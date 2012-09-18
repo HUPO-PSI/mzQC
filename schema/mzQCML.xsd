@@ -1,0 +1,500 @@
+<!-- edited with XMLSpy v2007 sp2 (http://www.altova.com) by Oliver Kohlbacher (Universität Tübingen) -->
+<!-- mzQualML version 0.0.1s
+Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
+-->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="1.1.0">
+	<xsd:element name="MzQualityML" type="MzQualityMLType">
+		<xsd:annotation>
+			<xsd:documentation>The Quality file  XML root element containing several QualityAssessments to runs and an optional QualityAssessment to the whole set</xsd:documentation>
+		</xsd:annotation>
+		<xsd:unique name="PK_MZIDENTML">
+			<xsd:selector xpath="."/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_SCDBSEQ">
+			<xsd:selector xpath="./SequenceCollection/DBSequence"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_SCPEP">
+			<xsd:selector xpath="./SequenceCollection/Peptide"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_SCPEPEVLIPEPEV">
+			<xsd:selector xpath="./SequenceCollection/PeptideEvidence"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_ANA">
+			<xsd:selector xpath="./AnalysisCollection/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_APC">
+			<xsd:selector xpath="./AnalysisProtocolCollection/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_APCSIPMT">
+			<xsd:selector xpath="./AnalysisProtocolCollection/SpectrumIdentificationProtocol/MassTable"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_APCSIPENZ">
+			<xsd:selector xpath="./AnalysisProtocolCollection/SpectrumIdentificationProtocol/Enzymes/Enzyme"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_APCSIPDTTT">
+			<xsd:selector xpath="./AnalysisProtocolCollection/SpectrumIdentificationProtocol/DatabaseTranslation/TranslationTable"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAIN">
+			<xsd:selector xpath="./DataCollection/Inputs/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAAD">
+			<xsd:selector xpath="./DataCollection/AnalysisData/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAADSIL">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAADSILSIR">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAADSILSIRSII">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAADPDL">
+			<xsd:selector xpath="./DataCollection/AnalysisData/ProteinDetectionList/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAADPDLPAG">
+			<xsd:selector xpath="./DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_ANASW">
+			<xsd:selector xpath="./AnalysisSoftwareList/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_PROV">
+			<xsd:selector xpath="./Provider"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_AUDIT">
+			<xsd:selector xpath="./AuditCollection/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_AUDITORG">
+			<xsd:selector xpath="./AuditCollection/Organization"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_AUDITPER">
+			<xsd:selector xpath="./AuditCollection/Person"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_SAMPLE">
+			<xsd:selector xpath="./AnalysisSampleCollection/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_CV">
+			<xsd:selector xpath="./cvList/*"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_DATAADSILFRAGTMEAS">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/FragmentationTable/Measure"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:unique name="PK_Bibref">
+			<xsd:selector xpath="./BibliographicReference"/>
+			<xsd:field xpath="@id"/>
+		</xsd:unique>
+		<xsd:keyref name="FK_SoftwareContact" refer="PK_AUDIT">
+			<xsd:selector xpath="./AnalysisSoftwareList/AnalysisSoftware/ContactRole"/>
+			<xsd:field xpath="@contact_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_AUDITPERAFF" refer="PK_AUDITORG">
+			<xsd:selector xpath="./AuditCollection/Person/Affiliation"/>
+			<xsd:field xpath="@organization_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_AUDITORGPAR" refer="PK_AUDITORG">
+			<xsd:selector xpath="./AuditCollection/Organization/Parent"/>
+			<xsd:field xpath="@organization_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_ProviderContact" refer="PK_AUDIT">
+			<xsd:selector xpath="./Provider/ContactRole"/>
+			<xsd:field xpath="@contact_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_ProviderSoftware" refer="PK_ANASW">
+			<xsd:selector xpath="./Provider"/>
+			<xsd:field xpath="@software_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SampleContact" refer="PK_AUDIT">
+			<xsd:selector xpath="./AnalysisSampleCollection/Sample/ContactRole"/>
+			<xsd:field xpath="@contact_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_subSamples" refer="PK_SAMPLE">
+			<xsd:selector xpath="./AnalysisSampleCollection/Sample/SubSample"/>
+			<xsd:field xpath="@sample_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_DBSEQ_SDB" refer="PK_DATAIN">
+			<xsd:selector xpath="./SequenceCollection/DBSequence"/>
+			<xsd:field xpath="@searchDatabase_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPEVID_PEP" refer="PK_SCPEP">
+			<xsd:selector xpath="./SequenceCollection/PeptideEvidence"/>
+			<xsd:field xpath="@peptide_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPEVID_DBSEQ" refer="PK_SCDBSEQ">
+			<xsd:selector xpath="./SequenceCollection/PeptideEvidence"/>
+			<xsd:field xpath="@dBSequence_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PEPEVID_TT" refer="PK_APCSIPDTTT">
+			<xsd:selector xpath="./SequenceCollection/PeptideEvidence"/>
+			<xsd:field xpath="@translationTable_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SI_SIP" refer="PK_APC">
+			<xsd:selector xpath="./AnalysisCollection/SpectrumIdentification"/>
+			<xsd:field xpath="@spectrumIdentificationProtocol_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SI_SILR" refer="PK_DATAAD">
+			<xsd:selector xpath="./AnalysisCollection/SpectrumIdentification"/>
+			<xsd:field xpath="@spectrumIdentificationList_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SISDB_SDBR" refer="PK_DATAIN">
+			<xsd:selector xpath="./AnalysisCollection/SpectrumIdentification/SearchDatabaseRef"/>
+			<xsd:field xpath="@searchDatabase_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SIIS_SDR" refer="PK_DATAIN">
+			<xsd:selector xpath="./AnalysisCollection/SpectrumIdentification/InputSpectra"/>
+			<xsd:field xpath="@spectraData_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PD_PDP" refer="PK_APC">
+			<xsd:selector xpath="./AnalysisCollection/ProteinDetection"/>
+			<xsd:field xpath="@proteinDetectionProtocol_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PD_PDL" refer="PK_DATAAD">
+			<xsd:selector xpath="./AnalysisCollection/ProteinDetection"/>
+			<xsd:field xpath="@proteinDetectionList_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PDSIL_ISI" refer="PK_DATAAD">
+			<xsd:selector xpath="./AnalysisCollection/ProteinDetection/InputSpectrumIdentifications"/>
+			<xsd:field xpath="@spectrumIdentificationList_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_APSIP_ASW" refer="PK_ANASW">
+			<xsd:selector xpath="./AnalysisProtocolCollection/SpectrumIdentificationProtocol"/>
+			<xsd:field xpath="@analysisSoftware_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_APPDP_ASW" refer="PK_ANASW">
+			<xsd:selector xpath="./AnalysisProtocolCollection/ProteinDetectionProtocol"/>
+			<xsd:field xpath="@analysisSoftware_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_SIIPEV_PEPEVR" refer="PK_SCPEPEVLIPEPEV">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/PeptideEvidenceRef"/>
+			<xsd:field xpath="@peptideEvidence_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_DATAADSILSIR_SDR" refer="PK_DATAIN">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult"/>
+			<xsd:field xpath="@spectraData_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_DATAADSILSIRSII_PEP" refer="PK_SCPEP">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem"/>
+			<xsd:field xpath="@peptide_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_DATAADPDLPAGPDHPH_PEPEV" refer="PK_SCPEPEVLIPEPEV">
+			<xsd:selector xpath="./DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/PeptideHypothesis"/>
+			<xsd:field xpath="@peptideEvidence_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_DATAADPDLPAGPDHPHSIIR_SII" refer="PK_DATAADSILSIRSII">
+			<xsd:selector xpath="./DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis/PeptideHypothesis/SpectrumIdentificationItemRef"/>
+			<xsd:field xpath="@spectrumIdentificationItem_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_PDH_DBSeq" refer="PK_SCDBSEQ">
+			<xsd:selector xpath="./DataCollection/AnalysisData/ProteinDetectionList/ProteinAmbiguityGroup/ProteinDetectionHypothesis"/>
+			<xsd:field xpath="@dBSequence_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_DATAADSILSIRSIIFRAGIONFRAGARR" refer="PK_DATAADSILFRAGTMEAS">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem/Fragmentation/IonType/FragmentArray"/>
+			<xsd:field xpath="@measure_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_Sample" refer="PK_SAMPLE">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem"/>
+			<xsd:field xpath="@sample_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_MassTable" refer="PK_APCSIPMT">
+			<xsd:selector xpath="./DataCollection/AnalysisData/SpectrumIdentificationList/SpectrumIdentificationResult/SpectrumIdentificationItem"/>
+			<xsd:field xpath="@massTable_ref"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist1" refer="PK_CV">
+			<xsd:selector xpath="*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist2" refer="PK_CV">
+			<xsd:selector xpath="*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist3" refer="PK_CV">
+			<xsd:selector xpath="*/*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist4" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist5" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist6" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist7" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*/*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_UnitCVlist8" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*/*/*/*"/>
+			<xsd:field xpath="@unitCvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist1" refer="PK_CV">
+			<xsd:selector xpath="*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist2" refer="PK_CV">
+			<xsd:selector xpath="*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist3" refer="PK_CV">
+			<xsd:selector xpath="*/*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist4" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist5" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist6" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist7" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*/*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+		<xsd:keyref name="FK_CVlist8" refer="PK_CV">
+			<xsd:selector xpath="*/*/*/*/*/*/*/*"/>
+			<xsd:field xpath="@cvRef"/>
+		</xsd:keyref>
+	</xsd:element>
+	<xsd:complexType name="MzQualityMLType">
+		<xsd:annotation>
+			<xsd:documentation>The type of the root element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="cvList" type="CVListType">
+				<xsd:annotation>
+					<xsd:documentation>the list of cvParams referenced by the QualityParameters</xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+			<xsd:element name="StudyQC" type="SetQualityAssessmentType" minOccurs="0"/>
+			<xsd:element name="RunQC" type="RunQualityAssessmentType" maxOccurs="unbounded"/>
+			<xsd:element name="QCMeasureDoc">
+				<xsd:annotation>
+					<xsd:documentation>Freeform text that describes the contents in a flexible way in the way a README  would. Extension of xsd:string</xsd:documentation>
+				</xsd:annotation>
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="cvRef">
+								<xsd:annotation>
+									<xsd:documentation>reference for a interactive Viewer to display the right params w/o redundancy</xsd:documentation>
+								</xsd:annotation>
+							</xsd:attribute>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+			<xsd:element name="AttachmentList">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="Attachment" type="AttachmentType" maxOccurs="unbounded">
+							<xsd:annotation>
+								<xsd:documentation>the element for the binary data of a QualityParameter reference with the MIME type as additional cvParam</xsd:documentation>
+							</xsd:annotation>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="CVListType">
+		<xsd:annotation>
+			<xsd:documentation>The list of controlled vocabularies used in the file.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="cv" type="cvType" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>these are describing the QualityParameters with a given semantic. (FWHM, TIC, TICsetlimit, ..., jpeg, ...) </xsd:documentation>
+				</xsd:annotation>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:group name="ParamGroup">
+		<xsd:annotation>
+			<xsd:documentation>A choice of either a cvParam or userParam.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:choice>
+			<xsd:element name="cvParam" type="CVParamType"/>
+			<xsd:element name="userParam" type="UserParamType"/>
+		</xsd:choice>
+	</xsd:group>
+	<xsd:complexType name="QualityAssessmentType" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>The abstract base Type for QualityParameter  container</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:element name="QCMeasure" type="QCMeasureType"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="RunQualityAssessmentType">
+		<xsd:annotation>
+			<xsd:documentation>The derived Type for QualityParameter  container of a run</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="QualityAssessmentType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="SetQualityAssessmentType">
+		<xsd:annotation>
+			<xsd:documentation>The derived Type for QualityParameter  container of a Set</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="QualityAssessmentType"/>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="QCMeasureType">
+		<xsd:annotation>
+			<xsd:documentation>A value modelling a QualityParameter</xsd:documentation>
+		</xsd:annotation>
+		<xsd:sequence>
+			<xsd:group ref="ParamGroup" maxOccurs="unbounded">
+				<xsd:annotation>
+					<xsd:documentation>CV terms for ...</xsd:documentation>
+				</xsd:annotation>
+			</xsd:group>
+		</xsd:sequence>
+		<xsd:attribute name="AttachmentRef"/>
+	</xsd:complexType>
+	<xsd:simpleType name="versionRegex">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="(1\.1\.\d+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:complexType name="AbstractParamType" abstract="true">
+		<xsd:annotation>
+			<xsd:documentation>Abstract entity allowing either cvParam or userParam to be referenced in other schemas. </xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="name" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The name of the parameter.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="value" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>The user-entered value of the parameter.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+	<xsd:complexType name="UserParamType">
+		<xsd:annotation>
+			<xsd:documentation>A single user-defined parameter.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="AbstractParamType">
+				<xsd:attribute name="type" type="xsd:string" use="optional">
+					<xsd:annotation>
+						<xsd:documentation>The datatype of the parameter, where appropriate (e.g.: xsd:float).</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="AttachmentType">
+		<xsd:annotation>
+			<xsd:documentation>A single attachment containing binary data and MIME type of the binary data</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="AbstractParamType">
+				<xsd:sequence>
+					<xsd:element name="binary" type="xsd:base64Binary">
+						<xsd:annotation>
+							<xsd:documentation>base64binary</xsd:documentation>
+						</xsd:annotation>
+					</xsd:element>
+				</xsd:sequence>
+				<xsd:attribute name="name_" type="xsd:string" use="required">
+					<xsd:annotation>
+						<xsd:documentation>Optional name</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="ID" type="xsd:string" use="required">
+					<xsd:annotation>
+						<xsd:documentation>The ID reffered to from QCMeasure elements</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="MIMEtype" use="required">
+					<xsd:annotation>
+						<xsd:documentation>W3C conform MIMEType descriptioin</xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="CVParamType">
+		<xsd:annotation>
+			<xsd:documentation>A single entry from an ontology or a controlled
+vocabulary.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexContent>
+			<xsd:extension base="AbstractParamType">
+				<xsd:attribute name="cvRef" type="xsd:string" use="required">
+					<xsd:annotation>
+						<xsd:documentation>A reference to the cv element from which this term originates. </xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+				<xsd:attribute name="accession" type="xsd:string" use="required">
+					<xsd:annotation>
+						<xsd:documentation>The accession or ID number of this CV term in the source CV. </xsd:documentation>
+					</xsd:annotation>
+				</xsd:attribute>
+			</xsd:extension>
+		</xsd:complexContent>
+	</xsd:complexType>
+	<xsd:complexType name="cvType">
+		<xsd:annotation>
+			<xsd:documentation>A source controlled vocabulary from which cvParams will be obtained.</xsd:documentation>
+		</xsd:annotation>
+		<xsd:attribute name="fullName" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The full name of the CV.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="version" type="xsd:string">
+			<xsd:annotation>
+				<xsd:documentation>The version of the CV.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="uri" type="xsd:anyURI" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The URI of the source CV.</xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+		<xsd:attribute name="id" type="xsd:string" use="required">
+			<xsd:annotation>
+				<xsd:documentation>The unique identifier of this cv within the document to be referenced by cvParam elements. </xsd:documentation>
+			</xsd:annotation>
+		</xsd:attribute>
+	</xsd:complexType>
+</xsd:schema>
