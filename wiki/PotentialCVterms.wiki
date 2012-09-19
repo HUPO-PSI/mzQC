@@ -1,0 +1,42 @@
+#potential CV terms as 
+
+= Introduction =
+
+The list should be expanded like a real one. Ids though are subject to change due to sorting/hierarchy and other.
+
+= Details =
+
+[Term]
+id: QC:0000001
+name: Quality Parameter
+def: "A quality parameter of some sort." [PXS:QC]
+
+[Term]
+id: QC:0000002
+name: MS-Injection Time
+def: "A quality parameter of some sort." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: MS2-Injection Time
+def: "A quality parameter of some sort." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000004
+name: Value distribution
+def: "A collection of values over either a run or several runs in a given interval." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000005
+name: Precursor distribution
+def: "..." [PXS:QC]
+is_a: MS:0000004 ! Value distribution
+
+[Term]
+id: QC:0000006
+name: Charge distribution
+def: "..." [PXS:QC]
+is_a: MS:0000004 ! Value distribution
