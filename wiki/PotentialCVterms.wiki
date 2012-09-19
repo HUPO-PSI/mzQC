@@ -7,6 +7,7 @@ The list should be expanded like a real one. Ids though are subject to change du
 = Details =
 
 <code language="xml">
+
 [Term]
 id: QC:0000001
 name: Quality Parameter
