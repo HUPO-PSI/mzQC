@@ -6,6 +6,7 @@ The list should be expanded like a real one. Ids though are subject to change du
 
 = Details =
 
+<code language="xml">
 [Term]
 id: QC:0000001
 name: Quality Parameter
@@ -40,3 +41,13 @@ id: QC:0000006
 name: Charge distribution
 def: "..." [PXS:QC]
 is_a: MS:0000004 ! Value distribution
+
+
+
+
+
+...
+
+
+
+</code>
