@@ -26,6 +26,25 @@ def: "A quality parameter of some sort." [PXS:QC]
 is_a: MS:0000001 ! Quality Parameter
 
 [Term]
+id: QC:0000003
+name: Total number of PSM
+def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+
+[Term]
+id: QC:0000003
+name: Total number of identified peptides
+def: "This number indicates the number peptides that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Total number of identified proteins
+def: "This number indicates the number proteins that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
 id: QC:0000004
 name: Value distribution
 def: "A collection of values over either a run or several runs in a given interval." [PXS:QC]
