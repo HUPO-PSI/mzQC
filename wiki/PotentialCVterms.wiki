@@ -27,6 +27,49 @@ is_a: MS:0000001 ! Quality Parameter
 
 [Term]
 id: QC:0000003
+name: Instrument:settings min mass 
+def: "This paramter shows the minimum of the mass range that was set during the acqusition." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Instrument:settings max mass 
+def: "This paramter shows the maximum of the mass range that was set during the acqusition." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Instrument:settings min RT 
+def: "This paramter shows the minimum of the retention time." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Instrument:settings max RT 
+def: "This paramter shows the maximum of the retention time." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Search:settings database 
+def: "This paramter shows the database that was used for MS/MS identification." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+
+[Term]
+id: QC:0000003
+name: Search:settings precursor ion tolerance 
+def: "This paramter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Search:settings product ion tolerance 
+def: "This paramter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
 name: Total number of PSM
 def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
 is_a: MS:0000001 ! Quality Parameter
@@ -42,6 +85,18 @@ is_a: MS:0000001 ! Quality Parameter
 id: QC:0000003
 name: Total number of identified proteins
 def: "This number indicates the number proteins that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Total number of missed cleavages
+def: "This number indicates the number missed cleavages that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:0000003
+name: Total number of mmodified peptides
+def: "This number indicates the number modified peptide sequences that were identified." [PXS:QC]
 is_a: MS:0000001 ! Quality Parameter
 
 [Term]
