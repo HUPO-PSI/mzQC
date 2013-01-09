@@ -15,89 +15,15 @@ def: "A quality parameter of some sort." [PXS:QC]
 
 [Term]
 id: QC:0000002
-name: MS-Injection Time
-def: "A quality parameter of some sort." [PXS:QC]
+name: Instrumentsettings
+def: "A quality parameter containing the instrument settings used." [PXS:QC]
 is_a: MS:0000001 ! Quality Parameter
 
 [Term]
 id: QC:0000003
-name: MS2-Injection Time
-def: "A quality parameter of some sort." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Instrument:settings min mass 
-def: "This paramter shows the minimum of the mass range that was set during the acqusition." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Instrument:settings max mass 
-def: "This paramter shows the maximum of the mass range that was set during the acqusition." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Instrument:settings min RT 
-def: "This paramter shows the minimum of the retention time." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Instrument:settings max RT 
-def: "This paramter shows the maximum of the retention time." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Search:settings database 
-def: "This paramter shows the database that was used for MS/MS identification." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-
-[Term]
-id: QC:0000003
-name: Search:settings precursor ion tolerance 
-def: "This paramter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Search:settings product ion tolerance 
-def: "This paramter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Total number of PSM
-def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-
-[Term]
-id: QC:0000003
-name: Total number of identified peptides
-def: "This number indicates the number peptides that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Total number of identified proteins
-def: "This number indicates the number proteins that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Total number of missed cleavages
-def: "This number indicates the number missed cleavages that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
-id: QC:0000003
-name: Total number of mmodified peptides
-def: "This number indicates the number modified peptide sequences that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+name: Aquisitionranges
+def: "Contains the min/max RT and mass range boundaries used during aquisition." [PXS:QC]
+is_a: MS:0000002 ! Instrument-Settings
 
 [Term]
 id: QC:0000004
@@ -117,9 +43,97 @@ name: Charge distribution
 def: "..." [PXS:QC]
 is_a: MS:0000004 ! Value distribution
 
+[Term]
+id: MS:1000927
+name: ion injection time
+def: "The length of time spent filling an ion trapping device." [PSI:MS]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: MS:1000503 ! scan attribute
+relationship: has_units UO:0000028 ! millisecond
 
+[Term]
+id: MS:1001011
+name: search database details
+def: "Details about the database searched." [PSI:PI]
+is_a: MS:1001249 ! search input details
 
+[Term]
+id: MS:1001411
+name: search tolerance specification
+is_a: MS:1001249 ! search input details
 
+[Term]
+id: MS:1001412
+name: search tolerance plus value
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001411 ! search tolerance specification
+relationship: has_units UO:0000166 ! parts per notation unit
+relationship: has_units UO:0000187 ! percent
+relationship: has_units UO:0000221 ! dalton
+
+[Term]
+id: MS:1001413
+name: search tolerance minus value
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: MS:1001411 ! search tolerance specification
+relationship: has_units UO:0000166 ! parts per notation unit
+relationship: has_units UO:0000187 ! percent
+relationship: has_units UO:0000221 ! dalton
+
+[Term]
+id: QC:000000X
+name: Search:settings precursor ion tolerance 
+def: "This paramter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:000000X
+name: Search:settings product ion tolerance 
+def: "This paramter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: MS:1001842
+name: peptide PSM count
+def: "The number of MS/MS spectra identified for this peptide in spectral counting." [PSI:PI]
+xref: value-type:xsd\:integer "The allowed value-type for this CV term."
+is_a: MS:1001805 ! quantification datatype
+
+[Term]
+id: QC:000000X
+name: Total number of PSM
+def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: MS:1001405
+name: spectrum identification result details
+def: "This subsection describes terms which can describe details of spectrum identification results." [PSI:PI]
+relationship: part_of MS:1001000 ! spectrum interpretation
+
+[Term]
+id: QC:000000X
+name: Total number of identified peptides
+def: "This number indicates the number peptides that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:000000X
+name: Total number of identified proteins
+def: "This number indicates the number proteins that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:000000X
+name: Total number of missed cleavages
+def: "This number indicates the number missed cleavages that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
+
+[Term]
+id: QC:000000X
+name: Total number of modified peptides
+def: "This number indicates the number modified peptide sequences that were identified." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
 
 ...
 
