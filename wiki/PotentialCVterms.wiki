@@ -23,31 +23,52 @@ is_a: MS:1000560 ! mass spectrometer file format
 id: QC:0000002
 name: aquisition results
 def: "The results (e.g. counts) of the aquisition step of a ms experiment." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: QC:0000001 ! quality parameter
 
 [Term]
 id: QC:0000003
 name: aquisition ranges
 def: "Contains the min/max RT and mass range boundaries used during aquisition." [PXS:QC]
-is_a: MS:0000002 ! aquisition results
+is_a: QC:0000002 ! aquisition results
 
 [Term]
 id: QC:0000004
 name: value distribution
 def: "A collection of values over either a run or several runs in a given interval." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: QC:0000001 ! quality parameter
 
 [Term]
 id: QC:0000005
 name: precursor distribution
 def: "The distribution of measured precursor ions over RT/mz." [PXS:QC]
-is_a: MS:0000004 ! Value distribution
+is_a: QC:0000004 ! value distribution
 
 [Term]
 id: QC:0000006
 name: charge distribution
 def: "The distribution of measured spectra over RT/mz." [PXS:QC]
-is_a: MS:0000004 ! Value distribution
+is_a: QC:0000004 ! value distribution
+
+[Term]
+id: QC:0000007
+name: total ion current distribution
+def: "The distribution of TIC over RT." [PXS:QC]
+is_a: QC:0000004 ! value distribution
+is_a: QC:0000017 ! ion current stability
+
+[Term]
+id: QC:0000008
+name: delta ppm distribution
+def: "The distribution of delta ppm over RT/mz." [PXS:QC]
+is_a: QC:0000004 ! value distribution
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: QC:0000009
+name: feature distribution
+def: "The distribution of features over RT/mz." [PXS:QC]
+is_a: QC:0000004 ! value distribution
+is_a: QC:0000017 ! featurefinding result details
 
 [Term]
 id: MS:1000927
@@ -93,13 +114,13 @@ relationship: has_units UO:0000187 ! percent
 relationship: has_units UO:0000221 ! dalton
 
 [Term]
-id: QC:0000007
+id: QC:0000010
 name: precursor ion tolerance 
 def: "This paramter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
 is_a: MS:1001411 ! search input details
 
 [Term]
-id: QC:0000008
+id: QC:0000011
 name: product ion tolerance 
 def: "This paramter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
 is_a: MS:1001411 ! search input details
@@ -118,7 +139,7 @@ def: "This subsection describes terms which can describe details of spectrum ide
 relationship: part_of MS:1001000 ! spectrum interpretation
 
 [Term]
-id: QC:0000009
+id: QC:0000012
 name: total number of PSM
 def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
@@ -130,7 +151,7 @@ def: "Peptide level information." [PSI:PI]
 is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:0000010
+id: QC:0000013
 name: total number of identified peptides
 def: "This number indicates the number peptides that were identified." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
@@ -142,22 +163,46 @@ def: "Protein level information." [PSI:PI]
 is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:0000011
+id: QC:0000014
 name: total number of identified proteins
 def: "This number indicates the number proteins that were identified." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:0000012
+id: QC:0000015
 name: total number of missed cleavages
 def: "This number indicates the number missed cleavages that were identified." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:0000013
+id: QC:0000016
 name: total number of modified peptides
 def: "This number indicates the number modified peptide sequences that were identified." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: QC:0000017
+name: ion current stability
+def: "These values give a indication of the ion current stability." [PXS:QC]
+is_a: QC:0000002 ! aquisition results
+
+[Term]
+id: QC:0000018
+name: mass accuracy
+def: "The values of overall mass accuracy." [PXS:QC]
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: QC:0000019
+name: id ratio
+def: "The ratio of identifications versus recorded ms2 spectra." [PXS:QC]
+is_a: MS:1001105 ! peptide result details
+
+[Term]
+id: QC:0000020
+name: featurefinding result details
+def: "Feature level information." [PXS:QC]
+is_a: QC:0000001 ! quality parameter
 
 ...
 
