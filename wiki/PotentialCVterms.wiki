@@ -15,33 +15,39 @@ def: "A quality parameter of some sort." [PXS:QC]
 
 [Term]
 id: QC:0000002
-name: Instrumentsettings
-def: "A quality parameter containing the instrument settings used." [PXS:QC]
+name: ms file base name
+def: "the file base name that gave rise to the calculated quality parameters." [PXS:QC]
 is_a: MS:0000001 ! Quality Parameter
 
 [Term]
 id: QC:0000003
-name: Aquisitionranges
-def: "Contains the min/max RT and mass range boundaries used during aquisition." [PXS:QC]
-is_a: MS:0000002 ! Instrument-Settings
+name: aquisition results
+def: "the results (e.g. counts) of the aquisition step of a ms experiment." [PXS:QC]
+is_a: MS:0000001 ! Quality Parameter
 
 [Term]
 id: QC:0000004
+name: Aquisition ranges
+def: "Contains the min/max RT and mass range boundaries used during aquisition." [PXS:QC]
+is_a: MS:0000002 ! aquisition results
+
+[Term]
+id: QC:0000005
 name: Value distribution
 def: "A collection of values over either a run or several runs in a given interval." [PXS:QC]
 is_a: MS:0000001 ! Quality Parameter
 
 [Term]
-id: QC:0000005
+id: QC:0000006
 name: Precursor distribution
 def: "..." [PXS:QC]
-is_a: MS:0000004 ! Value distribution
+is_a: MS:0000005 ! Value distribution
 
 [Term]
-id: QC:0000006
+id: QC:0000007
 name: Charge distribution
 def: "..." [PXS:QC]
-is_a: MS:0000004 ! Value distribution
+is_a: MS:0000005 ! Value distribution
 
 [Term]
 id: MS:1000927
@@ -50,6 +56,12 @@ def: "The length of time spent filling an ion trapping device." [PSI:MS]
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 is_a: MS:1000503 ! scan attribute
 relationship: has_units UO:0000028 ! millisecond
+
+[Term]
+id: MS:1001249
+name: search input details
+def: "Details describing the search input." [PSI:PI]
+relationship: part_of MS:1001000 ! spectrum interpretation
 
 [Term]
 id: MS:1001011
@@ -81,16 +93,16 @@ relationship: has_units UO:0000187 ! percent
 relationship: has_units UO:0000221 ! dalton
 
 [Term]
-id: QC:000000X
-name: Search:settings precursor ion tolerance 
+id: QC:0000008
+name: precursor ion tolerance 
 def: "This paramter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: MS:1001411 ! search input details
 
 [Term]
-id: QC:000000X
-name: Search:settings product ion tolerance 
+id: QC:0000009
+name: product ion tolerance 
 def: "This paramter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: MS:1001411 ! search input details
 
 [Term]
 id: MS:1001842
@@ -100,40 +112,52 @@ xref: value-type:xsd\:integer "The allowed value-type for this CV term."
 is_a: MS:1001805 ! quantification datatype
 
 [Term]
-id: QC:000000X
-name: Total number of PSM
-def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
-
-[Term]
 id: MS:1001405
 name: spectrum identification result details
 def: "This subsection describes terms which can describe details of spectrum identification results." [PSI:PI]
 relationship: part_of MS:1001000 ! spectrum interpretation
 
 [Term]
-id: QC:000000X
+id: QC:0000010
+name: Total number of PSM
+def: "This number indicates the number of spectra that were given peptide annotations." [PXS:QC]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: MS:1001105
+name: peptide result details
+def: "Peptide level information." [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: QC:0000011
 name: Total number of identified peptides
 def: "This number indicates the number peptides that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:000000X
+id: MS:1001085
+name: protein result details
+def: "Protein level information." [PSI:PI]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: QC:0000012
 name: Total number of identified proteins
 def: "This number indicates the number proteins that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:000000X
+id: QC:0000013
 name: Total number of missed cleavages
 def: "This number indicates the number missed cleavages that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
-id: QC:000000X
+id: QC:0000014
 name: Total number of modified peptides
 def: "This number indicates the number modified peptide sequences that were identified." [PXS:QC]
-is_a: MS:0000001 ! Quality Parameter
+is_a: MS:1001405 ! spectrum identification result details
 
 ...
 
