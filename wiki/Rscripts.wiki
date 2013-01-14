@@ -1,0 +1,105 @@
+#collection of Rscripts
+
+= Introduction =
+
+Each script shall be delimited by #########..
+
+= Details =
+
+## This is an R script to produce the figures that are attached to the qcML format
+
+#options
+require("geneplotter")  ## from BioConductor
+require("RColorBrewer") ## from CRAN
+
+path<-commandArgs(TRUE)[1]
+######
+###TIC
+######
+file = dir(pattern=".csv")
+a<-read.delim(dir(pattern=".csv"))
+######################################
+png(paste(path,"tic.png",sep=""))
+res = barplot(t(a$TIC),main=paste(strsplit(file,split="_TIC")[[1]][1],"_TIC",sep=""), xlab="RT (min)",ylab="Intensity")
+time_seq = seq(min(a$RT..sec.),max(a$RT..sec.),1200)
+time_seq = round(time_seq)/60
+tmp = seq(min(res),max(res),length(res)/(length(time_seq)-2))
+axis(1,at=tmp,labels=time_seq)
+######################################
+dev.off()
+#
+#
+#
+#
+#
+##########################
+###Spectra recordings
+##########################
+file = dir(pattern="_.csv")
+c<-read.delim(dir(pattern="_PRECURSOR.csv"))
+b<-read.delim(dir(pattern="_id.csv"))
+png(paste(path,"spec.png",sep=""))
+plot(c$RT..sec./60,c$Precursor,pch=16,,xlab="RT (min)",ylab="m/z",main=paste(strsplit(file,split="_PRECURSOR")[[1]][1],"_rec_id_specs",sep=""),cex=0.3)
+points(b$RT/60,b$MZ,col="red",pch=4,cex=0.3)
+legend("topleft",c("recorded spectra","identified spectra"),pch=19,col=c(1,2))
+######################################
+dev.off()
+#
+#
+#
+#
+#
+##########################
+###Mass accuracy
+##########################
+#d <- read.csv(file="/tmp/nu_pepid.csv",head=TRUE,sep="\t")
+file = dir(pattern=".csv")
+d<-read.delim(dir(pattern="_id.csv"))
+png(paste(path,"accuracy.png",sep=""))
+tmp<-(1-d$MZ/d$TheoreticalWeight)*1e6
+hist(tmp,xlim=c(-10,10),breaks=10000,xlab="ppm",main=paste(strsplit(file,split="_id")[[1]][1],"_mass_accuracy",sep=""))
+abline(v=median(tmp),col="red", lwd=2)
+mtext(paste("median(accuracy)=",round(median(tmp),3)," ppm",sep=""))
+######################################
+dev.off()
+
+
+##########################
+###Mass accuracy over time
+##########################
+file = dir(pattern=".csv")
+d<-read.delim(dir(pattern="_id.csv"))
+png(paste(path,"accuracyRT.png",sep=""))
+d1<-d$RT/60
+d2<-(as.numeric(d$MZ)-as.numeric(d$TheoreticalWeight))/as.numeric(d$MZ)*1e6
+d<-cbind(d1,d2)
+plot(d,xlab="RT in [min]",ylab="mass error in [ppm]",main=paste(strsplit(file,split="_id")[[1]][1],"_RT",sep=""),col="#88000011", pch=20,cex=1)
+dev.off()
+
+##########################
+###Number of Oxidation_(M) time
+##########################
+file = dir(pattern=".csv")
+d<-read.delim(dir(pattern="_id.csv"))
+png(paste(path,"accuracyRT.png",sep=""))
+d1<-d$RT/60
+d2<-d$Oxidation_(M)
+d<-cbind(d1,d2)
+plot(d,xlab="RT in [min]",ylab="mass error in [ppm]",main=paste(strsplit(file,split="_id")[[1]][1],"_RT",sep=""),col="#88000011", pch=20,cex=1)
+dev.off()
+
+##########################
+###Fractional versus nominal mass
+##########################
+b<-read.delim("theoretical_masses.txt")
+file=dir(pattern="feature")
+a<-read.delim(file)
+a<-a$MZ*a$Charge - a$Charge*1.007276467
+a1<-floor(a);
+a2<-a-floor(a);
+a<-cbind(a1,a2);
+png(paste(path,"fractionalMass.png",sep=""))
+smoothScatter(b,nrpoints=0,ylab="fractional mass",xlab="nominal mass", main="Fractional mass vs. nominal mass",xlim=c(0,5000),pch=4,col="blue")
+points(a,col="#88000011", pch=20,cex=1)
+legend("topleft",c("theoretical","experimental"),col=c("darkblue","darkred"),pch=19,bty='n')
+dev.off()
