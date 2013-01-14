@@ -5,14 +5,13 @@
 Each script shall be delimited by #########..
 
 = Details =
-
-## This is an R script to produce the figures that are attached to the qcML format
-
+{{{
 #options
 require("geneplotter")  ## from BioConductor
 require("RColorBrewer") ## from CRAN
 
 path<-commandArgs(TRUE)[1]
+
 ######
 ###TIC
 ######
@@ -103,3 +102,5 @@ smoothScatter(b,nrpoints=0,ylab="fractional mass",xlab="nominal mass", main="Fra
 points(a,col="#88000011", pch=20,cex=1)
 legend("topleft",c("theoretical","experimental"),col=c("darkblue","darkred"),pch=19,bty='n')
 dev.off()
+
+}}}
