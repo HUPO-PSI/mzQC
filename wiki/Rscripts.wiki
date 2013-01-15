@@ -9,6 +9,7 @@ Each script shall be delimited by #########..
 #options
 require("geneplotter")  ## from BioConductor
 require("RColorBrewer") ## from CRAN
+options(digits=30)
 
 path<-commandArgs(TRUE)[1]
 
