@@ -263,12 +263,6 @@ name: Spectrum identification result details
 def: "This subsection describes terms which can describe details of spectrum identification results." [PSI:PI]
 relationship: part_of MS:1001000 ! spectrum interpretation
 
-					<TableRowValues>#protein_hits 1</TableRowValues>
-					<TableRowValues>#unique_proteins 1254</TableRowValues>
-
-
-					<TableRowValues>#unique_peptides 6796</TableRowValues>
-
 [Term]
 id: QC:0000016
 name: total number of PSM
@@ -394,6 +388,102 @@ id: QC:0000032
 name: number of features
 def: "The number of features reported." [PXS:QC]
 is_a: QC:0000031 ! featurefinding result details
+
+[Term]
+id: QC:0000033
+name: run quality parameter
+def: "A run quality parameter of some sort." [PXS:QC]
+is_a: QC:0000001 ! quality parameter
+
+[Term]
+id: QC:0000034
+name: set quality parameter
+def: "A set quality parameter of some sort." [PXS:QC]
+is_a: QC:0000001 ! quality parameter
+
+[Term]
+id: QC:0000035
+name: sigma id numbers
+def: "The sigma of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+[Term]
+id: QC:0000036
+name: mu id numbers
+def: "The mu of the distribution of TIC sums defined by the sets tic sums." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+[Term]
+
+id: QC:0000037
+name: Q1 id numbers
+def: "The Q1 (lower quartile) of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000038
+name: Q2 id numbers
+def: "The Q2 (median) of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000039
+name: Q3 id numbers
+def: "The Q3 (upper quartile) of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+[Term]
+id: QC:0000040
+name: sigma feature number
+def: "The sigma of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+[Term]
+id: QC:0000041
+name: mu feature number
+def: "The mu of the distribution of feature numbers defined by the sets feature numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+[Term]
+
+id: QC:0000042
+name: Q1 feature number
+def: "The Q1 (lower quartile) of the distribution of feature numbers defined by the sets feature numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000043
+name: Q2 feature number
+def: "The Q2 (median) of the distribution of feature numbers defined by the sets feature numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000044
+name: Q3 feature number
+def: "The Q3 (upper quartile) of the distribution of feature numbers defined by the sets feature numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+[Term]
+id: QC:0000045
+name: sigma ms2 number
+def: "The sigma of the distribution of id numbers defined by the sets ms2 numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+[Term]
+id: QC:0000046
+name: mu ms2 number
+def: "The mu of the distribution of ms1 numbers defined by the sets ms2 numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+[Term]
+
+id: QC:0000047
+name: Q1 ms2 number
+def: "The Q1 (lower quartile) of the distribution of ms2 numbers defined by the sets ms2 numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000048
+name: Q2 ms2 number
+def: "The Q2 (median) of the distribution of id numbers defined by the sets ms2 numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000049
+name: Q3 ms2 number
+def: "The Q3 (upper quartile) of the distribution of ms2 numbers defined by the sets ms2 numbers." [PXS:QC]
+is_a: QC:0000034 ! set quality parameter
 
 ...
 
