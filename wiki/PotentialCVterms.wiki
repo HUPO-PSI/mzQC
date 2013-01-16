@@ -325,6 +325,12 @@ is_a: MS:1001405 ! spectrum identification result details
 
 [Term]
 id: QC:0000023
+name: id ratio
+def: "This ratio indicates the number of identified peptides vs. the number of recorded ms2 spectra." [PXS:QC]
+is_a: MS:1001405 ! spectrum identification result details
+
+[Term]
+id: QC:0000024
 name: mass accuracy
 def: "The values of overall mass accuracy." [PXS:QC]
 is_a: MS:1001105 ! peptide result details
@@ -339,49 +345,55 @@ relationship: has_units MS:1000040 ! m/z
 relationship: has_units UO:0000169 ! parts per million
 
 [Term]
-id: QC:0000024
+id: QC:0000025
 name: delta ppm
 def: "The deviation of the precursor ion mass and the theoretical mass of the matched identification." [PXS:QC]
-is_a: QC:0000023 ! mass accuracy
-relationship: has_units UO:0000169 ! parts per million
-
-[Term]
-id: QC:0000025
-name: mean delta ppm
-def: "The mean deviation of the precursor ion masses and the theoretical masses of the matched identifications." [PXS:QC]
-is_a: QC:0000023 ! mass accuracy
+is_a: QC:0000024 ! mass accuracy
 relationship: has_units UO:0000169 ! parts per million
 
 [Term]
 id: QC:0000026
-name: median delta ppm
-def: "The median deviation of the precursor ion masses and the theoretical masses of the matched identifications." [PXS:QC]
-is_a: QC:0000023 ! mass accuracy
+name: mean delta ppm
+def: "The mean deviation of the precursor ion masses and the theoretical masses of the matched identifications." [PXS:QC]
+is_a: QC:0000024 ! mass accuracy
 relationship: has_units UO:0000169 ! parts per million
 
 [Term]
 id: QC:0000027
+name: median delta ppm
+def: "The median deviation of the precursor ion masses and the theoretical masses of the matched identifications." [PXS:QC]
+is_a: QC:0000024 ! mass accuracy
+relationship: has_units UO:0000169 ! parts per million
+
+[Term]
+id: QC:0000028
 name: ion current stability
 def: "These values give a indication of the ion current stability." [PXS:QC]
 is_a: QC:0000002 ! aquisition results
 
 [Term]
-id: QC:0000028
+id: QC:0000029
 name: sum of tic
 def: "The sum of the tic of a run." [PXS:QC]
-is_a: QC:0000027 ! ion current stability
+is_a: QC:0000028 ! ion current stability
 
 [Term]
-id: QC:0000029
+id: QC:0000030
 name: percentage of tic slumps
 def: "The percentage of tic slumps below 10k." [PXS:QC]
-is_a: QC:0000027 ! ion current stability
+is_a: QC:0000028 ! ion current stability
 
 [Term]
-id: QC:0000020
+id: QC:0000031
 name: featurefinding result details
 def: "Feature level information." [PXS:QC]
 is_a: QC:0000001 ! quality parameter
+
+[Term]
+id: QC:0000032
+name: number of features
+def: "The number of features reported." [PXS:QC]
+is_a: QC:0000031 ! featurefinding result details
 
 ...
 
