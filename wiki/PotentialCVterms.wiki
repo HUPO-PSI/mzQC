@@ -403,14 +403,14 @@ is_a: QC:0000001 ! quality parameter
 
 [Term]
 id: QC:0000035
-name: sigma id numbers
-def: "The sigma of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+name: min id numbers
+def: "The minimum of the value distribution of id numbers defined by the sets of ids." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
 
 [Term]
 id: QC:0000036
-name: mu id numbers
-def: "The mu of the distribution of TIC sums defined by the sets tic sums." [PXS:QC]
+name: max id numbers
+def: "The maximum of the value distribution of TIC sums defined by the sets tic sums." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
 [Term]
 
@@ -431,14 +431,14 @@ is_a: QC:0000034 ! set quality parameter
 
 [Term]
 id: QC:0000040
-name: sigma feature number
-def: "The sigma of the distribution of id numbers defined by the sets of ids." [PXS:QC]
+name: min feature number
+def: "The minimum of the value distribution of id numbers defined by the sets of ids." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
 
 [Term]
 id: QC:0000041
-name: mu feature number
-def: "The mu of the distribution of feature numbers defined by the sets feature numbers." [PXS:QC]
+name: max feature number
+def: "The maximum of the value distribution of feature numbers defined by the sets feature numbers." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
 [Term]
 
@@ -459,14 +459,14 @@ is_a: QC:0000034 ! set quality parameter
 
 [Term]
 id: QC:0000045
-name: sigma ms2 number
-def: "The sigma of the distribution of id numbers defined by the sets ms2 numbers." [PXS:QC]
+name: min ms2 number
+def: "The minimum of the value distribution of id numbers defined by the sets ms2 numbers." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
 
 [Term]
 id: QC:0000046
-name: mu ms2 number
-def: "The mu of the distribution of ms1 numbers defined by the sets ms2 numbers." [PXS:QC]
+name: max ms2 number
+def: "The maximum of the value distribution of ms1 numbers defined by the sets ms2 numbers." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
 [Term]
 
@@ -484,6 +484,10 @@ id: QC:0000049
 name: Q3 ms2 number
 def: "The Q3 (upper quartile) of the distribution of ms2 numbers defined by the sets ms2 numbers." [PXS:QC]
 is_a: QC:0000034 ! set quality parameter
+
+id: QC:0000050
+name: run name
+def: "A run name as used by the qcml in set grouping." [PXS:QC]
 
 ...
 
