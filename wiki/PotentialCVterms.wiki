@@ -488,8 +488,8 @@ def: "The Q3 (upper quartile) of the distribution of ms2 numbers defined by the 
 is_a: QC:0000003 ! set quality parameter
 
 id: QC:0000058
-name: run name
-def: "A run name as used by the qcml in set grouping." [PXS:QC]
+name: set name
+def: "The set name describing the set grouping." [PXS:QC]
 
 ...
 
