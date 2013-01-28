@@ -104,4 +104,14 @@ points(a,col="#88000011", pch=20,cex=1)
 legend("topleft",c("theoretical","experimental"),col=c("darkblue","darkred"),pch=19,bty='n')
 dev.off()
 
+##########################
+###Set id stats
+##########################
+d <- read.table("/tmp/idstats.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+test$names=d[,1]
+d <- as.matrix(d[,-1])
+d <- t(d[,c("min","q1","q2","q3","max")])
+test$stats = d
+bxp(test)
+
 }}}
