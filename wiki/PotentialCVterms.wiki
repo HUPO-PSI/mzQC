@@ -357,61 +357,61 @@ is_a: QC:0000034 ! featurefinding result details
 
 [Term]
 id: QC:0000036
-name: min id numbers
-def: "The minimum of the value distribution of id numbers defined by the sets of ids." [PXS:QC]
-is_a: QC:0000003 ! set quality parameter
-
-[Term]
-id: QC:0000037
-name: max id numbers
-def: "The maximum of the value distribution of TIC sums defined by the sets tic sums." [PXS:QC]
-is_a: QC:0000003 ! set quality parameter
-
-[Term]
-id: QC:0000038
 name: value tables
 def: "A collection of values over either a run or several runs in a given interval." [PXS:QC]
 is_a: QC:0000001 ! quality parameter
 
 [Term]
-id: QC:0000039
+id: QC:0000037
 name: precursor tables
 def: "The tables of measured precursor ions over RT/mz." [PXS:QC]
 is_a: QC:0000004 ! value tables
 
 [Term]
-id: QC:0000040
+id: QC:0000038
 name: charge tables
 def: "The tables of measured spectra over RT/mz." [PXS:QC]
 is_a: QC:0000004 ! value tables
 
 [Term]
-id: QC:0000041
+id: QC:0000039
 name: total ion current tables
 def: "The tables of TIC over RT." [PXS:QC]
 is_a: QC:0000004 ! value tables
 is_a: QC:0000017 ! ion current stability
 
 [Term]
-id: QC:0000042
+id: QC:0000040
 name: delta ppm tables
 def: "The tables of delta ppm over RT/mz." [PXS:QC]
 is_a: QC:0000004 ! value tables
 is_a: MS:1001105 ! peptide result details
 
 [Term]
-id: QC:0000043
+id: QC:0000041
 name: feature tables
 def: "The tables of features over RT/mz." [PXS:QC]
 is_a: QC:0000004 ! value tables
 is_a: QC:0000034 ! featurefinding result details
 
 [Term]
-id: QC:0000044
+id: QC:0000042
 name: identification tables
 def: "The tables of features over RT/mz." [PXS:QC]
 is_a: QC:0000004 ! value tables
 is_a: QC:0000034 ! featurefinding result details
+
+[Term]
+id: QC:0000043
+name: min id numbers
+def: "The minimum of the value distribution of id numbers defined by the sets of ids." [PXS:QC]
+is_a: QC:0000003 ! set quality parameter
+
+[Term]
+id: QC:0000044
+name: max id numbers
+def: "The maximum of the value distribution of TIC sums defined by the sets tic sums." [PXS:QC]
+is_a: QC:0000003 ! set quality parameter
 
 [Term]
 id: QC:0000045
