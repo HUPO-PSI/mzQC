@@ -491,6 +491,9 @@ id: QC:0000058
 name: set name
 def: "The set name describing the set grouping." [PXS:QC]
 
+id: QC:0000059
+name: fractional masses
+def: "The fractional masses vs the measured masses." [PXS:QC]
 ...
 
 
