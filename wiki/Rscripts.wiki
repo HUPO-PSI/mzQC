@@ -16,15 +16,15 @@ path<-commandArgs(TRUE)[1]
 ######
 ###TIC
 ######
-file = dir(pattern=".csv")
-a<-read.delim(dir(pattern=".csv"))
+a<-read.csv(file=file,head=TRUE,sep="\t")
 ######################################
-png(paste(path,"tic.png",sep=""))
-res = barplot(t(a$TIC),main=paste(strsplit(file,split="_TIC")[[1]][1],"_TIC",sep=""), xlab="RT (min)",ylab="Intensity")
-time_seq = seq(min(a$RT..sec.),max(a$RT..sec.),1200)
+png(post)
+res = barplot(t(a$TIC), xlab="RT (min)",ylab="Intensity")
+time_seq = seq(min(a$RT),max(a$RT),1200)
 time_seq = round(time_seq)/60
-tmp = seq(min(res),max(res),length(res)/(length(time_seq)-2))
-axis(1,at=tmp,labels=time_seq)
+t<-which(time_seq %% 1==0 & duplicated(time_seq)==F)
+tmp = seq(min(res),max(res),max(res)/(length(time_seq)))
+axis(1,at=tmp[t],labels=time_seq[t])
 ######################################
 dev.off()
 #
@@ -33,14 +33,21 @@ dev.off()
 #
 #
 ##########################
-###Spectra recordings
+###IDs on rt/mz map vs precursors
 ##########################
-file = dir(pattern="_.csv")
-c<-read.delim(dir(pattern="_PRECURSOR.csv"))
-b<-read.delim(dir(pattern="_id.csv"))
-png(paste(path,"spec.png",sep=""))
-plot(c$RT..sec./60,c$Precursor,pch=16,,xlab="RT (min)",ylab="m/z",main=paste(strsplit(file,split="_PRECURSOR")[[1]][1],"_rec_id_specs",sep=""),cex=0.3)
-points(b$RT/60,b$MZ,col="red",pch=4,cex=0.3)
+file_p<-read.table(commandArgs(TRUE)[1], header=TRUE, sep="", na.strings="NA", dec=".", strip.white=TRUE)
+file_id<-read.table(commandArgs(TRUE)[2], header=TRUE, sep="", na.strings="NA", dec=".", strip.white=TRUE)
+post<-commandArgs(TRUE)[3]
+
+file_p$RT_.sec. = file_p$RT_.sec./60
+file_id$RT = file_id$RT/60
+
+spec<-cbind(file_p,col=rep(1,length(file_p$RT_.sec.)))
+id<-cbind(file_id[,1:2],rep(2,length(file_id$RT)))
+all<-rbind(as.matrix(spec),as.matrix(id))
+
+png(post)
+plot(all,col=all[,3], xlab="RT[sec]", ylab="mz", pch=4, cex=0.3)
 legend("topleft",c("recorded spectra","identified spectra"),pch=19,col=c(1,2))
 ######################################
 dev.off()
@@ -49,21 +56,30 @@ dev.off()
 #
 #
 #
+file<-commandArgs(TRUE)[1]
+post<-commandArgs(TRUE)[2]
 ##########################
 ###Mass accuracy
 ##########################
-#d <- read.csv(file="/tmp/nu_pepid.csv",head=TRUE,sep="\t")
-file = dir(pattern=".csv")
-d<-read.delim(dir(pattern="_id.csv"))
-png(paste(path,"accuracy.png",sep=""))
-tmp<-(1-d$MZ/d$TheoreticalWeight)*1e6
-hist(tmp,xlim=c(-10,10),breaks=10000,xlab="ppm",main=paste(strsplit(file,split="_id")[[1]][1],"_mass_accuracy",sep=""))
-abline(v=median(tmp),col="red", lwd=2)
-mtext(paste("median(accuracy)=",round(median(tmp),3)," ppm",sep=""))
+a<-read.delim(file)
+png(post)
+if ('delta_ppm' %in% colnames(a)) {
+	hist(a$delta_ppm,xlim=c(-10,10),breaks=seq(min(a$delta_ppm)-0.01, max(a$delta_ppm)+0.01, 0.01),xlab="ppm",main=paste("delta ppm"))
+	abline(v=median(a$delta_ppm),col="red", lwd=2)
+	mtext(paste("median(accuracy)=",round(median(a$delta_ppm),3)," ppm",sep=""))
+} else {
+	tmp<-(1-a$MZ/a$TheoreticalWeight)*1e6
+	hist(tmp,xlim=c(-10,10),breaks=seq(min(tmp)-0.01, max(tmp)+0.01, 0.01),xlab="ppm",main=paste("delta ppm"))
+	abline(v=median(tmp),col="red", lwd=2)
+	mtext(paste("median(accuracy)=",round(median(tmp),3)," ppm",sep=""))
+}
 ######################################
 dev.off()
-
-
+#
+#
+#
+#
+#
 ##########################
 ###Mass accuracy over time
 ##########################
@@ -77,7 +93,7 @@ plot(d,xlab="RT in [min]",ylab="mass error in [ppm]",main=paste(strsplit(file,sp
 dev.off()
 
 ##########################
-###Number of Oxidation_(M) time
+###Number of Oxidation_(M) over time
 ##########################
 file = dir(pattern=".csv")
 d<-read.delim(dir(pattern="_id.csv"))
@@ -107,11 +123,24 @@ dev.off()
 ##########################
 ###Set id stats
 ##########################
-d <- read.table("/tmp/idstats.csv", header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
-test$names=d[,1]
-d <- as.matrix(d[,-1])
-d <- t(d[,c("min","q1","q2","q3","max")])
-test$stats = d
-bxp(test)
+file<-commandArgs(TRUE)[1]
+post<-commandArgs(TRUE)[2]
+
+a<-read.table(file=file, header=TRUE, sep="\t", na.strings="NA", dec=".", strip.white=TRUE)
+######################################
+png(post)
+bxpo=list()
+bxpo$names=a[,1]
+a <- as.matrix(a[,-1])
+a <- t(a[,c("min","Q1","Q2","Q3","max")])
+bxpo$stats = a
+bxp(bxpo)
+######################################
+dev.off()
+#
+#
+#
+#
+#
 
 }}}
