@@ -500,8 +500,8 @@ name: injection times
 def: "The injection times for the runs." [PXS:QC]
 
 id: QC:0000061
-name: ion injection time
-def: "The injection times for a ion." [PXS:QC]
+name: mean injection time
+def: "The mean injection time for a run." [PXS:QC]
 
 
 ...
