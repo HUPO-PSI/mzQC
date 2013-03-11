@@ -494,6 +494,16 @@ def: "The set name describing the set grouping." [PXS:QC]
 id: QC:0000059
 name: fractional masses
 def: "The fractional masses vs the measured masses." [PXS:QC]
+
+id: QC:0000060
+name: injection times
+def: "The injection times for the runs." [PXS:QC]
+
+id: QC:0000061
+name: ion injection time
+def: "The injection times for a ion." [PXS:QC]
+
+
 ...
 
 
