@@ -1,0 +1,25 @@
+#PrimeXS basic QC metrics correspondence to QC parameters
+
+= MetaData =
+
+||instrumentsettings || ..and basic file content info ||
+||DB searchsettings || engine params ||
+
+= Basic ID results =
+
+||#mis. clevages || after FDR ||
+||#mod. peptides || after FDR ||
+||mass accuracy || delta ppm ||
+||enzyme contamination || (#chymo+#trypt)/#trypt ||
+||distribution rec./id. MS2 || id ratio ||
+
+
+= Targeted experiments =
+
+||targeted stats. || target hits in mz (with FWHM,RT,Int) ||
+
+
+= Aquisition details =
+
+||stability || tic ||
+||saturation || NA ||
