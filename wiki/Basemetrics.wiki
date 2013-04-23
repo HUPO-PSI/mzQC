@@ -2,24 +2,24 @@
 
 = MetaData =
 
-||instrumentsettings || ..and basic file content info ||
-||DB searchsettings || engine params ||
+||instrumentsettings || ..and basic file content info || NA ||
+||DB searchsettings || engine params || NA ||
 
 = Basic ID results =
 
-||#mis. clevages || after FDR ||
-||#mod. peptides || after FDR ||
-||mass accuracy || delta ppm ||
-||enzyme contamination || (#chymo+#trypt)/#trypt ||
-||distribution rec./id. MS2 || id ratio ||
+||#mis. clevages || after FDR || NA ||
+||#mod. peptides || after FDR || NA ||
+||mass accuracy || delta ppm || NA ||
+||enzyme contamination || (#chymo+#trypt)/#trypt || NA ||
+||distribution rec./id. MS2 || id ratio || NA ||
 
 
 = Targeted experiments =
 
-||targeted stats. || target hits in mz (with FWHM,RT,Int) ||
+||targeted stats. || target hits in mz (with FWHM,RT,Int) || NA ||
 
 
 = Aquisition details =
 
-||stability || tic ||
-||saturation || NA ||
+||stability || tic || NA ||
+||saturation || detector-saturation (not available in mzml!) || NA ||
