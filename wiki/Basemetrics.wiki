@@ -1,6 +1,6 @@
 #PrimeXS basic QC metrics correspondence to QC parameters
 
-= MetaData =
+=MetaData=
 
 ||instrumentsettings || ..and basic file content info || NA ||
 ||DB searchsettings || engine params || NA ||
@@ -14,12 +14,12 @@
 ||distribution rec./id. MS2 || id ratio || NA ||
 
 
-= Targeted experiments =
+=Targeted experiments (when available)=
 
 ||targeted stats. || target hits in mz (with FWHM,RT,Int) || NA ||
 
 
-= Aquisition details =
+=Aquisition details=
 
 ||stability || tic || NA ||
 ||saturation || detector-saturation (not available in mzml!) || NA ||
