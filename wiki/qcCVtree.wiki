@@ -1,9 +1,9 @@
 #A CV tree to reflect the PrimeXS basic QC metrics
 
-* A cv does not neccessarily have to have a value (in which case there is a NA). 
-* A cv may have a linked attachment type (in which case the cv is to be reused in the attachment element).
-* A cv may have a linked attachment type of both binary and table order (which are easily distinguished while parsing by the occurrence of the binary child element or the table row element of which a attachment element can only have either one).
-* A new kind of table or plot can be attached to any QC element of one of the cv below by qualityParameterRef with the use of the custom cv.
+  * A cv does not neccessarily have to have a value (in which case there is a NA). 
+  * A cv may have a linked attachment type (in which case the cv is to be reused in the attachment element).
+  * A cv may have a linked attachment type of both binary and table order (which are easily distinguished while parsing by the occurrence of the binary child element or the table row element of which a attachment element can only have either one).
+  * A new kind of table or plot can be attached to any QC element of one of the cv below by qualityParameterRef with the use of the custom cv.
 
 table legend:
 ||cv name||cv description||value type||attachment type||
