@@ -1,0 +1,39 @@
+#A CV tree to reflect the PrimeXS basic QC metrics
+
+=Aquisition=
+
+||raw file name||the raw files name||file name|| NA ||
+||ms1 spectra count||number of ms1 spectra aquired||count|| NA ||
+||ms2 spectra count||number of ms2 spectra aquired||count|| NA ||
+||chromatogram count||number of chromatograms aquired||count|| NA ||
+||mz range||aquisition range in mz dimension|| NA || min/max table ||
+||rt range||aquisition range in rt dimension|| NA || min/max table ||
+||ms1 injection time||accumulation time in the ion trap device used||time|| NA ||
+||ms2 injection time||accumulation time in the ion trap device used||time|| NA ||
+||ms1 scan time||average scan time for a ms1 event||time|| NA ||
+||ms2 scan time||average scan time for a ms2 event||time|| NA ||
+||lock mass||percentage of found lock masses||percentage|| NA ||
+||tic||total ion current information|| NA? ||tic table & tic plot||
+||saturation||detector-saturation (not available in mzml!)||value|| NA ||
+
+=ID=
+
+||id settings||the settings of the search engine used||engine name||settings table||
+||psm count||number of peptide to spectra matches||count|| NA ||
+||unique peptide count||number of unique peptides identified||count|| NA ||
+||protein count||number of proteins identified||count|| NA ||
+||unique protein count||number of unique proteins identified||count|| NA ||
+||id ratio||distribution recorded vs. identified MS2||ratio|| NA ||
+||id coverage||the coverages of distinct sequences for a respective engine||engine name||sequence coverage table||
+||missed cleavage count||number of missed cleavages after FDR||count||missed cleavage at fdr table||
+||modified peptide count||number of modified peptides after FDR||count||modified pepetide at fdr table||
+||median accuracy||median delta ppm||ppm||delta ppm table & deltappm histogram plot||
+||enzyme contamination||(#chymotryptic+#tryptic)/#tryptic||ratio|| NA ||
+
+=Features=
+
+||feature count||number of features detected||count||feature table||
+
+=Targeted experiments (when available)=
+
+||targeted stats. || target hits in mz (with FWHM,RT,Int) || NA ||
