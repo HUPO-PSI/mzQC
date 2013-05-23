@@ -1,4 +1,9 @@
 #A CV tree to reflect the PrimeXS basic QC metrics
+||cv name||cv description||value type||attachment type||
+*A cv does not neccessarily have to have a value (in which case there is a NA). 
+*A cv may have a linked attachment type (in which case the cv is to be reused in the attachment element).
+*A cv may have a linked attachment type of both binary and table order (which are easily distinguished while parsing by the occurrence of the binary child element or the table row element of which a attachment element can only have either one).
+*A new kind of table or plot can be attached to any QC element of one of the cv below by qualityParameterRef with the use of the custom cv.
 
 =Aquisition=
 
@@ -36,4 +41,8 @@
 
 =Targeted experiments (when available)=
 
-||targeted stats. || target hits in mz (with FWHM,RT,Int) || NA ||
+||targeted stats. || target hits in mz (with FWHM,RT,Int) ||value|| NA ||
+
+=misc=
+
+||custom||cv for custom attachment content not included in the CV yet, described in the value||description||custom table or plot||
