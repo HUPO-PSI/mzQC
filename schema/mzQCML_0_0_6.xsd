@@ -45,7 +45,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:sequence>
 			<xsd:element name="cv" type="cvType" maxOccurs="unbounded">
 				<xsd:annotation>
-					<xsd:documentation>these are describing the QualityParameters with a given semantic. (FWHM, TIC, TICsetlimit, ..., jpeg, ...) </xsd:documentation>
+					<xsd:documentation>these are describing the controlled vocabularies containing the used parameters</xsd:documentation>
 				</xsd:annotation>
 			</xsd:element>
 		</xsd:sequence>
