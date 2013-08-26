@@ -54,7 +54,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:annotation>
 			<xsd:documentation>The abstract base Type for QualityParameter  container</xsd:documentation>
 		</xsd:annotation>
-		<xsd:choice>
+		<xsd:choice maxOccurs="unbounded">
 			<xsd:sequence>
 				<xsd:element name="QualityParameter" type="QualityParameterType" maxOccurs="unbounded">
 					<xsd:annotation>
@@ -159,9 +159,10 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 								<xsd:documentation>List (space separated) of cvRefs determining the type of the respective column</xsd:documentation>
 							</xsd:annotation>
 						</xsd:element>
-						<xsd:element name="TableRowValues" type="listOfDoublesOrNulls" maxOccurs="unbounded"/>
+						<xsd:element name="TableRowValues" type="listOfStrings" maxOccurs="unbounded"/>
 					</xsd:sequence>
 				</xsd:choice>
+				<xsd:attribute name="ID" type="xsd:ID" use="required"/>
 				<xsd:attribute name="qualityParameterRef"/>
 			</xsd:extension>
 		</xsd:complexContent>
@@ -173,7 +174,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 		<xsd:complexContent>
 			<xsd:extension base="CVParamType">
 				<xsd:sequence minOccurs="0">
-					<xsd:element name="threshold">
+					<xsd:element name="threshold" maxOccurs="unbounded">
 						<xsd:complexType>
 							<xsd:complexContent>
 								<xsd:extension base="CVParamType">
