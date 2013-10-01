@@ -2,7 +2,7 @@
 <!-- mzQualML version 0.0.3
 Distributed under the Creative Commons license http://creativecommons.org/licenses/by/2.0/.
 -->
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="0.0.6">
+<xsd:schema xmlns:qcml="http://www.prime-xs.eu/ms/qcml" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" version="0.0.6">
 	<xsd:element name="MzQualityML" type="MzQualityMLType">
 		<xsd:annotation>
 			<xsd:documentation>The Quality file XML root element containing several QualityAssessments to runs and an optional QualityAssessment to the whole set</xsd:documentation>
