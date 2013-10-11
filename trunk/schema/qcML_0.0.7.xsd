@@ -152,20 +152,19 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 			<xsd:extension base="cvParamType">
 				<xsd:choice>
 					<xsd:element name="binary" type="xsd:base64Binary"/>
-					<xsd:sequence>
-						<xsd:element name="tableColumnTypes" type="listOfStrings">
-							<xsd:annotation>
-								<xsd:documentation>List (space separated) of cvRefs determining the type of the respective column</xsd:documentation>
-							</xsd:annotation>
-						</xsd:element>
-						<xsd:element name="tableRowValues" type="listOfStrings" maxOccurs="unbounded"/>
-					</xsd:sequence>
+                    <xsd:element name="table" type="tableType"/>
 				</xsd:choice>
 				<xsd:attribute name="ID" type="xsd:ID" use="required"/>
 				<xsd:attribute name="qualityParameterRef"/>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
+    <xsd:complexType name="tableType">
+        <xsd:sequence>
+            <xsd:element name="tableColumnTypes" type="listOfStrings"/>
+            <xsd:element maxOccurs="unbounded" name="tableRowValues" type="listOfStrings"/>
+        </xsd:sequence>
+    </xsd:complexType>
 	<xsd:complexType name="qualityParameterType">
 		<xsd:annotation>
 			<xsd:documentation>A quality parameter contains a value and a cv, as well as a optional threshold element</xsd:documentation>
