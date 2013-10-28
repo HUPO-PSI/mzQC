@@ -1,0 +1,17 @@
+#summary This page explains how to setup KNIME with the OpenMS community nodes to create QC workflows.
+
+= Introduction =
+
+KNIME is a workflow engine ... . Community nodes available for the TOPP tools from OpenMS ... proteomics workflows 
+
+
+
+= Details =
+Install OpenMS from here[http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
+make sure OpenMS is added to your environment variables. For more instructions see here[http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html].
+
+Download KNIME from here[http://www.knime.org/knime-desktop-sdk-download]:
+  * Start KNIME
+  * Install the community nodes from File|
+  * Get started by having a look at some example workflows from here[].
+  * Text in *bold* or _italic_
