@@ -7,8 +7,8 @@ KNIME is a workflow engine ... . Community nodes available for the TOPP tools fr
 
 
 = Details =
-Install OpenMS from here[http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
-make sure OpenMS is added to your environment variables. For more instructions see here[http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html].
+Install OpenMS from here [http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
+make sure OpenMS is added to your environment variables. For more instructions see here [http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html].
 
 Download KNIME from here[http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
