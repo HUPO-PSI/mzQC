@@ -7,7 +7,7 @@
 
 = Details =
 Install OpenMS from [http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
-make sure OpenMS is added to your environment variables. For more instructions see here [http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html].
+make sure OpenMS is added to your environment variables. For more instructions see [http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html here].
 
 Download KNIME from [http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
