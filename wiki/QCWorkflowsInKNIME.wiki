@@ -2,7 +2,7 @@
 
 = Introduction =
 
-KNIME is a workflow engine ... . Community nodes available for the TOPP tools from OpenMS ... proteomics workflows 
+KNIME is a graphical workbench for analysis processes including data access, data transformation, initial investigation ... . Community nodes available for the TOPP tools from OpenMS ... proteomics workflows 
 
 
 
@@ -12,6 +12,7 @@ make sure OpenMS is added to your environment variables. For more instructions s
 
 Download KNIME from here[http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
-  * Install the community nodes from File|
+  * Install the community nodes from File|Install KNIME Extensions
+    * Select and install OpenMS, KNIME R statistics integration, KNIME Report designer 
   * Get started by having a look at some example workflows from [ExampleKNIMEworkflows].
-  * Text in *bold* or _italic_
+  
