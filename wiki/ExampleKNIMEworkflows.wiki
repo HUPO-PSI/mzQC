@@ -4,6 +4,13 @@
 
 It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you have all the steps explained there covered. 
 
+= Workflows =
+
+The first workflow will accustom you with QC workflows in KNIME. The secod will give a more detailed view into qcML's capabilites, including a detailed (printable) report.
+
+== simple QC workflow ==
+
+== detailed QC workflow ==
 
 = Details =
 
