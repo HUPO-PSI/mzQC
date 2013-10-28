@@ -2,8 +2,7 @@
 
 = Introduction =
 
-KNIME is a graphical workbench for analysis processes including data access, data transformation, initial investigation ... . Community nodes available for the TOPP tools from OpenMS ... proteomics workflows 
-
+KNIME [http://www.knime.org/] is a graphical workbench for analysis processes including data access, data transformation, visualization and report generation. Through the community nodes available are the TOPP tools from OpenMS, making KNIME available for the proteomics community.
 
 
 = Details =
