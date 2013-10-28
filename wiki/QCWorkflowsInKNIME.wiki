@@ -6,10 +6,10 @@
 
 
 = Details =
-Install OpenMS from here [http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
+Install OpenMS from [http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
 make sure OpenMS is added to your environment variables. For more instructions see here [http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html].
 
-Download KNIME from here [http://www.knime.org/knime-desktop-sdk-download]:
+Download KNIME from [http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
   * Install the community nodes from File|Install KNIME Extensions
     * Select and install OpenMS, KNIME R statistics integration, KNIME Report designer, KNIME XML-Processing 
