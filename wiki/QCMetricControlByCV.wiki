@@ -1,0 +1,11 @@
+#summary This page explains the control of quality metrics by CV.
+
+= Introduction =
+
+The control of metrics via a controlled vocabulary is quite forward.
+
+..Intro to cv..
+
+= Details =
+
+..Example..
