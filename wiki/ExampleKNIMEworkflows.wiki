@@ -13,4 +13,4 @@ Download the examples from here[http://code.google.com/p/qcml/source/browse/trun
   * Import the workflow zips from /tmp/qcML
   * Open the simple QC workflow
   * Make sure, all input file nodes are set correctly. Reset the nodes if neccessary.
-  * Run the workflow and inspect the file created at /tmp/qcML/test.qcML
+  * Run the workflow and inspect the file created at /tmp/qcML/test.qcML in your browser (not IE).
