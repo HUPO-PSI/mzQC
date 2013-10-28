@@ -7,10 +7,10 @@ It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you 
 
 = Details =
 
-Download the examples from here[http://code.google.com/p/qcml/source/browse/trunk/pipelines/qcML_workflow_examples.zip].
+Download the examples from [http://code.google.com/p/qcml/source/browse/trunk/pipelines/qcML_workflow_examples.zip here].
   * Extract the zip file to your /tmp directory. This will create the qcML folder, containing all the data you need to get started.
   * Start KNIME
-  * Import the workflow zips from /tmp/qcML
+  * Import the workflow zips from /tmp/qcML via File|Import KNIME Workflow
   * Open the simple QC workflow
   * Make sure, all input file nodes are set correctly. Reset the nodes if neccessary.
   * Run the workflow and inspect the file created at /tmp/qcML/test.qcML in your browser (not IE).
