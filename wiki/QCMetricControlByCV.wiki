@@ -2,7 +2,9 @@
 
 = Introduction =
 
-The control of metrics via a controlled vocabulary is quite forward. A controlled vocabulary entry can describe both experimental as well as programmatic environmental variables. It is comprised of a name, a identifier, a definition and associated relations. The latter makes the CV  hierarchical structurable. E.g.:
+The control of metrics via a controlled vocabulary is quite forward. A controlled vocabulary entry can describe both experimental as well as programmatic environmental variables. It is comprised of a name, a identifier, a definition and associated relations. The latter makes the CV  hierarchical structurable. 
+
+= Details =
 
 {{{
 [Term]
@@ -13,9 +15,3 @@ The control of metrics via a controlled vocabulary is quite forward. A controlle
  is_a: QC:0000025 ! MS identification result details
 }}}
 The qualitative description of mass deviation is called _delta ppm_ and runs under the identifier _QC:0000039_. It is subordinate to the comprising term of _MS identification result details_ and has the unit _parts per million_
-
-..Intro to cv..
-
-= Details =
-
-..Example..
