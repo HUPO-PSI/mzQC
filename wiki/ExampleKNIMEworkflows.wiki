@@ -2,7 +2,7 @@
 
 = Introduction =
 
-It is assumed that you came here by QCWorkflowsInKNIME. If not, make sure you have all the steps covered. 
+It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you have all the steps covered. 
 
 
 = Details =
