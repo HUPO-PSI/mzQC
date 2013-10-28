@@ -2,16 +2,16 @@
 
 = Introduction =
 
-KNIME [http://www.knime.org/] is a graphical workbench for analysis processes including data access, data transformation, visualization and report generation. Through the community nodes available are the TOPP tools from OpenMS, making KNIME available for the proteomics community.
+[http://www.knime.org/ KNIME] is a graphical workbench for analysis processes including data access, data transformation, visualization and report generation. Through the community nodes available are the TOPP tools from OpenMS, making KNIME available for the proteomics community.
 
 
 = Details =
 Install OpenMS from here [http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
 make sure OpenMS is added to your environment variables. For more instructions see here [http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html].
 
-Download KNIME from here[http://www.knime.org/knime-desktop-sdk-download]:
+Download KNIME from here [http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
   * Install the community nodes from File|Install KNIME Extensions
-    * Select and install OpenMS, KNIME R statistics integration, KNIME Report designer 
+    * Select and install OpenMS, KNIME R statistics integration, KNIME Report designer, KNIME XML-Processing 
   * Get started by having a look at some example workflows from [ExampleKNIMEworkflows]
   
