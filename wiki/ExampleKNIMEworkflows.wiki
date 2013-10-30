@@ -19,7 +19,7 @@ Both workflows go through the same processes to compute the basic metrics for qu
 <img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png" border="0" height="280" width="280">
 </wiki:comment>
 
-[SimpleQCWorkflowPreprocessing http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png][http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png]
+[!SimpleQCWorkflowPreprocessing http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png][http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png]
 [SimpleQCWorkflowIDratio http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png][SimpleQCWorkflowMassaccuracy http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt4.png]
 [SimpleQCWorkflowFractionalmasses http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt5.png][SimpleQCWorkflowTIC http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt6.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png]
