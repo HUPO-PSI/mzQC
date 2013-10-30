@@ -13,5 +13,5 @@ Download KNIME from [http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
   * Install the community nodes from File|Install KNIME Extensions
     * Select and install OpenMS, KNIME R statistics integration, KNIME Report designer, KNIME XML-Processing 
-  * Get started by having a look at some example workflows from [ExampleKNIMEworkflows]
+  * Get started by having a look at some example workflows from [ExampleKNIMEworkflows here]
   
