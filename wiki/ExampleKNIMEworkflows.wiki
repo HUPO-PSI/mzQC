@@ -12,13 +12,6 @@ The first workflow will accustom you with QC workflows in KNIME. The second will
 
 [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime.png]
 
-<img usemap="#map1" src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime.png" >
-<map name="map1">
- <area href="name.htm" alt="Text" coords="3,15,7" shape="circle">
- <area href="name2.htm" alt="Text" coords="15,46,69,50,13,14" 
-       shape="poly">
-</map> 
-
 Both workflows go through the same processes to compute the basic metrics for quality control.
 
 
