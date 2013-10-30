@@ -2,7 +2,7 @@
 
 = Introduction =
 
-It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you have all the steps explained there covered. 
+It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you have all the steps explained there covered. Or just read along - it's a very visual guide ;)
 
 = Workflows =
 
@@ -12,7 +12,7 @@ The first workflow will accustom you with QC workflows in KNIME. The second will
 
 [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime.png]
 
-Both workflows go through the same processes to compute the basic metrics for quality control.
+Both workflows go through the same processes to compute the basic metrics for quality control. Hence, this part will not be repeated in the description of the detailed workflow.
 
 
 == detailed QC workflow ==
