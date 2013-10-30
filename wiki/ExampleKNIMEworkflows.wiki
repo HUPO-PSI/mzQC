@@ -9,20 +9,31 @@ It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you 
 The first workflow will accustom you with QC workflows in KNIME. The second will give a more detailed view into qcML's capabilites, including a detailed (printable or web publishable) report.
 
 == simple QC workflow ==
-<div style="float:left;clear:both;">
-[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png] [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png]  [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png] [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt4.png] [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt5.png] [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt6.png] [http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png]
-</div>
- 
-
-[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png][http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png][http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png]
 
 Both workflows go through the same processes to compute the basic metrics for quality control. Hence, this part will not be repeated in the description of the detailed workflow.
+
+<wiki:comment>
+<img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png" border="0" height="280" width="280"><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png" border="0" height="280" width="280">
+<img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png" border="0" height="280" width="280"><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt4.png" border="0" height="280" width="280">
+<img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt5.png" border="0" height="280" width="280"><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt6.png" border="0" height="280" width="280">
+<img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png" border="0" height="280" width="280">
+</wiki:comment>
+
+[SimpleQCWorkflowPreprocessing http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png][http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png]
+[SimpleQCWorkflowIDratio http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png][SimpleQCWorkflowMassaccuracy http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt4.png]
+[SimpleQCWorkflowFractionalmasses http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt5.png][SimpleQCWorkflowTIC http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt6.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png]
+
+
+
 
 
 == detailed QC workflow ==
 
 
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt2.png][http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_1.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt2.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_1.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_2.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_3.png]
 
