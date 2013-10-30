@@ -10,7 +10,14 @@ The first workflow will accustom you with QC workflows in KNIME. The second will
 
 == simple QC workflow ==
 
-[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime.png]
+<div style="float:left;">
+<img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt1.png" alt="knimeworkflow1"/><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt2.png" alt="knimeworkflow2"/><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png" alt="knimeworkflow3"/><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt4.png" alt="knimeworkflow4"/><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt5.png" alt="knimeworkflow5"/><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt6.png" alt="knimeworkflow6"/><img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png" alt="knimeworkflow7"/>
+</div>
+ 
+
+
+[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt3.png]||[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt4.png]||[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt5.png]||[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt6.png]||
+[http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime_pt7.png]||
 
 Both workflows go through the same processes to compute the basic metrics for quality control. Hence, this part will not be repeated in the description of the detailed workflow.
 
