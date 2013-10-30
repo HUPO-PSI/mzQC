@@ -18,11 +18,7 @@ Both workflows go through the same processes to compute the basic metrics for qu
 == detailed QC workflow ==
 
 
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1_1.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1_2.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1_3.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1_4.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1_5.png][http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt2.png][http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_1.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt2.png][http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_1.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_2.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_3.png]
 
