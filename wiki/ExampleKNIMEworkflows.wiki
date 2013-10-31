@@ -43,7 +43,7 @@ After we have all the plots and QC values we want, we can get rid of the verbose
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt4.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt5.png]
 
-= Details =
+= Try it yourself =
 
 Download the examples from [http://code.google.com/p/qcml/source/browse/trunk/pipelines/qcML_workflow_examples.zip here].
   * Extract the zip file to your /tmp directory. This will create the qcML folder, containing all the data you need to get started.
