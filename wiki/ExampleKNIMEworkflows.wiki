@@ -37,12 +37,11 @@ After we have all the plots and QC values we want, we can get rid of the verbose
 
 == detailed QC workflow ==
 
-
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt1.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt2.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_1.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_2.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/workflow_pt3_3.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt1.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt2.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt3.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt4.png]
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt5.png]
 
 = Details =
 
