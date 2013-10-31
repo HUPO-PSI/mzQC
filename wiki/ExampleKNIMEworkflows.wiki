@@ -45,7 +45,9 @@ We see, that the first part is the same as with the simple QC workflow, except f
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt4.png]
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt5.png]
 
-After the workflow is doen, we can click the [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_openreport.png] open report button in KNIME and be directed to the report page. There, you can click the generate report button dropdown and choose the report form of your choice and where to save it to. For example like [link here]. 
+After the workflow is done, we can click the  open report button in KNIME
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_openreport.png] 
+and be directed to the report page. There, you can click the generate report button dropdown and choose the report form of your choice and where to save it to. For example like [link here]. 
 
 = Try it yourself =
 
