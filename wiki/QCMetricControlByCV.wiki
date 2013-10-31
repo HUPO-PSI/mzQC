@@ -16,7 +16,8 @@ The control of metrics via a controlled vocabulary is quite forward. A controlle
 }}}
 The qualitative description of mass deviation is called _delta ppm_ and runs under the identifier _QC:0000039_. It is subordinate to the comprising term of _MS identification result details_ and has the unit _parts per million_.
 
-A _quality parameter_ has a cv element built in that will describe his type and alike.
+A _quality parameter_ has cv elements built in that will describe his type and alike. The cv structure is called cv param type and all it's attributes will be directly built in the _quality parameter_.
+
+{{{<QualityParameter name="MS1 spectra count" ID="20100219_SvNa_SA_Ecoli_PP_ms1aquisition" cvRef="QC" accession="QC:0000006" value="4536"/>}}}
 
 [http://qcml.googlecode.com/svn/trunk/schema/qcml_qp.png]
-
