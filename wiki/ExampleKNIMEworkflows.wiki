@@ -42,8 +42,8 @@ We see, that the first part is the same as with the simple QC workflow, except f
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt1.png]<br/>
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt2.png]
 [http://code.google.com/p/qcml/wiki/extractQPxml http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt3.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt4.png]
-[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt5.png]
+[http://code.google.com/p/qcml/wiki/extractATgkn http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt4.png]
+[http://code.google.com/p/qcml/wiki/detailed_workflow_extractATopenms http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_pt5.png]
 
 After the workflow is done, we can click the  open report button in KNIME
 [http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_openreport.png] <br/>
