@@ -1,3 +1,3 @@
 #summary Mass accuracy calculation and visualization
 
-[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_massaccuracy]
+[http://qcml.googlecode.com/svn/trunk/website-images/detailed_workflow_massaccuracy.png]
