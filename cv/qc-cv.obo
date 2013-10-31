@@ -397,4 +397,12 @@ remark: TIC plot is MS:1000235
  def: "This plot visualizes the mass accurracy of identified ms2 spectra." [PXS:QC]
  is_a: MS:1001405 ! spectrum identification result details
  is_a: QC:0000050 ! image plot
+  
+ 
+[Term]
+ id: QC:0000054
+ name: mass accurracy over time plot
+ def: "This plot visualizes the mass accurracy over the course of RT." [PXS:QC]
+ is_a: MS:1001405 ! spectrum identification result details
+ is_a: QC:0000050 ! image plot
  
