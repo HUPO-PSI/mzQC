@@ -26,4 +26,7 @@ Basically, a _quality parameter_ will look like that:
 
 The _name_ attribute is the name of the cv term chosen for this _quality parameter_, the _ID_ attribute is a file wide unique identifier that will make it easier to hold the many different _quality parameter_s contained in a file apart. The _accession_ attribute is the cv terms accession within its vocabulary. The _cvRef_ attribute gives back a link to the vocabulary from which the cv term stems from. Lastly, the _value_ attribute contains the value this_quality parameter_ holds for the given cv term, in this case the amount of MS1 spectra contained in the respective run.
 
+As you can see from the schema below, a _quality parameter_s can hold more cv control than the example above with optional attributes. These are indicated by the dashed boxes. You can control the unit of the associated value by giving a suitable cv term triplet of _name_, _accession_ and _reference_ from a vocabulary containing unit cv terms.
+For example {{{... unitAccession="UO:0000169" unitName="parts per million" unitCvRef="UO" ...}}} from the [http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/phenotype/unit.obo unit ontology].
+
 [http://qcml.googlecode.com/svn/trunk/schema/qcml_qp.png]
