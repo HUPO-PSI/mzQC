@@ -6,6 +6,7 @@ The control of metrics via a controlled vocabulary is quite forward. A controlle
 
 = Details =
 
+Here is an example of what a cv term looks like:
 {{{
 [Term]
  id: QC:0000039
@@ -16,8 +17,13 @@ The control of metrics via a controlled vocabulary is quite forward. A controlle
 }}}
 The qualitative description of mass deviation is called _delta ppm_ and runs under the identifier _QC:0000039_. It is subordinate to the comprising term of _MS identification result details_ and has the unit _parts per million_.
 
+== Quality parameter control ==
+
 A _quality parameter_ has cv elements built in that will describe his type and alike. The cv structure is called cv param type and all it's attributes will be directly built in the _quality parameter_.
 
+Basically, a _quality parameter_ will look like that:
 {{{<QualityParameter name="MS1 spectra count" ID="20100219_SvNa_SA_Ecoli_PP_ms1aquisition" cvRef="QC" accession="QC:0000006" value="4536"/>}}}
+
+The _name_ attribute is the name of the cv term chosen for this _quality parameter_, the _ID_ attribute is a file wide unique identifier that will make it easier to hold the many different _quality parameter_s contained in a file apart. The _accession_ attribute is the cv terms accession within its vocabulary. The _cvRef_ attribute gives back a link to the vocabulary from which the cv term stems from. Lastly, the _value_ attribute contains the value this_quality parameter_ holds for the given cv term, in this case the amount of MS1 spectra contained in the respective run.
 
 [http://qcml.googlecode.com/svn/trunk/schema/qcml_qp.png]
