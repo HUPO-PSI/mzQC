@@ -31,7 +31,7 @@ The [SimpleQCWorkflowPreprocessing preprocessing] node is performing feature det
 We now can give the QCCalculator the three files we have to calculate basic statistics and agglomerate quality data we need later to apply more advanced quality metrics. All will be stored in a qcML file, which will make it easy to access the data we need. We will add more data and hand the extended file over to the next step.
 The [SimpleQCWorkflowIDratio ID Ratio] metanode will create a plot of the measured spectra vs. the identified spectra in a m/z vs. RT map. The plot will be included in the qcML file, which will be handed over to the [SimpleQCWorkflowMassaccuracy Mass Accuracy] metanode. 
 Here, the accuracy of the measurement will be analysed by reference to the identifications. The calculated median deviation and the corresponding plot will add to the qcML file. 
-In the following [SimpleQCWorkflowFractionalmasses Fractional Mass] metanode we will use a external reference file of theoretical masses to plot the experimentally aquired fractional masses on the theoretical possible.(reference?)
+In the following [SimpleQCWorkflowFractionalmasses Fractional Mass] metanode we will use a external reference file of theoretical masses to plot the experimentally aquired fractional masses on the theoretical possible.
 The last metanode is plotting the [SimpleQCWorkflowTIC total ion current] of the experiment.
 After we have all the plots and QC values we want, we can get rid of the verbose or residual data we were collecting in order to be able to calculate everything we want. The QCShrinker node will take care of that. Afterwards, the qcML file will end up right where we want it to.
 
