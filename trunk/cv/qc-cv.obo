@@ -406,3 +406,10 @@ remark: TIC plot is MS:1000235
  is_a: MS:1001405 ! spectrum identification result details
  is_a: QC:0000050 ! image plot
  
+  
+[Term]
+ id: QC:0000055
+ name: MS experiment heatmap
+ def: "This plot visualizes the Intensity over MZ/RT by color coding." [PXS:QC]
+ is_a: QC:0000050 ! image plot
+ 
