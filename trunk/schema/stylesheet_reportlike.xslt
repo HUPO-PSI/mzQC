@@ -265,7 +265,7 @@
 	<xsl:template match="ns:attachment[(@accession = 'MS:1000235') or (@accession = 'QC:0000055') or (@accession = 'QC:0000053' )]">
 			<xsl:choose>
 				<xsl:when test="ns:binary">
-					<img>
+					<img style="width: 100%">
 						<xsl:attribute name="src"> data:image/png;base64,<xsl:value-of select="ns:binary"/>
 						</xsl:attribute>
 					</img>
