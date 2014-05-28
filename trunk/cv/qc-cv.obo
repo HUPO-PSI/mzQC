@@ -136,24 +136,32 @@ id: QC:0000017
 name: MS1 injection time
 def: "Contains the accumulation time in the ion trap device used in machine settings during MS aquisition." [PXS:QC]
 is_a: QC:0000004 ! MS aquisition result details
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000018
 name: MS2 injection time
 def: "Contains the accumulation time in the ion trap device used in machine settings during MS aquisition." [PXS:QC]
 is_a: QC:0000004 ! MS aquisition result details
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000019
 name: MS1 scan time
 def: "Contains the	average scan time for a MS1 event used in machine settings during MS aquisition." [PXS:QC]
 is_a: QC:0000004 ! MS aquisition result details
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000020
 name: MS2 scan time
 def: "Contains the	average scan time for a MS2 event used in machine settings during MS aquisition." [PXS:QC]
 is_a: QC:0000004 ! MS aquisition result details
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000021
