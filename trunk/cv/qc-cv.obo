@@ -47,8 +47,8 @@ is_a: QC:0000001 ! quality parameter
 
 [Term]
 id: QC:0000004
-name: MS aquisition result details
-def: "The results (e.g. counts) of the MS aquisition step of a MS experiment." [PXS:QC]
+name: MS acquisition result details
+def: "The results (e.g. counts) of the MS acquisition step of a MS experiment." [PXS:QC]
 is_a: QC:0000001 ! quality parameter
 remark: run name is MS:1000577 as raw data file in [PSI:MS]
 
@@ -62,112 +62,112 @@ is_a: QC:0000001 ! quality parameter
 id: QC:0000006
 name: MS1 spectra count
 def: "Contains the number of MS1 spectra recorded." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+is_a: QC:0000004 ! MS acquisition result details
 
 [Term]
 id: QC:0000007
 name: MS2 spectra count
 def: "Contains the number of MS2 spectra recorded." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+is_a: QC:0000004 ! MS acquisition result details
 
 [Term]
 id: QC:0000008
 name: Chromatogram count
 def: "Contains the number of chromatograms recorded." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+is_a: QC:0000004 ! MS acquisition result details
 
 [Term]
 id: QC:0000009
-name: MS MZ aquisition ranges
-def: "Contains the min/max MZ range boundaries observed during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+name: MS MZ acquisition ranges
+def: "Contains the min/max MZ range boundaries observed during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 is_a: QC:0000048 ! value table
 
 [Term]
 id: QC:0000010
 name: MS min MZ
-def: "Contains the actual min MZ occurrence in MS aquisition." [PXS:QC]
-is_a: QC:0000009 ! MS MZ aquisition ranges
+def: "Contains the actual min MZ occurrence in MS acquisition." [PXS:QC]
+is_a: QC:0000009 ! MS MZ acquisition ranges
 remark: supposed as table col
 
 [Term]
 id: QC:0000011
 name: MS max MZ
-def: "Contains the actual max MZ occurrence in MS aquisition." [PXS:QC]
-is_a: QC:0000009 ! MS MZ aquisition ranges
+def: "Contains the actual max MZ occurrence in MS acquisition." [PXS:QC]
+is_a: QC:0000009 ! MS MZ acquisition ranges
 remark: supposed as table col
 
 [Term]
 id: QC:0000012
-name: MS RT aquisition ranges
-def: "Contains the min/max RT range boundaries observed during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+name: MS RT acquisition ranges
+def: "Contains the min/max RT range boundaries observed during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 is_a: QC:0000048 ! value table
 
 [Term]
 id: QC:0000013
 name: MS min RT
-def: "Contains the actual min RT occurrence in MS aquisition." [PXS:QC]
-is_a: QC:0000012 ! MS RT aquisition ranges
+def: "Contains the actual min RT occurrence in MS acquisition." [PXS:QC]
+is_a: QC:0000012 ! MS RT acquisition ranges
 is_a: QC:0000048 ! value table
 
 [Term]
 id: QC:0000014
 name: MS max RT
-def: "Contains the actual max RT occurrence in MS aquisition." [PXS:QC]
-is_a: QC:0000012 ! MS RT aquisition ranges
+def: "Contains the actual max RT occurrence in MS acquisition." [PXS:QC]
+is_a: QC:0000012 ! MS RT acquisition ranges
 remark: supposed as table col
 
 [Term]
 id: QC:0000015
 name: MS gradient settings
-def: "Contains the min/max RT range boundaries used in machine settings during MS aquisition." [PXS:QC]
-is_a: QC:0000012 ! MS RT aquisition ranges
+def: "Contains the min/max RT range boundaries used in machine settings during MS acquisition." [PXS:QC]
+is_a: QC:0000012 ! MS RT acquisition ranges
 is_a: QC:0000048 ! value table
 
 [Term]
 id: QC:0000016
 name: MS MZ detection settings
-def: "Contains the min/max MZ range boundaries used in machine settings during MS aquisition." [PXS:QC]
-is_a: QC:0000009 ! MS MZ aquisition ranges
+def: "Contains the min/max MZ range boundaries used in machine settings during MS acquisition." [PXS:QC]
+is_a: QC:0000009 ! MS MZ acquisition ranges
 
 [Term]
 id: QC:0000017
 name: MS1 injection time
-def: "Contains the accumulation time in the ion trap device used in machine settings during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+def: "Contains the accumulation time in the ion trap device used in machine settings during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000018
 name: MS2 injection time
-def: "Contains the accumulation time in the ion trap device used in machine settings during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+def: "Contains the accumulation time in the ion trap device used in machine settings during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000019
 name: MS1 scan time
-def: "Contains the	average scan time for a MS1 event used in machine settings during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+def: "Contains the	average scan time for a MS1 event used in machine settings during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000020
 name: MS2 scan time
-def: "Contains the	average scan time for a MS2 event used in machine settings during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+def: "Contains the	average scan time for a MS2 event used in machine settings during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 relationship: has_units UO:0000010 ! second
 relationship: has_units UO:0000031 ! minute 
 
 [Term]
 id: QC:0000021
 name: lock mass percentage
-def: "Contains the	percentage of found lock masses during MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+def: "Contains the	percentage of found lock masses during MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 
 [Term]
 id: QC:0000022
@@ -179,14 +179,14 @@ is_a: QC:0000048 ! value table
 id: QC:0000023
 name: TIC slump
 def: "The percentage of tic slumps below 10k." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+is_a: QC:0000004 ! MS acquisition result details
 remark: TIC plot is MS:1000235
 
 [Term]
 id: QC:0000024
 name: detector-saturation
-def: "The average ion saturation of the detector in MS aquisition." [PXS:QC]
-is_a: QC:0000004 ! MS aquisition result details
+def: "The average ion saturation of the detector in MS acquisition." [PXS:QC]
+is_a: QC:0000004 ! MS acquisition result details
 
 [Term]
 id: QC:0000025
@@ -203,13 +203,13 @@ is_a: MS:1001249 ! search input details
 [Term]
 id: QC:0000027
 name: precursor ion tolerance 
-def: "This paramter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
+def: "This parameter shows the precursor tolerance that was used for MS/MS identification." [PXS:QC]
 is_a: MS:1001411 ! search tolerance specification
 
 [Term]
 id: QC:0000028
 name: product ion tolerance 
-def: "This paramter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
+def: "This parameter shows the product ion tolerance that was used for MS/MS identification." [PXS:QC]
 is_a: MS:1001411 ! search tolerance specification
 
 [Term]
@@ -373,15 +373,15 @@ is_a: QC:0000050 ! image plot
 
 [Term]
 id: QC:0000053
-name: mass accurracy plot
-def: "This plot visualizes the mass accurracy of identified ms2 spectra." [PXS:QC]
+name: mass accuracy plot
+def: "This plot visualizes the mass accuracy of identified ms2 spectra." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
 is_a: QC:0000050 ! image plot
 
 [Term]
 id: QC:0000054
-name: mass accurracy over time plot
-def: "This plot visualizes the mass accurracy over the course of RT." [PXS:QC]
+name: mass accuracy over time plot
+def: "This plot visualizes the mass accuracy over the course of RT." [PXS:QC]
 is_a: MS:1001405 ! spectrum identification result details
 is_a: QC:0000050 ! image plot
 
