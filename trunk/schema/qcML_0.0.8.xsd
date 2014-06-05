@@ -70,14 +70,14 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 				<xsd:element name="qualityParameter" type="QualityParameterType"
 					maxOccurs="unbounded">
 					<xsd:annotation>
-						<xsd:documentation>Describes the @value of a certain quality parameter by reference to a cvType (and unitCvType)</xsd:documentation>
+						<xsd:documentation>Describes the @value of a certain quality parameter by reference to a CVType (and UnitCvType)</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:sequence>
 			<xsd:sequence>
 				<xsd:element name="attachment" maxOccurs="unbounded" type="AttachmentType">
 					<xsd:annotation>
-						<xsd:documentation>Describes the binary data or tabular data of a referenced qualityParameter with a cvTerm describing the attached data and the MIME type as additional unitCvType</xsd:documentation>
+						<xsd:documentation>Describes the binary data or tabular data of a referenced qualityParameter with a cvTerm describing the attached data and the MIME type as additional UnitCvType</xsd:documentation>
 					</xsd:annotation>
 				</xsd:element>
 			</xsd:sequence>
@@ -224,7 +224,7 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 							<xsd:documentation>Contains the base64 binary for attached PNG plots</xsd:documentation>
 						</xsd:annotation>
 					</xsd:element>
-					<xsd:element name="table" type="tableType">
+					<xsd:element name="table" type="TableType">
 						<xsd:annotation>
 							<xsd:documentation>Describes a table of values to be attached</xsd:documentation>
 						</xsd:annotation>
