@@ -12,7 +12,7 @@ make sure OpenMS is added to your environment variables. For more instructions s
 Download KNIME from [http://www.knime.org/knime-desktop-sdk-download]:
   * Start KNIME
   * Install the community nodes from File|Install KNIME Extensions
-    * Select and install OpenMS, KNIME R statistics integration, KNIME
+    * Select and install OpenMS, KNIME R statistics integration, KNIME XML-Processing, KNIME Report Designer
     * if you are unfamiliar with that process, visit [http://open-ms.sourceforge.net/workflow-integration/openmstopp/ here] to get an illustrated guide.
 Report designer, KNIME XML-Processing 
   * Get started by having a look at some example workflows from [ExampleKNIMEworkflows here]
