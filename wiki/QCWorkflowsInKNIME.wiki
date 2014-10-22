@@ -6,14 +6,15 @@
 
 
 = Details =
-Install OpenMS from [http://ftp.mi.fu-berlin.de/OpenMS/nightly_binaries/]
-make sure OpenMS is added to your environment variables. For more instructions see [http://ftp.mi.fu-berlin.de/OpenMS/documentation/html/index.html here].
+_*NEW*_
+OpenMS now comes even easiyer to your KNIME! No prior installation needed. 
 
-Download KNIME from [http://www.knime.org/knime-desktop-sdk-download]:
+Download KNIME from [http://www.knime.org/downloads/overview]:
   * Start KNIME
   * Install the community nodes from File|Install KNIME Extensions
-    * Select and install OpenMS, KNIME R statistics integration, KNIME XML-Processing, KNIME Report Designer
+    * Select and install OpenMS, it also comes with the OpenMS executables.
+    * Select and install KNIME R statistics integration, KNIME XML-Processing, KNIME Report Designer
     * if you are unfamiliar with that process, visit [http://open-ms.sourceforge.net/workflow-integration/openmstopp/ here] to get an illustrated guide.
-Report designer, KNIME XML-Processing 
+ 
   * Get started by having a look at some example workflows from [ExampleKNIMEworkflows here]
   
