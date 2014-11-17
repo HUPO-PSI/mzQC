@@ -51,7 +51,7 @@ and be directed to the report page. There, you can click the generate report but
 
 = Try it yourself =
 
-Download the examples from [http://code.google.com/p/qcml/source/browse/trunk/pipelines/qcML_workflow_examples.zip here].
+Download the examples from [https://code.google.com/p/qcml/wiki/Downloads here].
   * Extract the zip file to your /tmp directory. This will create the qcML folder, containing all the data you need to get started.
   * Start KNIME
   * Import the workflow zips from /tmp/qcML via File|Import KNIME Workflow|select archive file
