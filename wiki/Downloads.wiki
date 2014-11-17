@@ -1,0 +1,34 @@
+#summary qcML downloads page
+
+= Downloads =
+
+==Workflows==
+_for direct import in KNIME_   
+
+
+
+[https://qcml.googlecode.com/svn/trunk/pipelines/simple%20QC%20workflow.zip simple QC workflow]
+----
+[https://qcml.googlecode.com/svn/trunk/pipelines/detailed%20QC%20workflow.zip detailed QC workflow]
+
+==Meta nodes==
+_for direct import in KNIME_
+
+
+
+[https://qcml.googlecode.com/svn/trunk/pipelines/KNIME%20Metanodes/Metanode%20id_ratio.zip id ratio metanode]
+----
+[https://qcml.googlecode.com/svn/trunk/pipelines/KNIME%20Metanodes/Metanode%20mass_accuracy.zip mass accuracy metanode]
+----
+[https://qcml.googlecode.com/svn/trunk/pipelines/KNIME%20Metanodes/Metanode%20peptide_featurespace.zip peptide feature space metanode]
+----
+[https://qcml.googlecode.com/svn/trunk/pipelines/KNIME%20Metanodes/Metanode%20tic_plot.zip tic plot metanode]
+
+
+==Input data==
+[https://qcml.googlecode.com/svn/trunk/example/input%20for%20detailed%20QC%20workflow.zip input for example workflows]
+==Example qcML==
+
+[https://qcml.googlecode.com/svn/trunk/example/report.pdf report pdf]
+----
+[https://qcml.googlecode.com/svn/trunk/example/samplefile_0_0_8.qcML qcML file]
