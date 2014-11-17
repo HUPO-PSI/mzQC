@@ -7,6 +7,7 @@ It is assumed that you came here by [QCWorkflowsInKNIME]. If not, make sure you 
 = Workflows =
 
 The first workflow will accustom you with QC workflows in KNIME. The second will give a more detailed view into qcML's capabilites, including a detailed (printable or web publishable) report.
+All KNIME metanodes and workflows are available from the [https://code.google.com/p/qcml/wiki/Downloads downloads] page. You don't know, what a metanode is? Read along!
 
 == simple QC workflow ==
 
