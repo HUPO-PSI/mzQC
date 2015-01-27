@@ -11,7 +11,7 @@ OpenMS now comes even easiyer to your KNIME! No prior installation needed.
 
 Download KNIME from [http://www.knime.org/downloads/overview]:
   * Start KNIME
-  * Install the [[http://tech.knime.org/update/community-contributions/trunk/ community nodes] from, if you are *unfamiliar with that process*, visit [http://open-ms.sourceforge.net/workflow-integration/openmstopp/ here] to get an illustrated guide.
+  * Install the [http://tech.knime.org/update/community-contributions/trunk/ community nodes] from - if you are *unfamiliar with that process*, visit [http://open-ms.sourceforge.net/workflow-integration/openmstopp/ here] to get an illustrated guide.
 https://qcml.googlecode.com/svn/trunk/website-images/knimeinstallmenu1.png
     * Select and install OpenMS, it also comes with the OpenMS executables. 
 https://qcml.googlecode.com/svn/trunk/website-images/knimeinstallmenu2.png
