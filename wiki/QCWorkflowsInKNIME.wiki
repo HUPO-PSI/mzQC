@@ -18,6 +18,6 @@ https://qcml.googlecode.com/svn/trunk/website-images/knimeinstallmenu2.png
     * For many workflows you will need additional plugins. As with OpenMS select and install KNIME R statistics integration, KNIME XML-Processing, KNIME Report Designer from the _--All Available Sites--_
  
   * Get started by having a look at some example workflows from [ExampleKNIMEworkflows here]
-  * You can simply import and export workflows to share them 
+  * You can simply import and export workflows to share them:
 https://qcml.googlecode.com/svn/trunk/website-images/import_knime_workflow.jpg
 https://qcml.googlecode.com/svn/trunk/website-images/import_knime_workflow_2.jpg
