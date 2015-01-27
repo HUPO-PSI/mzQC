@@ -12,4 +12,8 @@ Add your content here.  Format your content with:
 
   * If you not already have, install ProteoWizard/ms-convert from [http://proteowizard.sourceforge.net/ here] to convert your MS vendor specific RAW files as comprehensive input format for many analysis software packages.
   
-  * Start KNIME, open your QC workflow and make sure, the input files are correct.
+  * Start KNIME, open your QC workflow. If you do not have any, you can get one from the [https://code.google.com/p/qcml/wiki/Downloads download area].
+ 
+  * Make sure, the input files are correct. And then run your workflow. https://qcml.googlecode.com/svn/trunk/website-images/check_file_inputs.jpg
+
+  * Explore your qcML file by opening it in your browser (not! IE) or follow through by open the KNIME Report.
