@@ -1,0 +1,14 @@
+#summary Quickstart into QC with qcML
+
+= Introduction =
+
+this page will give you a guide for the quick start to quality control your own MS experiments with OpenMS/KNIME. Best keep this site open while you follow the few steps 
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * get and install KNIME/OpenMS and plugins
+ (illustrated guide [https://code.google.com/p/qcml/wiki/QCWorkflowsInKNIME here])
+  * If you not already have, install ProteoWizard/ms-convert from [http://proteowizard.sourceforge.net/ here] to convert your MS vendor specific RAW files as comprehensive input format for many analysis software packages.
+  ** Convert a RAW file and connect your QC workflow to the corresponding mzML file.
