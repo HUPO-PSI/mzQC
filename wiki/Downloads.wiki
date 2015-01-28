@@ -31,4 +31,5 @@ _for direct import in KNIME_
 
 [https://qcml.googlecode.com/svn/trunk/example/report.pdf report pdf]
 ----
+<a href="https://qcml.googlecode.com/svn/trunk/example/samplefile_0_0_8.qcML" target="_blank">Sample qcML file</a>
 [https://qcml.googlecode.com/svn/trunk/example/samplefile_0_0_8.qcML qcML file]
