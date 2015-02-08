@@ -1,7 +1,7 @@
 = Navigation =
   * [About]
   * [QuickstartIntoQCwithQcML QuickStart]
-  * [QC metrics]  
+  * [Metrics QC metrics]  
     * [Basemetrics]
     * [NISTmetrics]
     * [QCMetricControlByCV]
