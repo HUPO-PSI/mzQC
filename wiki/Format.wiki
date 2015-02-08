@@ -11,7 +11,7 @@ or in tabular format for data like the identification mass error distribution or
 
 You can find the recent format description as xsd file [https://code.google.com/p/qcml/source/browse/trunk/schema/qcML_0.0.8.xsd here]. 
 
-https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_root.png
-https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_qp.png
-https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_at.png
-https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_cvlist.png
+https://qcml.googlecode.com/svn/trunk/schema/qcml_root.png
+https://qcml.googlecode.com/svn/trunk/schema/qcml_qp.png
+https://qcml.googlecode.com/svn/trunk/schema/qcml_at.png
+https://qcml.googlecode.com/svn/trunk/schema/qcml_cvlist.png
