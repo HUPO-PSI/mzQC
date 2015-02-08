@@ -1,0 +1,35 @@
+This project develops and implements a data exchange format geared towards capturing 
+quality control (QC) data from high-throughput biology experiments. The current focus
+of the project is towards mass spectrometry based proteomics, but the format is suitable
+for metabolomics and next-generation sequencing as well.
+
+The format itself is designed to hold quality control data (numbers, texts and images) in either single elements or tabular format, each classified by controlled vocabulary terms, associating it with a QC metric, unit or type.
+It is built to sort the data according to the inherent design of every scientific experiment:
+  * single runs of a experiment (with different settings or as replications)
+  * sets of runs consolidating certain settings
+
+As an open format, it can be used to plug in new analyses or methods as well as established ones. It is not fixed to a single QC tool or suite.
+As such it can capture QC data all along the way of scientific research. By the tools used or the application of their resulting files - from raw data acquisition, over analysis and reporting to storage in repositories and databases.
+
+[http://qcml.googlecode.com/svn/trunk/website-images/Alternate%20qcml%20implementation%20zoo.png]
+
+Several  software tools able to handle qcML are already available: 
+
+  * [http://www.OpenMS.de OpenMS] provides tools for calculation proteomics and metabolomics QC data as well as a parser and writer for qcML (C++)
+ * [https://bitbucket.org/proteinspector/jqcml/wiki/Home# jqcML] provides a parser/writer for qcML in Java
+ * [http://ms.imp.ac.at/?goto=simpatiqco SympatiQCo] provides export of its QC data as qcML
+
+
+[http://www.OpenMS.de OpenMS] is also integrated into [http://www.knime.org/ KNIME ] allowing for easy graphical workflow and report generation. Have a look at [QCWorkflowsInKNIME how the QC workflows are done with KNIME] or jump directly to the [ExampleKNIMEworkflows examples]. The datasets used in the publication can be found [http://genesis.ugent.be/files/costore/qcml/ here]
+
+<img src="http://qcml.googlecode.com/svn/trunk/website-images/qc_workflow_knime.png" alt="knimeworkflow"/>
+
+KNIME also permits the construction of reporting workflows. Its [http://en.wikipedia.org/wiki/WYSIWYG WYSIWYG] editor makes constructing tailor-made QC workflows as simple as typing a document in Microsoft Word. An example of such a QC report in PDF format can be seen [http://qcml.googlecode.com/svn/trunk/example/report.pdf here].
+
+
+The quality metrics you can capture with qcML are controlled by a  [http://code.google.com/p/qcml/source/browse/trunk/cv/qc-cv.obo controlled vocabulary]. If you have a suggestion for a new metric, feel free to make a suggestion via [http://code.google.com/p/qcml/issues/entry submit metric entry] or drop us an email.
+If you want to know more about how it's done have a look at [QCMetricControlByCV].
+
+
+
+qcML is supported by: [http://www.primexs.eu/ http://qcml.googlecode.com/svn/trunk/website-images/primexs.png]   [http://www.OpenMS.de http://open-ms.sourceforge.net/wp-content/themes/light-clean-blue/images/openms-logo.png]
