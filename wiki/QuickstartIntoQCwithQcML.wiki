@@ -10,7 +10,7 @@ This page will give you a guide for the quick start to quality control your own 
 Add your content here.  Format your content with:
   * get and install KNIME/OpenMS and plugins (illustrated guide [https://code.google.com/p/qcml/wiki/QCWorkflowsInKNIME here])
 
-  * If you not already have, install ProteoWizard/ms-convert from [http://proteowizard.sourceforge.net/ here] to convert your MS vendor specific RAW files as comprehensive input format for many analysis software packages.
+  * If you not already have, install ProteoWizard / ms-convert from [http://proteowizard.sourceforge.net here] to convert your MS vendor specific RAW files as comprehensive input format for many analysis software packages.
   
   * Start KNIME, open your QC workflow. If you do not have any, you can get one from the [https://code.google.com/p/qcml/wiki/Downloads download area].
  
