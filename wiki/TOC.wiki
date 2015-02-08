@@ -7,9 +7,10 @@ Navigation
 
 = Wiki =
 
-  * about
-  * Basemetrics
-  * qcCVtree
-  * format
-  * software
-  * knime-metanodes-for-metrics
+  * [About]
+  * [QuickstartIntoQCwithQcML QuickStart]
+  * [Basemetrics]
+  * [qcCVtree]
+  * [format]
+  * [software]
+  * [knime-metanodes-for-metrics]
