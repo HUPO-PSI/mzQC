@@ -1,0 +1,10 @@
+#summary software availability
+
+= Available qcML software =
+
+This is a list of software implementing *qcML*. If you know software not contained in the list, please add a comment pointing to the respective resource.
+
+  * [www.openms.de OpenMS], for a quickstart see [QuickstartIntoQCwithQcML]
+  * [https://bitbucket.org/proteinspector/jqcml jqcML]
+  * [http://ms.imp.ac.at/?goto=simpatiqco simpatiQCo]
+  * a python qcDB interface is available in the [https://code.google.com/p/qcml/source/browse/#svn%2Ftrunk%2Fqcdb%2Fconverters repository]
