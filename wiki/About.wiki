@@ -1,27 +1,28 @@
 #summary About qcML.
 
-= Introduction =
+= About qcML =
 
 *qcML* is designed to hold quality control data in a simple yet easily accessible form to let applications producing or relying on quality control data tap into it in an ease.
  
 It has many advantages when quality control actions are taken:
-# It is independent of any viewer, as its contents can be directly rendered by any browser thanks to built-in XML2HTML transformations. Similarily, a PDF report can be generated in similar fashion from the qcML file as reporting (end-)point of a workflow. If you want to try out qcML visualization, download an example and drag the file into your browser or view the pdf.
-# It is a simple XML format and as such use can be readily implemented in existing applications. Its simplicity makes it especially easy to formulate XPATH queries to extract certain parts of information for developers.
-If you are interested in using qcML in your application click here.
-# It is yet structured and the quality control data is semantically connected to a quality control metric via the controlled vocabulary (CV).
-# There are already applications using qcML making it available to your data in the powerful combination of OpenMS/KNIME. Just few steps necessary to build plug in customized quality control for your analysis workflow. Click here to get started.
-# It is independent of the combination of quality control metrics you want to apply. Due to its modular setup, you can add your quality control data or ready metric plot to it. It is therefor independent of any particular quality control software. Click here if you want to know more about building your own metric.
-# It is flexible. Got more data? Just plug it in as an attachment (see Details).
+
+  # It is independent of any viewer, as its contents can be directly rendered by any browser thanks to built-in XML2HTML transformations. Similarily, a PDF report can be generated in similar fashion from the qcML file as reporting (end-)point of a workflow. If you want to try out qcML visualization, download an example and drag the file into your browser or view the pdf.
+  # It is a simple XML format and as such use can be readily implemented in existing applications. Its simplicity makes it especially easy to formulate XPATH queries to extract certain parts of information for developers. If you are interested in using qcML in your application click here.
+  # It is generic, yet structured and the quality control data is semantically connected to a quality control metric via the controlled vocabulary (CV). Browse the growing controlled vocabulary [http://www.ebi.ac.uk/ontology-lookup/browse.do?ontName=qcML here].
+  # There are already applications using qcML making it available to your data in the powerful combination of OpenMS/KNIME. Just few steps necessary to build plug in customized quality control for your analysis workflow. Click here to [QuickstartIntoQCwithQcML get started].
+  # It is independent of the combination of quality control metrics you want to apply. Due to its modular setup, you can add your quality control data or ready metric plot to it. It is therefor independent of any particular quality control software. Click here if you want to know more about building your own metric.
+  # It is flexible. Got more data? Just plug it in as an attachment (see Details).
 
 = Details =
 
 Any *qcML* file can contain 2 repeatable elements: runQC for QC of a single Experiment and setQC for QC of a set of runs.
 Each of these elements then contains any number of QualityControlParameters elements or QualityControlAttachment elements, representing a specific quality control metric or data attached to it.  
 These elements are structured via their CV accession. The quality control data can be either stored in 
-*the QualityControlParameters value field (alphanumerical), its type determined by the CV or tabular format, each classified by controlled vocabulary terms, say the simple QC metric of number of aquired MS2 spectra (CV [http://www.ebi.ac.uk/ontology-lookup/?termId=QC%3A0000007 QC:0000007]) 
-*or in tabular format for data like the identification mass error distribution or binary format like the plot of the distribution (CV [http://www.ebi.ac.uk/ontology-lookup/?termId=QC%3A0000053 QC:0000053])
+  * the QualityControlParameters value field (alphanumerical), its type determined by the CV or tabular format, each classified by controlled vocabulary terms, say the simple QC metric of number of aquired MS2 spectra (CV [http://www.ebi.ac.uk/ontology-lookup/?termId=QC%3A0000007 QC:0000007])
+  * or in tabular format for data like the identification mass error distribution or binary format like the plot of the distribution (CV [http://www.ebi.ac.uk/ontology-lookup/?termId=QC%3A0000053 QC:0000053])
 
 Like that, the structure can follow the inherent design of every scientific experiment: single runs of a experiment (with different settings or as replications) and sets of runs consolidating certain settings and other sets combining previous sets or runs in a differential analysis.
  
+
 *qcML* is an open format, it can be used to plug in new analyses or methods as well as established ones. The CV can be easily extended with new metric descriptions to structure your QC. 
 It is not fixed to a single QC tool or suite. As such it can capture QC data all along the way of scientific research. By the tools used or the application of their resulting files - from raw data acquisition, over analysis and reporting to storage in repositories and databases..
