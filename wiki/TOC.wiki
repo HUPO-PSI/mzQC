@@ -8,7 +8,7 @@
     * [DefineAMetric]
   * [Format]
   * [Software]
-  * [Workflow integration]
+  * [WorkflowIntegration]
     * [ExampleKNIMEworkflows]
     * [knime-metanodes-for-metrics]
       * [SimpleQCWorkflowIDratio]
