@@ -1,9 +1,4 @@
-= wiki Navigation =
-
-
-
-= Wiki =
-
+= Navigation =
   * [About]
   * [QuickstartIntoQCwithQcML QuickStart]
   * [Basemetrics]
