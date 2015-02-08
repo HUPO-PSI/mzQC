@@ -1,0 +1,17 @@
+#summary Format description
+
+= Introduction =
+
+Any qcML file can contain 2 repeatable elements: runQC for QC of a single Experiment and setQC for QC of a set of runs. Each of these elements then contains any number of QualityControlParameters? elements or QualityControlAttachment? elements, representing a specific quality control metric or data attached to it. These elements are structured via their CV accession. The quality control data can be either stored in
+
+the QualityControlParameters? value field (alphanumerical), its type determined by the CV or tabular format, each classified by controlled vocabulary terms, say the simple QC metric of number of aquired MS2 spectra (CV QC:0000007)
+or in tabular format for data like the identification mass error distribution or binary format like the plot of the distribution (CV QC:0000053)
+
+= Details =
+
+You can find the recent format description as xsd file [https://code.google.com/p/qcml/source/browse/trunk/schema/qcML_0.0.8.xsd here]. 
+
+https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_root.png
+https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_qp.png
+https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_at.png
+https://code.google.com/p/qcml/source/browse/trunk/schema/qcml_cvlist.png
