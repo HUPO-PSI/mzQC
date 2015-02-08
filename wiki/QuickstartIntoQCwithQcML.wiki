@@ -2,7 +2,7 @@
 
 = Introduction =
 
-this page will give you a guide for the quick start to quality control your own MS experiments with OpenMS/KNIME. Best keep this site open while you follow the few steps 
+This page will give you a guide for the quick start to quality control your own MS experiments with OpenMS/KNIME. Best keep this site open while you follow the few steps 
 
 
 = Details =
