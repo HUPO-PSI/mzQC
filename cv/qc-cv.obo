@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 0.1.1
-date: 13:08:2014 14:49
+data-version: 0.1.2
+date: 26:11:2015 09:52
 saved-by: Mathias Walzer
 remark: creator: Mathias Walzer <walzer <-at-> informatik.uni-tuebingen.de>
 remark: creator: Lucia Espona Pernas <espona <-at-> imsb.biol.ethz.ch>
@@ -414,7 +414,6 @@ def: "Software used for QC calculation (name and version)." [PXS:QC]
 is_a: QC:1000001 ! meta data parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00053 creation_software
 
 [Term]
 id: QC:1000003
@@ -423,7 +422,6 @@ def: "Command-line parameters of the creation software that are relevant for QC 
 is_a: QC:1000001 ! meta data parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
-comment: NONE
 
 [Term]
 id: QC:1000004
@@ -432,7 +430,6 @@ def: "Date and time when the quality parameters were calculation." [PXS:QC]
 is_a: QC:1000001 ! meta data parameter
 xref: value-type:xsd\:datetime "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00054 creation_date
 
 [Term]
 id: QC:1000005
@@ -441,7 +438,6 @@ def: "Input file that contains raw data for quality parameter calculation." [PXS
 is_a: QC:1000001 ! meta data parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00055 source_file
 
 ################################################################################################################################################
 # NEXT GENERATION SEQUENCING QC PARAMETERS - NAMESPACE QC:2000001...
@@ -458,7 +454,6 @@ created_by: sturm
 id: QC:2000002
 name: NGS aquisition parameter
 def: "Quality parameter from the acquisition step of a next generation sequencing experiment. This includes the raw read data before any manipulation." [PXS:QC]
-comment: category primary_analysis
 is_a: QC:2000003 ! NGS quality parameter
 created_by: sturm
 
@@ -483,7 +478,6 @@ def: "Total number of reads (one cluster in a paired-end experiment generates tw
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00016 reads_total
 
 [Term]
 id: QC:2000006
@@ -492,7 +486,6 @@ def: "Raw read length of a single read before trimming. Comma-separated list of 
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00028 read_length
 
 [Term]
 id: QC:2000007
@@ -501,7 +494,6 @@ def: "The percentage of reads with a mean base quality score greater than Q20." 
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00049 read_perc_q20
 
 [Term]
 id: QC:2000008
@@ -510,7 +502,6 @@ def: "The percentage of bases with a minimum quality score of Q30." [PXS:QC]
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00050 read_perc_base_q30
 
 [Term]
 id: QC:2000009
@@ -519,7 +510,6 @@ def: "The percentage of bases without base call (N)." [PXS:QC]
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00051 read_perc_base_n
 
 [Term]
 id: QC:2000010
@@ -528,7 +518,6 @@ def: "The percentage of bases that are called to be G or C." [PXS:QC]
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00052 read_perc_base_gc
 
 [Term]
 id: QC:2000011
@@ -538,7 +527,6 @@ is_a: QC:2000002 ! NGS aquisition parameter
 is_a: QC:0000050 ! image plot
 xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
 created_by: sturm
-comment: NONE
 
 [Term]
 id: QC:2000012
@@ -548,7 +536,6 @@ is_a: QC:2000002 ! NGS aquisition parameter
 is_a: QC:0000050 ! image plot
 xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
 created_by: sturm
-comment: NONE
 
 [Term]
 id: QC:2000013
@@ -557,7 +544,6 @@ def: "Total number of variants in the target region." [PXS:QC]
 is_a: QC:2000004 ! NGS variant list parameter
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00027 var_total
 
 [Term]
 id: QC:2000014
@@ -566,16 +552,14 @@ def: "Percentage of variants that are known polymorphisms in the dbSNP database.
 is_a: QC:2000004 ! NGS variant list parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00040 var_perc_dbsnp
 
 [Term]
 id: QC:2000015
-name: nonsense variants percentage
-def: "Percentage of variants that are nonsense variants." [PXS:QC]
+name: high-impact variants percentage
+def: "Percentage of variants with high impact on the protein, i.e. stop-gain, stop-loss, frameshift, splice-acceptor or splice-donor variants." [PXS:QC]
 is_a: QC:2000004 ! NGS variant list parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00026 var_perc_nonsense
 
 [Term]
 id: QC:2000016
@@ -584,7 +568,6 @@ def: "Percentage of variants that are called as homozygous." [PXS:QC]
 is_a: QC:2000004 ! NGS variant list parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00042 var_perc_hom
 
 [Term]
 id: QC:2000017
@@ -593,7 +576,6 @@ def: "Percentage of variants that are insertions/deletions." [PXS:QC]
 is_a: QC:2000004 ! NGS variant list parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00039 var_perc_indel
 
 [Term]
 id: QC:2000018
@@ -602,7 +584,6 @@ def: "Transition/transversion ratio of single nucleotide variants." [PXS:QC]
 is_a: QC:2000004 ! NGS variant list parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00024 var_ti_tv_ratio
 
 [Term]
 id: QC:2000019
@@ -611,7 +592,6 @@ def: "Percentage of bases that were trimmed during to adapter or quality trimmin
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00038 map_perc_trimmed
 
 [Term]
 id: QC:2000020
@@ -620,7 +600,6 @@ def: "Percentage of reads that could be mapped to the reference genome."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00029 map_perc_mapped
 
 [Term]
 id: QC:2000021
@@ -629,7 +608,6 @@ def: "Percentage of reads that could be mapped to the target region."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00018 map_perc_on_target
 
 [Term]
 id: QC:2000022
@@ -638,7 +616,6 @@ def: "Percentage of properly paired reads (for paired-end reads only)."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00030 map_perc_paired
 
 [Term]
 id: QC:2000023
@@ -647,7 +624,6 @@ def: "Average insert size (for paired-end reads only)."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00004 map_insert_size
 
 [Term]
 id: QC:2000024
@@ -656,7 +632,6 @@ def: "Percentage of reads removed because they were duplicates (PCR, optical, et
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00006 map_perc_duplicates
 
 [Term]
 id: QC:2000025
@@ -665,70 +640,62 @@ def: "Average sequencing depth in target region."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00046 map_depth_target
 
 [Term]
 id: QC:2000026
 name: target region 10x percentage
-def: "Percentage the target region that is covered at least 10-fold."
+def: "Percentage of the target region that is covered at least 10-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00019 map_perc_cov010
 
 [Term]
 id: QC:2000027
 name: target region 20x percentage
-def: "Percentage the target region that is covered at least 20-fold."
+def: "Percentage of the target region that is covered at least 20-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00031 map_perc_cov020
 
 [Term]
 id: QC:2000028
 name: target region 30x percentage
-def: "Percentage the target region that is covered at least 30-fold."
+def: "Percentage of the target region that is covered at least 30-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00032 map_perc_cov030
 
 [Term]
 id: QC:2000029
 name: target region 50x percentage
-def: "Percentage the target region that is covered at least 50-fold."
+def: "Percentage of the target region that is covered at least 50-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00033 map_perc_cov050
 
 [Term]
 id: QC:2000030
 name: target region 100x percentage
-def: "Percentage the target region that is covered at least 100-fold."
+def: "Percentage of the target region that is covered at least 100-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00034 map_perc_cov100
 
 [Term]
 id: QC:2000031
 name: target region 200x percentage
-def: "Percentage the target region that is covered at least 200-fold."
+def: "Percentage of the target region that is covered at least 200-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00035 map_perc_cov200
 
 [Term]
 id: QC:2000032
 name: target region 500x percentage
-def: "Percentage the target region that is covered at least 500-fold."
+def: "Percentage of the target region that is covered at least 500-fold."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00036 map_perc_cov500
 
 [Term]
 id: QC:2000033
@@ -737,7 +704,6 @@ def: "Average read depth on the special target region used for error estimation 
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NONE
 
 [Term]
 id: QC:2000034
@@ -746,7 +712,6 @@ def: "No base call (N) percentage determined on special target region after mapp
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00045 map_qc_perc_n
 
 [Term]
 id: QC:2000035
@@ -756,7 +721,6 @@ is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
 created_by: sturm
-comment: NGSO00043 map_qc_perc_snv
 
 [Term]
 id: QC:2000036
@@ -765,7 +729,6 @@ def: "indel error percentage determined on special target region after mapping."
 is_a: QC:2000003 ! NGS mapping parameter
 xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00044 map_qc_perc_indel
 
 [Term]
 id: QC:2000037
@@ -775,7 +738,6 @@ is_a: QC:2000003 ! NGS mapping parameter
 is_a: QC:0000050 ! image plot
 xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
 created_by: sturm
-comment: NONE
 
 [Term]
 id: QC:2000038
@@ -785,7 +747,6 @@ is_a: QC:2000003 ! NGS mapping parameter
 is_a: QC:0000050 ! image plot
 xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
 created_by: sturm
-comment: NONE
 
 [Term]
 id: QC:2000039
@@ -794,4 +755,3 @@ def: "Gender check result: 'n/a', 'male_passed', 'male_failed', 'female_passed',
 is_a: QC:2000001 ! NGS quality parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
-comment: NGSO00047 gender_check
