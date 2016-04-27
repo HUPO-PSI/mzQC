@@ -193,6 +193,11 @@ Distributed under the Creative Commons license http://creativecommons.org/licens
 						<xsd:complexType>
 							<xsd:complexContent>
 								<xsd:extension base="CVParamType">
+									<xsd:attribute name="ID" type="xsd:ID" use="optional">
+										<xsd:annotation>
+											<xsd:documentation>A file unique identifier for this attachment element</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
 									<xsd:attribute name="thresholdFilename" type="xsd:string"/>
 								</xsd:extension>
 							</xsd:complexContent>
