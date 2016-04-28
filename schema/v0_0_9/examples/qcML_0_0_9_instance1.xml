@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qcML xmlns="http://www.prime-xs.eu/ms/qcml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.prime-xs.eu/ms/qcml file:/home/walzer/bwSyncAndShare/QC/qcML_0_0_9.xsd" version="0.0.9">
+    <runQuality ID="ID001">
+        <metaDataParameter ID="ID003" cvRef="MS" accession="accession1" name="name1" description="description1" value="value1"
+             unitAccession="unitAccession1" unitName="unitName1" unitCvRef="UNIT"/>
+    </runQuality>
+    <runQuality ID="ID011">
+        <metaDataParameter ID="ID013" cvRef="QC" accession="accession9" name="name9" description="description9" value="value9"
+             unitAccession="unitAccession9" unitName="unitName9" unitCvRef="UNIT"/>
+        <qualityParameter ID="ID017" flag="false" cvRef="QC" accession="accession13" name="name13" description="description13"
+             value="value13" unitAccession="unitAccession13" unitName="unitName13" unitCvRef="UNIT">
+            <threshold ID="ID019" thresholdFilename="thresholdFilename1" cvRef="QC" accession="accession15" name="name15"
+                 description="description15" value="value15" unitAccession="unitAccession15" unitName="unitName15"
+                 unitCvRef="UNIT"/>
+            <content>
+                metric content
+            </content>
+        </qualityParameter>
+        <qualityParameter ID="ID023" flag="false" cvRef="QC" accession="accession19" name="name19" description="description19"
+             value="value19" unitAccession="unitAccession19" unitName="unitName19" unitCvRef="UNIT">
+            <content>
+                metric content
+            </content>
+        </qualityParameter>
+    </runQuality>
+    <cvList>
+        <cv fullName="fullName1" version="version3" uri="http://www.oxygenxml.com/" ID="QC"/>
+        <cv fullName="fullName2" version="version5" uri="http://www.oxygenxml.com/" ID="UNIT"/>
+        <cv fullName="fullName3" version="version7" uri="http://www.oxygenxml.com/" ID="MS"/>
+    </cvList>
+</qcML>
