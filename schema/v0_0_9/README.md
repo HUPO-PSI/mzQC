@@ -6,17 +6,17 @@ Right now, a qcML instance is structured as a root element comprising:
 * a CVList element denoting the used CVList and
 * optionally an element containing a stylesheet
 
-![root][images/qcML_0_0_9_root.png]
+![root][images/qcML_0_0_9_root.png?raw=true]
 
 One RunQuality element contains all metrics and the meta data for a specific run.
 
-![root][images/qcML_0_0_9_RunQuality.png]
+![root][images/qcML_0_0_9_RunQuality.png?raw=true]
 
 The SetQuality element is, apart from the name, syntactically the same as a RunQuality element, though as the differing name is indicating, used for different semantics.
 
 The QualityParameter element is representing a metric.
 
-![root][images/qcML_0_0_9_QualityParameter.png]
+![root][images/qcML_0_0_9_QualityParameter.png?raw=true]
 
 Which metric is denoted by the CVParamType inherited parts.
 The metric data for the particular Run/Set are kept in the content element.
