@@ -439,6 +439,14 @@ is_a: QC:1000001 ! meta data parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
 
+[Term]
+id: QC:1000006
+name: linked file
+def: "Link to a file." [PXS:QC]
+is_a: QC:1000001 ! meta data parameter
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+created_by: schroeder
+
 ################################################################################################################################################
 # NEXT GENERATION SEQUENCING QC PARAMETERS - NAMESPACE QC:2000001...
 ################################################################################################################################################
@@ -454,21 +462,21 @@ created_by: sturm
 id: QC:2000002
 name: NGS aquisition parameter
 def: "Quality parameter from the acquisition step of a next generation sequencing experiment. This includes the raw read data before any manipulation." [PXS:QC]
-is_a: QC:2000003 ! NGS quality parameter
+is_a: QC:2000001 ! NGS quality parameter
 created_by: sturm
 
 [Term]
 id: QC:2000003
 name: NGS mapping parameter
 def: "Quality parameter from the mapping/alignment step of a next generation sequencing experiment." [PXS:QC]
-is_a: QC:2000003 ! NGS quality parameter
+is_a: QC:2000001 ! NGS quality parameter
 created_by: sturm
 
 [Term]
 id: QC:2000004
 name: NGS variant list parameter
 def: "Quality parameter from the variant calling step of a next generation sequencing experiment." [PXS:QC]
-is_a: QC:2000003 ! NGS quality parameter
+is_a: QC:2000001 ! NGS quality parameter
 created_by: sturm
 
 [Term]
@@ -482,7 +490,7 @@ created_by: sturm
 [Term]
 id: QC:2000006
 name: read length
-def: "Raw read length of a single read before trimming. Comma-separated list of lenghs if several." [PXS:QC]
+def: "Raw read length of a single read before trimming. Comma-separated list of lengths if several." [PXS:QC]
 is_a: QC:2000002 ! NGS aquisition parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
 created_by: sturm
@@ -754,4 +762,103 @@ name: gender check
 def: "Gender check result: 'n/a', 'male_passed', 'male_failed', 'female_passed', 'female_failed'."
 is_a: QC:2000001 ! NGS quality parameter
 xref: value-type:xsd\:string "The allowed value-type for this CV term."
+created_by: sturm
+
+[Term]
+id: QC:2000040
+name: sample correlation
+def: "Detailed description of sample correlation. Type is either DNA or RNA, type of experiment. WT = 0, het = 1, hom = 2. Genotype of common SNPs. SNPs with a good quality / depth. Exemplary result: '98.7 % (Type: SampleID1, Type: SampleID2)'."
+is_a: QC:2000001 ! NGS quality parameter
+xref: value-type:xsd\:string "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000041
+name: somatic variant count
+def: "Number of somatic variants."
+is_a: QC:2000004 ! NGS variant list parameter
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000042
+name: somatic indel variants percentage
+def: "Percentage of somatic variants that are insertions/deletions." [PXS:QC]
+is_a: QC:2000004 ! NGS variant list parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000043
+name: somatic transition/transversion ratio
+def: "Transition/transversion ratio of somatic single nucleotide variants." [PXS:QC]
+is_a: QC:2000004 ! NGS variant list parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000044
+name: somatic CNVs count
+def: "Count of large somatic CNVs." [PXS:QC]
+is_a: QC:2000001 ! NGS quality parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000045
+name: known somatic variants percentage
+def: "Percentage of somatic variants that are known polymorphisms in the dbSNP database." [PXS:QC]
+is_a: QC:2000004 ! NGS variant list parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000046
+name: somatic variant distance plot
+def: "Plots the distance of somatic variants over the genomic position. Over the target region." [PXS:QC]
+is_a: QC:2000004 ! NGS variant list parameter
+is_a: QC:0000050 ! image plot
+xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000047
+name: somatic variant signature plot
+def: "Plots the mutation signature of somatic variants." [PXS:QC]
+is_a: QC:2000004 ! NGS variant list parameter
+is_a: QC:0000050 ! image plot
+xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000048
+name: somatic variants allele frequencies plot
+def: "Plots the allele frequencies of covered dbSNP variants over the genomic position." [PXS:QC]
+is_a: QC:2000001 ! NGS quality parameter
+is_a: QC:0000050 ! image plot
+xref: value-type:xsd\:base64Binary "The allowed value-type for this CV term."
+created_by: schroeder
+
+[Term]
+id: QC:2000049
+name: bases sequenced (MB)
+def: "Bases sequenced in total (in megabases)." [PXS:QC]
+is_a: QC:2000002 ! NGS aquisition parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+created_by: sturm
+
+[Term]
+id: QC:2000050
+name: bases usable (MB)
+def: "Bases sequenced that are usable for variant calling (in megabases)." [PXS:QC]
+is_a: QC:2000003 ! NGS mapping parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+created_by: sturm
+
+[Term]
+id: QC:2000051
+name: SNV allele frequency deviation
+def: "Mean deviation from expected allele frequency (e.g. 0.0, 0.5 or 1.0 for diploid organisms) for single nucleotide variants." [PXS:QC]
+is_a: QC:2000004 ! NGS variant list parameter
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
 created_by: sturm
