@@ -442,9 +442,9 @@ created_by: sturm
 [Term]
 id: QC:1000006
 name: linked file
-def: "Link to a file." [PXS:QC]
+def: "Link to a file. For source files use term QC:1000005." [PXS:QC]
 is_a: QC:1000001 ! meta data parameter
-xref: value-type:xsd\:string "The allowed value-type for this CV term."
+xref: value-type:xsd\:anyURI "The allowed value-type for this CV term."
 created_by: schroeder
 
 ################################################################################################################################################
