@@ -30,4 +30,4 @@ This folder should contain the text files containing the Specification Document 
 This folder should contain a OBO file with the representation of QC metrics. The file shall be hierarchically structured and in plain text. Additionally, there should be a documentation file, with detailed explanation of the cv terms, examples, visualizations and/or script snippets to calculate the metrics.
 
 ##Contribute
-You are welcome to contribute. The easiest way is to file an issue within GitHub. If you want to propose changes, follow the Git workflow (described here).
+You are welcome to contribute. The easiest way is to file an issue within GitHub. If you want to propose changes, follow the Git workflow (described [here](https://github.com/HUPO-PSI/qcML-development/wiki/Our-GitHub-workflow)).
