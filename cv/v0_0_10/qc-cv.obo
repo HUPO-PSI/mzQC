@@ -462,7 +462,6 @@ relationship: has_relation QC:3000011 ! QC metric relation: one run
 id: QC:3000057
 name: MS2 deltaM Q1-Qn
 def: "Code: P6-B; Quantiles sketching the mass error (deltaM) histogram of MS2 frament ion masses of spectrum identifications. Q_(n/2) (median) should be 0 ideally, the other Q_i depend on search engine tolerance setting." [PSI:QC]
-is_a: QC:3000004 ! Category: MS1
 is_a: QC:3000008 ! ID_based
 is_a: QC:3000046 ! Category: MS2
 is_a: QC:3000058 ! Metric Group: mass error histogram
@@ -473,6 +472,84 @@ id: QC:3000058
 name: Metric Group: mass error histogram
 def: "TODO: description of this metric group." [PSI:QC]
 is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000059
+name: Jinmeng metric: Chromatogram count
+def: "Contains the number of chromatograms recorded. TODO: check, whether 'relationship: multiple runs' is correct!" [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000012 ! QC metric relation: multiple runs
+
+[Term]
+id: QC:3000060
+name: Jinmeng Metric Group: MS acquisition parameters
+def: "Contains the number of chromatograms recorded." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000061
+name: Jinmeng metric: Fraction of repeat peptide identifications with divergent RT
+def: "Fraction of all peptides identified at least 4 min earlier/latter than max full MS scan. TODO: check, whether 'relationship: one run' is correct!" [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000062
+name: Jinmeng metric: Peak widths at half-height for identifications
+def: "Provide median peak widths for all identified unique peptides and measure of the distribution of the peak widths." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000063
+name: Jinmeng metric: Peak widths at half-max over RT quantiles for identifications
+def: "Median peak width for identified peptides in first/middle/ last RT quantile." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000064
+name: Jinmeng metric: Average elution order difference
+def: "Provide average elution rank order difference for identified peptides between series and provide radio of average rank order difference between series to average rank order difference within a series(low values indicate similarity between series)." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000012 ! QC metric relation: multiple runs
+
+[Term]
+id: QC:3000065
+name: Jinmeng metric: Fraction of early eluting peptides in row series
+def: "Estimates relative frequency of early/late eluting peptides." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000066
+name: Jinmeng metric: MZ
+def: "Provide median MZ for all identified peptides, min/max MZ range boundaries observed, minimum MZ detected and maximum MZ detected. TODO: multiple metrics? split into multiple CV terms." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000049 ! Category: Ion Source
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000067
+name: Jinmeng metric: Identifications by charge state
+def: "Number of 1+/3+/4+ peptides over 2+ peptides." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000049 ! Category: Ion Source
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
 
 [Typedef]
 id: has_relation
