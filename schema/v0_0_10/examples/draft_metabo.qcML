@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<qcML xmlns="http://www.psidev.info/qc/qcml"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.psidev.info/qc/qcml file:/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd" version="0.0.0">
+    <runQuality ID="ID001">
+        <metaDataParameters>
+            <InputFiles>
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile1.raw" id="ID005" name="myfile1.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+                    <userParam type="xsd:string" name="experiment-omics-type" description="experiment-omics-type" value="metabolomics-mrm"/>
+                </RawFile>
+                <IdentificationFile searchDatabase_name="my-spectral-library" location="z:\somefolder\allmyidfiles\myidentificationsfile.isatab" id="ID009" name="myidentificationsfile.isatab">
+                    <FileFormat>
+                        <userParam type="xsd:string" name="metabo-id-file-type" description="metabo-id-file-type" value="isa-tab"/> <!--actually, the schema does not support userParams at this place for good reasons, we need a CV term. What is your input? -->
+                    </FileFormat>
+                </IdentificationFile>
+                <QuantificationFile location="z:\somefolder\allmyquantfiles\myquantsfile.isatab" id="ID011" name="myquantsfile.isatab">
+                    <FileFormat>
+                        <userParam type="xsd:string" name="metabo-quant-file-type" description="metabo-quant-file-type" value="isa-tab"/> <!--actually, the schema does not support userParams at this place for good reasons, we need a CV term. What is your input? -->
+                    </FileFormat>
+                </QuantificationFile>
+                <OtherFile location="z:\somefolder\calibrations\mycalibrationsfile.isatab" id="ID013" name="mycalibrationsfile.isatab">
+                    <ExternalFormatDocumentation>http://www.mycalibrationform.at/</ExternalFormatDocumentation>
+                    <FileFormat>
+                        <userParam type="xsd:string" name="???" description="???" value="???"/> <!--actually, the schema does not support userParams at this place for good reasons, we need a CV term. What is your input? -->
+                    </FileFormat>
+                </OtherFile>
+            </InputFiles>
+<!--	<cvParam cvRef="PSI-QC-CV" accession="???" name="sample work-up procedure" description="value describe the " value="precipitation, solid phase extraction, ultrafiltration, recovery, aliquots" /> -->
+        </metaDataParameters>
+	<!-- Generally, what should be known after the metadata section - Is the run a  :
+		# spike-in? which standard? AKA internal standard 
+			* which calibration points
+			* bias on calibration points, LLOQ and ULOQ of instrumentation (separate or just LOQ)?
+			* slope, R^2
+			* concentration within LLOQ and ULOQ
+			* control or calibration?
+		# external standard? (https://goldbook.iupac.org/html/E/E02290.html)
+			* same as with internal
+		# blank? I would _strongly_ recommned to avoid calling something containing a standard (internal or not does not matter) a blank 
+		# SST?	
+			* resolution
+			* RSD
+			* column efficiency
+			* tailing factor 
+		# Sample/Unknowns
+		# Also what the sample work-up procedure is (as cv collection in metadata?)
+	-->
+	
+<!-- These metrices should be present according to data available in an SST -->
+	<!-- * resolution R -->
+        <qualityMetric ID="ID261" cvRef="PSI-MS" accession="MS:1000011" name="mass resolution" value="60000"/>
+	<!-- * column efficiency N -->
+	<qualityMetric ID="ID262" cvRef="PSI-QC-CV" accession="QC:???????" name="column efficiency" value="1000"/>
+	<!-- * tailing factor T -->
+        <qualityMetric ID="ID263" cvRef="PSI-MS" accession="QC:???????" name="tailing factor" value="1.1"/>
+	<!-- * Asymmetry A? -->
+        <qualityMetric ID="ID264" cvRef="PSI-MS" accession="QC:???????" name="chromatographic peak asymmetry" value="1.05"/>
+	<!-- * void time Tm? -->
+        <qualityMetric ID="ID265" cvRef="PSI-MS" accession="QC:???????" name="column dead time" value="2" unitAccession="UO:0000010" unitName="second" unitCvRef="UO"/>
+	<!-- can you specify in which contexts you need/calculate/get reported a s/n? -->
+ 	
+	<!-- * autosampler wash solvent A [mL] -->
+	<!-- * autosampler wash solvent B [mL] -->
+	<qualityMetric ID="ID266" cvRef="PSI-QC-CV" accession="QC:???????" name="autosampler wash solvent">
+	    <content ID="ID166" cvRef="PSI-QC-CV" accession="linked lists" name="linked lists" value='2'>{[A,B],'UO:0000098':[123,345]}</content>
+	</qualityMetric>
+		<!-- * mobile phase A [mL] -->
+		<!-- * mobile phase B [mL] -->
+	<qualityMetric ID="ID267" cvRef="PSI-QC-CV" accession="QC:???????" name="autosampler wash solvent">
+		<content ID="ID167" cvRef="PSI-QC-CV" accession="linked lists" value='2'>{[A,B],'UO:0000098':[123,345]}</content>
+	</qualityMetric>
+		<!-- * Buffer solution pump A (%) -->
+		<!-- * Buffer solution pump B (%) -->
+	<qualityMetric ID="ID268" cvRef="PSI-QC-CV" accession="QC:???????" name=" ">
+		<content ID="ID168" cvRef="PSI-QC-CV" accession="linked lists" value='2'>{[A,B],'UO:0000165':[11,3]}</content>
+	</qualityMetric>
+	<!-- * Autosampler waste container fill (%) -->
+	<qualityMetric ID="ID269" cvRef="PSI-MS" accession="QC:???????" name="waste container fill" value="23" unitAccession="UO:0000187" unitName="percent" unitCvRef="UO"/>
+
+	<!-- * N2 gas pressure curtain [psi] -->
+	<!-- * N2 gas pressure source [psi] -->
+	<!-- * N2 gas pressure exhaust [psi] -->
+	<qualityMetric ID="ID270" cvRef="PSI-QC-CV" accession="QC:???????" name="N2 gas pressure">
+		<!-- using SI units here! (pascal) -->
+		<content ID="ID170" cvRef="PSI-QC-CV" accession="linked lists" value='3'>{[curtain,source,exhaust],'UO:0000110':[620528.4,613633.6,696370.8]}</content>
+	</qualityMetric>
+	<!-- * Pump equilibration back pressure [psi] -->
+	<qualityMetric ID="ID271" cvRef="PSI-MS" accession="QC:???????" name="Pump equilibration back pressure" value="716370.8" unitAccession="UO:0000110" unitName="pascal" unitCvRef="UO"/>
+	
+	<!-- * complete injection of sample (uL) -->
+	<qualityMetric ID="ID272" cvRef="PSI-MS" accession="QC:???????" name="injected sample volume" value="34" unitAccession="UO:0000101" unitName="microliter" unitCvRef="UO"/>
+	<!-- * RT calibration substance pyr (light) [min] -->
+	<!-- * RT calibration substance g6p (light) [min] -->
+	<qualityMetric ID="ID273" cvRef="PSI-QC-CV" accession="QC:???????" name="N2 gas pressure">
+		<!-- using SI units here! (pascal) -->
+		<content ID="ID173" cvRef="PSI-QC-CV" accession="linked lists" value='3'>{[curtain,source,exhaust],'UO:0000110':[620528.4,613633.6,696370.8]}</content>
+	</qualityMetric>
+	<!-- * Ioncount (detector count?) substance pep (light) -->
+	<!-- * Ioncount (detector count?) substance atp (light) -->
+	<qualityMetric ID="ID274" cvRef="PSI-QC-CV" accession="QC:???????" name="Ioncount on indicator substance">
+		<content ID="ID174" cvRef="PSI-QC-CV" accession="linked lists" value='2'>{[pep light, atp light],'MS:1000131':[6E+5,3.4E+8]}</content>
+	</qualityMetric>
+	<!-- * Peakdetection indicator substance pep (light) -->
+	<!-- * Peakdetection indicator substance pep (heavy) -->
+	<!-- * Peakdetection indicator substance gln (light) -->
+	<!-- * Peakdetection indicator substance gln (heavy) -->
+	<qualityMetric ID="ID275" cvRef="PSI-QC-CV" accession="QC:???????" name="Peak detection indicator substance">
+		<!-- problem is heavy/light pairs are not immideately machine readable as connected pairs, but not all standards contain isotope lables -->
+		<content ID="ID215" cvRef="PSI-QC-CV" accession="linked lists" value='4'>{[pep light, pep heavy, gln light, gln heavy],[1,1,1,0]}</content>
+	</qualityMetric>
+    </runQuality>
+    
+    <setQuality ID="ID199">
+        <metaDataParameters>
+            <InputFiles>
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile1.raw" id="ID006" name="myfile1.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+                    <userParam type="xsd:string" name="experiment-omics-type" description="experiment-omics-type" value="standard"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1000747" name="completion time" value="2015-09-24T15:01:33"/>
+                    <cvParam cvRef="PSI-QC-CV" accession="QC:???????" name="calibration standard definition" value="?"/>
+		    <!-- we need something better to describe standards -->
+                </RawFile>
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile2.raw" id="ID007" name="myfile2.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+                    <userParam type="xsd:string" name="experiment-omics-type" description="experiment-omics-type" value="blank"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1000747" name="completion time" value="2015-09-24T15:21:45"/>
+                </RawFile>
+            </InputFiles>
+        </metaDataParameters>
+
+	<!-- carry over: successive runs (1st standard, 2nd blank) -->
+	<qualityMetric ID="ID276" cvRef="PSI-QC-CV" accession="QC:???????" name="carryover index">
+		<content ID="ID176" cvRef="PSI-QC-CV" accession="linked lists" value='4'>{[pep light, atp light],'UO:0000187':[0.1,0.05]}</content>
+	</qualityMetric>
+	<!-- Calibration with external standard -->
+	<qualityMetric ID="ID277" cvRef="PSI-QC-CV" accession="QC:???????" name="calibration standard measurement">
+		<content ID="ID177" cvRef="PSI-QC-CV" accession="linked lists" value='4'>{[calibration substance1, calbration substance2],' MS:1000042':[6.4E+6,1.4E+8]}</content> <!-- these should correspond to entries in the corresponding calibration standard definition -->
+	</qualityMetric>
+	<qualityMetric ID="ID278" cvRef="PSI-MS" accession="QC:???????" name="calibration fitx" value="0.98"/>
+	<qualityMetric ID="ID279" cvRef="PSI-MS" accession="QC:???????" name="calibration slope" value="1.02"/>
+	<!-- RSD for RT (which peaks? and also peak response as intensity?) - Evaluation of precision requires a sufficient number of replicate measurements ... -->
+    </setQuality>
+    
+    <!-- needs tags for inra/inter assay -->
+    <setQuality ID="ID198">
+        <metaDataParameters>
+            <InputFiles>
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile2.raw" id="ID007" name="myfile2.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+                    <userParam type="xsd:string" name="experiment-omics-type" description="experiment-omics-type" value="blank"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1000747" name="completion time" value="2015-09-24T15:21:45"/>
+                </RawFile>
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile3.raw" id="ID008" name="myfile3.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+                    <userParam type="xsd:string" name="experiment-omics-type" description="experiment-omics-type" value="standard"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1000747" name="completion time" value="2015-09-25T15:01:33"/>
+                </RawFile>
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile4.raw" id="ID009" name="myfile4.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+                    <userParam type="xsd:string" name="experiment-omics-type" description="experiment-omics-type" value="standard"/>
+                    <cvParam cvRef="PSI-MS" accession="MS:1000747" name="completion time" value="2015-09-26T15:01:33"/>
+                </RawFile>
+            </InputFiles>
+        </metaDataParameters>
+	<!-- Accuracy (Intra and Interassay) Min. 2 levels of spiked QC’s including LLOQ and ULOQ - Bias % <15% or 20% @LLOQ  -->
+	<!-- Precision (Intra and Interassay) Min. 2 levels of spiked QC’s including LLOQ and ULOQ; CV % 15%/20% @LLOQ -->
+    </setQuality>
+    
+    <!-- dilution linearity: dilution series -->
+    <!-- Transition ratio monitoring: Bias from extracted calibrators  -->
+    
+
+    <cvList>
+ 	<cv id="PSI-MS"	fullName="Proteomics Standards Initiative Mass Spectrometry Vocabularies" uri="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo" version="3.15.0"></cv> 
+ 	<cv id="UNIMOD"	fullName="UNIMOD" uri="http://www.unimod.org/obo/unimod.obo"></cv> 
+	<cv id="UO"		fullName="UNIT-ONTOLOGY" uri="https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo"></cv>
+        <cv id="PSI-QC-CV"	fullName="The HUPO-PSI QC WG metrics ontology in obo format" uri="http://www.github.com/HUPO-PSI/.../" version="new_draft"/>
+    </cvList>
+</qcML>

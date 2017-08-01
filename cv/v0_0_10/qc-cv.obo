@@ -33,6 +33,18 @@ remark: Filtered by Ancestor ID equals "UO:0000000"
 import: ./unit.obo
 ontology: uo
 
+[Typedef]
+id: has_relation
+name: has_relation
+
+[Typedef]
+id: has_type
+name: has_type
+
+[Typedef]
+id: has_units
+name: has_units
+
 [Term]
 id: QC:3000002
 name: QC metric relation
@@ -551,15 +563,212 @@ is_a: QC:3000049 ! Category: Ion Source
 is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
 relationship: has_relation QC:3000011 ! QC metric relation: one run
 
-[Typedef]
-id: has_relation
-name: has_relation
+########################### scratch space ###########################
+#General:
+#type of sample - regular run, blank, spike-in, calibration run (standard), system suitability test (instrument qc)
 
-[Typedef]
-id: has_type
-name: has_type
+[Term]
+id: QC:???????
+name: measurement type
+def: Different types of measurement are conducted on one instrument setup including maintenance, calibration, and regular acquisition.
+is_a: QC:??????? ! Category: QC type
 
-[Typedef]
-id: has_units
-name: has_units
+[Term]
+id: QC:???????
+name: blank measurement
+def: Using the instrument setup for measurement acquisition without sample present.
+is_a: QC:??????? ! Category: measurement type
 
+[Term]
+id: QC:???????
+name: regular measurement
+def: Using the instrument setup for regular sample measurement acquisition.
+is_a: QC:??????? ! Category: measurement type
+
+[Term]
+id: QC:???????
+name: internal standard measurement
+def: Using the instrument setup for sample plus internal standard measurement acquisition. [https://doi.org/10.1351/goldbook.I03108]
+is_a: QC:??????? ! Category: measurement type
+comment: this needs a link to the standard used or a field to define a 'home-grown' standard
+
+[Term]
+id: QC:???????
+name: external standard measurement
+def: Using the instrument setup for external standard measurement acquisition. [https://doi.org/10.1351/goldbook.E02290]
+is_a: QC:??????? ! Category: measurement type
+comment: this needs a link to the standard used or a field to define a 'home-grown' standard
+
+[Term]
+id: QC:???????
+name: system suitability measurement
+def:  [https://www.fda.gov/downloads/Drugs/Guidances/UCM134409.pdf][http://www.harvardapparatus.co.uk/hapdfs/HAUK_DOCCAT_1_2/PP145.pdf]
+is_a: QC:??????? ! Category: measurement type
+comment: this is most likely always an add-on term to an internal standard measurement 
+
+[Term]
+id: QC:???????
+name: waste container fill
+def: fill level of the waste container
+is_a: QC:??????? ! Category: instrumentation maintenance parameters
+comment: this is most likely for convenience in instrument maintenance
+relationship: has_units UO:0000187 ! percent
+
+[Term]
+id: QC:???????
+name: N2 gas pressure
+def: Gas pressure in different instrumentation compartements (should be named)
+is_a: QC:??????? ! Category: instrumentation maintenance parameters
+comment: this is most likely for convenience in instrument maintenance, compartement naming is suggested in combination with QC:3000018 ! corresponding lists
+relationship: has_units UO:0000187 ! percent
+
+[Term]
+id: QC:???????
+name: pump equilibration back pressure
+def: Back pressure level of pump equilibration
+is_a: QC:??????? ! Category: instrumentation maintenance parameters
+comment: this is most likely for convenience in instrument maintenance
+relationship: has_units UO:0000110 ! pascal
+
+[Term]
+id: QC:???????
+name: autosampler wash solvent
+def: ?
+is_a: QC:??????? ! Category: instrumentation maintenance parameters
+comment: this is most likely for convenience in instrument maintenance, if more than one pump is serving the system, specification is suggested in combination with QC:3000018 ! corresponding lists
+relationship: has_units UO:0000098 ! milliliter
+
+[Term]
+id: QC:???????
+name: buffer solution concentration
+def: ?
+is_a: QC:??????? ! Category: instrumentation maintenance parameters
+comment: this is most likely for convenience in instrument maintenance, if more than one pump is serving the system, specification is suggested in combination with QC:3000018 ! corresponding lists
+relationship: has_units UO:0000165 ! volume percentage
+
+[Term]
+id: QC:???????
+name: mobile phase
+def: ?
+is_a: QC:??????? ! Category: instrumentation maintenance parameters
+comment: this is most likely for convenience in instrument maintenance, if more than one pump is serving the system, specification is suggested in combination with QC:3000018 ! corresponding lists
+relationship: has_units UO:0000098 ! milliliter
+
+[Term]
+id: QC:???????
+name: Peak detection indicator substance
+def: ?
+is_a: QC:??????? ! Category: standard
+synonym: standard
+comment: specification is suggested in combination with QC:3000018 ! corresponding lists, 
+relationship: has_units UO:0000098 ! milliliter
+
+[Term]
+id: QC:???????
+name: Ioncount on indicator substance
+comment: name is suboptimal
+def: ?
+is_a: MS:1000042 ! peak intensity
+
+## LC stuff:
+# XIC in general to backtrack the IDs?
+# EMG parameter estimation - method & mu,sigma,lambda
+# maybe even column uuid???
+# S/N per chromatogram? (MS:1001884)
+
+[Term]
+id: QC:???????
+name: column efficiency
+def: Column efficiency is a function of the column dimensions, the type of mobile phase and flow rate, and the compound and its retention. The unitless value is the number of theoretical plates, its term derived by analogous distillation theory.
+is_a: QC:??????? ! Category: LC
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:???????
+name: column dead time
+def: The time taken for non-retained molecules to move through the column. [https://doi.org/10.1351/goldbook.D01530].
+is_a: QC:??????? ! Category: LC
+relationship: has_units UO:0000010 ! second
+relationship: has_units UO:0000031 ! minute
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:???????
+name: chromatographic peak asymmetry
+def: Asymmetry is a factor describing the shape (skew) of a chromatographic peak, indicating the divergence from the theoretically symmetrical Gaussian shape. It is defined as the distance from the center line of the peak to the back slope divided by the distance from the center line of the peak to the front slope, with all measurements made at 10% of the maximum peak height. A value of >1 indicates a tailing peak and <1 a fronting peak.
+is_a: QC:??????? ! Category: LC
+relationship: has_relation QC:??????? ! QC metric relation: one peak
+
+[Term]
+id: QC:???????
+name: chromatographic peak tailing
+def: The tailing factor describes the extent to which a chromatographic peak is tailing off. It is defined as the distance from the front slope of the peak to the back slope divided by twice the distance from the center line of the peak to the front slope, with all measurements made at 5% of the maximum peak height.
+is_a: QC:??????? ! Category: LC
+relationship: has_relation QC:??????? ! QC metric relation: one peak
+
+[Term]
+id: QC:???????
+name: injected sample volume
+def: The tailing factor describes the extent to which a chromatographic peak is tailing off. It is defined as the distance from the front slope of the peak to the back slope divided by twice the distance from the center line of the peak to the front slope, with all measurements made at 5% of the maximum peak height.
+is_a: QC:??????? ! Category: LC
+relationship: has_relation QC:??????? ! QC metric relation: one peak
+
+[Term]
+id: QC:???????
+name: RSD
+def: relative standard deviations - 100 * sample standard deviation / |\bar{x}|
+
+[Term]
+id: QC:???????
+name: carryover index
+def: Percentage of carryover from the column into a blank measurement - (Analyte area in first carryover blank) / (Analyte area in high level standard) * 100
+relationship: has_units UO:0000187 ! percent
+comment: this is important for recalculation, specification in case of several analytes is suggested in combination with QC:3000018 ! corresponding lists
+
+[Term]
+id: QC:???????
+name: calibration slope
+def: slope of the fitted calibration curve
+
+[Term]
+id: QC:???????
+name: calibration fit
+def: fit of the calibration curve 
+synonym: R squared
+
+[Term]
+id: QC:???????
+name: calibration standard definition
+def: Standard composition including substance names, labeling status, known mass, known concentration and/or retention time.
+comment: this is important for recalculation, specification is suggested in combination with QC:3000018 ! corresponding lists
+
+[Term]
+id: QC:???????
+name: calibration standard measurement
+def: Standard measurement including substance names, labeling status, measured mass, measured concentration and/or retention time.
+comment: this is important for recalculation, specification is suggested in combination with QC:3000018 ! corresponding lists
+
+[Term]
+id: QC:???????
+name: LOD
+def: limit of detection, the lowest quantity of a substance that can be distinguished from a blank value [https://doi.org/10.1351/goldbook.L03540]
+comment: this is oblivious of the confidence factor! 1% should be assumed
+
+[Term]
+id: QC:???????
+name: LLOQ
+def: Lower Limit of Quantification; lowest concentration that can still be used for quantification
+comment: this is oblivious of the confidence factor! 1% should be assumed
+
+[Term]
+id: QC:???????
+name: ULOQ
+def: Upper Limit of Quantification; highest concentration that can still be used for quantification
+synonym: Limit of linearity - LOL
+comment: this is oblivious of the confidence factor! 1% should be assumed
+
+[Term]
+id: QC:???????
+name: bias
+def: bias of true value to the mean of measured calibration points
+comment: this is important for qualification and monitoring, specification is suggested in combination with QC:3000018 ! corresponding lists

@@ -172,13 +172,55 @@ Changed namespace and renamed metric elements and added more input file provenan
 		<xsd:complexContent>
 			<xsd:extension base="CVParamType">
 				<xsd:sequence minOccurs="0">
-					<xsd:element name="content" minOccurs="0">
+					<xsd:element name="content">
 						<xsd:complexType>
 							<xsd:complexContent>
-								<xsd:extension base="CVParamType">
-									<xsd:sequence>
-										<xsd:any namespace="##any"/>
-									</xsd:sequence>
+								<xsd:extension base="xsd:anyType">
+									<xsd:attribute name="ID" type="xsd:ID" use="required">
+										<xsd:annotation>
+											<xsd:documentation>A file unique identifier for this  qualityParameter element</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="name" type="xsd:string" use="required">
+										<xsd:annotation>
+											<xsd:documentation>The name of the cvTerm describing the parameter</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="description" type="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>Description of the parameter, containing information to allow the user interpreting the QC value.</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="value" type="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>The user-entered value of the parameter, e.g. ppm value of accuracy or the file name</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="unitAccession" type="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>The accession number identifying the unit within the OBO foundry Unit CV</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="unitName" type="xsd:string">
+										<xsd:annotation>
+											<xsd:documentation>The name of the unit corresponding to the value</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="unitCvRef" type="xsd:IDREF">
+										<xsd:annotation>
+											<xsd:documentation>If a unit term is used, this attribute must refer to the corresponding CV 'id' attribute defined in the cvList in this file</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="cvRef" type="xsd:IDREF" use="required">
+										<xsd:annotation>
+											<xsd:documentation>This attribute must refer to the corresponding CV 'id' attribute defined in the cvList in this file</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
+									<xsd:attribute name="accession" type="xsd:string" use="required">
+										<xsd:annotation>
+											<xsd:documentation>The accession number identifying the used cvTterm in the source CV</xsd:documentation>
+										</xsd:annotation>
+									</xsd:attribute>
 								</xsd:extension>
 							</xsd:complexContent>
 						</xsd:complexType>
