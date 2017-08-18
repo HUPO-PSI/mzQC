@@ -3,19 +3,29 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.prime-xs.eu/ms/qcml file:/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd" version="0.0.10">
     <runQuality ID="ID001">
-        <metaDataParameter ID="fileprovenance001" >
-            <spectrumFileReference ID="fileid001" value="PH050213_0.raw">
-                <cvParam name="SHA-1" accession="MS:1000569" value="d2e001bbad8e479eaf82e1196801b1631617d215"/>
-            </spectrumFileReference>
-            <idFileReference ID="fileid002" value="bibabu.mzid">    
-                
+         <metaDataParameters ID="fileprovenance001" cvRef="?" accession="?" name="?" description="do we need cv for toplevel" value="all cv attributes are optional anyway">
+            <InputFiles>
+                <RawFile <!--methodFile_ref="ID001": remove this from schema!--> location="ftp://rawdump.org/supergoodrunsfrom2525/myfile1.raw" id="ID005" name="myfile1.raw">
+                    <FileFormat>
+                        <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
+                    </FileFormat>
+		    <!--Checksum required (not in the schema though)?-->
+                </RawFile>
+		<!-- We allow for several 'raw' files here, which I think is initially sensible, if you think that the qcML might be extendend at some point, where the raw file is not provided anymore, but the mzML conversion. However, I see that there _might_ be situations arising where it is important to know if a fiollowing metric was calculated based on the raw data or the mzML data.-->
+                <IdentificationFile searchDatabase_name="should we remove that here?" location="ftp://identdump.org/supergoodrunsfrom2525/myfile.mzid" id="ID009" name="myfile.mzid">
+                    <FileFormat>
+                        <cvParam cvRef="ID001" accession="MS:1002073" name="mzIdentML format"/>
+                    </FileFormat>
+		</IdentificationFile>
+	    </InputFiles>                
         </metaDataParameter>
+	<!--Use Quameter metrics here-->
         <qualityParameter ID="METRIC000" cvRef="PSI-QC-CV" accession="R1-B" name="File date attribute qcML" value="2013-02-06-T15:38:57Z"/>
         <qualityParameter ID="METRIC001" cvRef="PSI-QC-CV" accession="DS-4" name="Interval Acquisition range m/z"> 
             <content cvRef="PSI-QC-CV" accession="n - tuple" value='2'>{'MS:1000043':[400,1500]}</content> <!-- distinguish between targeted and observed acquisition range -->
         </qualityParameter>    
         <qualityParameter ID="METRIC002" cvRef="PSI-QC-CV" accession="DS-4B" name="Interval Acquisition range m/z ms2"> 
-            <content cvRef="PSI-QC-CV" accession="n - tuple" value='2'>{'???':[0,1000000]}</content>
+            <content cvRef="PSI-QC-CV" accession="n - tuple" value='2'>{'???':[0,1000000]}</content> <!-- we would need a unit cv term here -->
         </qualityParameter>    
         <qualityParameter ID="METRIC003" cvRef="PSI-QC-CV" accession="C-8C" name="area under total ion current chromatogram quartiles Intensity Q1-Q3">
             <content cvRef="PSI-QC-CV" accession="value at k-tile" value='3'>{'UO:0000189':[11235567,49344566,98047696]}</content>
@@ -24,9 +34,7 @@
         linked lists (aka array of structure, coordinated list): unit:[,],unit[,],... cv of qualityParameter has mapping rule that it is expected that in it's content there are the following types of list present.
         cv of qualityParameter has value length of each list
         -> all lists must have same length
-        -->
-        <!-- species synpx -->
-        
+        -->    
         <qualityParameter ID="METRIC003_1" cvRef="PSI-QC-CV" accession="C-8A" name="total ion current chromatogram Intensity collection">
             <content cvRef="PSI-QC-CV" accession="linked lists" value='5'>{'UO:0000010':[0.25,0.5,0.74,1.23,5.88],'MS:1000043':[123,456,789,666,901]}</content>
         </qualityParameter>
@@ -36,6 +44,7 @@
         
         <!-- Do we have / can we imagine a case where the content is of mixed units??? I couldn't -->
         
+        <!--I will correct the accessions following PR #31-->
         <qualityParameter ID="METRIC002_1" cvRef="PSI-QC-CV" accession="C-8D" name="TIC quartile in relation to RT duration RT-TIC Q1-Q3">
             <content cvRef="PSI-QC-CV" accession="C-8D-json" value='4'>{Q1:0.27,Q2:0.4,Q3:0.74}</content>
         </qualityParameter>        
