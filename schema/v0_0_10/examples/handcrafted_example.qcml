@@ -3,15 +3,19 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.prime-xs.eu/ms/qcml file:/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd" version="0.0.10">
     <runQuality ID="ID001">
-         <metaDataParameters ID="fileprovenance001" cvRef="?" accession="?" name="?" description="do we need cv for toplevel" value="all cv attributes are optional anyway">
+	<!-- Do we keep the element name 'metaDataParameter'? Meta might be anything, but then it contains something concrete and important as InputFiles -->
+        <metaDataParameters ID="fileprovenance001" cvRef="?" accession="?" name="?" description="do we need cv for toplevel" value="all cv attributes are optional anyway">
             <InputFiles>
-                <RawFile <!--methodFile_ref="ID001": remove this from schema!--> location="ftp://rawdump.org/supergoodrunsfrom2525/myfile1.raw" id="ID005" name="myfile1.raw">
+                <RawFile location="ftp://rawdump.org/supergoodrunsfrom2525/myfile1.raw" id="ID005" name="myfile1.raw">
                     <FileFormat>
                         <cvParam cvRef="PSI-MS" accession="MS:1000563" name="Thermo RAW format"/>
                     </FileFormat>
-		    <!--Checksum required (not in the schema though)?-->
+		    <!--Checksum required (not in the schema though, is cv term. Must go to mapping rules or recommendations)?-->
+		    <cvParam cvRef="PSI-MS" accession="MS:1000568" name="MD5" value="ccb8af387c287d662902340bf29e3bba" />  <!-- or any child term of MS:1000561 data file checksum type -->
+		    <!-- We should require to list methods parameter used or at least the Method file? -->
                 </RawFile>
-		<!-- We allow for several 'raw' files here, which I think is initially sensible, if you think that the qcML might be extendend at some point, where the raw file is not provided anymore, but the mzML conversion. However, I see that there _might_ be situations arising where it is important to know if a fiollowing metric was calculated based on the raw data or the mzML data.-->
+		<!-- We allow for several 'raw' files here, which I think is initially sensible, if you think that the qcML might be extendend at some point, where the raw file is not provided anymore, but the mzML conversion. However, I see that there _might_ be situations arising where it is important to know if a following metric was calculated based on the raw data or the mzML data.-->
+		<!-- To clarify the issue: this setting opens up for an ambiguity: several raw files treated as one (is that even sensible for our purposes?) or one raw file and one corresponding open file format (or worse several raw and several mzML files)-->
                 <IdentificationFile searchDatabase_name="should we remove that here?" location="ftp://identdump.org/supergoodrunsfrom2525/myfile.mzid" id="ID009" name="myfile.mzid">
                     <FileFormat>
                         <cvParam cvRef="ID001" accession="MS:1002073" name="mzIdentML format"/>

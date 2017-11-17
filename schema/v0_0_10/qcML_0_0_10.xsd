@@ -267,11 +267,6 @@ Changed namespace and renamed metric elements and added more input file provenan
 						<xsd:documentation>Additional parameters about the raw file.</xsd:documentation>
 					</xsd:annotation>
 				</xsd:group>
-				<xsd:attribute name="methodFile_ref" type="xsd:IDREF" use="optional">
-					<xsd:annotation>
-						<xsd:documentation>An optional reference to a methods file used in association with a raw file, for example a TraML file used for SRM analysis.</xsd:documentation>
-					</xsd:annotation>
-				</xsd:attribute>
 			</xsd:extension>
 		</xsd:complexContent>
 	</xsd:complexType>
