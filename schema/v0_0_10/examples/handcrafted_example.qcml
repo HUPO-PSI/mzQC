@@ -24,6 +24,7 @@
 	    </InputFiles>                
         </metaDataParameter>
 	<!--Use Quameter metrics here-->
+	<!-- which file?! (raw/id/qc) this should probably go into metadata as at least recommended cv term MS:1000747 completion time -->
         <qualityParameter ID="METRIC000" cvRef="PSI-QC-CV" accession="R1-B" name="File date attribute qcML" value="2013-02-06-T15:38:57Z"/>
         <qualityParameter ID="METRIC001" cvRef="PSI-QC-CV" accession="DS-4" name="Interval Acquisition range m/z"> 
             <content cvRef="PSI-QC-CV" accession="n - tuple" value='2'>{'MS:1000043':[400,1500]}</content> <!-- distinguish between targeted and observed acquisition range -->
