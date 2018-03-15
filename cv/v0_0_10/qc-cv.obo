@@ -755,7 +755,7 @@ Synonym: "IS-2" NARROW []
 id: QC:3000112
 name: NIST/Quameter Metric - IDs by charge state (relative to 2+)
 def: "Numbers of 1+/3+/4+ peptides over 2+ peptides; High ratios of 1+/2+ peptides may indicate inefficient ionization, higher ratios of 3+/2+ peptides may preferentially favor longer peptides, higher ratios of 4+/2+ peptides may preferentially favor longer peptides"
-is_a: QC:300000x ! single_value
+is_a: QC:3000008 ! n-tuple
 is_a: QC:30000xx ! Category: Ion source
 relationship: has_relation QC:3000043 ! ID_based
 relationship: has_relation QC:3000040 ! QC metric relation: one run

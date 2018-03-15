@@ -276,7 +276,7 @@ Changed namespace and renamed metric elements and added more input file provenan
 		</xsd:annotation>
 		<xsd:choice maxOccurs="unbounded">
 			<xsd:sequence>
-				<xsd:element name="metaDataParameters" minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="metaDataParameters" minOccurs="0" maxOccurs="1">
 					<xsd:annotation>
 						<xsd:documentation>Meta data about the quality parameters, e.g. description of tool(s) the quality parameters were created with, version of the tool(s), creation data, source files the quality parameters were extracted from, etc.
 
