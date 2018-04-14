@@ -216,7 +216,7 @@ is_a: QC:3000016 ! QC metric
 [Term]
 id: QC:3000028
 name: Quameter Metric Group: XIC
-def: "TODO: description of this Quameter metric group." [PSI:QC]
+def: "Metrics computed from extracted ion chromatograms in Quameter IDFree metric group." [PSI:QC]
 is_a: QC:3000016 ! QC metric
 
 [Term]
@@ -232,7 +232,7 @@ relationship: has_relation QC:3000011 ! QC metric relation: one run
 [Term]
 id: QC:3000030
 name: Quameter Metric Group: RT
-def: "TODO: description of this Quameter metric group." [PSI:QC]
+def: "Metrics computed as a function of retention time in the Quameter IDFree metric group." [PSI:QC]
 is_a: QC:3000016 ! QC metric
 
 [Term]
@@ -246,7 +246,7 @@ relationship: has_relation QC:3000011 ! QC metric relation: one run
 [Term]
 id: QC:3000032
 name: Quameter Metric Group: MS1
-def: "TODO: description of this Quameter metric group." [PSI:QC]
+def: "Metrics computed from MS scans in the Quameter IDFree metric group." [PSI:QC]
 is_a: QC:3000016 ! QC metric
 
 [Term]
@@ -303,7 +303,7 @@ relationship: has_relation QC:3000011 ! QC metric relation: one run
 [Term]
 id: QC:3000039
 name: Category: Dynamic Sampling
-def: "TODO: description of this category." [PSI:QC]
+def: "Relating to the process of selecting MS/MS targets from MS1 data" [PSI:QC]
 is_a: QC:3000016 ! QC metric
 
 [Term]
@@ -354,7 +354,7 @@ relationship: has_relation QC:3000011 ! QC metric relation: one run
 [Term]
 id: QC:3000045
 name: Quameter Metric Group: MS2
-def: "TODO: description of this Quameter metric group." [PSI:QC]
+def: "Metrics computed from MS/MS scans in the Quameter IDFree metric group." [PSI:QC]
 is_a: QC:3000016 ! QC metric
 
 [Term]
