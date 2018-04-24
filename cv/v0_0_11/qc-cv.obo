@@ -1,0 +1,565 @@
+format-version: 1.2
+data-version: releases/2015-11-18
+date: 20:07:2017 15:22
+saved-by: eisenm8r
+auto-generated-by: OBO-Edit 2.3.1
+subsetdef: abnormal_slim "Abnormal/normal slim"
+subsetdef: absent_slim "Absent/present slim"
+subsetdef: attribute_slim "Attribute slim"
+subsetdef: cell_quality "cell_quality"
+subsetdef: disposition_slim "Disposition slim"
+subsetdef: hpo_slim "Human phenotype slim"
+subsetdef: mpath_slim "Pathology slim"
+subsetdef: prefix_slim "prefix slim"
+subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: scalar_slim "Scalar slim"
+subsetdef: unit_group_slim "unit group slim"
+subsetdef: unit_slim "unit slim"
+subsetdef: value_slim "Value slim"
+default-namespace: QC
+remark: creator: Martin Eisenacher <martin.eisenacher <-at-> ruhr-uni-bochum.de>
+remark: namespace: QC
+remark: version: 0.1.1
+remark: ################################################################################################################################################
+remark: # MASS SPECTROMETRY QC PARAMETERS - NAMESPACE QC:0000001... see qc-cv.obo
+remark: #
+remark: # META DATA PARAMETERS - NAMESPACE QC:1000001... see qc-cv.obo
+remark: # NEXT GENERATION SEQUENCING QC PARAMETERS - NAMESPACE QC:2000001... see qc-cv.obo
+remark: # PSI QC PARAMETERS - NAMESPACE QC:3000001...
+remark: integrate the NIST code as obo field (SYNONYM?, relationship?)
+remark: also minutes etc.
+remark: relationship: has_units UO:00000XX
+remark: Filtered by Ancestor ID equals "UO:0000000"
+import: ./unit.obo
+ontology: uo
+
+[Term]
+id: QC:3000002
+name: QC metric relation
+def: "Parent term for QC metric relations (in contrast to QC metrics and types)." [PSI:QC]
+
+[Term]
+id: QC:3000003
+name: NIST Metric Group: Ion injection times for IDs
+def: "TODO: description of this NIST metric group." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000004
+name: Category: MS1
+def: "TODO: description of this category." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000005
+name: QC metric type
+def: "Parent term for QC metric types such as single_value, n-tuple, table (in contrast to QC metrics and relations)." [PSI:QC]
+
+[Term]
+id: QC:3000006
+name: single_value
+def: "metrics consisting of a single value (in contrast to n-tuple or table)." [PSI:QC]
+is_a: QC:3000005 ! QC metric type
+
+[Term]
+id: QC:3000007
+name: table
+def: "metrics consisting of a table (in contrast to single_value or n-tuple); TODO: give example!?" [PSI:QC]
+is_a: QC:3000005 ! QC metric type
+
+[Term]
+id: QC:3000008
+name: ID_based
+def: "metrics based on a previous identification run (in contrast to ID_free, Quant_based)" [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000009
+name: ID_free
+def: "metrics not based on a previous identification run (in contrast to ID_based, quant_based)" [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000010
+name: NIST Metric: Ion injection times for IDs: MS1 median
+def: "NIST_Code: MS1-1; NIST_Use: Lower times indicate an abundance of ions; NIST_Description: MS1 ion injection time." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:3000003 ! NIST Metric Group: Ion injection times for IDs
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000008 ! ID_based
+
+[Term]
+id: QC:3000011
+name: QC metric relation: one run
+def: "metrics which are calculated on one run (one .raw file)" [PSI:QC]
+is_a: QC:3000002 ! QC metric relation
+
+[Term]
+id: QC:3000012
+name: QC metric relation: multiple runs
+def: "metrics which are calculated on multiple runs / a set of runs (multiple .raw files)" [PSI:QC]
+is_a: QC:3000002 ! QC metric relation
+
+[Term]
+id: QC:3000013
+name: RT-TIC
+def: "The interval when a quantile of the TIC accumulates divided by RT-Duration (quantile is defined by a QC metric type, such as quartile, decile, percentile)." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000014
+name: NIST Metric Group: MS1 during middle (and early) peptide retention period
+def: "TODO: description of this NIST metric group" [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000015
+name: NIST Metric: MS1 during middle (and early) peptide retention period: S/N median
+def: "NIST_Code: MS1-2A; NIST_USE: Higher MS1 S/N may correlate with higher signal discrimination;NIST_Description: Median signal-to-noise value (ratio of maximum to median peak height) for MS1 spectra up to and including C-2A." [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000014 ! NIST Metric Group: MS1 during middle (and early) peptide retention period
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000016
+name: QC metric
+def: "Parent term for QC metrics (in contrast to QC metric types and relations)." [PSI:QC]
+
+[Term]
+id: QC:3000017
+name: n-tuple
+def: "Metrics consisting of n values (in contrast to single_value or table), n specified by the CV param value, e.g. n=4 for quartiles." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:3000005 ! QC metric type
+
+[Term]
+id: QC:3000018
+name: corresponding lists
+def: "Metrics consisting of a variable number of lists with n elements each, n specified by the CV param value. The k-th elements of the lists correspond to each other (as RT and intensity lists for a chromatogram)." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:3000005 ! QC metric type
+
+[Term]
+id: QC:3000019
+name: Scanranker score
+def: "A spectrum specific score of the Scanranker tool." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+relationship: has_relation QC:3000020 ! QC metric relation: one spectrum
+
+[Term]
+id: QC:3000020
+name: QC metric relation: one spectrum
+def: "metrics which are calculated on one spectrum." [PSI:QC]
+is_a: QC:3000002 ! QC metric relation
+
+[Term]
+id: QC:3000021
+name: NIST Metric: MS1 during middle (and early) peptide retention period: TIC median
+def: "NIST_Code: MS1-2B; NIST_USE: Estimates the total absolute signal for peptides (may vary significantly between instruments);NIST_Description: Median TIC value for identified peptides over same time period as used for MS1-2A." [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000014 ! NIST Metric Group: MS1 during middle (and early) peptide retention period
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000022
+name: NIST Metric: MS1 ID intensity maximum: Median
+def: "NIST_Code: MS1-3B; NIST_USE: Estimates the median MS1 signal for peptides;NIST_Description: Median maximum MS1 intensity value for identified peptides." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000024 ! NIST Metric Group: MS1 ID intensity maximum
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000023
+name: NIST Metric: MS1 ID intensity maximum: 95/5 percentile
+def: "NIST_Code: MS1-3A; NIST_USE: Estimates the dynamic range of the peptide signals;NIST_Description: Ratio of 95th over 5th percentile MS1 maximum intensity values for identified peptides (approximates dynamic range of signal)." [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000024 ! NIST Metric Group: MS1 ID intensity maximum
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000024
+name: NIST Metric Group: MS1 ID intensity maximum
+def: "TODO: description of this NIST metric group" [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000025
+name: diff_theo_vs_meas_ratio_of_spike_in_<prot>_<theo_ratio>
+def: "Code: P8-A; TO BE DISCUSSED: could be calculated for many spike-in proteins and many theo. ratios, e.g. diff_theo_vs_meas_ratio_of_spike_in_BSA_2.5." [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000026 ! Quant_based
+is_a: QC:3000027 ! Category: Feature Extraction
+relationship: has_relation QC:3000012 ! QC metric relation: multiple runs
+
+[Term]
+id: QC:3000026
+name: Quant_based
+def: "metrics based on a previous quantification run (in contrast to ID_free, ID_based)" [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000027
+name: Category: Feature Extraction
+def: "TODO: description of this category." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000028
+name: Quameter Metric Group: XIC
+def: "Metrics computed from extracted ion chromatograms in Quameter IDFree metric group." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000029
+name: Quameter metric: XIC-WideFrac
+def: "Code: F2-A; What fraction of precursor ions account for the top half of all peak width?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000006 ! single_value
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000027 ! Category: Feature Extraction
+is_a: QC:3000028 ! Quameter Metric Group: XIC
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000030
+name: Quameter Metric Group: RT
+def: "Metrics computed as a function of retention time in the Quameter IDFree metric group." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000031
+name: Quameter metric: XIC-FWHM Q1-Qn
+def: "Code: F2-B; What is the first, .., last quantile of peak widths for the wide XICs?" [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000028 ! Quameter Metric Group: XIC
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000032
+name: Quameter Metric Group: MS1
+def: "Metrics computed from MS scans in the Quameter IDFree metric group." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000033
+name: Quameter metric: XIC-Height Q2-Qn
+def: "Code: F2-C; The log ratio for second, .., last quantile of wide XIC heights over first quantile of heights." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000028 ! Quameter Metric Group: XIC
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000034
+name: Quameter metric: RT-Duration
+def: "Code: C8-D; What is the highest scan time observed minus the lowest scan time observed?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000030 ! Quameter Metric Group: RT
+is_a: QC:3000035 ! Category: Chromatography
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000035
+name: Category: Chromatography
+def: "TODO: description of this category." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000036
+name: Quameter metric: RT-TIC Q1-Qn
+def: "Code: C8-E; The interval when the first, .., last quantile of TIC accumulates divided by RT-Duration." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000030 ! Quameter Metric Group: RT
+is_a: QC:3000035 ! Category: Chromatography
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000037
+name: Quameter metric: RT-MS1 Q1-Qn
+def: "Code: MS1-7; The interval for the first, .., last quantile of all MS1 events divided by RT-Duration." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000030 ! Quameter Metric Group: RT
+is_a: QC:3000039 ! Category: Dynamic Sampling
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000038
+name: Quameter metric: RT-MS2 Q1-Qn
+def: "Code: MS2-6; The interval for the first, .., last quantile of all MS2 events divided by RT-Duration." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000030 ! Quameter Metric Group: RT
+is_a: QC:3000039 ! Category: Dynamic Sampling
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000039
+name: Category: Dynamic Sampling
+def: "Relating to the process of selecting MS/MS targets from MS1 data" [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000040
+name: Quameter metric: MS1-TIC-Change Q2-Qn
+def: "Code: C10-A; The log ratio for second, .., last quantile of TIC changes over first quantile of TIC changes." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000032 ! Quameter Metric Group: MS1
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000041
+name: Quameter metric: MS1-TIC Q2-Qn
+def: "Code: C10-B; The log ratio for second, .., last quantile of TIC over first quantile of TIC." [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000032 ! Quameter Metric Group: MS1
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000042
+name: Quameter metric: MS1-Freq-Max
+def: "Code: DS6-B; What was the fastest frequency for MS collection in any minute? (Hz)" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000032 ! Quameter Metric Group: MS1
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000043
+name: Quameter metric: MS1-Density Q1-Qn
+def: "Code: DS6-C; What was the first, .., last quantile of MS scan peak counts?" [PSI:QC]
+is_a: QC:3000004 ! Category: MS1
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000032 ! Quameter Metric Group: MS1
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000044
+name: Quameter metric: MS2-Freq-Max
+def: "Code: DS5-C; What was the fastest frequency for MS/MS collection in any minute? (Hz)" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000046 ! Category: MS2
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000045
+name: Quameter Metric Group: MS2
+def: "Metrics computed from MS/MS scans in the Quameter IDFree metric group." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000046
+name: Category: MS2
+def: "TODO: description of this category." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000047
+name: Quameter metric: MS2-Density Q1-Qn
+def: "Code: DS5-D; What was the first, .., last quantile of MS2 scan peak counts?" [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000046 ! Category: MS2
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000048
+name: Quameter metric: MS2-PrecZ-1
+def: "Code: IS-3D1; What fraction of MS/MS precursors is singly charged?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000049
+name: Category: Ion Source
+def: "TODO: description of this category." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000050
+name: Quameter metric: MS2-PrecZ-2
+def: "Code: IS-3D2; What fraction of MS/MS precursors is doubly charged?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000051
+name: Quameter metric: MS2-PrecZ-3
+def: "Code: IS-3D3; What fraction of MS/MS precursors is triply charged?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000052
+name: Quameter metric: MS2-PrecZ-4
+def: "Code: IS-3D4; What fraction of MS/MS precursors is quadruply charged?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000053
+name: Quameter metric: MS2-PrecZ-5
+def: "Code: IS-3D5; What fraction of MS/MS precursors is quintuply charged?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000054
+name: Quameter metric: MS2-PrecZ-more
+def: "Code: IS-3N; What fraction of MS/MS precursors is charged higher than +5?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000055
+name: Quameter metric: MS2-PrecZ-likely-1
+def: "Code: IS-3I; What fraction of MS/MS precursors lack known charge but look like +1s?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000056
+name: Quameter metric: MS2-PrecZ-likely-multi
+def: "Code: IS-3X; What fraction of MS/MS precursors lack known charge but look like >+1s?" [PSI:QC]
+xref: value-type:xsd\:float "The allowed value-type for this CV term."
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000045 ! Quameter Metric Group: MS2
+is_a: QC:3000049 ! Category: Ion Source
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000057
+name: MS2 deltaM Q1-Qn
+def: "Code: P6-B; Quantiles sketching the mass error (deltaM) histogram of MS2 frament ion masses of spectrum identifications. Q_(n/2) (median) should be 0 ideally, the other Q_i depend on search engine tolerance setting." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000046 ! Category: MS2
+is_a: QC:3000058 ! Metric Group: mass error histogram
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000058
+name: Metric Group: mass error histogram
+def: "TODO: description of this metric group." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000059
+name: Jinmeng metric: Chromatogram count
+def: "Contains the number of chromatograms recorded. TODO: check, whether 'relationship: multiple runs' is correct!" [PSI:QC]
+is_a: QC:3000009 ! ID_free
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000012 ! QC metric relation: multiple runs
+
+[Term]
+id: QC:3000060
+name: Jinmeng Metric Group: MS acquisition parameters
+def: "Contains the number of chromatograms recorded." [PSI:QC]
+is_a: QC:3000016 ! QC metric
+
+[Term]
+id: QC:3000061
+name: Jinmeng metric: Fraction of repeat peptide identifications with divergent RT
+def: "Fraction of all peptides identified at least 4 min earlier/latter than max full MS scan. TODO: check, whether 'relationship: one run' is correct!" [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000062
+name: Jinmeng metric: Peak widths at half-height for identifications
+def: "Provide median peak widths for all identified unique peptides and measure of the distribution of the peak widths." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000063
+name: Jinmeng metric: Peak widths at half-max over RT quantiles for identifications
+def: "Median peak width for identified peptides in first/middle/ last RT quantile." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000064
+name: Jinmeng metric: Average elution order difference
+def: "Provide average elution rank order difference for identified peptides between series and provide radio of average rank order difference between series to average rank order difference within a series(low values indicate similarity between series)." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000012 ! QC metric relation: multiple runs
+
+[Term]
+id: QC:3000065
+name: Jinmeng metric: Fraction of early eluting peptides in row series
+def: "Estimates relative frequency of early/late eluting peptides." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000035 ! Category: Chromatography
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000066
+name: Jinmeng metric: MZ
+def: "Provide median MZ for all identified peptides, min/max MZ range boundaries observed, minimum MZ detected and maximum MZ detected. TODO: multiple metrics? split into multiple CV terms." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000049 ! Category: Ion Source
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Term]
+id: QC:3000067
+name: Jinmeng metric: Identifications by charge state
+def: "Number of 1+/3+/4+ peptides over 2+ peptides." [PSI:QC]
+is_a: QC:3000008 ! ID_based
+is_a: QC:3000049 ! Category: Ion Source
+is_a: QC:3000060 ! Jinmeng Metric Group: MS acquisition parameters
+relationship: has_relation QC:3000011 ! QC metric relation: one run
+
+[Typedef]
+id: has_relation
+name: has_relation
+
+[Typedef]
+id: has_type
+name: has_type
+
+[Typedef]
+id: has_units
+name: has_units
