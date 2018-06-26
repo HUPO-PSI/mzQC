@@ -1,0 +1,274 @@
+{
+    "qcML": {
+        "_version": "0.0.10",
+	"__comment": "Is the above a schema version or a CV version?",
+        "runQuality": {
+            "metaDataParameters": {
+                "InputFiles": [
+                    {
+                        "RawFile": {
+                            "_id": "rawfile001",
+                            "_location": "file://c:/Research/20171124-Lizex-Chia/1091_Pool_start.mzML",
+                            "FileFormat": {
+                                "_cvRef": "MS",
+                                "_accession": "MS:1000584",
+                                "_name": "mzML format"
+                            },
+                            "FileProperties": [
+                                {
+                                    "_cvRef": "MS",
+                                    "_accession": "MS:1000568",
+                                    "_name": "MD5",
+                                    "_value": "b583f6d2a91b4749d5a75885330f6e5d"
+                                },
+                                {
+                                    "_cvRef": "MS",
+                                    "_accession": "MS:1000747",
+                                    "_name": "completion time",
+                                    "_value": "2017-12-08-T15:38:57Z"
+                                }
+                            ]
+                        }
+                    }
+                ],
+                "AnalysisSoftware": [
+                    {
+                        "_cv": {
+                            "_cvRef": "QC",
+                            "_accession": "QC:ToDo",
+                            "_name": "QuaMeter IDFree"
+                        },
+                        "_version": "1.1.10165",
+                        "_uri": "http://proteowizard.sourceforge.net/"
+                    }
+                ]
+            },
+            "qualityParameters": [
+                {
+                    "_id": "XIC-WideFrac",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000029",
+                    "_name": "Quameter metric: XIC-WideFrac",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000191",
+                        "_name": "fraction"
+                    },
+                    "_value": 0.206807
+                },
+                {
+                    "_id": "XIC-FWHM",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000031",
+                    "_name": "Quameter metric: XIC-FWHM Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000010",
+                        "_name": "second"
+                    },
+                    "_value": [12.5377,14.2244,16.9234]
+                },
+                {
+                    "_id": "XIC-Height",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000033",
+                    "_name": "Quameter metric: XIC-FWHM Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000006",
+                        "_name": "ratio"
+                    },
+                    "_value": [0.776393,0.93114,6.6283]
+                },
+                {
+                    "_id": "RT-Duration",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000034",
+                    "_name": "Quameter metric: RT-Duration",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000010",
+                        "_name": "second"
+                    },
+                    "_value": 4920.17
+                },
+                {
+                    "_id": "RT-TIC",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000036",
+                    "_name": "Quameter metric: XIC-FWHM Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000191",
+                        "_name": "fraction"
+                    },
+                    "_value": [0.301236,0.13286,0.174576,0.391328]
+                },
+                {
+                    "_id": "RT-MS1",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000037",
+                    "_name": "Quameter metric: RT-MS1 Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000191",
+                        "_name": "fraction"
+                    },
+                    "_value": [0.217794,0.272976,0.275845,0.233385]
+                },
+                {
+                    "_id": "RT-MS2",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000038",
+                    "_name": "Quameter metric: RT-MS2 Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000191",
+                        "_name": "fraction"
+                    },
+                    "_value": [0.268157,0.233516,0.236373,0.261954]
+                },
+                {
+                    "_id": "MS1-TIC-Change",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000040",
+                    "_name": "Quameter metric: MS1-TIC-Change Q2-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0010006",
+                        "_name": "ratio"
+                    },
+                    "_value": [0.870774,0.900585,4.66521]
+                },
+                {
+                    "_id": "MS1-TIC",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000041",
+                    "_name": "Quameter metric: MS1-TIC Q2-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0010006",
+                        "_name": "ratio"
+                    },
+                    "_value": [0.568866,0.815636,1.18124]
+                },
+                {
+                    "_id": "MS1-Count",
+                    "_cvRef": "QC",
+                    "_accession": "QC:ToDo",
+                    "_name": "Quameter metric: MS1-Count",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000189",
+                        "_name": "count"
+                    },
+                    "_value": 7832
+                },
+                {
+                    "_id": "MS1-Freq-Max",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000042",
+                    "_name": "Quameter metric: MS1-Freq-Max",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000106",
+                        "_name": "Hertz"
+                    },
+                    "_value": 2.41814
+                },
+                {
+                    "_id": "MS1-Density",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000043",
+                    "_name": "Quameter metric: MS1-Density Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000189",
+                        "_name": "count"
+                    },
+                    "_value": [693,1205,1424]
+                },
+                {
+                    "_id": "MS2-Count",
+                    "_cvRef": "QC",
+                    "_accession": "QC:ToDo",
+                    "_name": "Quameter metric: MS2-Count",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000189",
+                        "_name": "count"
+                    },
+                    "_value": 33495
+                },
+                {
+                    "_id": "MS2-Freq-Max",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000044",
+                    "_name": "Quameter metric: MS2-Freq-Max",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000106",
+                        "_name": "Hertz"
+                    },
+                    "_value": 7.33107
+                },
+                {
+                    "_id": "MS2-Density",
+                    "_cvRef": "QC",
+                    "_accession": "QC:3000047",
+                    "_name": "Quameter metric: MS2-Density Q1-Qn",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000189",
+                        "_name": "count"
+                    },
+                    "_value": [27,44,70]
+                },
+                {
+                    "_id": "MS2-PrecZ-Known",
+                    "_cvRef": "QC",
+                    "_accession": "QC:ToDo",
+                    "_name": "Quameter metric: MS2-PrecZ-Known",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000191",
+                        "_name": "fraction"
+                    },
+                    "_value": [0,0.15047,0.0687565,0.00877743,0.000507538,0.000268697]
+                },
+                {
+                    "_id": "MS2-PrecZ-Unknown",
+                    "_cvRef": "QC",
+                    "_accession": "QC:ToDo",
+                    "_name": "Quameter metric: MS2-PrecZ-Unknown",
+                    "_unit": {
+                        "_cvRef": "UO",
+                        "_accession": "UO:0000191",
+                        "_name": "fraction"
+                    },
+                    "_value": [0.54235,0.22887]
+                }
+            ]
+        }
+    },
+    "cv": [
+        {
+            "_id": "QC",
+            "_name": "Proteomics Standards Initiative Quality Control Ontology",
+            "_version": "0.0.11",
+            "_uri": "https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_0_11/qc-cv.obo"
+        },
+        {
+            "_id": "MS",
+            "_name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
+            "_version": "4.1.7",
+            "_uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo"
+        },
+        {
+            "_id": "UO",
+            "_name": "Unit Ontology",
+            "_version": "09:04:2014 13:37",
+            "_uri": "https://github.com/bio-ontology-research-group/unit-ontology/blob/master/unit.obo"
+        }
+    ]
+}
