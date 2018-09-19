@@ -171,16 +171,6 @@ is_a: QC:4000010 ! ID free
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
-id: QC:3000044
-name: Quameter metric: MS2-Freq-Max
-def: "Code: DS5-C; What was the fastest frequency for MS/MS collection in any minute? (Hz)" [PSI:QC]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000046 ! Category: MS2
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-
-[Term]
 id: QC:3000045
 name: Quameter Metric Group: MS2
 def: "Metrics computed from MS/MS scans in the Quameter IDFree metric group." [PSI:QC]
@@ -193,69 +183,10 @@ def: "TODO: description of this category." [PSI:QC]
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:3000047
-name: Quameter metric: MS2-Density Q1-Qn
-def: "Code: DS5-D; What was the first, .., last quantile of MS2 scan peak counts?" [PSI:QC]
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000046 ! Category: MS2
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-
-[Term]
-id: QC:3000048
-name: Quameter metric: MS2-PrecZ-1
-def: "Code: IS-3D1; What fraction of MS/MS precursors is singly charged?" [PSI:QC]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000049 ! Category: Ion Source
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-
-[Term]
 id: QC:3000049
 name: Category: Ion Source
 def: "TODO: description of this category." [PSI:QC]
 is_a: QC:4000001 ! QC metric
-
-[Term]
-id: QC:3000050
-name: Quameter metric: MS2-PrecZ-2
-def: "Code: IS-3D2; What fraction of MS/MS precursors is doubly charged?" [PSI:QC]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000049 ! Category: Ion Source
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-
-[Term]
-id: QC:3000051
-name: Quameter metric: MS2-PrecZ-3
-def: "Code: IS-3D3; What fraction of MS/MS precursors is triply charged?" [PSI:QC]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000049 ! Category: Ion Source
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-
-[Term]
-id: QC:3000052
-name: Quameter metric: MS2-PrecZ-4
-def: "Code: IS-3D4; What fraction of MS/MS precursors is quadruply charged?" [PSI:QC]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000049 ! Category: Ion Source
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-
-[Term]
-id: QC:3000053
-name: Quameter metric: MS2-PrecZ-5
-def: "Code: IS-3D5; What fraction of MS/MS precursors is quintuply charged?" [PSI:QC]
-xref: value-type:xsd\:float "The allowed value-type for this CV term."
-is_a: QC:3000045 ! Quameter Metric Group: MS2
-is_a: QC:3000049 ! Category: Ion Source
-is_a: QC:4000010 ! ID free
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:3000054
@@ -505,6 +436,12 @@ def: "a metric based on MS2 events" [PSI:QC]
 is_a: QC:4000001 ! QC metric
 
 [Term]
+id: QC:4000025
+name: ion source metric
+def: "a metric related to events in the ions source" [PSI:QC]
+is_a: QC:4000001 ! QC metric
+
+[Term]
 id: QC:4000050
 name: XIC-WideFrac
 def: "The fraction of precursor ions accounting for the top half of all peak widths" [PSI:QC]
@@ -526,7 +463,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000052
 name: XIC-Height quantiles ratio to Q1
-def: "The log ratio for second to n-th quantile of wide XIC heights over first quantile of heights. The cvParam value defines the number of given quantiles n (the corresponding tuple of teh metric has n-1 values)." [PSI:QC]
+def: "The log ratio for second to n-th quantile of wide XIC heights over first quantile of heights. The cvParam value defines the number of given quantiles n (the corresponding tuple of the metric has n-1 values)." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
@@ -578,7 +515,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000057
 name: MS1 quantile TIC change ratio to Q1
-def: "The log ratio for the second to n-th quantile of TIC changes over first quantile of TIC changes. The cvParam value defines the number of given quantiles n (the corresponding tuple of teh metric has n-1 values)." [PSI:QC]
+def: "The log ratio for the second to n-th quantile of TIC changes over first quantile of TIC changes. The cvParam value defines the number of given quantiles n (the corresponding tuple of the metric has n-1 values)." [PSI:QC]
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
@@ -588,7 +525,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000058
 name: MS1 quantile TIC ratio to Q1
-def: "The log ratio for the second to n-th quantile of TIC over first quantile of TIC. The cvParam value defines the number of given quantiles n (the corresponding tuple of teh metric has n-1 values)." [PSI:QC]
+def: "The log ratio for the second to n-th quantile of TIC over first quantile of TIC. The cvParam value defines the number of given quantiles n (the corresponding tuple of the metric has n-1 values)." [PSI:QC]
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
@@ -610,7 +547,48 @@ name: MS2 count
 def: "The number of MS2 events in the run." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
-is_a: QC:4000023 ! MS2 metric
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000061
+name: maximal MS2 frequency
+def: "The fastest frequency for MS/MS collection in any minute over the complete run" [PSI:QC]
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000062
+name: MS2 density per quantile
+def: "The was the first to n-th quantile of MS2 scan peak counts. The cvParam value defines the number of given quantiles n (the corresponding tuple of the metric has n-1 values)." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000063
+name: MS2 known precursor charges fractions
+def: "The fraction of MS/MS precursors of the corresponding charge. The fractions are given in the first list, charges in the second list. The cvParam value defines the number of entries in both lists." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+is_a: QC:4000025 ! ion source metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000064
+name: MS2 unknown and likely precursor charges fractions
+def: "The fraction of MS/MS precursors of unknown, but possible likely charges. The fractions are given in the first list, the likely charges in the second list, charge 0 stands for unknown. The cvParam value defines the number of entries in both lists." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+is_a: QC:4000025 ! ion source metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Typedef]

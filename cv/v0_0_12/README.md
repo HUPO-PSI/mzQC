@@ -49,3 +49,7 @@ RENAMED:
 * "Quameter metric: RT-MS2 Q1-Qn" -> "MS2 quantiles RT fraction"
 * "Quameter metric: MS1-TIC-Change Q2-Qn" -> "MS1 quantile TIC change ratio to Q1"
 * "Quameter metric: MS1-TIC Q2-Qn" -> "MS1 quantile TIC ratio to Q1"
+* "Quameter metric: MS2-Freq-Max" -> "maximal MS2 frequency"
+* "Quameter metric: MS2-Density" -> "MS2 density per quantile"
+* "Quameter metric: MS2-PrecZ-XYZ" -> "MS2 known precursor charges fractions"
+* new: "MS2 unknown and likely precursor charges fractions"
