@@ -35,11 +35,15 @@ TODO in json files:
 
 
 TODO CV:
-* check descriptions
 * rename "XIC-WideFrac" to better correspond to its description
+* description of "Ambient humidity", why is this a tuple?
+* check other descriptions
 
 
-RENAMED:
+RENAMED/NEW items:
+* new: "quality control metrics generating software" (should directly go into PSI OBO, ask Gerhard for it)
+* new: "QuaMeter IDFree" (should directly go into PSI OBO, ask Gerhard for it)
+* new: "iMonDB" (should directly go into PSI OBO, ask Gerhard for it)
 * "Quameter metric: XIC-WideFrac" -> "XIC-WideFrac"
 * "Quameter metric: XIC-FWHM Q1-Qn" -> "XIC-FWHM quantiles"
 * "Quameter metric: XIC-Height Q2-Qn" -> "XIC-Height quantiles ratio to Q1"
@@ -53,3 +57,5 @@ RENAMED:
 * "Quameter metric: MS2-Density" -> "MS2 density per quantile"
 * "Quameter metric: MS2-PrecZ-XYZ" -> "MS2 known precursor charges fractions"
 * new: "MS2 unknown and likely precursor charges fractions"
+* new: "Precursor median m/z for IDs"
+* new: "Fraction of MS2 identified at different MS1 quantiles"
