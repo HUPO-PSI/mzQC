@@ -1,7 +1,0 @@
-
-do we need or want to specify types like currently "corresponding lists",
-"n-tuple", "single_value" and "table"
-
-same for metric relations and metric basis
-
-start from new version, you ask for new entries?

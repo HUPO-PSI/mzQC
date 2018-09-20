@@ -1,8 +1,5 @@
 # Notes on the CV
 
-julianu: weiter bei "Quameter metric: MS1-Count"
-
-
 The cv structures the metrics and gives a description of each metric. Classes of
 metrics are hierarchical and each metric has to have some elements:
 
