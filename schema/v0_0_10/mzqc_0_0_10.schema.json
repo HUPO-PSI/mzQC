@@ -1,0 +1,221 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"$id": "https://github.com/HUPO-PSI/qcML-development/tree/master/schema/v0_0_10/mzqc_0_0_10.schema.json",
+	"title": "mzQC schema v0.0.10",
+	"description": "JSON schema specifying the mzQC format v0.0.10 developed by the HUPO-PSI Quality Control working group (http://psidev.info/groups/quality-control).",
+	"type": "object",
+	"properties": {
+		"qcML": {
+			"description": "Root qcML element.",
+			"type": "object",
+			"properties": {
+				"version": {
+					"description": "Version number of the relevant mzQC JSON schema.",
+					"type": "string",
+					"pattern": "^\\d+\\.\\d+\\.\\d+$"
+				},
+				"runQuality": {
+					"description": "List of runQuality elements.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/runQuality"
+					}
+				},
+				"setQuality": {
+					"description": "List of setQuality elements.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/setQuality"
+					}
+				},
+				"cv": {
+					"description": "Collection of CV elements.",
+					"type": "object",
+					"patternProperties": {
+						"[A-Z]{2}": {
+							"$ref": "#/definitions/cv"
+						}
+					},
+					"minProperties": 1
+				}
+			},
+			"additionalProperties": false,
+			"oneOf": [
+				{"required": ["runQuality"]},
+				{"required": ["setQuality"]}
+			],
+			"required": ["version", "cv"]
+		}
+	},
+	"additionalProperties": false,
+	"required": ["qcML"],
+	"definitions": {
+		"baseQuality": {
+			"description": "Base element describing a runQuality or setQuality.",
+			"type": "object",
+			"properties": {
+				"metadata": {
+					"$ref": "#/definitions/metadata"
+				},
+				"qualityParameters": {
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/qualityParameter"
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": ["metadata", "qualityParameters"]
+		},
+		"runQuality": {
+			"description": "Parent element describing QC metrics for a single run.",
+			"$ref": "#/definitions/baseQuality"
+		},
+		"setQuality": {
+			"description": "Parent element describing combined QC metrics for multiple runs.",
+			"$ref": "#/definitions/baseQuality"
+		},
+		"cvParameter": {
+			"description": "Base element containing a reference to a controlled vocabulary.",
+			"type": "object",
+			"properties": {
+				"cvRef": {
+					"description": "Reference to the CV that contains the parameter definition.",
+					"type": "string",
+					"pattern": "^[A-Z]{2}$"
+				},
+				"accession": {
+					"description": "Accession number identifying the parameter within its CV.",
+					"type": "string",
+					"pattern": "^[A-Z]{2}:[0-9]{7}$"
+				},
+				"name": {
+					"description": "Name of the CV element describing the parameter.",
+					"type": "string"
+				},
+				"description": {
+					"description": "Description of the parameter.",
+					"type": "string"
+				},
+				"value": {
+					"description": "Value of the parameter."
+				},
+				"unit": {
+					"description": "A CV element describing the unit of the parameter value.",
+					"$ref": "#/definitions/cvParameter"
+				}
+			},
+			"required": ["cvRef", "accession", "name"]
+		},
+		"metadata": {
+			"description": "Metadata describing the QC analysis.",
+			"type": "object",
+			"properties": {
+				"inputFiles": {
+					"description": "List of input files based on which the QC metrics were generated.",
+					"type": "array",
+					"minItems": 1,
+					"items": [
+						{
+							"type": "object",
+							"properties": {
+								"rawFile": {
+									"description": "Raw spectral file based on which QC metrics were generated.",
+									"$ref": "#/definitions/inputFile"
+								}
+							}
+						}
+					],
+					"additionalItems": {
+						"$ref": "#/definitions/inputFile"
+					}
+				},
+				"analysisSoftware": {
+					"description": "Software tool(s) used to generate the QC metrics.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"allOf": [
+							{
+								"$ref": "#/definitions/cvParameter"
+							},
+							{
+								"properties": {
+									"version": {
+										"description": "Version number of the software tool.",
+										"type": "string"
+									},
+									"uri": {
+										"description": "Publicly accessible URI of the software tool.",
+										"type": "string",
+										"format": "uri"
+									}
+								},
+								"required": ["version", "uri"]
+							}
+						]
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": ["inputFiles", "analysisSoftware"]
+		},
+		"inputFile": {
+			"description": "File based on which QC metrics were generated.",
+			"type": "object",
+			"properties": {
+				"location": {
+					"description": "Unique file location, preferably publicly accessible.",
+					"type": "string",
+					"format": "uri"
+				},
+				"name": {
+					"description": "Base file name, should be unique across the mzQC file.",
+					"type": "string"
+				},
+				"fileFormat": {
+					"description": "Type of input file.",
+					"$ref": "#/definitions/cvParameter"
+				},
+				"fileProperties": {
+					"description": "Detailed properties of the input file.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/cvParameter"
+					}
+				}
+			},
+			"additionalProperties": false,
+			"required": ["location", "fileFormat"]
+		},
+		"qualityParameter": {
+			"description": "Parameter describing a QC metric.",
+			"$ref": "#/definitions/cvParameter"
+		},
+		"cv": {
+			"description": "Element describing a controlled vocabulary.",
+			"type": "object",
+			"properties": {
+				"name": {
+					"description": "Full name of the CV.",
+					"type": "string"
+				},
+				"uri": {
+					"description": "Publicly accessible URI of the CV.",
+					"type": "string",
+					"format": "uri"
+				},
+				"version": {
+					"description": "Version of the CV.",
+					"type": "string"
+				}
+			},
+			"additionalProperties": false,
+			"required": ["name", "uri"]
+		}
+	}
+}
