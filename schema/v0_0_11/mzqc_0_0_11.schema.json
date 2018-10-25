@@ -5,8 +5,8 @@
 	"description": "JSON schema specifying the mzQC format v0.0.11 developed by the HUPO-PSI Quality Control working group (http://psidev.info/groups/quality-control).",
 	"type": "object",
 	"properties": {
-		"qcML": {
-			"description": "Root qcML element.",
+		"mzQC": {
+			"description": "Root mzQC element.",
 			"type": "object",
 			"properties": {
 				"version": {
@@ -50,7 +50,7 @@
 		}
 	},
 	"additionalProperties": false,
-	"required": ["qcML"],
+	"required": ["mzQC"],
 	"definitions": {
 		"baseQuality": {
 			"description": "Base element describing a runQuality or setQuality.",
