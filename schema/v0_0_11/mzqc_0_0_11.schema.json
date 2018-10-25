@@ -42,7 +42,7 @@
 				}
 			},
 			"additionalProperties": false,
-			"oneOf": [
+			"anyOf": [
 				{"required": ["runQuality"]},
 				{"required": ["setQuality"]}
 			],
