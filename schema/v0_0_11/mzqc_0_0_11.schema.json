@@ -34,7 +34,7 @@
 					"description": "Collection of CV elements.",
 					"type": "object",
 					"patternProperties": {
-						"[A-Z]{2}": {
+						"[A-Z]+": {
 							"$ref": "#/definitions/cv"
 						}
 					},
@@ -85,12 +85,12 @@
 				"cvRef": {
 					"description": "Reference to the CV that contains the parameter definition.",
 					"type": "string",
-					"pattern": "^[A-Z]{2}$"
+					"pattern": "^[A-Z]+$"
 				},
 				"accession": {
 					"description": "Accession number identifying the parameter within its CV.",
 					"type": "string",
-					"pattern": "^[A-Z]{2}:[0-9]{7}$"
+					"pattern": "^[A-Z]+:[0-9]{7}$"
 				},
 				"name": {
 					"description": "Name of the CV element describing the parameter.",
