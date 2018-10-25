@@ -118,18 +118,7 @@
 					"description": "List of input files based on which the QC metrics were generated.",
 					"type": "array",
 					"minItems": 1,
-					"items": [
-						{
-							"type": "object",
-							"properties": {
-								"rawFile": {
-									"description": "Raw spectral file based on which QC metrics were generated.",
-									"$ref": "#/definitions/inputFile"
-								}
-							}
-						}
-					],
-					"additionalItems": {
+					"items": {
 						"$ref": "#/definitions/inputFile"
 					}
 				},

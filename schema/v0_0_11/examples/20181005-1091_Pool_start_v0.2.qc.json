@@ -6,28 +6,26 @@
                 "metadata": {
                     "inputFiles": [
                         {
-                            "rawFile": {
-                                "location": "file:///c:/Research/20171124-Lizex-Chia/1091_Pool_start.mzML",
-                                "fileFormat": {
+                            "location": "file:///c:/Research/20171124-Lizex-Chia/1091_Pool_start.mzML",
+                            "fileFormat": {
+                                "cvRef": "MS",
+                                "accession": "MS:1000584",
+                                "name": "mzML format"
+                            },
+                            "fileProperties": [
+                                {
                                     "cvRef": "MS",
-                                    "accession": "MS:1000584",
-                                    "name": "mzML format"
+                                    "accession": "MS:1000568",
+                                    "name": "MD5",
+                                    "value": "b583f6d2a91b4749d5a75885330f6e5d"
                                 },
-                                "fileProperties": [
-                                    {
-                                        "cvRef": "MS",
-                                        "accession": "MS:1000568",
-                                        "name": "MD5",
-                                        "value": "b583f6d2a91b4749d5a75885330f6e5d"
-                                    },
-                                    {
-                                        "cvRef": "MS",
-                                        "accession": "MS:1000747",
-                                        "name": "completion time",
-                                        "value": "2017-12-08-T15:38:57Z"
-                                    }
-                                ]
-                            }
+                                {
+                                    "cvRef": "MS",
+                                    "accession": "MS:1000747",
+                                    "name": "completion time",
+                                    "value": "2017-12-08-T15:38:57Z"
+                                }
+                            ]
                         }
                     ],
                     "analysisSoftware": [
