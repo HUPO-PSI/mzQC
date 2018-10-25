@@ -179,7 +179,7 @@
 				}
 			},
 			"additionalProperties": false,
-			"required": ["location", "fileFormat"]
+			"required": ["location", "name", "fileFormat"]
 		},
 		"qualityParameter": {
 			"description": "Parameter describing a QC metric.",
