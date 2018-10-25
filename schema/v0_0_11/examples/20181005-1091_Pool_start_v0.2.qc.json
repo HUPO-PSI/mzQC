@@ -7,7 +7,7 @@
                     "inputFiles": [
                         {
                             "location": "file:///c:/Research/20171124-Lizex-Chia/1091_Pool_start.mzML",
-                            "name": "1091_Pool_start.mzML",
+                            "name": "1091_Pool_start",
                             "fileFormat": {
                                 "cvRef": "MS",
                                 "accession": "MS:1000584",
