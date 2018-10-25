@@ -1,8 +1,8 @@
 {
 	"$schema": "http://json-schema.org/draft-07/schema#",
-	"$id": "https://github.com/HUPO-PSI/qcML-development/tree/master/schema/v0_0_10/mzqc_0_0_10.schema.json",
-	"title": "mzQC schema v0.0.10",
-	"description": "JSON schema specifying the mzQC format v0.0.10 developed by the HUPO-PSI Quality Control working group (http://psidev.info/groups/quality-control).",
+	"$id": "https://github.com/HUPO-PSI/qcML-development/tree/master/schema/v0_0_11/mzqc_0_0_11.schema.json",
+	"title": "mzQC schema v0.0.11",
+	"description": "JSON schema specifying the mzQC format v0.0.11 developed by the HUPO-PSI Quality Control working group (http://psidev.info/groups/quality-control).",
 	"type": "object",
 	"properties": {
 		"qcML": {
