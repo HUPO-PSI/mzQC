@@ -1,0 +1,4 @@
+
+schema/\.CI/\.pytest_cache/
+
+schema/\.CI/__pycache__/
