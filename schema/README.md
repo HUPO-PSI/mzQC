@@ -3,6 +3,9 @@
 Please find the _current_ schema, documentation and examples in the `current` folder (which should link to the highest version number folder.
 Version number increase usually indicates non-minor schema changes.
 
+![Schema visualisation](current/schema.jpg)
+
+
 ### Developers:
 each version folder should contain:
 * example folder
