@@ -13,4 +13,4 @@ install:
   - pip install jsonschema
 
 script:
-- pytest
+- pytest schema/.CI
