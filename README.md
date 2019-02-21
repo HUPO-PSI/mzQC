@@ -1,4 +1,6 @@
 # Welcome to the PSI-QC working group repository.
+[![Build Status](https://travis-ci.org/HUPO-PSI/mzQC.svg?branch=master)](https://travis-ci.org/HUPO-PSI/mzQC)
+====== 
 
 ## Focus and Purpose of the working group
 The PSI-QC working group is composed of academic, government, and industry researchers, software developers, journal representatives, and instrument manufacturers. The main goal of the PSI-QC working group is to define a community data format and associated controlled vocabulary terms, facilitating data exchange and archiving of mass spectrometry derived quality control metrics.
