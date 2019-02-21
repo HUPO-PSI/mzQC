@@ -1,6 +1,7 @@
 language: python
 python:
-  - "3.5"
+ - "2.7"
+ - "3.5"
 
 git:
   depth: 3
@@ -9,7 +10,7 @@ services:
   - docker
 
 install:
-  - pip install -r jsonschema
+  - pip install jsonschema
 
 script:
 - pytest
