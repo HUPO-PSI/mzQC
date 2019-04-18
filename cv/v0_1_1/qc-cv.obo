@@ -309,7 +309,7 @@ relationship: has_relation MS:1000029 ! sampling frequency
 [Term]
 id: QC:4000062
 name: MS2 density per quantile
-def: "" [PSI:QC]
+def: "Characterizes the distribution of peak counts among tandem mass spectra" [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
