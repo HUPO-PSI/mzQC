@@ -1,10 +1,22 @@
 __author__ = 'walzer'
 import json
 from datetime import datetime
+from typing import List,Dict,Union,NewType,Any
 
+#int
+#str
+#float
+FloatVector = List[float]
+IntVector = List[int]
+StringVector = List[str]
+FloatMatrix = List[FloatVector]
+IntMatrix = List[IntVector]
+StringMatrix = List[StringVector]
+#Table = Dict[str,Union(FloatVector,IntVector,StringVector)]
+Table = Dict[str,List]
 
 class JsonSerialisable(object):
-    mappings = dict()
+    mappings = Dict[Any,Any]
 
     @classmethod
     def class_mapper(classself, d):
@@ -49,7 +61,6 @@ class ControlledVocabulary(object):
         self.uri = uri  # uri obviously
         self.version = version  # optional
 
-
 @JsonSerialisable.register
 class CvParam(object):
     def __init__(self, cv_ref: str="", 
@@ -65,21 +76,21 @@ class CvParam(object):
         self.value = value
         self.unit = unit  # IMO this should be accession only, not annother cvParam
 
-	# 		"unit": {
-	# 			"description": "A CV element describing the unit of the parameter value.",
-	# 			"anyOf": [
-	# 				{
-	# 					"$ref": "#/definitions/cvParameter"
-	# 				},
-	# 				{
-	# 					"type": "array",
-	# 					"minItems": 1,
-	# 					"items": {
-	# 						"$ref": "#/definitions/cvParameter"
-	# 					}
-	# 				}
-	# 			]
+	# "unit": {
+	# 	"description": "A CV element describing the unit of the parameter value.",
+	# 	"anyOf": [
+	# 		{
+	# 			"$ref": "#/definitions/cvParameter"
+	# 		},
+	# 		{
+	# 			"type": "array",
+	# 			"minItems": 1,
+	# 			"items": {
+	# 				"$ref": "#/definitions/cvParameter"
+	# 			}
 	# 		}
+	# 	]
+	# }
 
 @JsonSerialisable.register
 class AnalysisSoftware(CvParam):
@@ -95,107 +106,93 @@ class AnalysisSoftware(CvParam):
         self.version = version  # 
         self.uri = uri  # required
 
-			# "analysisSoftware": {
-			# 	"description": "Software tool(s) used to generate the QC metrics.",
-			# 	"type": "array",
-			# 	"minItems": 1,
-			# 	"items": {
-			# 		"allOf": [
-			# 			{
-			# 				"$ref": "#/definitions/cvParameter"
-			# 			},
-			# 			{
-			# 				"properties": {
-			# 					"version": {
-			# 						"description": "Version number of the software tool.",
-			# 						"type": "string"
-			# 					},
-			# 					"uri": {
-			# 						"description": "Publicly accessible URI of the software tool.",
-			# 						"type": "string",
-			# 						"format": "uri"
-			# 					}
-			# 				},
-			# 				"required": ["version", "uri"]
-			# 			}
-			# 		]
-			# 	}
-
-# @JsonSerialisable.register
-# class OtherFile(object):
-#     def __init__(self, id: str = "", name: str = "", location: str = ""):
-#         self.id = id
-#         self.name = name
-#         self.location = location
-
-
-# @JsonSerialisable.register
-# class RawFile(OtherFile):
-#     def __init__(self, id: str = "", name: str = "", location: str = "", file_format: [CvParam] = None):
-#         super().__init__(id, name, location)
-#         self.file_format = [] if file_format is None else file_format
-
-
-# @JsonSerialisable.register
-# class IdentificationFile(OtherFile):
-#     def __init__(self, id: str = "", name: str = "", location: str = "", file_format: [CvParam] = None):
-#         super().__init__(id, name, location)
-#         self.file_format = [] if file_format is None else file_format
-
+	# "analysisSoftware": {
+	# 	"description": "Software tool(s) used to generate the QC metrics.",
+	# 	"type": "array",
+	# 	"minItems": 1,
+	# 	"items": {
+	# 		"allOf": [
+	# 			{
+	# 				"$ref": "#/definitions/cvParameter"
+	# 			},
+	# 			{
+	# 				"properties": {
+	# 					"version": {
+	# 						"description": "Version number of the software tool.",
+	# 						"type": "string"
+	# 					},
+	# 					"uri": {
+	# 						"description": "Publicly accessible URI of the software tool.",
+	# 						"type": "string",
+	# 						"format": "uri"
+	# 					}
+	# 				},
+	# 				"required": ["version", "uri"]
+	# 			}
+	# 		]
+	# 	}
 
 @JsonSerialisable.register
 class InputFiles(object):
-    def __init__(self, location: str = "", name: str = "", file_format: CvParam = None, file_properties: [CvParam] = None):
+    def __init__(self, location: str = "", 
+                    name: str = "", 
+                    file_format: CvParam = None, 
+                    file_properties: List[CvParam] = None):
         self.location = location  # required , uri
         self.name = name  # required , string (doubles as internal and external ref anchor?)
         self.file_format = file_format  # required , cvParam
         self.file_properties = [] if file_properties is None else file_properties  # cvParam
 
-
 @JsonSerialisable.register
 class MetaDataParameters(object):
-    def __init__(self, file_provenance: str="", input_files: [InputFiles] = None, analysis_software: AnalysisSoftware=None, cv_params: [CvParam] = None):
+    def __init__(self, file_provenance: str="", 
+                    input_files: List[InputFiles] = None, 
+                    analysis_software: AnalysisSoftware=None, 
+                    cv_params: List[CvParam] = None):
         self.file_provenance = file_provenance  # not in schema
         self.input_files =  [] if input_files is None else input_files
         self.analysis_software = analysis_software
         self.cv_params = [] if cv_params is None else cv_params  # not in schema
-
+    # SHOULD have at least one input file ot property raw/peak file
 
 @JsonSerialisable.register
 class QualityMetric(object):
-    def __init__(self, id: str="", cv_ref: str="", accession: str="", name: str="", value: str=""):
+    def __init__(self, id: str="", 
+                    cv_ref: str="", 
+                    accession: str="", 
+                    name: str="", 
+                    value: Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table]=None):
         self.id = id
         self.cv_ref = cv_ref
         self.accession = accession
         self.name = name
-        self.value = value
-
+        self.value = [] if value is None else value
 
 @JsonSerialisable.register
 class BaseQuality(object):
-    def __init__(self, id: str="", metadata: MetaDataParameters=None, quality_metrics: [QualityMetric]=None):
+    def __init__(self, id: str="", 
+                    metadata: MetaDataParameters=None, 
+                    quality_metrics: List[QualityMetric]=None):
         self.id = id
         self.metadata = metadata
         self.quality_metrics = [] if quality_metrics is None else quality_metrics  # "minItems": 1
-
 
 @JsonSerialisable.register
 class RunQuality(BaseQuality):
     pass
 
-
 @JsonSerialisable.register
 class SetQuality(BaseQuality):
     pass
     
-
 @JsonSerialisable.register
 class MzQcFile(object):
-    def __init__(self, name: str="", version: str="",  
-                                    run_qualities: [RunQuality]=None, 
-                                    set_qualities: [SetQuality]=None, 
-                                    controlled_vocabularies: [ControlledVocabulary]=None, 
-                                    creationtime: datetime=None):
+    def __init__(self, name: str="", 
+                    version: str="",  
+                    run_qualities: List[RunQuality]=None, 
+                    set_qualities: List[SetQuality]=None, 
+                    controlled_vocabularies: List[ControlledVocabulary]=None, 
+                    creationtime: datetime=None):
         self.name = name
         # self.schemaLocation = "/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd"
         # self.xmlns = "http://www.w3.org/2001/XMLSchema-instance"
