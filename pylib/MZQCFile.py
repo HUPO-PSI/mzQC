@@ -16,7 +16,7 @@ StringMatrix = List[StringVector]
 Table = Dict[str,List]
 
 class JsonSerialisable(object):
-    mappings = Dict[Any,Any]
+    mappings = dict()
 
     @classmethod
     def class_mapper(classself, d):
