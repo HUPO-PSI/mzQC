@@ -30,12 +30,12 @@
 						"$ref": "#/definitions/setQuality"
 					}
 				},
-				"cv": {
+				"controlledVocabularies": {
 					"description": "Collection of CV elements.",
 					"type": "object",
 					"patternProperties": {
 						"[A-Z]+": {
-							"$ref": "#/definitions/cv"
+							"$ref": "#/definitions/controlledVocabulary"
 						}
 					},
 					"minProperties": 1
@@ -46,7 +46,7 @@
 				{"required": ["runQuality"]},
 				{"required": ["setQuality"]}
 			],
-			"required": ["version", "cv"]
+			"required": ["version", "controlledVocabularies"]
 		}
 	},
 	"additionalProperties": false,
@@ -59,16 +59,16 @@
 				"metadata": {
 					"$ref": "#/definitions/metadata"
 				},
-				"qualityParameters": {
+				"qualityMetrics": {
 					"type": "array",
 					"minItems": 1,
 					"items": {
-						"$ref": "#/definitions/qualityParameter"
+						"$ref": "#/definitions/qualityMetric"
 					}
 				}
 			},
 			"additionalProperties": false,
-			"required": ["metadata", "qualityParameters"]
+			"required": ["metadata", "qualityMetrics"]
 		},
 		"runQuality": {
 			"description": "Parent element describing QC metrics for a single run.",
@@ -192,11 +192,11 @@
 			"additionalProperties": false,
 			"required": ["location", "name", "fileFormat"]
 		},
-		"qualityParameter": {
+		"qualityMetric": {
 			"description": "Parameter describing a QC metric.",
 			"$ref": "#/definitions/cvParameter"
 		},
-		"cv": {
+		"controlledVocabulary": {
 			"description": "Element describing a controlled vocabulary.",
 			"type": "object",
 			"properties": {
