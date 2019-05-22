@@ -24,7 +24,6 @@ class JsonSerialisable(object):
             if keys.issuperset(d.keys()):
                 return cls(**d)
         else:
-            # Raise exception instead of silently returning None
             import collections
             if {'__datetime__': None}.keys() == d.keys():
                 return datetime.strptime(d['__datetime__'], '%Y-%m-%dT%H:%M:%S')
@@ -55,45 +54,31 @@ class JsonSerialisable(object):
 
 @JsonSerialisable.register
 class ControlledVocabulary(object):
-    def __init__(self, id: str="", name: str="", uri: str="", version: str=""):
-        self.id = id
-        self.name = name
-        self.uri = uri  # uri obviously
+    def __init__(self, 
+                #ref: str="", 
+                name: str="", uri: str="", version: str=""):
+        #self.ref = ref  # not in schema
+        self.name = name  # required
+        self.uri = uri  # required
         self.version = version  # optional
 
 @JsonSerialisable.register
-class CvParam(object):
+class CvParameter(object):
     def __init__(self, cv_ref: str="", 
                        accession: str="", 
                        name: str="", 
                        description: str="", 
                        value: str="", 
                        unit: str=""):
-        self.cv_ref = cv_ref  # required
+        self.cvRef = cv_ref  # required
         self.accession = accession  # required "pattern": "^[A-Z]+:[0-9]{7}$"
         self.name = name  # required
-        self.description = description  # "pattern": "^[A-Z]+$"
-        self.value = value
-        self.unit = unit  # IMO this should be accession only, not annother cvParam
-
-	# "unit": {
-	# 	"description": "A CV element describing the unit of the parameter value.",
-	# 	"anyOf": [
-	# 		{
-	# 			"$ref": "#/definitions/cvParameter"
-	# 		},
-	# 		{
-	# 			"type": "array",
-	# 			"minItems": 1,
-	# 			"items": {
-	# 				"$ref": "#/definitions/cvParameter"
-	# 			}
-	# 		}
-	# 	]
-	# }
+        self.description = description  # optional, "pattern": "^[A-Z]+$"
+        self.value = value  # optional
+        self.unit = unit  # optional, IMO this should be accession only, not annother cvParam
 
 @JsonSerialisable.register
-class AnalysisSoftware(CvParam):
+class AnalysisSoftware(CvParameter):
     def __init__(self, cv_ref: str="", 
                        accession: str="", 
                        name: str="", 
@@ -102,80 +87,57 @@ class AnalysisSoftware(CvParam):
                        unit: str="", 
                        version: str = "", 
                        uri: str = ""):
-        super().__init__(cv_ref, accession, description, value, unit)
-        self.version = version  # 
+        super().__init__(cv_ref, accession, description, value, unit)  # optional, this will set None to optional omitted arguments
+        self.version = version  # required
         self.uri = uri  # required
-
-	# "analysisSoftware": {
-	# 	"description": "Software tool(s) used to generate the QC metrics.",
-	# 	"type": "array",
-	# 	"minItems": 1,
-	# 	"items": {
-	# 		"allOf": [
-	# 			{
-	# 				"$ref": "#/definitions/cvParameter"
-	# 			},
-	# 			{
-	# 				"properties": {
-	# 					"version": {
-	# 						"description": "Version number of the software tool.",
-	# 						"type": "string"
-	# 					},
-	# 					"uri": {
-	# 						"description": "Publicly accessible URI of the software tool.",
-	# 						"type": "string",
-	# 						"format": "uri"
-	# 					}
-	# 				},
-	# 				"required": ["version", "uri"]
-	# 			}
-	# 		]
-	# 	}
 
 @JsonSerialisable.register
 class InputFiles(object):
     def __init__(self, location: str = "", 
                     name: str = "", 
-                    file_format: CvParam = None, 
-                    file_properties: List[CvParam] = None):
+                    file_format: CvParameter = None, 
+                    file_properties: List[CvParameter] = None):
         self.location = location  # required , uri
         self.name = name  # required , string (doubles as internal and external ref anchor?)
         self.file_format = file_format  # required , cvParam
-        self.file_properties = [] if file_properties is None else file_properties  # cvParam
+        self.file_properties = [] if file_properties is None else file_properties  # optional, cvParam, at least one item
 
 @JsonSerialisable.register
 class MetaDataParameters(object):
-    def __init__(self, file_provenance: str="", 
+    def __init__(self, 
+                    #file_provenance: str="", 
                     input_files: List[InputFiles] = None, 
-                    analysis_software: AnalysisSoftware=None, 
-                    cv_params: List[CvParam] = None):
-        self.file_provenance = file_provenance  # not in schema
-        self.input_files =  [] if input_files is None else input_files
-        self.analysis_software = analysis_software
-        self.cv_params = [] if cv_params is None else cv_params  # not in schema
-    # SHOULD have at least one input file ot property raw/peak file
+                    analysis_software: List[AnalysisSoftware]=None#, 
+                    #cv_params: List[CvParameter] = None
+                ):
+        #self.file_provenance = file_provenance  # not in schema
+        self.input_files =  [] if input_files is None else input_files  # required
+        self.analysis_software = [] if analysis_software is None else analysis_software  # required
+        # self.cv_params = [] if cv_params is None else cv_params  # not in schema, IMO should be in there
+    # schema: at least one input_file in input_files
+    # schema: at least one analysis_software in analysis_software 
 
 @JsonSerialisable.register
 class QualityMetric(object):
-    def __init__(self, id: str="", 
-                    cv_ref: str="", 
+    def __init__(self, cv_ref: str="", 
                     accession: str="", 
                     name: str="", 
                     value: Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table]=None):
-        self.id = id
         self.cv_ref = cv_ref
         self.accession = accession
         self.name = name
         self.value = [] if value is None else value
+    # schema: rename from qualityParameter
+    # schema: is cvParam object 
+    # schema: do we allow no-value metrics? cvParam value attribute is optional
 
 @JsonSerialisable.register
 class BaseQuality(object):
-    def __init__(self, id: str="", 
-                    metadata: MetaDataParameters=None, 
+    def __init__(self, metadata: MetaDataParameters=None, 
                     quality_metrics: List[QualityMetric]=None):
-        self.id = id
-        self.metadata = metadata
-        self.quality_metrics = [] if quality_metrics is None else quality_metrics  # "minItems": 1
+        self.metadata = metadata  # required
+        self.quality_metrics = [] if quality_metrics is None else quality_metrics  # reuired,
+    # schema: at least one item in quality_metrics
 
 @JsonSerialisable.register
 class RunQuality(BaseQuality):
@@ -187,19 +149,19 @@ class SetQuality(BaseQuality):
     
 @JsonSerialisable.register
 class MzQcFile(object):
-    def __init__(self, name: str="", 
-                    version: str="",  
+    def __init__(self, version: str="0.0.11",  
                     run_qualities: List[RunQuality]=None, 
                     set_qualities: List[SetQuality]=None, 
-                    controlled_vocabularies: List[ControlledVocabulary]=None, 
-                    creationtime: datetime=None):
-        self.name = name
+                    controlled_vocabularies: List[ControlledVocabulary]=None): #, 
+                    #creationtime: datetime=None):
         # self.schemaLocation = "/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd"
-        # self.xmlns = "http://www.w3.org/2001/XMLSchema-instance"
-        self.version = "0.0.11"
-        self.creationtime = datetime.now() if creationtime is None else creationtime
+        self.version = version
+        #self.creationtime = datetime.now() if creationtime is None else creationtime  # not in schema, IMO should be
         self.run_qualities = [] if run_qualities is None else run_qualities
         self.set_qualities = [] if set_qualities is None else set_qualities
-        self.controlled_vocabularies = [] if controlled_vocabularies is None else controlled_vocabularies
+        self.controlled_vocabularies = [] if controlled_vocabularies is None else controlled_vocabularies  # required
+    # schema: at least one cv in controlled_vocabularies
+    # schema: at least one of run_qualities or set_qualities
+    # schema: at least one item in run_qualities or set_qualities
 
 
