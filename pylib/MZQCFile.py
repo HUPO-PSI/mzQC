@@ -54,10 +54,8 @@ class JsonSerialisable(object):
 
 @JsonSerialisable.register
 class ControlledVocabulary(object):
-    def __init__(self, 
-                #ref: str="", 
-                name: str="", uri: str="", version: str=""):
-        #self.ref = ref  # not in schema
+    def __init__(self, ref: str="", name: str="", uri: str="", version: str=""):
+        self.ref = ref  # not in schema
         self.name = name  # required
         self.uri = uri  # required
         self.version = version  # optional
@@ -152,11 +150,11 @@ class MzQcFile(object):
     def __init__(self, version: str="0.0.11",  
                     run_qualities: List[RunQuality]=None, 
                     set_qualities: List[SetQuality]=None, 
-                    controlled_vocabularies: List[ControlledVocabulary]=None): #, 
-                    #creationtime: datetime=None):
+                    controlled_vocabularies: List[ControlledVocabulary]=None): 
+                    creationtime: datetime=None):
         # self.schemaLocation = "/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd"
         self.version = version
-        #self.creationtime = datetime.now() if creationtime is None else creationtime  # not in schema, IMO should be
+        self.creationtime = datetime.now() if creationtime is None else creationtime  # not in schema, IMO should be
         self.run_qualities = [] if run_qualities is None else run_qualities
         self.set_qualities = [] if set_qualities is None else set_qualities
         self.controlled_vocabularies = [] if controlled_vocabularies is None else controlled_vocabularies  # required
