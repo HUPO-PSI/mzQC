@@ -129,6 +129,10 @@
 			"description": "Metadata describing the QC analysis.",
 			"type": "object",
 			"properties": {
+				"fileProvenance": {
+					"description": "Optional string describing/documenting the provenance of the file",
+					"type": "string"
+				},
 				"inputFiles": {
 					"description": "List of input files based on which the QC metrics were generated.",
 					"type": "array",
@@ -161,6 +165,14 @@
 								"required": ["version", "uri"]
 							}
 						]
+					}
+				},
+				"cvParameters": {
+					"description": "Optional cvParameter tags for the QC analysis.",
+					"type": "array",
+					"minItems": 1,
+					"items": {
+						"$ref": "#/definitions/cvParameter"
 					}
 				}
 			},

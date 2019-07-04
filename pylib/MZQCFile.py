@@ -103,15 +103,15 @@ class InputFiles(object):
 @JsonSerialisable.register
 class MetaDataParameters(object):
     def __init__(self, 
-                    #file_provenance: str="", 
+                    file_provenance: str="", 
                     input_files: List[InputFiles] = None, 
-                    analysis_software: List[AnalysisSoftware]=None#, 
-                    #cv_params: List[CvParameter] = None
+                    analysis_software: List[AnalysisSoftware]=None, 
+                    cv_params: List[CvParameter] = None
                 ):
-        #self.file_provenance = file_provenance  # not in schema
+        self.file_provenance = file_provenance  # not in schema
         self.input_files =  [] if input_files is None else input_files  # required
         self.analysis_software = [] if analysis_software is None else analysis_software  # required
-        # self.cv_params = [] if cv_params is None else cv_params  # not in schema, IMO should be in there
+        self.cv_params = [] if cv_params is None else cv_params  # not in schema, IMO should be in there
     # schema: at least one input_file in input_files
     # schema: at least one analysis_software in analysis_software 
 
