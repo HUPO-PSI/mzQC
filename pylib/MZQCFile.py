@@ -120,12 +120,12 @@ class QualityMetric(object):
     def __init__(self, cv_ref: str="", 
                     accession: str="", 
                     name: str="", 
-                    value: Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table]=None):
+                    value: Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table]=None,
+                    unit: str=""):
         self.cv_ref = cv_ref
         self.accession = accession
         self.name = name
-        self.value = [] if value is None else value
-    # schema: rename from qualityParameter
+        self.value = Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table] if value is None else value
     # schema: is cvParam object 
     # schema: do we allow no-value metrics? cvParam value attribute is optional
 
@@ -147,14 +147,14 @@ class SetQuality(BaseQuality):
     
 @JsonSerialisable.register
 class MzQcFile(object):
-    def __init__(self, version: str="0.0.11",  
+    def __init__(self, creationtime: datetime = datetime.now(), version: str = "0.0.11",  
                     run_qualities: List[RunQuality]=None, 
                     set_qualities: List[SetQuality]=None, 
-                    controlled_vocabularies: List[ControlledVocabulary]=None): 
-                    creationtime: datetime=None):
+                    controlled_vocabularies: List[ControlledVocabulary]=None 
+                    ):
         # self.schemaLocation = "/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd"
-        self.version = version
         self.creationtime = datetime.now() if creationtime is None else creationtime  # not in schema, IMO should be
+        self.version = version
         self.run_qualities = [] if run_qualities is None else run_qualities
         self.set_qualities = [] if set_qualities is None else set_qualities
         self.controlled_vocabularies = [] if controlled_vocabularies is None else controlled_vocabularies  # required
