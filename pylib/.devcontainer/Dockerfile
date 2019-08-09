@@ -10,5 +10,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends --no-install-su
   zlib1g \
   libstdc++6
   
-RUN pip install numpy pyopenms==2.3.*
+RUN pip install numpy mypy pronto pytest jupyter pyopenms==2.3.*
  

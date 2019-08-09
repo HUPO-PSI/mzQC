@@ -28,6 +28,8 @@ class JsonSerialisable(object):
             if {'__datetime__': None}.keys() == d.keys():
                 return datetime.strptime(d['__datetime__'], '%Y-%m-%dT%H:%M:%S')
             else:
+                # go one down if it is a dict as allowed ControlledVocabularies???
+                #return {ref:sub for ref,sub in d.items()}
                 raise ValueError('Unable to find a matching class for object: {d} (keys: {k})' .format(d=d,k=d.keys()))
 
     @classmethod
@@ -48,27 +50,46 @@ class JsonSerialisable(object):
     def ToJson(classself, obj):
         return json.dumps(obj.__dict__, default=classself.complex_handler, indent=4)
 
+    # N.B.: for this to work the class init variables must be same name as the corresponding member attributes (self.)
     @classmethod
     def FromJson(classself, json_str):
         return json.loads(json_str, object_hook=classself.class_mapper)
 
+class jsonobject(object):
+    def __eq__(self, other):
+        """Overrides the default implementation"""
+        if isinstance(other, __class__):
+            return all([self.__getattribute__(attr) == other.__getattribute__(attr) for attr in self.__dict__.keys()])
+        return False
+
 @JsonSerialisable.register
-class ControlledVocabulary(object):
+class ControlledVocabulary(jsonobject):
     def __init__(self, ref: str="", name: str="", uri: str="", version: str=""):
         self.ref = ref  # not in schema
         self.name = name  # required
         self.uri = uri  # required
         self.version = version  # optional
 
+# @JsonSerialisable.register
+# class ControlledVocabularies(Dict[str,ControlledVocabulary]):
+#     def __init__(self, cvdict: Dict[str,ControlledVocabulary] = {}):
+#         super().__init__(cvdict)
+        
+#     def __getattr__(self, item):
+#         return self[item]
+
+#     def __dir__(self):
+#         return super().__dir__() + [str(k) for k in self.keys()]
+
 @JsonSerialisable.register
-class CvParameter(object):
-    def __init__(self, cv_ref: str="", 
+class CvParameter(jsonobject):
+    def __init__(self, cvRef: str="", 
                        accession: str="", 
                        name: str="", 
                        description: str="", 
                        value: str="", 
                        unit: str=""):
-        self.cvRef = cv_ref  # required
+        self.cvRef = cvRef  # required
         self.accession = accession  # required "pattern": "^[A-Z]+:[0-9]{7}$"
         self.name = name  # required
         self.description = description  # optional, "pattern": "^[A-Z]+$"
@@ -77,7 +98,7 @@ class CvParameter(object):
 
 @JsonSerialisable.register
 class AnalysisSoftware(CvParameter):
-    def __init__(self, cv_ref: str="", 
+    def __init__(self, cvRef: str="", 
                        accession: str="", 
                        name: str="", 
                        description: str="", 
@@ -85,12 +106,12 @@ class AnalysisSoftware(CvParameter):
                        unit: str="", 
                        version: str = "", 
                        uri: str = ""):
-        super().__init__(cv_ref, accession, description, value, unit)  # optional, this will set None to optional omitted arguments
+        super().__init__(cvRef, accession, description, value, unit)  # optional, this will set None to optional omitted arguments
         self.version = version  # required
         self.uri = uri  # required
 
 @JsonSerialisable.register
-class InputFiles(object):
+class InputFile(jsonobject):
     def __init__(self, location: str = "", 
                     name: str = "", 
                     file_format: CvParameter = None, 
@@ -101,10 +122,10 @@ class InputFiles(object):
         self.file_properties = [] if file_properties is None else file_properties  # optional, cvParam, at least one item
 
 @JsonSerialisable.register
-class MetaDataParameters(object):
+class MetaDataParameters(jsonobject):
     def __init__(self, 
                     file_provenance: str="", 
-                    input_files: List[InputFiles] = None, 
+                    input_files: List[InputFile] = None, 
                     analysis_software: List[AnalysisSoftware]=None, 
                     cv_params: List[CvParameter] = None
                 ):
@@ -116,21 +137,21 @@ class MetaDataParameters(object):
     # schema: at least one analysis_software in analysis_software 
 
 @JsonSerialisable.register
-class QualityMetric(object):
+class QualityMetric(jsonobject):
     def __init__(self, cv_ref: str="", 
                     accession: str="", 
                     name: str="", 
-                    value: Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table]=None,
+                    value: Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table, None]=None,
                     unit: str=""):
         self.cv_ref = cv_ref
         self.accession = accession
         self.name = name
-        self.value = Union[int,str,float,IntVector,StringVector,FloatVector,IntMatrix,StringMatrix,FloatMatrix,Table] if value is None else value
+        self.value = None if value is None else value
     # schema: is cvParam object 
     # schema: do we allow no-value metrics? cvParam value attribute is optional
 
 @JsonSerialisable.register
-class BaseQuality(object):
+class BaseQuality(jsonobject):
     def __init__(self, metadata: MetaDataParameters=None, 
                     quality_metrics: List[QualityMetric]=None):
         self.metadata = metadata  # required
@@ -146,18 +167,18 @@ class SetQuality(BaseQuality):
     pass
     
 @JsonSerialisable.register
-class MzQcFile(object):
-    def __init__(self, creationtime: datetime = datetime.now(), version: str = "0.0.11",  
-                    run_qualities: List[RunQuality]=None, 
-                    set_qualities: List[SetQuality]=None, 
-                    controlled_vocabularies: List[ControlledVocabulary]=None 
+class MzQcFile(jsonobject):
+    def __init__(self, creationDate: datetime = datetime.now().replace(microsecond=0), version: str = "0.0.11",  
+                    runQualities: List[RunQuality]=None, 
+                    setQualities: List[SetQuality]=None, 
+                    controlledVocabularies: List[ControlledVocabulary]=None 
                     ):
         # self.schemaLocation = "/home/walzer/psi/qcML-development/schema/v0_0_10/qcML_0_0_10.xsd"
-        self.creationtime = datetime.now() if creationtime is None else creationtime  # not in schema, IMO should be
+        self.creationDate = datetime.now() if creationDate is None else creationDate  # not in schema, IMO should be
         self.version = version
-        self.run_qualities = [] if run_qualities is None else run_qualities
-        self.set_qualities = [] if set_qualities is None else set_qualities
-        self.controlled_vocabularies = [] if controlled_vocabularies is None else controlled_vocabularies  # required
+        self.runQualities = [] if runQualities is None else runQualities
+        self.setQualities = [] if setQualities is None else setQualities
+        self.controlledVocabularies = [] if controlledVocabularies is None else controlledVocabularies  # required
     # schema: at least one cv in controlled_vocabularies
     # schema: at least one of run_qualities or set_qualities
     # schema: at least one item in run_qualities or set_qualities
