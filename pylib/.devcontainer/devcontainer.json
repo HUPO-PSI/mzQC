@@ -1,0 +1,13 @@
+{
+	"name": "MZQC Python Development container",
+	"dockerFile": "Dockerfile",
+	"context": "..",
+	"extensions": [
+		"ms-python.python"
+	],
+	"settings": {
+		"python.pythonPath": "/usr/local/bin/python"
+	},
+	"postCreateCommand": "sudo pip install -e .",
+	"runArgs": ["-u", "vscode"]
+}
