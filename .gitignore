@@ -10,3 +10,10 @@ pylib/\.mypy_cache/
 pylib/\.vscode/
 
 pylib/__pycache__/
+
+pylib/MZQC/__pycache__/
+
+pylib/tests/__pycache__/
+
+pylib/MZQC\.egg-info/
+
