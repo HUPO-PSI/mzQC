@@ -15,10 +15,15 @@ def test_SyntaxCheck():
     anso = qc.AnalysisSoftware(cvRef="QC", accession="QC:9999999", name="bigwhopqc", version="1.2.3", uri="file:///dev/null")   # isn't requiring a uri a bit too much?
     meta = qc.MetaDataParameters(inputFiles=[infi],analysisSoftware=[anso])
     qm = qc.QualityMetric(cvRef="QC", accession="QC:4000053", name="RT duration", value=99)
-    rq = qc.RunQuality(metadata=meta, qualityMetrics=[qm])
-    sq = qc.SetQuality(metadata=meta, qualityMetrics=[qm])
-    cv = qc.ControlledVocabulary(ref="REF", name="TEST", uri="www.eff.off")
-    mzqc = qc.MzQcFile(version="0.0.11", runQualities=[rq], setQualities=[sq], controlledVocabularies=[cv]) 
+    qm2 = qc.QualityMetric(cvRef="QC", accession="QC:4000061", name="Maximal MS2 frequency", value=999)
+    qm3 = qc.QualityMetric(cvRef="QC", accession="QC:4000055", name="MS1 quantiles RT fraction", value=9)
+    rq = qc.RunQuality(metadata=meta, qualityMetrics=[qm, qm2])
+    sq = qc.SetQuality(metadata=meta, qualityMetrics=[qm3])
+    cv = qc.ControlledVocabulary(ref="QC", name="QCvocab", uri="www.qc.ml")
+    cv2 = qc.ControlledVocabulary(ref="REF", name="TEST", uri="www.eff.off")
+    mzqc = qc.MzQcFile(version="0.0.11", runQualities=[rq], setQualities=[sq], controlledVocabularies=[cv, cv2])  
+    # with open('tests/mzqc_lib_out.mzqc', 'w') as f:
+    #     f.write("{ \"mzQC\": " + qc.JsonSerialisable.ToJson(mzqc) + " }")
         
     syn_check = sy.SyntacticCheck()
     syn_check.validate("{ \"mzQC\": " + qc.JsonSerialisable.ToJson(mzqc) + " }")
