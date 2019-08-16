@@ -54,8 +54,13 @@ class JsonSerialisable(object):
         return cls
 
     @classmethod
-    def ToJson(classself, obj):
-        return json.dumps(obj.__dict__, default=classself.complex_handler, indent=4)
+    def ToJson(classself, obj, readability=0):
+        if readability==0:
+            return json.dumps(obj.__dict__, default=classself.complex_handler)
+        elif readability == 1:
+            return json.dumps(obj.__dict__, default=classself.complex_handler, indent=2, cls=MzqcJSONEncoder)
+        else:
+            return json.dumps(obj.__dict__, default=classself.complex_handler, indent=4)
 
     # N.B.: for this to work the class init variables must be same name as the corresponding member attributes (self.)
     @classmethod
@@ -68,19 +73,34 @@ def rectify(obj):
             'qualityMetrics': QualityMetric, 'inputFiles': InputFile, 'analysisSoftware': AnalysisSoftware, 'fileProperties': CvParameter}
     static_singlet_typemap = {'fileFormat': CvParameter, 'metadata': MetaDataParameters}
     if hasattr(obj, '__dict__'):
-        # print("rectify:" + str(obj) + " items are " + str(obj.__dict__))
         for k,v in obj.__dict__.items():
-            # print("=" + str(k) + ":" + str(type(v)))
             if k in static_list_typemap.keys():
-                # print("+: from "+str(type(v))+" to list of "+str(static_list_typemap[k]))
                 v = [rectify((static_list_typemap[k])(**i.__dict__ if hasattr(i, '__dict__') else i)) for i in v]
-                # print("-")
             elif k in static_singlet_typemap.keys():
-                # print("+singlet: from "+str(type(v))+" to "+str(static_singlet_typemap[k]))
-                # print("resulting in "+str((static_singlet_typemap[k])(v.__dict__ if hasattr(v, '__dict__') else v)))
                 k = rectify((static_singlet_typemap[k])(**v.__dict__ if hasattr(v, '__dict__') else v))
-                # print("-")
     return obj
+
+
+class MzqcJSONEncoder(json.JSONEncoder):
+  def iterencode(self, o, _one_shot=False):
+    indent_level = 0
+    value_scope = False
+    for s in super(MzqcJSONEncoder, self).iterencode(o, _one_shot=_one_shot):
+        if value_scope and indent_level == 0 and s.startswith('}'):
+            value_scope = False
+        elif s.startswith('"value"'):
+            value_scope = True
+        if 0 < indent_level:
+            s = s.replace('\n', '').rstrip().lstrip()
+            if s.startswith(','):
+                s = ',' + s[1:].lstrip()
+        if s.startswith('[') and value_scope:
+            indent_level += 1
+        if s.endswith(']') and value_scope:
+            indent_level -= 1
+            s = s.replace(']', '\n'+' '*self.indent*6+']').rstrip()
+        yield s
+
 
 class jsonobject(object):
     def __eq__(self, other):
@@ -100,17 +120,6 @@ class ControlledVocabulary(jsonobject):
         self.name = name  # required
         self.uri = uri  # required
         self.version = version  # optional
-
-# @JsonSerialisable.register
-# class ControlledVocabularies(Dict[str,ControlledVocabulary]):
-#     def __init__(self, cvdict: Dict[str,ControlledVocabulary] = {}):
-#         super().__init__(cvdict)
-        
-#     def __getattr__(self, item):
-#         return self[item]
-
-#     def __dir__(self):
-#         return super().__dir__() + [str(k) for k in self.keys()]
 
 @JsonSerialisable.register
 class CvParameter(jsonobject):
