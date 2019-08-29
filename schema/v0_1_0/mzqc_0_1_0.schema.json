@@ -36,7 +36,7 @@
 					}
 				},
 				"controlledVocabularies": {
-					"description": "Collection of CV elements.",
+					"description": "Collection of controlled vocabulary elements.",
 					"type": "array",
 					"minItems": 1,
 					"items": {
@@ -86,7 +86,7 @@
 			"type": "object",
 			"properties": {
 				"cvRef": {
-					"description": "Reference to the CV that contains the parameter definition.",
+					"description": "Reference to the controlled vocabulary that contains the parameter definition.",
 					"type": "string",
 					"pattern": "^[A-Z]+$"
 				},
@@ -96,7 +96,7 @@
 					"pattern": "^[A-Z]+:[0-9]{7}$"
 				},
 				"name": {
-					"description": "Name of the CV element describing the parameter.",
+					"description": "Name of the controlled vocabulary element describing the parameter.",
 					"type": "string"
 				},
 				"description": {
@@ -107,7 +107,7 @@
 					"description": "Value of the parameter."
 				},
 				"unit": {
-					"description": "A CV element describing the unit of the parameter value.",
+					"description": "A controlled vocabulary element describing the unit of the parameter value.",
 					"anyOf": [
 						{
 							"$ref": "#/definitions/cvParameter"
@@ -216,20 +216,20 @@
 			"type": "object",
 			"properties": {
 				"name": {
-					"description": "Full name of the CV.",
+					"description": "Full name of the controlled vocabulary.", 
 					"type": "string"
 				},
 				"ref": {
-					"description": "Reference string to denote the use of this specific CV by.",
+					"description": "Reference string to denote the use of this specific controlled vocabulary by.",
 					"type": "string"
 				},
 				"uri": {
-					"description": "Publicly accessible URI of the CV.",
+					"description": "Publicly accessible URI of the controlled vocabulary.",
 					"type": "string",
 					"format": "uri"
 				},
 				"version": {
-					"description": "Version of the CV.",
+					"description": "Version of the controlled vocabulary.",
 					"type": "string"
 				}
 			},
