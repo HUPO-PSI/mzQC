@@ -370,11 +370,6 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 
-[Term]
-id: QC:4001000
-name: sample preparation metric
-is_a: QC:4000001 ! QC metric
-
 [Typedef]
 id: has_relation
 name: has_relation
