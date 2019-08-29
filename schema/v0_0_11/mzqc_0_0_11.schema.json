@@ -105,7 +105,18 @@
 				},
 				"unit": {
 					"description": "A CV element describing the unit of the parameter value.",
-					"$ref": "#/definitions/cvParameter"
+					"anyOf": [
+						{
+							"$ref": "#/definitions/cvParameter"
+						},
+						{
+							"type": "array",
+							"minItems": 1,
+							"items": {
+								"$ref": "#/definitions/cvParameter"
+							}
+						}
+					]
 				}
 			},
 			"required": ["cvRef", "accession", "name"]
