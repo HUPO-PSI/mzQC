@@ -26,5 +26,4 @@ metrics are hierarchical and each metric has to have some elements:
 
 TODO CV:
 * rename "XIC-WideFrac" to better correspond to its description
-* description of "Ambient humidity", why is this a tuple?
 * check other descriptions

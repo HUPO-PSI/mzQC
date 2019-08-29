@@ -149,13 +149,13 @@ is_a: QC:4000001 ! QC metric
 id: QC:4000023
 name: MS1 metric
 def: "a metric based on MS1 events" [PSI:QC]
-is_a: QC:4000028 ! QC metric
+is_a: QC:4000028 ! MS metric
 
 [Term]
 id: QC:4000024
 name: MS2 metric
 def: "a metric based on MS2 events" [PSI:QC]
-is_a: QC:4000028 ! QC metric
+is_a: QC:4000028 ! MS metric
 
 [Term]
 id: QC:4000025
