@@ -36,7 +36,8 @@ class JsonSerialisable(object):
             if {'creationDate': None}.keys() == d.keys():
                 return datetime.strptime(d['creationDate'], '%Y-%m-%dT%H:%M:%S')
             else:
-                raise ValueError('Unable to find a matching class for object: {d} (keys: {k})' .format(d=d,k=d.keys()))
+                # raise ValueError('Unable to find a matching class for object: {d} (keys: {k})' .format(d=d,k=d.keys()))
+                return d
 
     @classmethod
     def complex_handler(classself, obj):

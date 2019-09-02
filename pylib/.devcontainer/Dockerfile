@@ -54,6 +54,13 @@ RUN Rscript -e "install.packages('pracma')"
 RUN Rscript -e "install.packages('anomalize')"
 RUN Rscript -e "install.packages('DMwR')"
 RUN Rscript -e "install.packages('outliers')"
+
+RUN apt-get install -y --no-install-recommends \
+    gfortran \
+    pandoc
+RUN Rscript -e "install.packages('plotly')"
+RUN Rscript -e "install.packages('htmlwidgets')"
+
 #RUN Rscript -e "install.packages('devtools')"
 ENV R_LIBS_USER ~/R/x86_64-pc-linux-gnu/3.5
 ENV R_LIBS_SITE /usr/local/lib/R/site-library:/usr/lib/R/site-library:/usr/lib/R/library
@@ -65,7 +72,7 @@ RUN Rscript -e "library('devtools'); install_github('twitter/AnomalyDetection')"
 #&& Rscript /tmp/packages.R
 
 
-RUN pip install numpy mypy pronto pytest jupyter rpy2 pyopenms==2.3.* 
+RUN pip install numpy mypy pronto pytest jupyter rpy2 pyopenms==2.3.* flask
 #RUN pip install -e .  # devcontainer.json: "postCreateCommand": "pip install -e .",
 
 ARG USERNAME=vscode
