@@ -2,7 +2,7 @@
 
 To request a new CV entry, either:
 * visit https://github.com/HUPO-PSI/mzQC/issues and open a new ticket via 'Request for new CV entry'
-* write to the mailing list ....@.... (todo)
+* write to the mailing list `psidev-qc-dev@lists.sourceforge.net`
 
 The CV structures the metrics and gives a description of each metric. Classes of
 metrics are hierarchical and each metric has to have some elements:
