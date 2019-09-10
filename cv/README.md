@@ -1,6 +1,6 @@
 #The CV section contains the work on the QC metrics 
 
-We might start with collecting a solid base of QC metriccs and how to describe them, then define CV entries from these definitions and draft examplary qcML elements (value and graphical representations to better understand the metric's expressiveness)
+We might start with collecting a solid base of QC metrics and how to describe them, then define CV entries from these definitions and draft examplary qcML elements (value and graphical representations to better understand the metric's expressiveness)
 
 ***Note that this is free-form so your creative ideas are not hindered, but ultimatively a common structure would be desired.*** 
 

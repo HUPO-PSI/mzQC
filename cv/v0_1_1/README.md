@@ -11,7 +11,7 @@ metrics are hierarchical and each metric has to have some elements:
    have to be modeled in the QC document.
 
 3) metrics with tuples (matrices and tables as well?) have the dimensions
-   defined implicitly by the length of teh json element.
+   defined implicitly by the length of the json element.
 
 4) each metric MUST have a child of QC:4000012 "QC metric relation" in its
    has_relation relations which describe the origin of the metric's calculation
