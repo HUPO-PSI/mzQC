@@ -1,6 +1,10 @@
 # Notes on the CV
 
-The cv structures the metrics and gives a description of each metric. Classes of
+To request a new CV entry, either:
+* visit https://github.com/HUPO-PSI/mzQC/issues and open a new ticket via 'Request for new CV entry'
+* write to the mailing list ....@.... (todo)
+
+The CV structures the metrics and gives a description of each metric. Classes of
 metrics are hierarchical and each metric has to have some elements:
 
 1) each metric must have the ancestor QC:4000001 "QC metric" in its is_a
