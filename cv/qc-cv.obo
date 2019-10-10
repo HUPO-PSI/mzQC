@@ -490,6 +490,28 @@ is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 
+[Term]
+id: QC:4000078
+name: Peptide elution order trailing
+def: "N(a, b) are the peptides common in the run and a reference run. N(a,b)_i to N(a,b)_j are the first to last eluting common peptides in the run ordered by retention time. This metric is the maximum of ('elution rank' of peptide N(a,b)_t in run) - ('elution_rank' of peptide N(a,b)_t in reference) for the first tenth of common peptides ordered by retention time. The metric is finally normalised with dividing by the number of (identified) peptides in the run." [PSI:QC]
+comment: The elution rank difference gives you a measure of how many peptides are eluting early.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000009 ! ID based
+is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation QC:4000014 ! QC metric relation: multiple runs
+
+[Term]
+id: QC:4000079
+name: Peptide elution order preceding
+def: "N(a, b) are the peptides common in the run and a reference run. N(a,b)_i to N(a,b)_j are the first to last eluting common peptides in the run ordered by retention time. This metric is the maximum of ('elution rank' of peptide N(a,b)_t in run) - ('elution_rank' of peptide N(a,b)_t in reference) for the last tenth of common peptides ordered by retention time. The metric is finally normalised with dividing by the number of (identified) peptides in the run." [PSI:QC]
+comment: The elution rank difference gives you a measure of how many peptides are eluting late.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000009 ! ID based
+is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation QC:4000014 ! QC metric relation: multiple runs
+
 [Typedef]
 id: has_relation
 name: has_relation
