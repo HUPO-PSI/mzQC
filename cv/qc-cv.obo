@@ -393,7 +393,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000069
 name: Fraction of peptide IDs around max MS1
-def: "Fraction of all peptides identified at least X min earlier or later than max MS1 for ID. The values are given in a corresponding list, where the first value is the X minutes before (negative) or after (positive) max MS1 and the second value is the fraction of IDs." [PSI:QC]
+def: "Fraction of all peptides identified at least X min earlier or later than the most intense MS1 signal of the identification. The values are given in a corresponding list, where the first value is the X minutes before (negative) or after (positive) max MS1 and the second value is the fraction of IDs." [PSI:QC]
 comment: Estimates very early peak broadening.
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000009 ! ID based
@@ -424,7 +424,7 @@ relationship: has_relation QC:4000070 ! Interquartile RT period for peptide iden
 [Term]
 id: QC:4000072
 name: Median MS1 peak FWHM for peptides
-def: "Median of all MS1 peak widths at half maximum (FWHM) for all identified peptide, in seconds" [PSI:QC]
+def: "Median of all MS1 peak widths at half maximum (FWHM) for all identified peptides, in seconds" [PSI:QC]
 comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution.
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: QC:4000003 ! single value
@@ -447,7 +447,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000074
-name: Median MS1 peak FWHM for peptides in RT decile
+name: Median MS1 peak FWHM for peptides in RT quantile
 def: "Median of all MS1 peak widths at half maximum (FWHM) for all identified peptide, in seconds, in the respective identifications' quantiles ordered by retention time. The data is given in a tuple defining the quantiles, 4-tuple represents quartiles, 10-tuple deciles, etc." [PSI:QC]
 comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution in the given quantile.
 xref: value-type:xsd\:double "The allowed value-type for this CV term."
