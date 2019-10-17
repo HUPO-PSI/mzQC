@@ -378,6 +378,7 @@ xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
