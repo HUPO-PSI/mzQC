@@ -11,7 +11,15 @@ Name:
 
 Definition:
 
+How to interpret the metric value:
+
 Proposed value type:
 - [ ] single value
 - [ ] n-tuple
+- [ ] corresponding lists
+- [ ] table
 - [ ] matrix
+
+Identifications needed (if appropriate):
+- [ ] ID based
+- [ ] ID free
