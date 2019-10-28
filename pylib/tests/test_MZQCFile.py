@@ -1,6 +1,7 @@
 __author__ = 'walzer'
 import pytest  # Eeeeeeverything needs to be prefixed with test ito be picked up by pytest, i.e. TestClass() and test_function()
 from MZQC import MZQCFile as qc
+import numpy as np
 
 """
 Unit tests for the MZQCFile library
@@ -15,6 +16,7 @@ INFI = '{"location": "file:///dev/null", "name": "file.raw", "fileFormat": {"cvR
 META = '{"inputFiles": [{"location": "file:///dev/null", "name": "file.raw", "fileFormat": {"cvRef": "MS", "accession": "MS:1000584", "name": "mzML format"}, "fileProperties": [{"cvRef": "MS", "accession": "MS:1000747", "name": "completion time", "value": "2017-12-08-T15:38:57Z"}]}], "analysisSoftware": [{"cvRef": "QC", "accession": "QC:9999999", "name": "bigwhopqc", "version": "1.2.3", "uri": "file:///dev/null"}]}'
 RUQU = '{"metadata": {"inputFiles": [{"location": "file:///dev/null", "name": "file.raw", "fileFormat": {"cvRef": "MS", "accession": "MS:1000584", "name": "mzML format"}, "fileProperties": [{"cvRef": "MS", "accession": "MS:1000747", "name": "completion time", "value": "2017-12-08-T15:38:57Z"}]}], "analysisSoftware": [{"cvRef": "QC", "accession": "QC:9999999", "name": "bigwhopqc", "version": "1.2.3", "uri": "file:///dev/null"}]}, "qualityMetrics": [{"cvRef": "QC", "accession": "QC:4000053", "name": "RT duration", "value": 99}]}'
 SEQU = '{"metadata": {"inputFiles": [{"location": "file:///dev/null", "name": "file.raw", "fileFormat": {"cvRef": "MS", "accession": "MS:1000584", "name": "mzML format"}, "fileProperties": [{"cvRef": "MS", "accession": "MS:1000747", "name": "completion time", "value": "2017-12-08-T15:38:57Z"}]}], "analysisSoftware": [{"cvRef": "QC", "accession": "QC:9999999", "name": "bigwhopqc", "version": "1.2.3", "uri": "file:///dev/null"}]}, "qualityMetrics": [{"cvRef": "QC", "accession": "QC:4000053", "name": "RT duration", "value": 99}]}'
+NPQM = '{"cvRef": "", "accession": "QC:123", "name": "einszweidrei", "description": "", "value": {"np": [0.1111111119389534, 0.25, 0.4285714328289032]}, "unit": ""}'
 
 cvt = qc.CvParameter(cvRef="REF", accession="TEST:123", name="testname", value=99)
 infi = qc.InputFile(name="file.raw",location="file:///dev/null", 
@@ -66,7 +68,15 @@ class TestSerialisation:
         
     def test_MzQcFile(self):
         pass 
-        
+
+    def test_NumpyValues(self):
+        nup = qc.QualityMetric()
+        nup.accession = "QC:123"
+        nup.name = "einszweidrei"
+        npnd = np.array([1/9,2/8,3/7], dtype=np.float32)
+        nup.value= {"np":npnd}
+        assert qc.JsonSerialisable.ToJson(nup) == NPQM
+
 #First, serialisation should be tested separately!
 class TestDeserialisation:
     def test_ControlledVocabulary(self):

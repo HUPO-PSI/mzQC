@@ -3,6 +3,7 @@ import json
 import operator
 from datetime import datetime
 from typing import List,Dict,Union,Any,Tuple
+import numpy as np 
 
 #int
 #str
@@ -44,8 +45,14 @@ class JsonSerialisable(object):
         if hasattr(obj, '__dict__'):
             return {k:v for k,v in obj.__dict__.items() if v is not None and v is not ""}
 
+        elif 'numpy' in str(type(obj)):
+            if isinstance(obj,np.ndarray):
+                return obj.tolist() 
+            return obj.item()
+
         elif isinstance(obj, datetime):
-             return obj.replace(microsecond=0).isoformat()
+            return obj.replace(microsecond=0).isoformat()
+            
         else:
             raise TypeError('Object of type {ty} with value {val} is not JSON (de)serializable'.format(ty=type(obj), val=repr(obj)))
 
