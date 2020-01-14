@@ -513,6 +513,32 @@ is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation QC:4000014 ! QC metric relation: multiple runs
 
+[Term]
+id: QC:4000080
+name: MS1 Total ion current chromatogram
+def: "The total ion current chromatogram of MS1 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+comment: The metric enables to check visually e.g. MS1 TIC stability along the retention time and its absolute value compared to MS2 total ion chromatogram or other analyses MS1 TICs. TIC drops caused by e.g. spray stability issues or bubbles presence can be detected here.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000067 ! Total ion current chromatogram
+
+[Term]
+id: QC:4000081
+name: MS2 Total ion current chromatogram
+def: "The total ion current chromatogram of MS2 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+comment: The metric enables to check visually e.g. MS2 TIC absolute value compared to MS1 total ion chromatogram or other analyses MS2 TICs.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000067 ! Total ion current chromatogram
+
 [Typedef]
 id: has_relation
 name: has_relation
