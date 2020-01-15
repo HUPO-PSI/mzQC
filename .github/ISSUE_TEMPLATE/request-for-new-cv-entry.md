@@ -7,11 +7,11 @@ assignees: julianu
 
 ---
 
-Name:
+Name: (name of metric, should be shorter than 100 characters)
 
-Definition:
+Definition: (a longer definition, containing how the metric should be stored in the mzQC file and may contain, if applicable, how the metric is calculated)
 
-How to interpret the metric value:
+How to interpret the metric value: (short description of how to interpret, like "Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution.")
 
 Proposed value type:
 - [ ] single value
