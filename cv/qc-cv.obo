@@ -1,6 +1,6 @@
 format-version: 1.2
-data-version: 0.1.1
-date: 29:08:2019 15:54
+data-version: 0.1.2
+date: 14:01:2020 10:28
 saved-by: julianu
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
@@ -40,40 +40,40 @@ def: "Parent term for QC metrics, each metric MUST have this as an ancestor in i
 
 [Term]
 id: QC:4000002
-name: QC metric type
+name: QC metric value type
 def: "The QC metric type describes what type the respective metric is, like e.g. single value, n-tuple or table" [PSI:QC]
 
 [Term]
 id: QC:4000003
 name: single value
 def: "Metrics consisting of a single value (in contrast to n-tuple or table)." [PSI:QC]
-is_a: QC:4000002 ! QC metric type
+is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000004
 name: n-tuple
 def: "Metrics consisting of n values (in contrast to single_value or table), n specified by the CV param value, e.g. n=4 for quartiles." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
-is_a: QC:4000002 ! QC metric type
+is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000005
 name: corresponding lists
 def: "Metrics consisting of a variable number of lists with n elements each, n specified by the CV param value. The k-th elements of the lists correspond to each other (as RT and intensity lists for a chromatogram)." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
-is_a: QC:4000002 ! QC metric type
+is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000006
 name: table
-def: "Metrics consisting of a table or data frame (in contrast to single_value or n-tuple), the values of the table may have different types in each column (in contrast to a matrix). The actual structure of the matrix is defined in the QC document." [PSI:QC]
-is_a: QC:4000002 ! QC metric type
+def: "Metrics consisting of a table or data frame (in contrast to single_value or n-tuple), the values of the table may have different types in each column (in contrast to a matrix). The actual structure of the table is defined in the QC document." [PSI:QC]
+is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000007
 name: matrix
 def: "A matrix is a rectangular array of values of the same type (in contrast to a table). The actual structure of the matrix is defined in the QC document." [PSI:QC]
-is_a: QC:4000002 ! QC metric type
+is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000008
@@ -187,7 +187,6 @@ is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000086 ! full width at half-maximum
 
 [Term]
 id: QC:4000051
@@ -197,8 +196,8 @@ xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000086 ! full width at half-maximum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000052
@@ -208,31 +207,31 @@ xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000627 ! selected ion current chromatogram
 relationship: has_relation MS:1000042 ! peak intensity
+relationship: has_relation MS:1000627 ! selected ion current chromatogram
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000053
 name: RT duration
-def: "The retention time duration of the MS run, similar to the highest scan time minus the lowest scan time." [PSI:QC]
+def: "The retention time duration of the MS run in seconds, similar to the highest scan time minus the lowest scan time." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000016 ! scan start time
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000054
-name: RT of TIC quantile
-def: "The interval when the respective quantile of the TIC accumulates divided by retention time duration." [PSI:QC]
+name: RT over TIC quantile
+def: "The interval when the respective quantile of the TIC accumulates divided by retention time duration. The number of quantiles observed is given by the size of the tuple." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
 is_a: QC:4000022 ! chromatogram metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000235 ! total ion current chromatogram
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000055
@@ -243,9 +242,9 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
 is_a: QC:4000023 ! MS1 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000579 ! MS1 spectrum
 relationship: has_relation MS:1000016 ! scan start time
+relationship: has_relation MS:1000579 ! MS1 spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000056
@@ -256,9 +255,9 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
 is_a: QC:4000024 ! MS2 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation MS:1000016 ! scan start time
+relationship: has_relation MS:1000580 ! MSn spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000057
@@ -268,9 +267,9 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation MS:1000016 ! scan start time
+relationship: has_relation MS:1000235 ! total ion current chromatogram
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000058
@@ -280,9 +279,9 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation MS:1000016 ! scan start time
+relationship: has_relation MS:1000235 ! total ion current chromatogram
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000059
@@ -291,8 +290,8 @@ def: "The number of MS1 events in the run." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000023 ! MS1 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000579 ! MS1 spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000060
@@ -301,8 +300,8 @@ def: "The number of MS2 events in the run." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000023 ! MS1 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000580 ! MSn spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000061
@@ -311,9 +310,9 @@ def: "The fastest frequency for MS/MS collection in any minute over the complete
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation MS:1000029 ! sampling frequency
+relationship: has_relation MS:1000580 ! MSn spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000062
@@ -323,8 +322,8 @@ xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000035 ! peak picking
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000063
@@ -335,8 +334,8 @@ is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000041 ! charge state
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000064
@@ -347,8 +346,8 @@ is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation MS:1000041 ! charge state
+relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000065
@@ -374,11 +373,12 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000067
 name: Total ion current chromatogram
-def: "The (centroided) total ion current chromatogram. The first list contains the m/z values, the second list the corresponding abundances." [PSI:QC]
+def: "The total ion current chromatogram. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
@@ -390,6 +390,32 @@ is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000069
+name: MS1 Total ion current chromatogram
+def: "The total ion current chromatogram of MS1 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+comment: The metric enables to check visually e.g. MS1 TIC stability along the retention time and its absolute value compared to MS2 total ion chromatogram or other analyses MS1 TICs. TIC drops caused by e.g. spray stability issues or bubbles presence can be detected here.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000067 ! Total ion current chromatogram
+
+[Term]
+id: QC:4000070
+name: MS2 Total ion current chromatogram
+def: "The total ion current chromatogram of MS2 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+comment: The metric enables to check visually e.g. MS2 TIC absolute value compared to MS1 total ion chromatogram or other analyses MS2 TICs.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000067 ! Total ion current chromatogram
 
 [Typedef]
 id: has_relation

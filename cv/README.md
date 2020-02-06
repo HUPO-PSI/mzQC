@@ -1,33 +1,19 @@
-# Notes on the CV
+# The mzQC controlled vocabulary (CV)
 
-To request a new CV entry, either:
-* visit https://github.com/HUPO-PSI/mzQC/issues and open a new ticket via 'Request for new CV entry'
-* write to the mailing list `psidev-qc-dev@lists.sourceforge.net`
+The CV contains entries for metrics which can be recorded in the mzQC files. Even if mzQC allows to just store any metric information, the CV helps to facilitate the interpretation of the actual values. Each entry in the CV has a unique ID, QC:XXXXX number, followed by a human readable name, which both will also be given in teh mzQC files. A short explanation of the entry and how it SHOULD be stored in the mzQC file is given in the entry's definition.
+The comment gives a short means on how to interpret the actual values of the metric.
 
-The CV structures the metrics and gives a description of each metric. Classes of
-metrics are hierarchical and each metric has to have some elements:
+# Request new entry in the CV
 
-1) each metric must have the ancestor QC:4000001 "QC metric" in its is_a
-   relations
+If you like to record a metric which is not yet defined in the current CV, we just need some information of your metric:
 
-2) each metric MUST have a child of QC:4000002 "QC metric type" in its is_a
-   relations which describes, how the values of the metric are interpreted and
-   have to be modeled in the QC document.
-
-3) metrics with tuples (matrices and tables as well?) have the dimensions
-   defined implicitly by the length of the json element.
-
-4) each metric MUST have a child of QC:4000012 "QC metric relation" in its
-   has_relation relations which describe the origin of the metric's calculation
-   and SHOULD have at least has_relation to a term it actually represents
-
-5) each metric MUST have at least one child of QC:4000008 "QC metric basis" in
-   its is_a relations which describes the origin of the metric regarding
-   quantification and identification
+- Name: some (short) string describing your metric
+- Definition: a longer description and how the metric shoudl be stored in the mzQC file
+- How to interpret the metric value: how your metric can be interpreted (e.g. is a higher value better, can it only be interpreted relative to...)
+- type of the metric: Is your metric a single value, an n-tuple, a corresponding list, matrix, table, ...?
+- are Identifications needed: Does teh metric depend on spectrum/peptide/metabolomical identifications?
 
 
-
-
-TODO CV:
-* rename "XIC-WideFrac" to better correspond to its description
-* check other descriptions
+If you have this information, you have two ways to request a new CV entry, either:
+* visit https://github.com/HUPO-PSI/mzQC/issues and open a new issue and make a 'Request for new CV entry'
+* or write to the mailing list `psidev-qc-dev@lists.sourceforge.net`
