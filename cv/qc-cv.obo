@@ -1,6 +1,6 @@
 format-version: 1.2
 data-version: 0.1.2
-date: 14:01:2020 10:28
+date: 05:03:2020 17:57
 saved-by: julianu
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
@@ -14,24 +14,6 @@ remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
 import: https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
 ontology: qc
-
-[Term]
-id: MS:1009001
-name: quality control metrics generating software
-def: "Quality control metrics generating softwares are special types of analysis softwares, which are capable of generating QC metrics." [PSI:PI]
-is_a: MS:1001456 ! analysis software
-
-[Term]
-id: MS:1009002
-name: QuaMeter IDFree
-def: "QuaMeter IDFree is a QC metrics generating software." [PSI:PI]
-is_a: MS:1009001 ! quality control metrics generating software
-
-[Term]
-id: MS:1009003
-name: iMonDB
-def: "iMonDB is a QC metrics generating software." [PSI:PI]
-is_a: MS:1009001 ! quality control metrics generating software
 
 [Term]
 id: QC:4000001
@@ -318,7 +300,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000062
 name: MS2 density per quantile
 def: "The first to n-th quantile of MS2 scan peak counts." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
@@ -417,6 +399,294 @@ is_a: QC:4000024 ! MS2 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
 
+[Term]
+id: QC:4000071
+name: isolation window target m/z
+def: "The primary or reference m/z about which the isolation window is defined." [PSI:QC]
+comment: The isolation window target m/z is read straight from the mzML file and reported for every unique isolation window. This serves mainly as information to orientate the user.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation MS:1000827 ! isolation window target m/z
+
+[Term]
+id: QC:4000072
+name: scans per isolation window
+def: "The number of scans collected during the run reported for all unique isolation windows." [PSI:QC]
+comment: This is mainly informative and serves as a nice confirmation that mzML contains all the necessary information.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000073
+name: average m/z range of isolation window
+def: "The average range in m/z of each unique isolation window." [PSI:QC]
+comment: This is the range set by the user in the isolation scheme. The purpose is to provide context for other metrics.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000074
+name: proportion of total TIC per isolation window
+def: "The TIC for all occurrences of the relevant isolation window in the run is summed and divided by the total TIC for all MS2 scans in the run." [PSI:QC]
+comment: A larger value indicates that isolation windows with that particular target m/z contributed more to the total TIC.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000070 ! MS2 Total ion current chromatogram
+relationship: has_relation QC:4000071 ! isolation window target m/z
+
+[Term]
+id: QC:4000075
+name: average isolation window density
+def: "For each unique isolation window this value reports the number of ions detected on average throughout the run." [PSI:QC]
+comment: A higher value indicates that a higher number of ions was detected for this specific isolation window on average.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000071 ! isolation window target m/z
+
+[Term]
+id: QC:4000076
+name: isolation window density IQR
+def: "The interquartile range (IQR) of the number of ions detected throughout the run for each unique isolation window." [PSI:QC]
+comment: A higher value indicates greater variability in the number of ions detected for that particular isolation window.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000071 ! isolation window target m/z
+relationship: has_relation QC:4000075 ! average isolation window density
+
+[Term]
+id: QC:4000077
+name: MS2 peak widths
+def: "For this metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. This metric returns the average FWHM for base peaks in each segment." [PSI:QC]
+comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation MS:1000086 ! full width at half-maximum
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000078
+name: peak tailing factor
+def: "For this metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. This metric returns the tailing factor calculated as per the USP (http://www.uspbpep.com/usp31/v31261/usp31nf26s1_c621.asp) averaged for the base peaks of the segment in question." [PSI:QC]
+comment: The larger the value, the longer the peak tail and therefore the less symmetric the peak.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000079
+name: MS2 peak capacity
+def: "For this metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. For this metric, the size of each segment (Identical across segments) is divided by the number of peaks in this segment. PeakCapacity is calculated as per Dolan et al.2009, PubMed 10536823);" [PSI:QC]
+comment: This metric is related to peak widths. A larger peak width will result in less distinguishable peaks for the segment in question.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000077 ! MS2 peak widths
+
+[Term]
+id: QC:4000080
+name: MS2 peak precision
+def: "For this metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. For each base peak, both the m/z and intensity of every instance in which an ion (not necessarily a base peak) within the m/z tolerance of the base peak is picked up is added to an array for m/z and an array for intensity and the mean of those arrays are determined. The mean m/z is divided by the m/z at which the base peak was reported as a base peak. This value is squared and multiplied by the intensity mean. The intensity of the base peak when it was reported as a base peak is then divided by this result." [PSI:QC]
+comment: The larger the value, the less precise the m/z value of the peak. The value is weighted so as to not penalize low intensity peaks.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000081
+name: MS1 peak precision
+def: "For this metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. For each base peak, both the m/z and intensity of every instance in which an ion (not necessarily a base peak) within the m/z tolerance of the base peak is picked up is added to an array for m/z and an array for intensity and the mean of those arrays are determined. The mean m/z is divided by the m/z at which the base peak was reported as a base peak. This value is squared and multiplied by the intensity mean. The intensity of the base peak when it was reported as a base peak is then divided by this result." [PSI:QC]
+comment: The larger the value, the less precise the m/z value of the peak. The value is weighted so as to penalize high intensity peaks that have drifted.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000082
+name: average change in TIC
+def: "For thsi metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. The TIC of a scan is subtracted from the TIC of the previous scan and the absolute value is then added to an array for all scans in the segment, of which the average is reported here." [PSI:QC]
+comment: A larger value could indicate irregularities in the ionization process, such as sputter.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000067 ! Total ion current chromatogram
+
+[Term]
+id: QC:4000083
+name: IQR of change in TIC
+def: "For this metric the user has selected the number of segments the RT is divided into and for each segment a value is returned. N is therefore stipulated by the user. The TIC of a scan is subtracted from the TIC of the previous scan and the absolute value is then added to an array for all scans in the segment, of which the interquantile range (IQR) is reported here." [PSI:QC]
+comment: A larger value indicates greater variability in the change in TIC and therefore that a greater portion of the scans might have a value that is further away from the mean.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000082 ! average change in TIC
+
+[Term]
+id: QC:4000084
+name: average cycle time per RT quantiles
+def: "This metric reports the average time in seconds taken to complete a cycle in the first to n-th retention time quantile." [PSI:QC]
+comment: A larger value could indicate a longer scan time which could be due to a larger amount of ions in this quantile or other factors.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000071 ! isolation window target m/z
+
+[Term]
+id: QC:4000085
+name: average MS1 ions per RT quantile
+def: "This metric reports the average number of ions reported per MS1 scan in the first to n-th retention time quantile." [PSI:QC]
+comment: A larger value indicates a larger number of ions detected in this section of the RT on average.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000086
+name: average MS2 ions per RT quantile
+def: "This metric reports the average number of ions reported per MS2 scan in the first to n-th retention time quantile." [PSI:QC]
+comment: A larger value indicates a larger number of ions detected in this section of the RT on average.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000087
+name: MS1 TIC per RT quantile
+def: "This metric reports the total MS1 TIC for the first to n-th retention time quantile." [PSI:QC]
+comment: A larger value indicates a higher TIC.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000069 ! MS1 Total ion current chromatogram
+
+[Term]
+id: QC:4000088
+name: MS2 TIC per RT quantile
+def: "This metric reports the total MS2 TIC for the first to n-th retention time quantile." [PSI:QC]
+comment: A larger value indicates a higher TIC.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000004 ! n-tuple
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000070 ! MS2 Total ion current chromatogram
+
+[Term]
+id: QC:4000089
+name: number of missing scans
+def: "The total number of scans where not a single ion was detected." [PSI:QC]
+comment: A larger value indicates a higher number of scans without any data.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000090
+name: isolation windows size difference
+def: "This metric is the difference in m/z between the largest and the smallest isolation window in the run." [PSI:QC]
+comment: In SWATH/DIA this is merely for informative purposes so a user can check that there was not an error in the isolation scheme they had set up.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation MS:1000827 ! isolation window target m/z
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000091
+name: isolation windows per cycle
+def: "The number of unique isolation windows per cycle for the whole run." [PSI:QC]
+comment: In SWATH/DIA this is merely informative for the user to double check that the correct isolation settings were carried out.
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+
+[Term]
+id: QC:4000092
+name: MS1 TIC sum
+def: "The sum of all abundances in all MS1 events in the run." [PSI:QC]
+comment: A higher value indicates more ions detected. When comparing runs, this value could be compared to the MS1 density average as this would give an indication whether a few scans are responsible for the bulk of the number of ions, or the load is spread evenly throughout.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000069 ! MS1 Total ion current chromatogram
+
+[Term]
+id: QC:4000093
+name: MS2 TIC sum
+def: "The sum of all abundances in all MS2 events in the run." [PSI:QC]
+comment: A higher value indicates more ions detected. When comparing runs, this value could be compared to the MS2 density average as this would give an indication whether a few scans are responsible for the bulk of the number of ions, or the load is spread evenly throughout.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000070 ! MS2 Total ion current chromatogram
+
+[Term]
+id: QC:4000094
+name: MS2 density average
+def: "The number of ions in each MS2 scan is averaged for all MS2 scans in the run." [PSI:QC]
+comment: A higher value indicates more ions detected. When comparing runs, this value could be compared to the MS2 density average as this would give an indication whether a few scans are responsible for the bulk of the number of ions, or the load is spread evenly throughout.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000095 ! MS2 density IQR
+
+[Term]
+id: QC:4000095
+name: MS2 density IQR
+def: "The IQR for the number of ions detected in all MS2 scans in the run." [PSI:QC]
+comment: A higher value indicates greater variability in the number of ions detected in MS2 scans.
+xref: value-type:xsd\:double "The allowed value-type for this CV term."
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000094 ! MS2 density average
+
 [Typedef]
 id: has_relation
 name: has_relation
@@ -428,3 +698,4 @@ name: has_type
 [Typedef]
 id: has_units
 name: has_units
+
