@@ -38,18 +38,18 @@ AP's:
 ## 3. Specification document
 Work on the documentation for the standard specification. 
 This is about targeting the right audience for each section.
-#### 1. Target: Tool devs that know 2. already, anyone who needs a technical reference
+#### 1. Target: Tool devs that know 2.1-2 already, anyone who needs a technical reference
 * Examples in the specification document
 * All examples in section6 - revise, check accession, format
 * Other issues we want to adress in the specification:
   - Why we have metrics with one value and metrics with whole tables of values
   - Others?
 
-#### 2. Target: PSI reviewers, technical people with general hands-on knowledge of computational MS, tool devs
+#### 2. Target: Technical people, QC veterans, PIs
 * Appendix sections of the specification document
 * Use-case descriptions
 
-#### 3. Target: PSI reviewers, technical people with general hands-on knowledge of computational MS, tool devs
+#### 3. Target: PSI reviewers
 * polish specification document (probably best last)
   - Author list, 
   - Pending comments, 
