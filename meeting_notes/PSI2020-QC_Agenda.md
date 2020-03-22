@@ -1,14 +1,14 @@
 # PSI2020 all-virtual conference agenda for QC track
 ## 1. We need a release-ready CV
 AP's:
-  a. Finish outstanding requests
-  b. Formalise requirements and suggestions
-  3. Check all entries against above requirements & suggestions
-  4. Hierarchy organisation & visualisation 
-  5. Is something missing? 
-     - essentials (what are the essentials?)
-     - priority *TODO*s (advertise participation/cooperation from/with specific tools/developers that might offer items on the list), 
-     - wishlist (if someone wants to join in the future, prepare entry points to work onwards from)
+1. Finish outstanding requests
+2. Formalise requirements and suggestions
+3. Check all entries against above requirements & suggestions
+4. Hierarchy organisation & visualisation 
+5. Is something missing? 
+   - essentials (what are the essentials?)
+   - priority *TODO*s (advertise participation/cooperation from/with specific tools/developers that might offer items on the list), 
+   - wishlist (if someone wants to join in the future, prepare entry points to work onwards from)
 
 ## 2. companion documents
 Work on the (companion) documentation for the standard specification. 
