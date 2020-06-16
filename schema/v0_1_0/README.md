@@ -17,21 +17,23 @@
             - Required attributes to refer to a CV entry.
             - Additional required attributes `version` and `uri`.
     - Required list of at least one `qualityMetrics`.
-        - Required attributes to refer to a CV entry: `cvRef`, `accession`, `name`.
+        - Required attributes to refer to a CV entry: `accession` (PURL controlled vocabulary reference including the accession for the term), `name`.
         - Optional attributes: `description`, `value`, `unit`.
         - `unit` is a similar sub-element referring to CV entry.
         - `value` can be anything: string, number, list, nested element. We have to do semantic validation based on information from the CV.
 
 - `controlledVocabularies`: References to controlled vocabularies.
-    - Required attribute: `ref`, the reference by which terms from this ontology are referenced in a mzQC file (usually with the cvRef attribute) 
+    - Required attribute: `namespace` (PURL reference to the controlled vocabulary).
     - Required attribute: `name`, `uri`.
     - Optional attribute: `version`.
 
 
-## changelog 
- - added optional creationDate
- - cv -> controlledVocabularies
- - qualityParameters -> qualityMetrics
- - added optional fileProvenancecvParameters
- - optional cvParameters to metadata
- - internalised the cv ref which also acted as name of the json object in the controlledVocabularies list as attribute into the now dynamic object
+## Changelog 
+
+- added optional creationDate
+- cv -> controlledVocabularies
+- qualityParameters -> qualityMetrics
+- added optional fileProvenancecvParameters
+- optional cvParameters to metadata
+- internalised the cv ref which also acted as name of the json object in the controlledVocabularies list as attribute into the now dynamic object
+- Removed the `cvRef` attribute in favor of a PURL reference in `accession`.

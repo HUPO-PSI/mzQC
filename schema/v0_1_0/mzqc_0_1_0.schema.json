@@ -85,15 +85,10 @@
 			"description": "Base element containing a reference to a controlled vocabulary.",
 			"type": "object",
 			"properties": {
-				"cvRef": {
-					"description": "Reference to the controlled vocabulary that contains the parameter definition.",
-					"type": "string",
-					"pattern": "^[A-Z]+$"
-				},
 				"accession": {
-					"description": "Accession number identifying the parameter within its CV.",
+					"description": "PURL reference to the term with the specified accession in its controlled vocabulary.",
 					"type": "string",
-					"pattern": "^[A-Z]+:[0-9]{7}$"
+					"pattern": "^https?://[^\s/$.?#].[^\s]*/[A-Z]+:[0-9]{7}$"
 				},
 				"name": {
 					"description": "Name of the controlled vocabulary element describing the parameter.",
@@ -122,7 +117,7 @@
 					]
 				}
 			},
-			"required": ["cvRef", "accession", "name"]
+			"required": ["accession", "name"]
 		},
 		"metadata": {
 			"description": "Metadata describing the QC analysis.",
@@ -215,12 +210,13 @@
 			"description": "Element describing a controlled vocabulary.",
 			"type": "object",
 			"properties": {
+				"namespace": {
+					"description": "PURL namespace of the controlled vocabulary.",
+					"type": "string",
+					"pattern": "^https?://[^\s/$.?#].[^\s]*$"
+				},
 				"name": {
 					"description": "Full name of the controlled vocabulary.", 
-					"type": "string"
-				},
-				"ref": {
-					"description": "Reference string to denote the use of this specific controlled vocabulary by.",
 					"type": "string"
 				},
 				"uri": {
