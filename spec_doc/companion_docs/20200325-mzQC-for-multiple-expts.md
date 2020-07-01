@@ -1,4 +1,4 @@
-﻿# mzQC with multiple experiments
+# mzQC with multiple experiments
 At first glance, it might seem that mzQC is intended to store quality metrics for a single LC-MS/MS experiment.  In fact, the format is designed to scale to store metrics for collections of many LC-MS/MS experiments.  For that matter, it is capable of experiments using altogether different types of separation or that lack tandem mass spectra!  This tutorial examines scenarios in which a single mzQC contains metrics from a group of experiments.
 
 
