@@ -1,21 +1,22 @@
-# ﻿mzQC format for analytical chemists
+# mzQC format for analytical chemists
 The Proteomics Standards Initiative of the Human Proteomics Organization (HUPO-PSI) has developed the mzQC format to simplify communicating quality control metrics for biological mass spectrometry experiments.  HUPO-PSI wants it to be easy to generate quality metrics from proteomics and metabolomics data sets and easy to read and interpret these values.  mzQC is different from other HUPO-PSI standards in that it employs “JSON” (JavaScript Object Notation) rather than XML (as in mzML or mzIdentML) or tab-delimited text (as in mzTab).  JSON is in widespread use for communicating data among web applications and other network services.
 
 ## Decide on a set of metrics
 While many of the papers describing QC metrics for mass spectrometry have been built around “shotgun” proteomics experiments, metrics can be defined for any biological mass spectrometry application.  In this case, we will use data from PXD006843, a GeLC-MS shotgun examination of Mycobacterium tuberculosis proteomes.  We might start with the mzML file for experiment H2-1-1 (an arbitrary choice).  In this case, we might ask the following questions about the mzML file:
 1. How long did this experiment take on the instrument?
-    7199.34 seconds
+    _7199.34 seconds_
 2. How many MS scans were generated in this experiment?
-    8279 MS scans
+    _8279 MS scans_
 3. How many MS/MS scans were generated in this experiment?
-    7255 MS/MS scans
+    _7255 MS/MS scans_
 4. What fraction of MS/MS scans came from +2 precursor ions?
-    63.67%
+    _63.67%_
+
 Naturally, it’s much easier if you use software to produce these values.  In this case, I am using values reported by the QuaMeter software[1] in “IDFree” mode.
 
 
 ## Format metrics in JSON
-For each of the metrics we defined in the prior section, we note that there’s an entity (the mzML in question), an attribute (the question we’re answering), a value (the number answering the question), and a unit (the type of thing represented by the value).  For this section, we will concern ourselves only with attributes, values, and units.  The following bloc expresses the answers from the first two questions in the previous section:
+For each of the metrics we defined in the prior section, we note that there’s an entity (the mzML in question), an _attribute_ (the question we’re answering), a _value_ (the number answering the question), and a _unit_ (the type of thing represented by the value).  For this section, we will concern ourselves only with attributes, values, and units.  The following bloc expresses the answers from the first two questions in the previous section:
 
 ```
 "qualityMetrics": [
@@ -46,10 +47,10 @@ For each of the metrics we defined in the prior section, we note that there’s 
 ]
 ```
 
-In essence, we have a list of two qualityMetrics (started and terminated by square brackets).  Each of the curly braces inside that list enclose an object; JSON does not require us to specify how many objects appear on a list in advance, so we could have continued to append more qualityMetrics until we were satisfied.  The pieces within the object are called key / value pairs.  In the case of “unit,” the value is a unit object nested inside the qualityMetric object.
+In essence, we have a **list** of two _qualityMetrics_ (started and terminated by square brackets).  Each of the curly braces inside that list enclose an **object**; JSON does not require us to specify how many objects appear on a list in advance, so we could have continued to append more _qualityMetrics_ until we were satisfied.  The pieces within the object are called **key / value pairs**.  In the case of “unit,” the value is a unit object **nested** inside the _qualityMetric_ object.
 
 
-It’s important that each of the attributes (metrics) we compute for an entity references the controlled vocabulary (“CV”) for mzQC.  We don’t just create metrics out of the blue; metrics should be described in the CV before they are used in mzQC files.  Each type of metric gets an accession within the CV to help people interpret these values from a given mzQC.  This greatly improves the interpretability of mzQC outputs over a text table that bears only a couple words of a caption for each column.
+It’s important that each of the attributes (metrics) we compute for an entity references the **controlled vocabulary** (“CV”) for mzQC.  We don’t just create metrics out of the blue; metrics should be described in the CV before they are used in mzQC files.  Each type of metric gets an accession within the CV to help people interpret these values from a given mzQC.  This greatly improves the interpretability of mzQC outputs over a text table that bears only a couple words of a caption for each column.
 
 
 ## Relate these data to external resources
