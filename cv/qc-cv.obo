@@ -7,7 +7,8 @@ namespace-id-rule: * MS:$sequence(7,0,9999999)$
 namespace-id-rule: * QC:$sequence(7,0,9999999)$
 remark: coverage: Mass spectrometer quality control metrics
 remark: creator: Julian Uszkoreit <julian.uszkoreit <-at-> ruhr-uni-bochum.de>
-remark: synonyms can be 'RELATED' (the metric is similar, but not the same thing), 'NARROW' (identical interpretation of numbers), 'EXACT' (result of renaming)
+remark: metric name synonyms can be used to allow alternative names which e.g. have been used in previous publication or older software to allow a measure of downwards compatibility
+remark: synonyms can be 'RELATED' (the defined metric is similar, but not the same as what is connected with the synonym name), 'NARROW' (the metric's values can be identically interpretated as in the meaning of the synoym metric, however defintion and calculation may somewhat differ), 'EXACT' (the defined metric is basically a result of renaming)
 remark: namespace: MS
 remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
@@ -419,7 +420,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
 
 [Term]
-<<<<<<< HEAD
 id: QC:4000071
 name: Fraction of peptide IDs around max MS1
 def: "Fraction of all peptides identified at least X min earlier or later than the most intense MS1 signal of the identification. The values are given in a corresponding list, where the first value is the X minutes before (negative) or after (positive) max MS1 and the second value is the fraction of IDs." [PSI:QC]
@@ -552,76 +552,88 @@ id: QC:40000
 name: Retention times
 def: "The column contains retention times in seconds." [PSI:QC]
 is_a: QC:4000082 ! Column type
+
+[Term]
+id: QC:4000082
+name: Defined value type
+def: "The parent to the group of column definitions for name, content, and units for table type (, and lists and single values)." [PSI:QC]
+relationship: has_relation id: QC:4000006 ! table
+
+[Term]
+id: QC:4000083
+name: Retention time points
+def: "The column contains retention time points in seconds." [PSI:QC]
+is_a: QC:4000082 ! Defined value type
 has_units: UO:0000010 ! second
 
 [Term]
 id: QC:40000
 name: Relative intensities 
 def: "The column contains relative intensity values of one type." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: MS:1000043 ! intensity unit
 
 [Term]
 id: QC:40000
 name: Sequence coverages
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: UO:0000187 ! percent
 
 [Term]
 id: QC:40000
 name: Protein accessions
 def: "The column contains protein accessions." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: NCIT:C45253 ! String
 
 [Term]
 id: QC:40000
 name: Length values
 def: "The column contains length values of sequences, i.e. the count of items within the sequences, e.g. total length of proteins." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: STATO:0000047 ! count
 
 [Term]
 id: QC:40000
 name: Target or decoy designation
 def: "The column contains designations of the type 'target', 'decoy', or 'target+decoy'." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: NCIT:C45253 ! String
 
 [Term]
 id: QC:40000
 name: Sample rates
 def: "The column contains sample rates as number of occurrences." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: PATO:0000161 ! rate
 
 [Term]
 id: QC:40000
 name: Counts
 def: "The column contains counts of occurrences of a common type." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: STATO:0000047 ! count
 
 [Term]
 id: QC:40000
 name: Peptide sequences
 def: "The column contains peptide sequences." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: NCIT:C45253 ! String
 
 [Term]
 id: QC:40000
 name: Outliers below
 def: "The outlier values of a given type below 1.5 * IQR." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: NCIT:C79083 ! Outlier
 
 [Term]
 id: QC:40000
 name: Outliers above
 def: "The outlier values above 1.5 * IQR." [PSI:QC]
-is_a: QC:4000082 ! Column type
+is_a: QC:4000082 ! Defined value type
 has_units: NCIT:C79083 ! Outlier
 
 [Term]
@@ -632,10 +644,10 @@ comment: The protein coverage can provide insight into the sensitivity of the in
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000085 ! Sequence coverages
-has_column: QC:4000086 ! Protein accessions
-has_column: QC:4000087 ! Length values
-has_optional_column: QC:4000088 ! Target or decoy designation
+has_column_type: QC:4000085 ! Sequence coverages
+has_column_type: QC:4000086 ! Protein accessions
+has_column_type: QC:4000087 ! Length values
+has_optional_column_type: QC:4000088 ! Target or decoy designation
 
 [Term]
 id: QC:40000
@@ -645,9 +657,9 @@ comment: The sampling rate may give insights to peptide separation, dynamic excl
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000089 ! Sample rates
-has_column: QC:4000090 ! Counts
-has_optional_column: QC:4000091 ! Peptide sequences
+has_column_type: QC:4000089 ! Sample rates
+has_column_type: QC:4000090 ! Counts
+has_optional_column_type: QC:4000091 ! Peptide sequences
 
 [Term]
 id: QC:4000096
@@ -940,8 +952,8 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000126
@@ -981,8 +993,8 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000130
@@ -1022,8 +1034,8 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000134
@@ -1063,8 +1075,8 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000138
@@ -1104,8 +1116,8 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000142
@@ -1309,8 +1321,8 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000165
@@ -1350,8 +1362,8 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000169
@@ -1424,8 +1436,8 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000176
@@ -1466,8 +1478,8 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000180
@@ -1508,8 +1520,8 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000184
@@ -1549,8 +1561,8 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight into 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000188
@@ -1590,8 +1602,8 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000192
@@ -1629,8 +1641,8 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 [Term]
 id: QC:4000196
@@ -1670,8 +1682,8 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column: QC:4000092 ! Outliers below
-has_column: QC:4000093 ! Outliers above
+has_column_type: QC:4000092 ! Outliers below
+has_column_type: QC:4000093 ! Outliers above
 
 
 [Typedef]
@@ -1683,12 +1695,23 @@ id: has_type
 name: has_type
 
 [Typedef]
-id: has_column
-name: has_column
+id: has_column_type
+name: has_column_type
+comment: to define the value type of column contained values; column header should correspond to the respectively used concrete term
 
 [Typedef]
-id: has_optional_column
-name: has_optional_column
+id: has_optional_column_type
+name: has_optional_column_type
+comment: to define the value type of contained values of an optional column; column header should correspond to the respectively used concrete term
+
+[Typedef]
+id: has_value_type
+name: has_value_type
+
+[Typedef]
+id: has_list_type
+name: has_list_type
+comment: to define the value type of list contained values; only use if the list values are of homogenous type
 
 [Typedef]
 id: has_units
