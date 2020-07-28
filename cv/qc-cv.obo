@@ -8,7 +8,7 @@ namespace-id-rule: * QC:$sequence(7,0,9999999)$
 remark: coverage: Mass spectrometer quality control metrics
 remark: creator: Julian Uszkoreit <julian.uszkoreit <-at-> ruhr-uni-bochum.de>
 remark: metric name synonyms can be used to allow alternative names which e.g. have been used in previous publication or older software to allow a measure of downwards compatibility
-remark: synonyms can be 'RELATED' (the defined metric is similar, but not the same as what is connected with the synonym name), 'NARROW' (the metric's values can be identically interpretated as in the meaning of the synoym metric, however defintion and calculation may somewhat differ), 'EXACT' (the defined metric is basically a result of renaming)
+remark: synonyms can be 'RELATED' (the defined metric is similar, but not the same as what is connected with the synonym name), 'NARROW' (the metric's values can be identically interpreted as in the meaning of the synonym metric, however definition and calculation may somewhat differ), 'EXACT' (the defined metric is basically a result of renaming) 
 remark: namespace: MS
 remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
@@ -194,7 +194,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000051
 name: XIC-FWHM quantiles
 def: "The first to n-th quantile of peak widths for the wide XICs." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
@@ -205,7 +204,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000052
 name: XIC-Height quantiles ratio to Q1
 def: "The log ratio for the second to n-th quantile of wide XIC heights over first quantile of heights." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
@@ -227,7 +225,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000054
 name: RT over TIC quantile
 def: "The interval when the respective quantile of the TIC accumulates divided by retention time duration. The number of quantiles observed is given by the size of the tuple." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
@@ -239,7 +236,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000055
 name: MS1 quantiles RT fraction
 def: "The interval for the first to n-th quantile of all MS1 events divided by RT-Duration." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
@@ -252,7 +248,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000056
 name: MS2 quantiles RT fraction
 def: "The interval for the first to n-th quantile of all MS2 events divided by RT-Duration." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
@@ -320,7 +315,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000062
 name: MS2 density per quantile
 def: "The first to n-th quantile of MS2 scan peak counts." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
@@ -331,7 +325,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000063
 name: MS2 known precursor charges fractions
 def: "The fraction of MS/MS precursors of the corresponding charge. The fractions are given in the first list, charges in the second list." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
@@ -343,7 +336,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000064
 name: MS2 unknown and likely precursor charges fractions
 def: "The fractions of inferred charge state of MS/MS precursors. The fractions [0,1] are given in the first list, their charges in the second list. Charge 0 stands for unknown." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
@@ -365,7 +357,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000066
 name: Fraction of MS2 identified at different MS1 quantiles
 def: "Fraction of total MS2 scans identified after FDR in the respective quantile of peptides sorted by MS1 maximum intensity." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000023 ! MS1 metric
@@ -376,7 +367,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000067
 name: Total ion current chromatogram
 def: "The total ion current chromatogram. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
@@ -387,7 +377,6 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000068
 name: Ambient humidity
 def: "The ambient relative humidity in percent (0,100) over one or more time points. The first list contains is the ambient humidity value(s). The second contains the respective retention time. A negative RT implies that the exact time of measurement is unknown." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
@@ -398,7 +387,6 @@ id: QC:4000069
 name: MS1 Total ion current chromatogram
 def: "The total ion current chromatogram of MS1 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
 comment: The metric enables to check visually e.g. MS1 TIC stability along the retention time and its absolute value compared to MS2 total ion chromatogram or other analyses MS1 TICs. TIC drops caused by e.g. spray stability issues or bubbles presence can be detected here.
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
@@ -411,7 +399,6 @@ id: QC:4000070
 name: MS2 Total ion current chromatogram
 def: "The total ion current chromatogram of MS2 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
 comment: The metric enables to check visually e.g. MS2 TIC absolute value compared to MS1 total ion chromatogram or other analyses MS2 TICs.
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
