@@ -7,8 +7,7 @@ namespace-id-rule: * MS:$sequence(7,0,9999999)$
 namespace-id-rule: * QC:$sequence(7,0,9999999)$
 remark: coverage: Mass spectrometer quality control metrics
 remark: creator: Julian Uszkoreit <julian.uszkoreit <-at-> ruhr-uni-bochum.de>
-remark: metric name synonyms can be used to allow alternative names which e.g. have been used in previous publication or older software to allow a measure of downwards compatibility
-remark: synonyms can be 'RELATED' (the defined metric is similar, but not the same as what is connected with the synonym name), 'NARROW' (the metric's values can be identically interpreted as in the meaning of the synonym metric, however definition and calculation may somewhat differ), 'EXACT' (the defined metric is basically a result of renaming) 
+remark: synonyms can be 'RELATED' (the metric is similar, but not the same thing), 'NARROW' (identical interpretation of numbers), 'EXACT' (result of renaming)
 remark: namespace: MS
 remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
@@ -55,15 +54,15 @@ is_a: QC:4000002 ! QC metric value type
 id: QC:4000004
 name: n-tuple
 def: "Metrics consisting of n values (in contrast to single_value or table), n specified by the CV param value, e.g. n=4 for quartiles." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000005
 name: corresponding lists
 def: "Metrics consisting of a variable number of lists with n elements each, n specified by the CV param value. The k-th elements of the lists correspond to each other (as RT and intensity lists for a chromatogram)." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000002 ! QC metric value type
-comment: OBSOLETE! Please use table (which are corresponding lists with an additional header string)
-is_obsolete: true
 
 [Term]
 id: QC:4000006
@@ -194,6 +193,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000051
 name: XIC-FWHM quantiles
 def: "The first to n-th quantile of peak widths for the wide XICs." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
@@ -204,6 +204,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000052
 name: XIC-Height quantiles ratio to Q1
 def: "The log ratio for the second to n-th quantile of wide XIC heights over first quantile of heights." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
@@ -225,6 +226,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000054
 name: RT over TIC quantile
 def: "The interval when the respective quantile of the TIC accumulates divided by retention time duration. The number of quantiles observed is given by the size of the tuple." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
@@ -236,6 +238,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000055
 name: MS1 quantiles RT fraction
 def: "The interval for the first to n-th quantile of all MS1 events divided by RT-Duration." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
@@ -248,6 +251,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000056
 name: MS2 quantiles RT fraction
 def: "The interval for the first to n-th quantile of all MS2 events divided by RT-Duration." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
@@ -315,6 +319,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000062
 name: MS2 density per quantile
 def: "The first to n-th quantile of MS2 scan peak counts." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
@@ -324,28 +329,26 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000063
 name: MS2 known precursor charges fractions
-def: "The fraction of MS/MS precursors of the known precursor charge states. The precursor charges are given in one column, the fraction of MS/MS precursors in another." [PSI:QC]
-is_a: QC:4000006 ! table
+def: "The fraction of MS/MS precursors of the corresponding charge. The fractions are given in the first list, charges in the second list." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
 relationship: has_relation MS:1000041 ! charge state
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-has_column_type: QC:4000213 ! Precursor fraction
-has_column_type: QC:4000214 ! Charge states
 
 [Term]
 id: QC:4000064
 name: MS2 unknown and likely precursor charges fractions
-def: "The fractions of MS/MS precursors of inferred charge states. The precursor charges are given in one column, the fraction of MS/MS precursors in another. Charge 0 stands for unknown." [PSI:QC]
-is_a: QC:4000006 ! table
+def: "The fractions of inferred charge state of MS/MS precursors. The fractions [0,1] are given in the first list, their charges in the second list. Charge 0 stands for unknown." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
 relationship: has_relation MS:1000041 ! charge state
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-has_column_type: QC:4000213 ! Precursor fraction
-has_column_type: QC:4000214 ! Charge states
 
 [Term]
 id: QC:4000065
@@ -361,6 +364,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000066
 name: Fraction of MS2 identified at different MS1 quantiles
 def: "Fraction of total MS2 scans identified after FDR in the respective quantile of peptides sorted by MS1 maximum intensity." [PSI:QC]
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000023 ! MS1 metric
@@ -371,166 +375,159 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 id: QC:4000067
 name: Total ion current chromatogram
 def: "The total ion current chromatogram. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
-is_a: QC:4000006 ! table
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-has_column_type: QC:4000083 ! Retention time points in seconds
-has_column_type: QC:4000084 ! Intensities
 
 [Term]
 id: QC:4000068
 name: Ambient humidity
 def: "The ambient relative humidity in percent (0,100) over one or more time points. The first list contains is the ambient humidity value(s). The second contains the respective retention time. A negative RT implies that the exact time of measurement is unknown." [PSI:QC]
-is_a: QC:4000006 ! table
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-has_column_type: QC:4000083 ! Retention time points in seconds
-has_column_type: QC:4000215 ! Ambient relative humidity values
-
 
 [Term]
 id: QC:4000069
 name: MS1 Total ion current chromatogram
 def: "The total ion current chromatogram of MS1 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
 comment: The metric enables to check visually e.g. MS1 TIC stability along the retention time and its absolute value compared to MS2 total ion chromatogram or other analyses MS1 TICs. TIC drops caused by e.g. spray stability issues or bubbles presence can be detected here.
-is_a: QC:4000006 ! table
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
-has_column_type: QC:4000083 ! Retention time points in seconds
-has_column_type: QC:4000084 ! Intensities
 
 [Term]
 id: QC:4000070
 name: MS2 Total ion current chromatogram
 def: "The total ion current chromatogram of MS2 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
 comment: The metric enables to check visually e.g. MS2 TIC absolute value compared to MS1 total ion chromatogram or other analyses MS2 TICs.
-is_a: QC:4000006 ! table
+xref: value-type:xsd\:int "The allowed value-type for this CV term."
+is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
-has_column_type: QC:4000083 ! Retention time points in seconds
-has_column_type: QC:4000084 ! Intensities
 
 [Term]
-id: QC:4000082
-name: Defined value type
-def: "The parent to the group of column definitions for name, content, and units for table type (, and lists and single values)." [PSI:QC]
+id: QC:4000107
+name: Column type
+def: "The parent to the group of column definitions for name, content, and units for table type." [PSI:QC]
 relationship: has_relation id: QC:4000006 ! table
 
 [Term]
-id: QC:4000083
-name: Retention time points in seconds
-def: "The column contains retention time points in seconds." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+id: QC:4000108
+name: Retention times
+def: "The column contains retention times in seconds." [PSI:QC]
+is_a: QC:4000107 ! Column type
 has_units: UO:0000010 ! second
-has_value_type: NCIT:C45255 ! Integer
 
 [Term]
-id: QC:4000084
-name: Intensities 
+id: QC:4000109
+name: Relative intensities 
 def: "The column contains relative intensity values of one type." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: MS:1000043 ! intensity unit
-has_value_type: NCIT:C45255 ! Integer
 
 [Term]
-id: QC:4000085
+id: QC:4000110
 name: Sequence coverages
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: UO:0000187 ! percent
 
 [Term]
-id: QC:4000086
+id: QC:4000111
 name: Protein accessions
 def: "The column contains protein accessions." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: NCIT:C45253 ! String
 
 [Term]
-id: QC:4000087
+id: QC:4000112
 name: Length values
 def: "The column contains length values of sequences, i.e. the count of items within the sequences, e.g. total length of proteins." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: STATO:0000047 ! count
 
 [Term]
-id: QC:4000088
+id: QC:4000113
 name: Target or decoy designation
 def: "The column contains designations of the type 'target', 'decoy', or 'target+decoy'." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: NCIT:C45253 ! String
 
 [Term]
-id: QC:4000089
+id: QC:4000114
 name: Sample rates
 def: "The column contains sample rates as number of occurrences." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: PATO:0000161 ! rate
 
 [Term]
-id: QC:4000090
+id: QC:4000115
 name: Counts
 def: "The column contains counts of occurrences of a common type." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: STATO:0000047 ! count
 
 [Term]
-id: QC:4000091
+id: QC:4000116
 name: Peptide sequences
 def: "The column contains peptide sequences." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: NCIT:C45253 ! String
 
 [Term]
-id: QC:4000092
+id: QC:4000117
 name: Outliers below
 def: "The outlier values of a given type below 1.5 * IQR." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: NCIT:C79083 ! Outlier
 
 [Term]
-id: QC:4000093
+id: QC:4000118
 name: Outliers above
 def: "The outlier values above 1.5 * IQR." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
+is_a: QC:4000107 ! Column type
 has_units: NCIT:C79083 ! Outlier
 
 [Term]
-id: QC:4000094
+id: QC:4000119
 name: Protein coverage
 def: "The coverage of protein sequences from the peptide sequences identified. The table records the coverage itself (in percent), the protein accession (SHOULD correspond to the accession used in fasta document used for Sequence DB based identification), Length of the protein(, and optionally if it is 'target' or 'decoy' entry.)" [PSI:QC]
 comment: The protein coverage can provide insight into the sensitivity of the instrument/identification/protocols used.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column_type: QC:4000085 ! Sequence coverages
-has_column_type: QC:4000086 ! Protein accessions
-has_column_type: QC:4000087 ! Length values
-has_optional_column_type: QC:4000088 ! Target or decoy designation
+has_column: QC:4000110 ! Sequence coverages
+has_column: QC:4000111 ! Protein accessions
+has_column: QC:4000112 ! Length values
+has_optional_column: QC:4000113 ! Target or decoy designation
 
 [Term]
-id: QC:4000095
+id: QC:4000120
 name: Sampling rates
 definition: "The sampling rates of identified peptides and their respective frequency (accumulated by the sampling rate, i.e. how often peptides were sampled n times and how many peptides were resampled at that rate. Optionally, which peptides were sampled at that rate, space separated)" [PSI:QC]
 comment: The sampling rate may give insights to peptide separation, dynamic exclusion settings and gradient efficiency.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-has_column_type: QC:4000089 ! Sample rates
-has_column_type: QC:4000090 ! Counts
-has_optional_column_type: QC:4000091 ! Peptide sequences
+has_column: QC:4000114 ! Sample rates
+has_column: QC:4000115 ! Counts
+has_optional_column: QC:4000116 ! Peptide sequences
 
 [Term]
-id: QC:4000096
+id: QC:4000121
 name: Explained precursor intensity first quarter
 def: "Fraction of identified MS2 in the first quarter of MS2 sorted by precursor intensity." [PSI:QC]
 comment: Higher fractions of identified MS2 spectra indicate the efficiency of detection and sampling
@@ -540,7 +537,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "MS2-4A" NARROW []
 
 [Term]
-id: QC:4000097
+id: QC:4000122
 name: Explained precursor intensity second quarter
 def: "Fraction of identified MS2 in the second quarter of MS2 sorted by precursor intensity." [PSI:QC]
 comment: Higher fractions of identified MS2 spectra indicate the efficiency of detection and sampling
@@ -550,7 +547,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "MS2-4B" NARROW []
 
 [Term]
-id: QC:4000098
+id: QC:4000123
 name: Explained precursor intensity third quarter
 def: "Fraction of identified MS2 in the third quarter of MS2 sorted by precursor intensity." [PSI:QC]
 comment: Higher fractions of identified MS2 spectra indicate the efficiency of detection and sampling
@@ -560,7 +557,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "MS2-4C" NARROW []
 
 [Term]
-id: QC:4000099
+id: QC:4000124
 name: Explained precursor intensity fourth quarter
 def: "Fraction of identified MS2 in the fourth quarter of MS2 sorted by precursor intensity." [PSI:QC]
 comment: Higher fractions of identified MS2 spectra indicate the efficiency of detection and sampling
@@ -570,7 +567,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "MS2-4D" NARROW []
 
 [Term]
-id: QC:4000100
+id: QC:4000125
 name: Extent of identified precursor intensity
 def: "Ratio of 95th over 5th percentile of precursor intensity for identified peptides" [PSI:QC]
 comment: Can be used to approximate the dynamic range of signal
@@ -581,7 +578,7 @@ has_units: STATO:0000300 ! dimensionless ratio
 synonym: "MS1-3A" NARROW []
 
 [Term]
-id: QC:4000101
+id: QC:4000126
 name: Precursor intensity range of identified MS2
 def: "Minimum and maximum precursor intensity recorded and identified." [PSI:QC]
 comment: The intensity range of the identified precursors informs about the dynamic range of the acquisition. 
@@ -591,7 +588,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: MS:1003085 ! previous MSn-1 scan precursor intensity
 
 [Term]
-id: QC:4000102
+id: QC:4000127
 name: Precursor intensity of identified MS2 Q1, Q2, Q3
 def: "From the distribution of precursor intensity of identified MS2, the quartiles Q1, Q2, Q3" [PSI:QC] 
 comment: The (un)identified precursor intensity distribution can aid the interpretation of overall identification success.
@@ -601,7 +598,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000103
+id: QC:4000128
 name: Precursor intensity of unidentified MS2 Q1, Q2, Q3
 def: "From the distribution of precursor intensity of unidentified MS2, the quartiles Q1, Q2, Q3" [PSI:QC] 
 comment: The (un)identified precursor intensity distribution can aid the interpretation of overall identification success.
@@ -611,7 +608,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000104
+id: QC:4000129
 name: Median S/N for MS1 spectra in RT range in which the middle half of the peptides are identified
 def: "Median S/N for MS1 spectra in RT range in which half of the peptides are identified (RT values of Q1 to Q3 of identifications)" [PSI:QC] 
 comment: Higher MS1 S/N may correlate with higher signal discrimination
@@ -622,7 +619,7 @@ has_units: STATO:0000300 ! dimensionless ratio
 synonym: "MS1-2A" NARROW []
 
 [Term]
-id: QC:4000105
+id: QC:4000130
 name: Median of TIC values in the RT range in which the middle half of peptides are identified
 def: "Median of TIC values in the RT range in which half of peptides are identified (RT values of Q1 to Q3 of identifications)"  [PSI:QC] 
 comment: Estimates the total absolute signal for peptides (may vary significantly between instruments)
@@ -632,7 +629,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "MS1-2B" NARROW []
 
 [Term]
-id: QC:4000106
+id: QC:4000131
 name: Median S/N for MS1 spectra in the shortest RT range in which half of the peptides are identified
 def: "Median S/N for MS1 spectra in the shortest RT range in which half of the peptides are identified" [PSI:QC] 
 is_a: QC:4000003 ! single value
@@ -640,7 +637,7 @@ is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000107
+id: QC:4000132
 name: Median of TIC values in the shortest RT range in which half of the peptides are identified
 def: "Median of TIC values in the shortest RT range in which half of the peptides are identified"  [PSI:QC] 
 is_a: QC:4000003 ! single value
@@ -648,7 +645,7 @@ is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000108
+id: QC:4000133
 name: Explained base peak intensity median
 def: "Median of the ratio of 'max survey scan intensity' over 'sampled precursor intensity' for all peptides identified"  [PSI:QC] 
 comment: Gives insight into the amount of overall explained signal and whether the amount of signal could be increased by a better sampling strategy.
@@ -658,7 +655,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000574 ! center value
 
 [Term]
-id: QC:4000109
+id: QC:4000134
 name: Explained base peak intensity median from least intense 50% base peaks
 def: "Ratios of 'max survey scan intensity' over sampled precursor intensity for the bottom half (by MS1 max) of MS2" [PSI:QC] 
 comment: Gives insight into the amount of explained signal and whether the sampling strategy is interfering with the sampling of low abundant peaks.
@@ -667,7 +664,7 @@ is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000110
+id: QC:4000135
 name: Number of chromatograms
 def: "Number of chromatograms" [PSI:QC]
 comment: A lower number of chromatograms acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation.
@@ -677,7 +674,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000111
+id: QC:4000136
 name: Number of MS1 spectra
 def: "Number of MS1 spectra" [PSI:QC]
 comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation.
@@ -687,7 +684,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000112
+id: QC:4000137
 name: Number of MS2 spectra
 def: "Number of MS2 spectra" [PSI:QC]
 comment: A lower number of MS2 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or unusual low levels of ions collectable for MS/MS.
@@ -697,7 +694,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000113
+id: QC:4000138
 name: MZ acquisition range
 def: "Upper and lower limit of m/z values at which spectra are recorded." [PSI:QC]
 comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs. 
@@ -707,7 +704,7 @@ is_a: QC:4000004 ! n-tuple
 has_units MS:1000040 ! m/z
 
 [Term]
-id: QC:4000114
+id: QC:4000139
 name: RT acquisition range
 def: "Upper and lower limit of time at which spectra are recorded." [PSI:QC]
 comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs. 
@@ -715,7 +712,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: UO:0000010 ! second
 
 [Term]
-id: QC:4000115
+id: QC:4000140
 name: Fastest frequency for MS level 1 collection
 def: "Fastest frequency for MS level 1 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -725,7 +722,7 @@ is_a: QC:4000001 ! QC metric
 has_units: UO:0000106 ! hertz
 
 [Term]
-id: QC:4000116
+id: QC:4000141
 name: Fastest frequency for MS level 2 collection
 def: "Fastest frequency for MS level 2 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -735,7 +732,7 @@ is_a: QC:4000001 ! QC metric
 has_units: UO:0000106 ! hertz
 
 [Term]
-id: QC:4000117
+id: QC:4000142
 name: Slowest frequency for MS level 1 collection
 def: "Slowest frequency for MS level 1 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -745,7 +742,7 @@ is_a: QC:4000001 ! QC metric
 has_units: UO:0000106 ! hertz
 
 [Term]
-id: QC:4000118
+id: QC:4000143
 name: Slowest frequency for MS level 2 collection
 def: "Slowest frequency for MS level 2 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -755,7 +752,7 @@ is_a: QC:4000001 ! QC metric
 has_units: UO:0000106 ! hertz
 
 [Term]
-id: QC:4000119
+id: QC:4000144
 name: Precursor intensity range
 def: "Minimum and maximum precursor intensity recorded." [PSI:QC]
 comment: The intensity range of the precursors informs about the dynamic range of the acquisition. 
@@ -765,7 +762,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: MS:1003085 ! previous MSn-1 scan precursor intensity
 
 [Term]
-id: QC:4000120
+id: QC:4000145
 name: MS1 frequency in RT quarters
 def: "MS1 frequency in RT 1st quarter, 2nd quarter, 3rd quarter, 4th quarter" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -775,7 +772,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: UO:0000106 ! hertz
 
 [Term]
-id: QC:4000121
+id: QC:4000146
 name: MS2 frequency in RT quarters
 def: "MS2 frequency in RT 1st quarter, 2nd quarter, 3rd quarter, 4th quarter" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -785,7 +782,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: UO:0000106 ! hertz
 
 [Term]
-id: QC:4000122
+id: QC:4000147
 name: MS1 trap time Q1, Q2, Q3
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -793,7 +790,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000123
+id: QC:4000148
 name: MS1 trap time mean
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the mean" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -803,7 +800,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000124
+id: QC:4000149
 name: MS1 trap time sigma
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the sigma value" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -813,27 +810,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000125
-name: MS1 trap time outliers (<Q1-1.5*IQR)
-def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000150
+name: MS1 trap time outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000126
-name: MS1 trap time outliers (>Q3+1.5*IQR)
-def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000127
+id: QC:4000151
 name: MS2 trap time Q1, Q2, Q3
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -843,7 +831,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000128
+id: QC:4000152
 name: MS2 trap time mean
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the mean" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -853,7 +841,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000129
+id: QC:4000153
 name: MS2 trap time sigma
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the sigma value" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -863,28 +851,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000130
-name: MS2 trap time outliers (<Q1-1.5*IQR)
-def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000154
+name: MS2 trap time outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
-has_column_type: QC:4000093 ! Outliers above
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000131
-name: MS2 trap time outliers (>Q3+1.5*IQR)
-def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000132
+id: QC:4000155
 name: Peak density distribution MS1 Q1, Q2, Q3
 def: "From the distribution of peak densities in MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
@@ -894,7 +872,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000133
+id: QC:4000156
 name: Peak density distribution MS1 mean
 def: "From the distribution of peak densities in MS1, the mean" [PSI:QC]
 comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
@@ -904,7 +882,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000134
+id: QC:4000157
 name: Peak density distribution MS1 sigma
 def: "From the distribution of peak densities in MS1, the sigma value" [PSI:QC]
 comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
@@ -914,27 +892,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000135
-name: Peak density distribution MS1 outliers (<Q1-1.5*IQR)
-def: "From the distribution of peak densities in MS1, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000158
+name: Peak density distribution MS1 outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of peak densities in MS1, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000136
-name: Peak density distribution MS1 outliers (>Q3+1.5*IQR)
-def: "From the distribution of peak densities in MS1, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000137
+id: QC:4000159
 name: Peak density distribution MS2 Q1, Q2, Q3
 def: "From the distribution of peak densities in MS2, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
@@ -944,7 +913,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000138
+id: QC:4000160
 name: Peak density distribution MS2 mean
 def: "From the distribution of peak densities in MS2, the mean" [PSI:QC]
 comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
@@ -954,7 +923,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000139
+id: QC:4000161
 name: Peak density distribution MS2 sigma
 def: "From the distribution of peak densities in MS2, the sigma value" [PSI:QC]
 comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
@@ -964,27 +933,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000140
-name: Peak density distribution MS2 outliers (<Q1-1.5*IQR)
-def: "From the distribution of peak densities in MS2, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000162
+name: Peak density distribution MS2 outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of peak densities in MS2, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000141
-name: Peak density distribution MS2 outliers (>Q3+1.5*IQR)
-def: "From the distribution of peak densities in MS2, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000142
+id: QC:4000163
 name: Precursor intensity distribution Q1, Q2, Q3
 def: "From the distribution of precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
@@ -994,7 +954,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000143
+id: QC:4000164
 name: Precursor intensity distribution mean
 def: "From the distribution of precursor intensities, the mean" [PSI:QC]
 comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
@@ -1004,7 +964,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000144
+id: QC:4000165
 name: Precursor intensity distribution sigma
 def: "From the distribution of precursor intensities, the sigma value" [PSI:QC]
 comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
@@ -1014,27 +974,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000145
-name: Precursor intensity distribution outliers (<Q1-1.5*IQR)
-def: "From the distribution of precursor intensities, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000166
+name: Precursor intensity distribution outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of precursor intensities, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000146
-name: Precursor intensity distribution outliers (>Q3+1.5*IQR)
-def: "From the distribution of precursor intensities, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000147
+id: QC:4000167
 name: MS1 signal jump (10x) count
 def: "The count of MS1 signal jump by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
 comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
@@ -1044,7 +995,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-1A"  RELATED []
 
 [Term]
-id: QC:4000148
+id: QC:4000168
 name: MS1 signal fall (10x) count
 def: "The count of MS1 signal decline by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
 comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
@@ -1054,7 +1005,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-1B"  RELATED []
 
 [Term]
-id: QC:4000149
+id: QC:4000169
 name: Charged peptides ratio 1+ over 2+
 def: Ratio of 1+ peptide count  over 2+ peptide count  in identified spectra
 is_a: QC:4000003 ! single value
@@ -1063,7 +1014,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-3A" NARROW []
 
 [Term]
-id: QC:4000150
+id: QC:4000170
 name: Charged peptides ratio 3+ over 2+
 def: Ratio of 3+ peptide count over 2+ peptide count in identified spectra
 is_a: QC:4000003 ! single value
@@ -1072,7 +1023,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-3B" NARROW []
 
 [Term]
-id: QC:4000151
+id: QC:4000171
 name: Charged peptides ratio 4+ over 2+
 def: Ratio of 4+ peptide count over 2+ peptide count in identified spectra
 is_a: QC:4000003 ! single value
@@ -1081,7 +1032,7 @@ is_a: QC:4000001 ! QC metric
 synoym: "IS-3C" NARROW []
 
 [Term]
-id: QC:4000152
+id: QC:4000172
 name: Mean charge in identified spectra
 def: Mean charge in identified spectra
 is_a: QC:4000003 ! single value
@@ -1089,7 +1040,7 @@ is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000153
+id: QC:4000173
 name: Median charge in identified spectra
 def: Median charge in identified spectra
 is_a: QC:4000003 ! single value
@@ -1097,7 +1048,7 @@ is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000154
+id: QC:4000174
 name: Charged spectra ratio +1 over +2
 def: Ratio of 1+ spectra count over 2+ spectra count in all MS2
 is_a: QC:4000003 ! single value
@@ -1106,7 +1057,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-3A"  RELATED []
 
 [Term]
-id: QC:4000155
+id: QC:4000175
 name: Charged spectra ratio +3 over +2
 def: Ratio of 3+ peptide count over 2+ peptide count in all MS2
 is_a: QC:4000003 ! single value
@@ -1115,7 +1066,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-3B"  RELATED []
 
 [Term]
-id: QC:4000156
+id: QC:4000176
 name: Charged spectra ratio +4 over +2
 def: Ratio of 4+ peptide count over 2+ peptide count in all MS2
 is_a: QC:4000003 ! single value
@@ -1124,7 +1075,7 @@ is_a: QC:4000001 ! QC metric
 synonym: "IS-3C"  RELATED []
 
 [Term]
-id: QC:4000157
+id: QC:4000177
 name: Mean precursor charge in all MS2
 def: Mean precursor charge in all MS2
 is_a: QC:4000003 ! single value
@@ -1132,7 +1083,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000158
+id: QC:4000178
 name: Median precursor charge in all MS2
 def: Median precursor charge in all MS2
 is_a: QC:4000003 ! single value
@@ -1140,7 +1091,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 
 [Term]
-id: QC:4000159
+id: QC:4000180
 name: Number of different proteins from all PSM
 def: Number of different protein from all PSM
 is_a: QC:4000003 ! single value
@@ -1149,7 +1100,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000160
+id: QC:4000181
 name: Number of identified proteins
 def: Number of identified proteins at given FDR threshold, first number is the number of proteins (considering sequence only), second number is the FDR threshold applied (negative if no threshold applied)
 comment: The number of identifications are likely to only make local sense within a confined set of identification parameters (identification algorithm, searchspace, FDR method).
@@ -1159,7 +1110,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000161
+id: QC:4000182
 name: Total number of PSM
 def: Total number of PSM
 is_a: QC:4000003 ! single value
@@ -1168,7 +1119,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000162
+id: QC:4000183
 name: Number of identified peptides
 def: Number of identified peptides at given FDR threshold, first number is the number of peptides (considering sequence only), second number is the FDR threshold applied (negative if no threshold applied)
 comment: The number of identifications are likely to only make local sense within a confined set of identification parameters (identification algorithm, searchspace, FDR method).
@@ -1178,7 +1129,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000163
+id: QC:4000184
 name: Number of identified spectra
 def: Number of identified spectra at given FDR threshold, first number is the number of spectra, second number is the FDR threshold applied (negative if no threshold applied)
 comment: The number of identifications are likely to only make local sense within a confined set of identification parameters (identification algorithm, searchspace, FDR method).
@@ -1188,7 +1139,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000047! count
 
 [Term]
-id: QC:4000164
+id: QC:4000185
 name: ID ratio
 def: The ratio of identified and recorded spectra.
 is_a: QC:4000003 ! single value
@@ -1197,7 +1148,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000300 ! dimensionless ratio
 
 [Term]
-id: QC:4000165
+id: QC:4000186
 name: Precursor errors (Da) Q1, Q2, Q3
 def: "From the distribution of Precursor errors (Da), the quartiles Q1, Q2, Q3 value" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
@@ -1207,7 +1158,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000166
+id: QC:4000187
 name: Precursor errors (Da) mean
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 def: "From the distribution of Precursor errors (Da), the mean" [PSI:QC]
@@ -1218,7 +1169,7 @@ has_units: STATO:0000401 ! sample mean
 synonym: "MS1-5B" NARROW []
 
 [Term]
-id: QC:4000167
+id: QC:4000188
 name: Precursor errors (Da) sigma
 def: "From the distribution of Precursor errors (Da), the sigma value" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
@@ -1228,28 +1179,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000168
-name: Precursor errors (Da) outliers (<Q1-1.5*IQR)
-def: "From the distribution of Precursor errors (Da), the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000189
+name: Precursor errors (Da) outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of Precursor errors (Da), the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
-
-
-[Term]
-id: QC:4000169
-name: Precursor errors (Da) outliers (>Q3+1.5*IQR)
-def: "From the distribution of Precursor errors (Da), the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000170
+id: QC:4000190
 name: Precursor errors (ppm) Q1, Q2, Q3
 comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
 def: "From the distribution of Precursor errors (ppm), the quartiles Q1, Q2, Q3 value" [PSI:QC]
@@ -1259,7 +1200,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000171
+id: QC:4000191
 name: Precursor errors (ppm) mean
 def: "From the distribution of Precursor errors (ppm), the mean " [PSI:QC]
 comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
@@ -1269,7 +1210,7 @@ is_a: QC:4000003 ! single value
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000172
+id: QC:4000192
 name: Precursor errors (ppm) sigma
 def: "From the distribution of Precursor errors (ppm), the sigma value" [PSI:QC]
 comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
@@ -1279,27 +1220,18 @@ is_a: QC:4000003 ! single value
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000173
-name: Precursor errors (ppm) outliers (<Q1-1.5*IQR)
-def: "From the distribution of Precursor errors (ppm), the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000193
+name: Precursor errors (ppm) outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of Precursor errors (ppm), the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000174
-name: Precursor errors (ppm) outliers (>Q3+1.5*IQR)
-def: "From the distribution of Precursor errors (ppm), the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000175
+id: QC:4000194
 name: Precursor errors (Da) median
 def: "From the distribution of Precursor errors (Da), the median" [PSI:QC]
 comment: The precursor error distribution can aid the interpretation of overall identification success.
@@ -1310,7 +1242,7 @@ has_units: STATO:0000401 ! sample mean
 synonym: "MS1-5A" NARROW []
 
 [Term]
-id: QC:4000176
+id: QC:4000195
 name: Precursor errors (ppm) median
 def: "From the distribution of Precursor errors (ppm), the median" [PSI:QC]
 comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
@@ -1321,7 +1253,7 @@ has_units: STATO:0000401 ! sample mean
 synonym: "MS1-5C" NARROW []
 
 [Term]
-id: QC:4000177
+id: QC:4000196
 name: Precursor errors (ppm) IQR
 def: "From the distribution of Precursor errors (ppm), the IQR" [PSI:QC]
 comment: The precursor error in ppm distribution can aid the interpretation of overall identification success.
@@ -1332,7 +1264,7 @@ has_units: STATO:0000401 ! sample mean
 synonym: "MS1-5D" NARROW []
 
 [Term]
-id: QC:4000178
+id: QC:4000197
 name: Identification score - Q1, Q2, Q3
 def: "From the distribution of Identification score, the Q1, Q2, Q3 value" [PSI:QC]
 comment: The identification score distribution can help improve scoring function tuning, aid the interpretation of overall identification success, and integration with downstream processing such as percolator. Comparisons will likely only make local sense where the same method of identification is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1342,7 +1274,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000179
+id: QC:4000198
 name: Identification score - mean
 def: "From the distribution of Identification score, the mean value" [PSI:QC]
 comment: The identification score distribution can help improve scoring function tuning, aid the interpretation of overall identification success, and integration with downstream processing such as percolator. Comparisons will likely only make local sense where the same method of identification is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1352,7 +1284,7 @@ is_a: QC:4000003 ! single value
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000180
+id: QC:4000199
 name: Identification score - sigma
 def: "From the distribution of Identification score, the sigma value" [PSI:QC]
 comment: The identification score distribution can help improve scoring function tuning, aid the interpretation of overall identification success, and integration with downstream processing such as percolator. Comparisons will likely only make local sense where the same method of identification is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1362,27 +1294,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000181
-name: Identification score - outliers (<Q1-1.5*IQR)
-def: "From the distribution of Identification score, the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000200
+name: Identification score - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of Identification score, the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: The identification score distribution can help improve scoring function tuning, aid the interpretation of overall identification success, and integration with downstream processing such as percolator. Comparisons will likely only make local sense where the same method of identification is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000182
-name: Identification score - outliers (>Q3+1.5*IQR)
-def: "From the distribution of Identification score, the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: The identification score distribution can help improve scoring function tuning, aid the interpretation of overall identification success, and integration with downstream processing such as percolator. Comparisons will likely only make local sense where the same method of identification is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000183
+id: QC:4000201
 name: Missed cleavages - Q1, Q2, Q3
 def: "From the distribution of missed cleavages in identified peptides the quartiles Q1, Q2, Q3 value" [PSI:QC]
 comment: The missed cleavage distribution can aid the interpretation of digestion efficacy.
@@ -1392,7 +1315,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000184
+id: QC:4000202
 name: Missed cleavages - mean
 def: "From the distribution of missed cleavages in identified peptides the mean" [PSI:QC]
 comment: The missed cleavage distribution can aid the interpretation of digestion efficacy.
@@ -1403,7 +1326,7 @@ has_units: STATO:0000401 ! sample mean
 synonym: "MS1-5B" NARROW []
 
 [Term]
-id: QC:4000185
+id: QC:4000203
 name: Missed cleavages - sigma
 def: "From the distribution of missed cleavages in identified peptides the sigma value" [PSI:QC]
 comment: The missed cleavage distribution can aid the interpretation of digestion efficacy.
@@ -1413,27 +1336,18 @@ is_a: QC:4000003 ! single value
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000186
-name: Missed cleavages - outliers (<Q1-1.5*IQR)
-def: "From the distribution of missed cleavages in identified peptides, the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000204
+name: Missed cleavages - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of missed cleavages in identified peptides, the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: The missed cleavage distribution can aid the interpretation of digestion efficacy.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000187
-name: Missed cleavages - outliers (>Q3+1.5*IQR)
-def: "From the distribution of missed cleavages in identified peptides, the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: The missed cleavage distribution can aid the interpretation of digestion efficacy.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000188
+id: QC:4000205
 name: Identified peptide lengths - Q1, Q2, Q3
 def: "From the distribution of identified peptide lengths the quartiles Q1, Q2, Q3 value" [PSI:QC]
 comment: The identified peptide lengths distribution can aid the interpretation of digestion efficacy.
@@ -1443,7 +1357,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000189
+id: QC:4000206
 name: Identified peptide lengths - mean
 def: "From the distribution of identified peptide lengths the mean" [PSI:QC]
 comment: The identified peptide lengths distribution can aid the interpretation of digestion efficacy.
@@ -1454,7 +1368,7 @@ has_units: STATO:0000401 ! sample mean
 synonym: "MS1-5B" NARROW []
 
 [Term]
-id: QC:4000190
+id: QC:4000207
 name: Identified peptide lengths - sigma
 def: "From the distribution of identified peptide lengths the sigma value" [PSI:QC]
 comment: The identified peptide lengths distribution can aid the interpretation of digestion efficacy.
@@ -1464,27 +1378,18 @@ is_a: QC:4000003 ! single value
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000191
-name: Identified peptide lengths - outliers (<Q1-1.5*IQR)
-def: "From the distribution of identified peptide lengths, the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000208
+name: Identified peptide lengths - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of identified peptide lengths, the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: The identified peptide lengths distribution can aid the interpretation of digestion efficacy.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000192
-name: Identified peptide lengths - outliers (>Q3+1.5*IQR)
-def: "From the distribution of identified peptide lengths, the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: The identified peptide lengths distribution can aid the interpretation of digestion efficacy.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000193
+id: QC:4000209
 name: Signal-to-noise ratio in MS1 - Q1, Q2, Q3
 def: "From the distribution of signal-to-noise ratio in MS1, the quartiles Q1, Q2, Q3 value" [PSI:QC]
 comment: The Signal-to-noise ratio in MS1 distribution can provide insight to the presence of nuisance factors.
@@ -1494,7 +1399,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000194
+id: QC:4000210
 name: Signal-to-noise ratio in MS1 - mean
 comment: The signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
 def: "From the distribution of signal-to-noise ratio in MS1, the mean" [PSI:QC]
@@ -1504,7 +1409,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000195
+id: QC:4000211
 name: Signal-to-noise ratio in MS1 - sigma
 def: "From the distribution of signal-to-noise ratio in MS1, the sigma value" [PSI:QC]
 comment: The Signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1514,27 +1419,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000196
-name: Signal-to-noise ratio in MS1 - outliers (<Q1-1.5*IQR)
-def: "From the distribution of signal-to-noise ratio in MS1, the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000212
+name: Signal-to-noise ratio in MS1 - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of signal-to-noise ratio in MS1, the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: The Signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000197
-name: Signal-to-noise ratio in MS1 - outliers (>Q3+1.5*IQR)
-def: "From the distribution of signal-to-noise ratio in MS1, the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: The Signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000198
+id: QC:4000213
 name: Signal-to-noise ratio in MS2 - Q1, Q2, Q3
 def: "From the distribution of signal-to-noise ratio in MS2, the quartiles Q1, Q2, Q3 value" [PSI:QC]
 comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1544,7 +1440,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000199
+id: QC:4000214
 name: Signal-to-noise ratio in MS2 - mean
 def: "From the distribution of signal-to-noise ratio in MS2, the mean" [PSI:QC]
 comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1554,7 +1450,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000200
+id: QC:4000215
 name: Signal-to-noise ratio in MS2 - sigma
 def: "From the distribution of signal-to-noise ratio in MS2, the sigma value"
 comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
@@ -1564,27 +1460,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000201
-name: Signal-to-noise ratio in MS2 - outliers (<Q1-1.5*IQR)
-def: "From the distribution of signal-to-noise ratio in MS2, the list of outliers below of Q1-1.5IQR" [PSI:QC]
+id: QC:4000216
+name: Signal-to-noise ratio in MS2 - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of signal-to-noise ratio in MS2, the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
 comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000202
-name: Signal-to-noise ratio in MS2 - outliers (>Q3+1.5*IQR)
-def: "From the distribution of signal-to-noise ratio in MS2, the list of outliers above Q3+1.5IQR" [PSI:QC]
-comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000010 ! ID free
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000203
+id: QC:4000217
 name: Identified precursor intensity distribution Q1, Q2, Q3
 def: "From the distribution of identified precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
@@ -1592,7 +1479,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000204
+id: QC:4000218
 name: Identified precursor intensity distribution - mean
 def: "From the distribution of identified precursor intensities, the mean" [PSI:QC]
 comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
@@ -1602,7 +1489,7 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000205
+id: QC:4000219
 name: Identified precursor intensity distribution - sigma
 def: "From the distribution of identified precursor intensities, the sigma value" [PSI:QC]
 comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
@@ -1612,27 +1499,18 @@ is_a: QC:4000001 ! QC metric
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000206
-name: Identified precursor intensity distribution - outliers (<Q1-1.5*IQR)
-def: "From the distribution of identified precursor intensities, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000220
+name: Identified precursor intensity distribution - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of identified precursor intensities, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 [Term]
-id: QC:4000207
-name: Identified precursor intensity distribution - outliers (>Q3+1.5*IQR)
-def: "From the distribution of identified precursor intensities, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000208
+id: QC:4000221
 name: Unidentified precursor intensity distribution - Q1, Q2, Q3
 def: "From the distribution of unidentified precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The intensity distribution of the unidentified precursors informs about the dynamic range of the acquisition in relation to identifiability.
@@ -1642,7 +1520,7 @@ is_a: QC:4000004 ! n-tuple
 has_units: STATO:0000167 ! first quartile, STATO:0000574 ! center value, STATO:0000170 ! third quartile
 
 [Term]
-id: QC:4000209
+id: QC:4000222
 name:  Unidentified precursor intensity distribution - mean
 def: "From the distribution of unidentified precursor intensities, the mean" [PSI:QC]
 comment: The intensity distribution of the unidentified precursors informs about the dynamic range of the acquisition in relation to identifiability.
@@ -1652,7 +1530,7 @@ is_a: QC:4000003 ! single value
 has_units: STATO:0000401 ! sample mean
 
 [Term]
-id: QC:4000210
+id: QC:4000223
 name: Unidentified precursor intensity distribution - sigma
 def: "From the distribution of unidentified precursor intensities, the sigma value" [PSI:QC]
 comment: The intensity distribution of the unidentified precursors informs about the dynamic range of the acquisition in relation to identifiability.
@@ -1662,48 +1540,15 @@ is_a: QC:4000009 ! ID based
 has_units: STATO:0000237 ! standard deviation
 
 [Term]
-id: QC:4000211
-name: Unidentified precursor intensity distribution - outliers (<Q1-1.5*IQR)
-def: "From the distribution of unidentified precursor intensities, the list of outliers below of Q1-1.5*IQR" [PSI:QC]
+id: QC:4000224
+name: Unidentified precursor intensity distribution - outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
+def: "From the distribution of unidentified precursor intensities, the list of outliers below of Q1-1.5*IQR and above Q3+1.5*IQR" [PSI:QC]
 comment: The intensity distribution of the unidentified precursors informs about the dynamic range of the acquisition in relation to identifiability.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000092 ! Outliers below
-
-[Term]
-id: QC:4000212
-name: Unidentified precursor intensity distribution - outliers (>Q3+1.5*IQR)
-def: "From the distribution of unidentified precursor intensities, the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: The intensity distribution of the unidentified precursors informs about the dynamic range of the acquisition in relation to identifiability.
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000004 ! n-tuple
-has_column_type: QC:4000093 ! Outliers above
-
-[Term]
-id: QC:4000213
-name: Precursor fraction
-def: "The column contains fraction of selected precursors against all precusors." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
-has_units: UO:0000191 ! fraction
-has_value_type: NCIT:C48150 ! Float
-
-[Term]
-id: QC:4000214
-name: Charge states
-def: "The column contains charge states." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
-has_units: MS:1000041 ! charge state
-has_value_type: NCIT:C45255 ! Integer
-
-[Term]
-id: QC:4000215
-name: Ambient relative humidity values
-def: "The relative magnitude of a signal." [PSI:QC]
-is_a: QC:4000082 ! Defined value type
-has_units: NCIT:C88206 ! Humidity
-has_value_type: NCIT:C45255 ! Integer
+is_a: QC:4000006 ! table
+has_column: QC:4000117 ! Outliers below
+has_column: QC:4000118 ! Outliers above
 
 
 [Typedef]
@@ -1711,28 +1556,16 @@ id: has_relation
 name: has_relation
 
 [Typedef]
-id: has_value_type
-name: has_value_type
-comment: to define the value type
+id: has_type
+name: has_type
 
 [Typedef]
-id: has_column_type
-name: has_column_type
-comment: to define the value and unit type of column contained values; column header should correspond to the respectively used concrete term
+id: has_column
+name: has_column
 
 [Typedef]
-id: has_optional_column_type
-name: has_optional_column_type
-comment: to define the value and unit type of contained values of an optional column; column header should correspond to the respectively used concrete term
-
-[Typedef]
-id: has_value_type
-name: has_value_type
-
-[Typedef]
-id: has_list_type
-name: has_list_type
-comment: to define the value type of list contained values; only use if the list values are of homogenous type
+id: has_optional_column
+name: has_optional_column
 
 [Typedef]
 id: has_units
