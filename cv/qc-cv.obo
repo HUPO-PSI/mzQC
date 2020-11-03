@@ -61,6 +61,7 @@ id: QC:4000005
 name: corresponding lists
 def: "Metrics consisting of a variable number of lists with n elements each, n specified by the CV param value. The k-th elements of the lists correspond to each other (as RT and intensity lists for a chromatogram)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
+is_obsolete: true
 
 [Term]
 id: QC:4000006
