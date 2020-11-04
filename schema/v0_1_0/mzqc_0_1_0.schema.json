@@ -49,7 +49,7 @@
 				{"required": ["runQualities"]},
 				{"required": ["setQualities"]}
 			],
-			"required": ["version", "controlledVocabularies"]
+			"required": ["version", "controlledVocabularies", "creationDate"]
 		}
 	},
 	"additionalProperties": false,
