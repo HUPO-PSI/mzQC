@@ -101,7 +101,7 @@ is_a: QC:4000008 ! QC metric basis
 [Term]
 id: QC:4000012
 name: QC metric relation
-def: "A QC metric describes the basis for the metric calculation like \"one MS run\" or \"one spectrum\"" [PSI:QC]
+def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'" [PSI:QC]
 
 [Term]
 id: QC:4000013
@@ -324,24 +324,24 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000063
 name: MS2 known precursor charges fractions
-def: "The fraction of MS/MS precursors of the corresponding charge. The fractions are given in the first list, charges in the second list." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "The fraction of MS/MS precursors of the corresponding (known) charge. The fractions are formed by the number of precursors at a given charge by the total number of precurors." [PSI:QC]
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
-relationship: has_relation MS:1000041 ! charge state
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column QC:4000225
+property_value: has_column QC:4000226
 
 [Term]
 id: QC:4000064
 name: MS2 unknown and likely precursor charges fractions
-def: "The fractions of inferred charge state of MS/MS precursors. The fractions [0,1] are given in the first list, their charges in the second list. Charge 0 stands for unknown." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "The fraction of MS/MS precursors of the corresponding (inferred) charge. Unkown charge is treated as zero. The fractions are formed by the number of precursors at a given charge by the total number of precurors." [PSI:QC]
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
-relationship: has_relation MS:1000041 ! charge state
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column QC:4000225
+property_value: has_column QC:4000226
 
 [Term]
 id: QC:4000065
@@ -366,45 +366,53 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000067
 name: Total ion current chromatogram
-def: "The total ion current chromatogram. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "The total ion current chromatogram. One column contains the retention time values in seconds, the other column contains the corresponding abundances." [PSI:QC]
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column QC:4000108
+property_value: has_column QC:4000109
 
 [Term]
 id: QC:4000068
 name: Ambient humidity
-def: "The ambient relative humidity in percent (0,100) over one or more time points. The first list contains is the ambient humidity value(s). The second contains the respective retention time. A negative RT implies that the exact time of measurement is unknown." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "The ambient relative humidity in percent (0,100) over one or more time points. One column contains the ambient humidity value(s). The other column contains the respective retention time. Zero time indicates the start of the run, unknown exact time of measurement is indicated with N/A." [PSI:QC]
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column QC:4000227
+property_value: has_column QC:4000108
 
 [Term]
 id: QC:4000069
 name: MS1 Total ion current chromatogram
-def: "The total ion current chromatogram of MS1 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+def: "The total ion current chromatogram of MS1 measurements. One column contains the retention time values in seconds, the other column contains the corresponding abundances." [PSI:QC]
 comment: The metric enables to check visually e.g. MS1 TIC stability along the retention time and its absolute value compared to MS2 total ion chromatogram or other analyses MS1 TICs. TIC drops caused by e.g. spray stability issues or bubbles presence can be detected here.
-is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
+property_value: has_column QC:4000108
+property_value: has_column QC:4000109
 
 [Term]
 id: QC:4000070
 name: MS2 Total ion current chromatogram
-def: "The total ion current chromatogram of MS2 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+def: "The total ion current chromatogram of MS2 measurements. One column contains the retention time values in seconds, the other column contains the corresponding abundances." [PSI:QC]
 comment: The metric enables to check visually e.g. MS2 TIC absolute value compared to MS1 total ion chromatogram or other analyses MS2 TICs.
-is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
+property_value: has_column QC:4000108
+property_value: has_column QC:4000109
 
 [Term]
 id: QC:4000071
@@ -1307,13 +1315,22 @@ property_value: has_units STATO:0000237
 
 [Term]
 id: QC:4000189
-name: Precursor errors (Da) outliers (<Q1-1.5*IQR, >Q3+1.5*IQR)
-def: "From the distribution of Precursor errors (Da), the list of outliers below of Q1-1.5IQR and above Q3+1.5IQR" [PSI:QC]
+name: Precursor errors (Da) outliers (<Q1-1.5*IQR)
+def: "From the distribution of Precursor errors (Da), the list of outliers below of Q1-1.5IQR" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
 property_value: has_column QC:4000117
+
+[Term]
+id: QC:4000189
+name: Precursor errors (Da) outliers (>Q3+1.5*IQR)
+def: "From the distribution of Precursor errors (Da), the list of outliers above Q3+1.5IQR" [PSI:QC]
+comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
+is_a: QC:4000001 ! QC metric
+is_a: QC:4000009 ! ID based
+is_a: QC:4000006 ! table
 property_value: has_column QC:4000118
 
 [Term]
@@ -1693,6 +1710,27 @@ is_a: QC:4000006 ! table
 property_value: has_column QC:4000117
 property_value: has_column QC:4000118
 
+[Term]
+id: QC:4000225
+name: Charge state column
+def: "The column contains charge states." [PSI:QC]
+is_a: QC:4000107 ! Column type
+property_value: has_units MS:1000041
+
+[Term]
+id: QC:4000226
+name: Fractions column
+def: "The column contains fraction values as decimals." [PSI:QC]
+is_a: QC:4000107 ! Column type
+property_value: has_units UO:0000191
+
+[Term]
+id: QC:4000227
+name: Humidity value column
+def: "The column contains relative humidity values in percent." [PSI:QC]
+is_a: QC:4000107 ! Column type
+property_value: has_units UO:0000187
+
 
 [Typedef]
 id: has_relation
@@ -1709,6 +1747,10 @@ name: has_column
 [Typedef]
 id: has_optional_column
 name: has_optional_column
+
+[Typedef]
+id: has_tuple
+name: has_tuple
 
 [Typedef]
 id: has_units
