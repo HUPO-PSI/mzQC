@@ -166,17 +166,19 @@ is_a: QC:4000028 ! MS metric
 [Term]
 id: QC:4000026
 name: environment metric
-def: "A metric related to measurements of the environment/laboratory/room." [PSI:QC]
+def: "An environment metric" [PSI:QC]
 is_a: QC:4000001 ! QC metric
 
 [Term]
 id: QC:4000027
 name: sample preparation metric
+def: "A sample preparation metric." [PSI:QC]
 is_a: QC:4000001 ! QC metric
 
 [Term]
 id: QC:4000028
 name: MS metric
+def: "A metric related to measurements of the environment/laboratory/room." [PSI:QC]
 is_a: QC:4000001 ! QC metric
 
 [Term]
@@ -703,7 +705,9 @@ comment: The (un)identified precursor intensity distribution can aid the interpr
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000128
@@ -713,7 +717,9 @@ comment: The (un)identified precursor intensity distribution can aid the interpr
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000129
@@ -895,7 +901,9 @@ name: MS1 trap time Q1, Q2, Q3
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000148
@@ -936,7 +944,9 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000152
@@ -977,7 +987,9 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000156
@@ -1018,7 +1030,9 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000160
@@ -1059,7 +1073,10 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
+
 
 [Term]
 id: QC:4000164
@@ -1115,7 +1132,7 @@ synonym: "IS-1B"  RELATED []
 [Term]
 id: QC:4000169
 name: Charged peptides ratio 1+ over 2+
-def: Ratio of 1+ peptide count  over 2+ peptide count  in identified spectra
+def: "Ratio of 1+ peptide count  over 2+ peptide count  in identified spectra" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1124,7 +1141,7 @@ synonym: "IS-3A" NARROW []
 [Term]
 id: QC:4000170
 name: Charged peptides ratio 3+ over 2+
-def: Ratio of 3+ peptide count over 2+ peptide count in identified spectra
+def: "Ratio of 3+ peptide count over 2+ peptide count in identified spectra" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1133,16 +1150,16 @@ synonym: "IS-3B" NARROW []
 [Term]
 id: QC:4000171
 name: Charged peptides ratio 4+ over 2+
-def: Ratio of 4+ peptide count over 2+ peptide count in identified spectra
+def: "Ratio of 4+ peptide count over 2+ peptide count in identified spectra" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-synoym: "IS-3C" NARROW []
+synonym: "IS-3C" NARROW []
 
 [Term]
 id: QC:4000172
 name: Mean charge in identified spectra
-def: Mean charge in identified spectra
+def: "Mean charge in identified spectra" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1150,7 +1167,7 @@ is_a: QC:4000001 ! QC metric
 [Term]
 id: QC:4000173
 name: Median charge in identified spectra
-def: Median charge in identified spectra
+def: "Median charge in identified spectra" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1158,7 +1175,7 @@ is_a: QC:4000001 ! QC metric
 [Term]
 id: QC:4000174
 name: Charged spectra ratio +1 over +2
-def: Ratio of 1+ spectra count over 2+ spectra count in all MS2
+def: "Ratio of 1+ spectra count over 2+ spectra count in all MS2" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1167,7 +1184,7 @@ synonym: "IS-3A"  RELATED []
 [Term]
 id: QC:4000175
 name: Charged spectra ratio +3 over +2
-def: Ratio of 3+ peptide count over 2+ peptide count in all MS2
+def: "Ratio of 3+ peptide count over 2+ peptide count in all MS2" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1176,7 +1193,7 @@ synonym: "IS-3B"  RELATED []
 [Term]
 id: QC:4000176
 name: Charged spectra ratio +4 over +2
-def: Ratio of 4+ peptide count over 2+ peptide count in all MS2
+def: "Ratio of 4+ peptide count over 2+ peptide count in all MS2" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1185,7 +1202,7 @@ synonym: "IS-3C"  RELATED []
 [Term]
 id: QC:4000177
 name: Mean precursor charge in all MS2
-def: Mean precursor charge in all MS2
+def: "Mean precursor charge in all MS2" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1193,7 +1210,7 @@ is_a: QC:4000001 ! QC metric
 [Term]
 id: QC:4000178
 name: Median precursor charge in all MS2
-def: Median precursor charge in all MS2
+def: "Median precursor charge in all MS2" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1201,7 +1218,7 @@ is_a: QC:4000001 ! QC metric
 [Term]
 id: QC:4000180
 name: Number of different proteins from all PSM
-def: Number of different protein from all PSM
+def: "Number of different protein from all PSM" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1210,7 +1227,7 @@ property_value: has_units STATO:0000047
 [Term]
 id: QC:4000181
 name: Number of identified proteins
-def: Number of identified proteins at given FDR threshold, first number is the number of proteins (considering sequence only), second number is the FDR threshold applied (negative if no threshold applied)
+def: "Number of identified proteins at given FDR threshold, first number is the number of proteins (considering sequence only), second number is the FDR threshold applied (negative if no threshold applied)" [PSI:QC]
 comment: The number of identifications are likely to only make local sense within a confined set of identification parameters (identification algorithm, searchspace, FDR method).
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
@@ -1220,7 +1237,7 @@ property_value: has_units STATO:0000047
 [Term]
 id: QC:4000182
 name: Total number of PSM
-def: Total number of PSM
+def: "Total number of PSM" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1229,7 +1246,7 @@ property_value: has_units STATO:0000047
 [Term]
 id: QC:4000183
 name: Number of identified peptides
-def: Number of identified peptides at given FDR threshold, first number is the number of peptides (considering sequence only), second number is the FDR threshold applied (negative if no threshold applied)
+def: "Number of identified peptides at given FDR threshold, first number is the number of peptides (considering sequence only), second number is the FDR threshold applied (negative if no threshold applied)" [PSI:QC]
 comment: The number of identifications are likely to only make local sense within a confined set of identification parameters (identification algorithm, searchspace, FDR method).
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
@@ -1239,7 +1256,7 @@ property_value: has_units STATO:0000047
 [Term]
 id: QC:4000184
 name: Number of identified spectra
-def: Number of identified spectra at given FDR threshold, first number is the number of spectra, second number is the FDR threshold applied (negative if no threshold applied)
+def: "Number of identified spectra at given FDR threshold, first number is the number of spectra, second number is the FDR threshold applied (negative if no threshold applied)" [PSI:QC]
 comment: The number of identifications are likely to only make local sense within a confined set of identification parameters (identification algorithm, searchspace, FDR method).
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
@@ -1249,7 +1266,7 @@ property_value: has_units STATO:0000047
 [Term]
 id: QC:4000185
 name: ID ratio
-def: The ratio of identified and recorded spectra.
+def: "The ratio of identified and recorded spectra." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1263,7 +1280,9 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000187
@@ -1305,7 +1324,9 @@ def: "From the distribution of Precursor errors (ppm), the quartiles Q1, Q2, Q3 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000191
@@ -1379,7 +1400,9 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000198
@@ -1420,7 +1443,9 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000202
@@ -1462,7 +1487,9 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000206
@@ -1504,7 +1531,9 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight to th
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000210
@@ -1545,7 +1574,9 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000214
@@ -1560,7 +1591,7 @@ property_value: has_units STATO:0000401
 [Term]
 id: QC:4000215
 name: Signal-to-noise ratio in MS2 - sigma
-def: "From the distribution of signal-to-noise ratio in MS2, the sigma value"
+def: "From the distribution of signal-to-noise ratio in MS2, the sigma value" [PSI:QC]
 comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
@@ -1584,7 +1615,9 @@ name: Identified precursor intensity distribution Q1, Q2, Q3
 def: "From the distribution of identified precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000218
@@ -1625,7 +1658,9 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167, STATO:0000574, STATO:0000170
+property_value: has_units STATO:0000167
+property_value: has_units STATO:0000574
+property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000222
