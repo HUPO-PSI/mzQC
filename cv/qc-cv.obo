@@ -572,21 +572,21 @@ relationship: has_relation QC:4000006 ! table
 
 [Term]
 id: QC:4000108
-name: Retention times
-def: "The column contains retention times in seconds." [PSI:QC]
+name: Retention time
+def: "The column contains retention time points in seconds." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000010
 
 [Term]
 id: QC:4000109
+name: Relative intensity
 def: "The column contains relative intensity values of one type." [PSI:QC]
-name: Relative intensities 
 is_a: QC:4000107 ! Column type
 property_value: has_units MS:1000043
 
 [Term]
 id: QC:4000110
-name: Sequence coverages
+name: Sequence coverage
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000187
@@ -594,14 +594,14 @@ property_value: has_type NCIT:C68811
 
 [Term]
 id: QC:4000111
-name: Protein accessions
+name: Protein accession
 def: "The column contains protein accessions." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_types MS:1000885
 
 [Term]
 id: QC:4000112
-name: Length values
+name: Length value
 def: "The column contains length values of sequences, i.e. the count of items within the sequences, e.g. total length of proteins." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000189
@@ -615,21 +615,21 @@ property_value: has_types NCIT:C45253
 
 [Term]
 id: QC:4000114
-name: Sample rates
-def: "The column contains sample rates as number of occurrences." [PSI:QC]
+name: Sample rate
+def: "The column contains sample rate values as number of occurrences." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units PATO:0000161
 
 [Term]
 id: QC:4000115
-name: Counts
+name: Count
 def: "The column contains counts of occurrences of a common type." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000189
 
 [Term]
 id: QC:4000116
-name: Peptide sequences
+name: Peptide sequence
 def: "The column contains peptide sequences." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_types NCIT:C45253
@@ -1857,21 +1857,21 @@ property_value: has_column QC:4000118
 
 [Term]
 id: QC:4000238
-name: Charge state column
+name: Charge state
 def: "The column contains charge states." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units MS:1000041
 
 [Term]
 id: QC:4000239
-name: Fractions column
+name: Fraction
 def: "The column contains fraction values as decimals." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000191
 
 [Term]
 id: QC:4000240
-name: Humidity value column
+name: Humidity
 def: "The column contains relative humidity values in percent." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000187
