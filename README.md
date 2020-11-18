@@ -2,7 +2,7 @@
 
 [![Build status](https://travis-ci.org/HUPO-PSI/mzQC.svg?branch=master)](https://travis-ci.org/HUPO-PSI/mzQC)
 
-![mzQC](mzQC.png)
+![mzQC](mzQC.png&s=120)
 
 ## The HUPO-PSI Quality Control working group
 
