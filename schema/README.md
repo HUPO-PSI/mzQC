@@ -1,25 +1,21 @@
-# mzQC Schema
+# mzQC JSON Schema
 
-Please find the _current_ schema, documentation and examples in the `current` folder (which should link to the highest version number folder.
-Version number increase usually indicates non-minor schema changes.
+![mzQC JSON Schema](mzqc_schema.jpg)
 
-## Current: v0.1.0
-![Schema visualisation](v0_1_0/mzqc_0_1_0.schema.jpg)
+For a detailed description of the mzQC Schema, please see the [mzQC Specification Document](https://docs.google.com/document/d/132F3MBgDJgtFlXxDZhpJ1oHGbKL8pT6dk9fvL55L5_M/edit?usp=sharing).
 
+## Changelog
 
-### Developers:
-each version folder should contain:
-* example folder
-* README.md with some documentation/changelog
-* a schema visualisation file
-* the schema file
+## Version 0.1.1 (Oct 2020)
 
-In case of version bump, make sure to:
-1. symlink the schema file to schema.json in the folder
-2. symlink the schema visualisation to schema.jpg in the folder
-3. update the current folder symlink to the folder
-4. update the links in the README.md of the schema root folder
+- Removed `cvRef` from `qualityMetric`s.
+- Made `creationDate` attribute of the root `mzQC` element mandatory.
 
+### Version 0.1.0 (Aug 2019)
 
-------
-^[*]: visualised with https://navneethg.github.io/jsonschemaviewer/
+- Added optional `creationDate` to root `mzQC` element.
+- Renamed `cv` to `controlledVocabularies`.
+- Renamed `qualityParameters` to `qualityMetrics`.
+- Added optional `fileProvenance` to the `metadata`.
+- Added optional additional `cvParameters` to the `metadata`.
+- Internalised the `cvRef` which also acted as name of the JSON object in the `controlledVocabularies` list as attribute into the now dynamic object.
