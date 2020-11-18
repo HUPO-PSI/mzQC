@@ -100,21 +100,6 @@
 				},
 				"value": {
 					"description": "Value of the parameter."
-				},
-				"unit": {
-					"description": "A controlled vocabulary element describing the unit of the parameter value.",
-					"anyOf": [
-						{
-							"$ref": "#/definitions/cvParameter"
-						},
-						{
-							"type": "array",
-							"minItems": 1,
-							"items": {
-								"$ref": "#/definitions/cvParameter"
-							}
-						}
-					]
 				}
 			},
 			"required": ["accession", "name"]
@@ -204,7 +189,30 @@
 		},
 		"qualityMetric": {
 			"description": "Parameter describing a QC metric.",
-			"$ref": "#/definitions/cvParameter"
+			"allOf": [
+                {
+                    "$ref": "#/definitions/cvParameter"
+                },
+                {
+                    "properties": {
+                        "unit": {
+                            "description": "A controlled vocabulary element describing the unit of the quality metric.",
+                            "anyOf": [
+                                {
+                                    "$ref": "#/definitions/cvParameter"
+                                },
+                                {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "$ref": "#/definitions/cvParameter"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
 		},
 		"controlledVocabulary": {
 			"description": "Element describing a controlled vocabulary.",
