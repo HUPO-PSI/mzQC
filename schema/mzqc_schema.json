@@ -88,7 +88,7 @@
 				"accession": {
 					"description": "Accession number identifying the parameter within its CV.",
 					"type": "string",
-					"pattern": "^[A-Z]+:[0-9]{7}$"
+					"pattern": "^[A-Z]+:[A-Z0-9]+$"
 				},
 				"name": {
 					"description": "Name of the controlled vocabulary element describing the parameter.",
