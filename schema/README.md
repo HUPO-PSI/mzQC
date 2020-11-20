@@ -6,10 +6,12 @@ For a detailed description of the mzQC Schema, please see the [mzQC Specificatio
 
 ## Changelog
 
-### Version 0.1.1 (Oct 2020)
+### Version 0.1.1 (Nov 2020)
 
 - Removed `cvRef` from `qualityMetric`s.
 - Made `creationDate` attribute of the root `mzQC` element mandatory.
+- Moved `unit` from `cvParameter` to `qualityMetric`.
+- Relax the restrictions on the format of `accession` strings.
 
 ### Version 0.1.0 (Aug 2019)
 
