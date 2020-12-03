@@ -19,6 +19,10 @@
                     "type": "string",
                     "format": "date-time"
                 },
+                "readMe": {
+                    "description": "Description and comments about the mzQC file contents.",
+                    "type": "string"
+                },
                 "runQualities": {
                     "description": "List of runQuality elements.",
                     "type": "array",
