@@ -23,6 +23,14 @@
                     "description": "Description and comments about the mzQC file contents.",
                     "type": "string"
                 },
+                "contactName": {
+                    "description": "Name of contact a particular mzQC file.",
+                    "type": "string"
+                },
+                "contactAddress": {
+                    "description": "Contact Address (mail/tel.) for getting in touch with given contact for a particular file",
+                    "type": "string"
+                },
                 "runQualities": {
                     "description": "List of runQuality elements.",
                     "type": "array",
@@ -150,6 +158,10 @@
                             }
                         ]
                     }
+                },
+                "labelName": {
+                    "description": "OPTIONAL label name. For setQuality, this a group name, lending itself for example as a axis labels for a plot. OPTIONAL.",
+                    "type": "string"
                 },
                 "cvParameters": {
                     "description": "OPTIONAL list of cvParameter elements containing additional metadata about its parent runQuality/setQuality.",
