@@ -24,11 +24,11 @@
                     "type": "string"
                 },
                 "contactName": {
-                    "description": "Name of contact a particular mzQC file.",
+                    "description": "Name of file creator or person chosen as dedicated contact a particular mzQC file.",
                     "type": "string"
                 },
                 "contactAddress": {
-                    "description": "Contact Address (mail/tel.) for getting in touch with given contact for a particular file",
+                    "description": "Contact Address (mail/tel.) for getting in touch with given contact for a particular mzQC file",
                     "type": "string"
                 },
                 "runQualities": {
