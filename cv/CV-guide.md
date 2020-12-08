@@ -19,7 +19,7 @@ to define your metric object which would look like
 {
     "accession": "QC:4000111",
     "name": "Number of MS1 spectra",
-    "value": 7130,
+    "value": 7130
 }
 ```
 where the value would then be implicitly interpreted as of type `count`.
@@ -42,7 +42,7 @@ Then we can assign the tuples as an n-array and their units implicitly assumed t
 {
     "accession": "QC:4000113",
     "name": "MZ acquisition range",
-    "value": [400,1200],
+    "value": [400,1200]
 }
 ```
 
@@ -90,7 +90,7 @@ def: "The column contains peptide sequences." [PSI:QC]
 is_a: QC:4000082 ! Defined value type
 has_units: NCIT:C45253 ! String
 ```
-Such, a metric object for two peptides being samples 5 times ("DYHTVLGAR", "AGLVTHYDR") and three peptides sampled 3 times ("IQACSGNDLQQWAR","AWQQLDNGSCAQIR","MATSGMMTELGK") will look like this.
+A metric object for two peptides being samples 5 times ("DYHTVLGAR", "AGLVTHYDR") and three peptides sampled 3 times ("IQACSGNDLQQWAR","AWQQLDNGSCAQIR","MATSGMMTELGK") will look like this.
 ```
 {
     "accession": "QC:4000113",
@@ -98,23 +98,23 @@ Such, a metric object for two peptides being samples 5 times ("DYHTVLGAR", "AGLV
     "value": {
 	    "Sample rates": [5,3],
 	    "Counts": [2,3],
-	    "Peptide sequences": ["DYHTVLGAR AGLVTHYDR","IQACSGNDLQQWAR AWQQLDNGSCAQIR MATSGMMTELGK"],
+	    "Peptide sequences": ["DYHTVLGAR AGLVTHYDR","IQACSGNDLQQWAR AWQQLDNGSCAQIR MATSGMMTELGK"]
     },
 }
 ```
 
 
-# Define a new metric term for a
-If a desired metric is not yet defined, you will need a cv term definition before you can write a metric object. 
+# Define a new metric term for ...
+If a desired metric is not yet defined, you will need a cv term definition before you can write a metric object. First to decide is what type of value your new metric will have.
 
 ## single value, n-tuple, matrix:
 This is straight forward for these types. 
 1. Make sure, the term is not defined yet in the QC ontology
 2. Define a reasonable descriptive name while keeping concise
 3. Describe the term content, context (relations), and usage 
-4. Define its value type 
+4. Define its value type and unit 
 
-Say we want to define a metric for the fastest frequency for MS/MS acquisition. We look up the QC ontology and for the purpose of this document pretend, no such term exists. We coin the name `Maximal MS2 frequency` and define it as `"The fastest frequency for MS/MS collection in any minute over the complete run"`.  This will clearly be a single value type, we do not need any spectrum identifications to assign its value, but it will be for the MS2 tandem spectra of one particular run.  And it will clearly be of type frequency, in particular the sampling frequency of spectra per minute. Hence the might look like this.
+Say we want to define a metric for the fastest frequency for MS/MS acquisition. We look up the QC ontology and for the purpose of this document pretend, no such term exists. We coin the name `Maximal MS2 frequency` and define it as `"The fastest frequency for MS/MS collection in any minute over the complete run"`.  This will clearly be a single value type, we do not need any spectrum identifications to assign its value, but it will be for the tandem spectra of one particular run.  And it will clearly be of type frequency, in particular the sampling frequency of spectra per minute. All together, it might look like this.
 
 ```
 [Term]
@@ -130,14 +130,12 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 ```
 where the content, context (relations), and usage are described by the is_a and relationship expressions. The unit is implied as `has_units UO:0000106 ! hertz` per the `has_relation MS:1000029 ! sampling frequency` relationship.
 
-***Issue***: do we want to allow these indirect unit associations? We can be flexible, and allow unit definition individually per object instance, or mandate. But indirect is somewhere inbetween.
-
 ## tables
 In case multiple types are involved,  the procedure changes slightly. 
 
 `Defined value type`s are no renamed unit types! In case you need multiple columns of the same type, it would not be helpful to have a `Defined value type` to be the same as a unit as this would result in column name conflicts. For this purpose, `Defined value type`s are 'named' stand-ins for unit types where same type occurrences are expected frequently. This also makes automated parsing a lot easier, as now each column has a dedicated name, and well defined/describet content, too, thanks to the defintion of the `Defined value type`.
 
-For example if we want a table to describe total ion current chromatogram forvisualisation purposes. It would be for one particular run and it would need a representation for retention time/intensity coordinates.  
+For example if we want a table to describe total ion current chromatogram for visualisation purposes. It would be for one particular run and it would need a representation for retention time/intensity coordinates.  
 We discover two types in the QC ontology which fit our needs.
 ```
 [Term]
@@ -154,7 +152,7 @@ def: "The column contains relative intensity values of one type." [PSI:QC]
 is_a: QC:4000082 ! Defined value type
 has_units: MS:1000043 ! intensity unit
 ```
-Such, we can define it as a ID free table type metric for chromatograms of a run.
+With these, we can define it as a ID free table type metric for chromatograms of a run.
 ```
 [Term]
 id: QC:4000067
