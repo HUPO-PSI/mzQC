@@ -19,7 +19,7 @@
                     "type": "string",
                     "format": "date-time"
                 },
-                "readMe": {
+                "description": {
                     "description": "Description and comments about the mzQC file contents.",
                     "type": "string"
                 },
@@ -159,7 +159,7 @@
                         ]
                     }
                 },
-                "labelName": {
+                "label": {
                     "description": "OPTIONAL label name. For setQuality, this a group name, lending itself for example as a axis labels for a plot. OPTIONAL.",
                     "type": "string"
                 },
