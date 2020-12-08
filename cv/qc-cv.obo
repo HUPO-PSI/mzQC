@@ -610,7 +610,7 @@ property_value: has_units UO:0000189
 [Term]
 id: QC:4000116
 name: Peptide sequence
-def: "The column contains peptide sequences." [PSI:QC]
+def: "The column contains peptide sequences; multiple peptides are separated by space." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_types NCIT:C45253
 
@@ -740,8 +740,8 @@ property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000129
-name: Median S/N for MS1 spectra in RT range in which the middle half of the peptides are identified
-def: "Median S/N for MS1 spectra in RT range in which half of the peptides are identified (RT values of Q1 to Q3 of identifications)" [PSI:QC] 
+name: Median S/N for MS1 spectra in RT range in which half of the identified spectra are identified
+def: "Median S/N for MS1 spectra whose RT is between Q1-Q3 of identified MS2 spectra. This will be half of the identified MS2 spectra." [PSI:QC] 
 comment: Higher MS1 S/N may correlate with higher signal discrimination
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
@@ -808,7 +808,7 @@ property_value: has_units UO:0000189
 id: QC:4000136
 name: Number of MS1 spectra
 def: "Number of MS1 spectra" [PSI:QC]
-comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation.
+comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or issues with sample amounts.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -914,7 +914,7 @@ property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000147
-name: MS1 trap time Q1, Q2, Q3
+name: MS1 ion collection time Q1, Q2, Q3
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000004 ! n-tuple
@@ -924,7 +924,7 @@ property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000148
-name: MS1 trap time mean
+name: MS1 ion collection time mean
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the mean" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000003 ! single value
@@ -934,7 +934,7 @@ property_value: has_units STATO:0000401
 
 [Term]
 id: QC:4000149
-name: MS1 trap time sigma
+name: MS1 ion collection time sigma
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the sigma value" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000003 ! single value
@@ -944,7 +944,7 @@ property_value: has_units STATO:0000237
 
 [Term]
 id: QC:4000150
-name: MS1 trap time low outliers (<Q1-1.5*IQR)
+name: MS1 ion collection time low outliers (<Q1-1.5*IQR)
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers below Q1-1.5*IQR" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000001 ! QC metric
@@ -954,7 +954,7 @@ property_value: has_column QC:4000117
 
 [Term]
 id: QC:4000151
-name: MS1 trap time high outliers (>Q3+1.5*IQR)
+name: MS1 ion collection time high outliers (>Q3+1.5*IQR)
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers above Q3+1.5*IQR" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000001 ! QC metric
@@ -964,7 +964,7 @@ property_value: has_column QC:4000118
 
 [Term]
 id: QC:4000152
-name: MS2 trap time Q1, Q2, Q3
+name: MS2 ion collection time Q1, Q2, Q3
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000010 ! ID free
@@ -976,7 +976,7 @@ property_value: has_units STATO:0000170
 
 [Term]
 id: QC:4000153
-name: MS2 trap time mean
+name: MS2 ion collection time mean
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the mean" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000003 ! single value
@@ -986,7 +986,7 @@ property_value: has_units STATO:0000401
 
 [Term]
 id: QC:4000154
-name: MS2 trap time sigma
+name: MS2 ion collection time sigma
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the sigma value" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000003 ! single value
@@ -996,7 +996,7 @@ property_value: has_units STATO:0000237
 
 [Term]
 id: QC:4000155
-name: MS2 trap time low outliers (<Q1-1.5*IQR)
+name: MS2 ion collection time low outliers (<Q1-1.5*IQR)
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers below Q1-1.5*IQR" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000001 ! QC metric
@@ -1006,7 +1006,7 @@ property_value: has_column QC:4000118
 
 [Term]
 id: QC:4000156
-name: MS2 trap time high outliers (>Q3+1.5*IQR)
+name: MS2 ion collection time high outliers (>Q3+1.5*IQR)
 def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers above Q3+1.5*IQR" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000001 ! QC metric
@@ -1173,7 +1173,7 @@ property_value: has_column QC:4000118
 [Term]
 id: QC:4000172
 name: MS1 signal jump (10x) count
-def: "The count of MS1 signal jump by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
+def: "The count of MS1 signal jump (spectra sum) by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
 comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
@@ -1183,7 +1183,7 @@ synonym: "IS-1A"  RELATED []
 [Term]
 id: QC:4000173
 name: MS1 signal fall (10x) count
-def: "The count of MS1 signal decline by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
+def: "The count of MS1 signal decline (spectra sum) by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
 comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
@@ -1278,8 +1278,8 @@ is_a: QC:4000001 ! QC metric
 
 [Term]
 id: QC:4000184
-name: Number of different proteins from all PSM
-def: "Number of different protein from all PSM" [PSI:QC]
+name: Number of different distinct proteins from all PSM
+def: "Number of different distinct protein from all PSM after FDR filtering. (No undistinguishability groups.)" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1298,7 +1298,7 @@ property_value: has_units UO:0000189
 [Term]
 id: QC:4000186
 name: Total number of PSM
-def: "Total number of PSM" [PSI:QC]
+def: "Total number of PSM before FDR filtering." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
@@ -1327,7 +1327,7 @@ property_value: has_units UO:0000189
 [Term]
 id: QC:4000189
 name: ID ratio
-def: "The ratio of identified and recorded spectra." [PSI:QC]
+def: "The ratio of identified and recorded MS2 spectra after FDR filtering." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1336,7 +1336,7 @@ property_value: has_units STATO:0000300
 [Term]
 id: QC:4000190
 name: Precursor errors (Da) Q1, Q2, Q3
-def: "From the distribution of Precursor errors (Da), the quartiles Q1, Q2, Q3 value" [PSI:QC]
+def: "From the distribution of Precursor errors (mass deviation of precursor to identified peptide in Da), the quartiles Q1, Q2, Q3 value" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1349,7 +1349,7 @@ property_value: has_units STATO:0000170
 id: QC:4000191
 name: Precursor errors (Da) mean
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
-def: "From the distribution of Precursor errors (Da), the mean" [PSI:QC]
+def: "From the distribution of Precursor errors (mass deviation of precursor to identified peptide in Da), the mean" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
@@ -1359,7 +1359,7 @@ synonym: "MS1-5B" NARROW []
 [Term]
 id: QC:4000192
 name: Precursor errors (Da) sigma
-def: "From the distribution of Precursor errors (Da), the sigma value" [PSI:QC]
+def: "From the distribution of Precursor errors (mass deviation of precursor to identified peptide in Da), the sigma value" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
@@ -1369,7 +1369,7 @@ property_value: has_units STATO:0000237
 [Term]
 id: QC:4000193
 name: Precursor errors (Da) outliers (<Q1-1.5*IQR)
-def: "From the distribution of Precursor errors (Da), the list of outliers below Q1-1.5IQR" [PSI:QC]
+def: "From the distribution of Precursor errors (mass deviation of precursor to identified peptide in Da), the list of outliers below Q1-1.5IQR" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
@@ -1379,7 +1379,7 @@ property_value: has_column QC:4000117
 [Term]
 id: QC:4000194
 name: Precursor errors (Da) outliers (>Q3+1.5*IQR)
-def: "From the distribution of Precursor errors (Da), the list of outliers above Q3+1.5IQR" [PSI:QC]
+def: "From the distribution of Precursor errors (mass deviation of precursor to identified peptide in Da), the list of outliers above Q3+1.5IQR" [PSI:QC]
 comment: The absolute precursor error distribution can aid the interpretation of overall identification success.
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
@@ -1891,4 +1891,11 @@ is_a: QC:4000006 ! table
 property_value: has_column: QC:4000116 ! Peptide sequence
 property_value: has_column: QC:4000243 ! Observed mass accuracies
 
-  
+[Term]
+id: QC:4000245
+name: Number of different undistinguishable proteins groups from all PSM
+def: "Number of different undistinguishable proteins groups from all PSM after FDR filtering. (Only undistinguishability groups.)" [PSI:QC]
+is_a: QC:4000003 ! single value
+is_a: QC:4000009 ! ID based
+is_a: QC:4000001 ! QC metric
+property_value: has_units UO:0000189
