@@ -388,13 +388,12 @@ synonym: "MS2-Density-Q3" RELATED []
 id: QC:4000063
 name: MS2 known precursor charges fractions
 def: "The fraction of MS/MS precursors of the corresponding charge. The fractions [0,1] are given in the 'Fraction' column, corresponding charges in the 'Charge state' column. The highest charge state is to be interpreted as that charge state or higher. " [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
 relationship: has_relation MS:1000041 ! charge state
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-is_a: QC:4000006 ! table 
 property_value: has_column: QC:4000238 ! Charge state
 property_value: has_column: QC:4000239 ! Fraction
 synonym: "MS2-PrecZ-1" RELATED []
@@ -408,13 +407,12 @@ synonym: "MS2-PrecZ-more" RELATED []
 id: QC:4000064
 name: MS2 unknown and likely precursor charges fractions
 def: "The fractions of inferred charge state of MS/MS precursors. The fractions [0,1] are given in the 'Fraction' column, corresponding charges in the 'Charge state' column. Charge 0 represents unknown charge states." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
+is_a: QC:4000006 ! table 
 relationship: has_relation MS:1000041 ! charge state
 relationship: has_relation QC:4000013 ! QC metric relation: one run
-is_a: QC:4000006 ! table 
 property_value: has_column: QC:4000238 ! Charge state
 property_value: has_column: QC:4000239 ! Fraction
 synonym: "MS2-PrecZ-likely-1" RELATED []
@@ -443,55 +441,65 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000067
 name: Total ion current chromatogram
-def: "The total ion current chromatogram. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "The total ion current chromatogram. The first column contains the retention time values in second, the second column the corresponding relative intensities." [PSI:QC]
+is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column: QC:4000108 ! Retention time
+property_value: has_column: QC:4000109 ! Relative intensity
 
 [Term]
 id: QC:4000068
 name: Ambient humidity
-def: "The ambient relative humidity in percent (0,100) over one or more time points. The first list contains is the ambient humidity value(s). The second contains the respective retention time. A negative RT implies that the exact time of measurement is unknown." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "The ambient relative humidity in percent (0,100) over one or more time points. The first column contains is the ambient humidity value(s). The second contains the respective retention time. A negative RT implies that the exact time of measurement is unknown." [PSI:QC]
+is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column: QC:4000108 ! Retention time
+property_value: has_column: QC:4000260 ! Percent
 
 [Term]
 id: QC:4000069
 name: MS1 Total ion current chromatogram
-def: "The total ion current chromatogram of MS1 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+def: "The total ion current chromatogram of MS1 measurements. The first column contains the retention time values in seconds, the second column the corresponding relative intensities." [PSI:QC]
 comment: The metric enables to check visually e.g. MS1 TIC stability along the retention time and its absolute value compared to MS2 total ion chromatogram or other analyses MS1 TICs. TIC drops caused by e.g. spray stability issues or bubbles presence can be detected here.
-is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
+property_value: has_column: QC:4000108 ! Retention time
+property_value: has_column: QC:4000109 ! Relative intensity
 
 [Term]
 id: QC:4000070
 name: MS2 Total ion current chromatogram
-def: "The total ion current chromatogram of MS2 measurements. The first list contains the retention time values in second, the second list the corresponding abundances." [PSI:QC]
+def: "The total ion current chromatogram of MS2 measurements. The first column contains the retention time values in second, the second column the corresponding relative intensities." [PSI:QC]
 comment: The metric enables to check visually e.g. MS2 TIC absolute value compared to MS1 total ion chromatogram or other analyses MS2 TICs.
-is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
+property_value: has_column: QC:4000108 ! Retention time
+property_value: has_column: QC:4000109 ! Relative intensity
 
 [Term]
 id: QC:4000071
 name: Fraction of peptide IDs around max MS1
-def: "Fraction of all peptides identified at least X min earlier or later than the most intense MS1 signal of the identification. The values are given in a corresponding list, where the first value is the X minutes before (negative) or after (positive) max MS1 and the second value is the fraction of IDs." [PSI:QC]
+def: "Fraction of all peptides identified at least X minutes earlier or later than the most intense MS1 signal of the identification. The first column contains the time in minute-wise steps of seconds, the other comlumn the fraction of identified. Negative time values indicate minutes before and positive after maximum MS1." [PSI:QC]
 comment: Estimates very early peak broadening.
-is_a: QC:4000005 ! corresponding lists
+is_a: QC:4000006 ! table 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column: QC:4000108 ! Retention time
+property_value: has_column: QC:4000239 ! Fraction
 
 [Term]
 id: QC:4000072
@@ -570,12 +578,14 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 [Term]
 id: QC:4000079
 name: Pump pressure chromatogram
-def: "Representation of chromatographic pressure versus time. The first list contains the retention time points in seconds, the second list the corresponding pressures in pascal." [PSI:QC]
-is_a: QC:4000005 ! corresponding lists
+def: "Representation of chromatographic pressure versus time. The first column contains the retention time points in seconds, the second column the corresponding pressures in pascal." [PSI:QC]
+is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_column: QC:4000108 ! Retention time
+property_value: has_column: QC:4000261 ! Pressure
 
 [Term]
 id: QC:4000080
@@ -2033,7 +2043,6 @@ is_a: QC:4000003 ! single value
 relationship: has_relation QC:4000013 ! QC metric relation: one run
 property_value: has_units UO:0000189
 
-
 [Term]
 id: QC:4000258
 name: Maximal MS1 frequency
@@ -2059,3 +2068,17 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 synonym: MS1-Density-Q1" RELATED []
 synonym: MS1-Density-Q2" RELATED []
 synonym: MS1-Density-Q3" RELATED []
+
+[Term]
+id: QC:4000260
+name: Percent
+def: "The column contains percentages of one type." [PSI:QC]
+is_a: QC:4000107 ! Column type
+property_value: has_units UO:0000187
+
+[Term]
+id: QC:4000261
+name: Pressure
+def: "The column contains measurments of pressure in pascal." [PSI:QC]
+is_a: QC:4000107 ! Column type
+property_value: has_units UO:0000110
