@@ -306,13 +306,15 @@ relationship: has_relation QC:4000013 ! QC metric relation: one run
 
 [Term]
 id: QC:4000059
-name: MS1 count
+name: Number of MS1 spectra
 def: "The number of MS1 events in the run." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000023 ! MS1 metric
+comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or issues with sample amounts.
 relationship: has_relation MS:1000579 ! MS1 spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_units UO:0000189
 
 [Term]
 id: QC:4000060
@@ -320,9 +322,11 @@ name: MS2 count
 def: "The number of MS2 events in the run." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
-is_a: QC:4000023 ! MS1 metric
+is_a: QC:4000024 ! MS2 metric
+comment: A lower number of MS2 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or unusual low levels of ions collectable for MS/MS.
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: one run
+property_value: has_units UO:0000189
 
 [Term]
 id: QC:4000061
@@ -799,26 +803,6 @@ id: QC:4000135
 name: Number of chromatograms
 def: "Number of chromatograms" [PSI:QC]
 comment: A lower number of chromatograms acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation.
-is_a: QC:4000003 ! single value
-is_a: QC:4000010 ! ID free
-is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
-
-[Term]
-id: QC:4000136
-name: Number of MS1 spectra
-def: "Number of MS1 spectra" [PSI:QC]
-comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or issues with sample amounts.
-is_a: QC:4000003 ! single value
-is_a: QC:4000010 ! ID free
-is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
-
-[Term]
-id: QC:4000137
-name: Number of MS2 spectra
-def: "Number of MS2 spectra" [PSI:QC]
-comment: A lower number of MS2 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or unusual low levels of ions collectable for MS/MS.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
