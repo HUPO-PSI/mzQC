@@ -121,10 +121,6 @@
             "description": "Metadata describing the QC analysis.",
             "type": "object",
             "properties": {
-                "fileProvenance": {
-                    "description": "Optional string describing/documenting the provenance of the file.",
-                    "type": "string"
-                },
                 "inputFiles": {
                     "description": "List of input files from which the QC metrics have been generated.",
                     "type": "array",
