@@ -20,7 +20,7 @@ Of course we also need some information about the current mzQC document, too.
 These are simple strings, the 'creationDate' has to be formatted according to ISO 8601.
 ```
 	'creationDate': '2020-07-29T11:17:09', 
-	'version': '0.1.1',
+	'version': '1.0.0',
 ```
 Next we come to describe the quality of a ms experiment, 
 either a 'runQuality' for quality metrics about a single run or 
@@ -45,7 +45,7 @@ Softwares are collected in the 'analysisSoftware' list, files considered in the 
 				{'fileFormat': {'accession': 'MS:1000584', 'name': 'mzML format'},
 				'fileProperties': [{'accession': 'MS:1000747', 'name': 'completion time', 'value': '2017-12-08-T15:38:57Z'}],
 				'location': 'file:///folder/file.mzML',
-				'name': 'file.raw'
+				'name': 'file'
 				}
 			]},
 ```
@@ -70,7 +70,7 @@ so all in all, here is the mzQC in complete and uninterrupted:
 		{'name': 'Unit Ontology', 'uri': 'http://ontologies.berkeleybop.org/uo.obo', 'version': 'releases/2020-03-10'}
 	],
 	'creationDate': '2020-07-29T11:17:09', 
-	'version': '0.1.1',
+	'version': '1.0.0',
 	'runQualities': [
 		{'metadata': 
 			{'analysisSoftware': [{'accession': 'QC:9999999', 'name': 'bestqctool', 'uri': 'http://www.qc-for-protein-pros.org', 'version': '1.2.3'}],
@@ -78,7 +78,7 @@ so all in all, here is the mzQC in complete and uninterrupted:
 				{'fileFormat': {'accession': 'MS:1000584', 'name': 'mzML format'},
 				'fileProperties': [{'accession': 'MS:1000747', 'name': 'completion time', 'value': '2017-12-08-T15:38:57Z'}],
 				'location': 'file:///dev/null',
-				'name': 'file.raw'
+				'name': 'file'
 				}
 			]},
 		'qualityMetrics': [
