@@ -8,7 +8,7 @@ This folder contains different types of documentations for mzQC, here is a guide
 * The `examples` folder contains the raw examples, there are markdown comments available to each example:
   - [Single-Run Example of mzQC](single-run.mzQC.md)
   - [QC Sample-Run Example of mzQC](QC2-sample-example.mzQC.md)
-  - multi-run.mzQC
+  - [QC Multi-Run Example of mzQC](multi-run.mzQC.md)
   - [Metabolomics Batch-Runs Example](metabo-batches.mzQC.md)
 
 * A document introducing several mzQC use cases for multiple experiments and studies can be found in [mzQC for multiple experiments](mzQC_multiple_experiments.md)
