@@ -52,10 +52,11 @@ c) information about the QC metrics computed on **a set of runs**.
 ```
 In fact, `setQualities` can contain one or more `setQuality` objects, each defining a different set of runs.
 E.g. if you have three technical replicates for two conditions, you might want to subsume three runs into a set, one for each condition and report the total number of proteins you identified, or the percentage of total intensity attributable to contaminants). Each `setQuality` object is an element of a JSON array, thus it is not explicitly named (i.e. there is no "setQuality" key in the mzQC file).
-A different object `runQualities` may hold the QC information about the individual runs (shown in the `single-run.mzQC` example).
-For the purpose of this example, we will just use one `setQuality` (there could be more though). How you define (and name) each set, is up to you and depends on your experimental design.
-A `setQuality` represents QC data  (as `qualityMetric` objects) which is only valid when looking at a set, i.e. within the context of the runs it comprises. E.g. it would be invalid to define a set of three runs and report their individual MS1 scan counts as a 3-tuple -- because this information can clearly be attributed to individual runs. Similar to `runQuality` it also contains `metadata` about the set of runs (its input file**s**, the software used). 
-You can give the set a unique name using the `label` attribute:
+A different `runQualities` object may hold QC information about the individual runs (shown in the `single-run.mzQC` example).
+For the purpose of this example, we will just use two `setQuality` objects (there could be none, only one or more than two though). How you define (and name) each set, is up to you and depends on your experimental design.
+A `setQuality` represents QC data that must be viewed in the context of all the runs of this set/group. I.e. the data is only valid within the context of the runs it comprises. E.g. it would be invalid to define a set of three runs and report their individual MS1 scan counts as a 3-tuple -- because this information can clearly be attributed to individual runs.
+Similar to `runQuality`, a `setQuality` also contains `metadata` about the set of runs (its input file**s**, the software used). 
+You can give the set a unique name using the `label` attribute. Here is how a `setQuality` object looks like:
 ```
       {
         "metadata": {
@@ -99,13 +100,16 @@ Here we show two metrics: the first describes the relative total intensity of al
             "name": "Protein contaminant intensity ratio",
             "value": 0.25
 ```
- ... and the second metric is a PCA result, which stores the first 5 principal components (PC) for this set
+... and the second metric is a single column of a PCA result matrix. This metric is a bit special because it only partially describes the data.
+This data is part of a superset (a.k.a. set of sets). Let's see what the full data would look like:
+![PCA results based on a table where each row is a proteingroup, and each column represents a set of Rawfiles(runs). Each data point in the plot represents one set, e.g. `TechRepl:1,2,3_diseased` or `TechRepl:1,2,3_healthy`.](figures/MultiSet_PCA.png)
+But let's see the mzQC data first: The metric for this set stores its first 5 principal components (PC):
 ```
             "accession": "QC:0000000",
             "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ -43.22, 32.1, 3.8, -7.7, 140.6]
+            "value": [ 47.22, 29.1, 3.8, -7.7, 140.6 ]
 ```
-As you might have noticed, the PCA metric is a bit special, because the values are meaningless unless we know the PC's for other sets to puzzle together the PCA result matrix (this is how the PCA was done in the first place: from a table, where columns represent one or more Raw files (a set), and each row is a proteingroup's intensity; you would find this data, for example, in MaxQuant's proteinGroups.txt). To make sure we can identify all sets which belong to this 'superset' for our PCA result, we annotate the `metadata` section with a CV term. All sets which have the same term (and value!), contribute one row of our PCA result matrix.
+Now, these values are meaningless unless we know the PC's for other sets to puzzle together the PCA plot above (this is how the PCA was done in the first place: from a table, where each column represents a set of Raw files (e.g. subsumed technical replicates), and each row is a proteingroup; you would find this data, for example, in MaxQuant's proteinGroups.txt). To make sure we can identify all sets which belong to this 'superset' for our PCA result, we annotate the `metadata` section with a CV term. All sets which have the same term (and value!), contribute one row of our PCA result matrix.
 ```
   "metadata" : {
     ...,
@@ -118,7 +122,7 @@ As you might have noticed, the PCA metric is a bit special, because the values a
     ]
   }
 ```
-In other words: if you need to represent some kind of hierarchy of QC information, maybe due to your experimental design, `setQuality`'s are always the leaf nodes in that tree. To describe data for inner nodes, annotate the sets in the leaf nodes with a CV term. This allows to reconstruct this hierarchy.
+In other words: if you need to represent some kind of hierarchy of QC information (supersets), maybe due to your experimental design, `setQuality`'s are always the leaf nodes in that tree. To describe data for inner nodes (supersets), annotate the sets in the leaf nodes with a CV term. This allows to reconstruct this hierarchy.
 
 
 ### This is the mzQC file once again, in full:
@@ -206,7 +210,7 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
           {
             "accession": "QC:0000000",
             "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ -43.22, 32.1, 3.8, -7.7, 140.6 ]
+            "value": [ 47.22, 29.1, 3.8, -7.7, 140.6 ]
           }
         ]
       },
@@ -277,8 +281,6 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
             }
           ]
         },
-
-
         "qualityMetrics": [
           {
             "accession": "QC:0000000",
@@ -288,7 +290,7 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
           {
             "accession": "QC:0000000",
             "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ 15.22, -32.5, -7.3, 5.55, -64.1 ]
+            "value": [ -30.22, -36.5, -7.3, 5.55, -64.1 ]
           }
         ]
       }
