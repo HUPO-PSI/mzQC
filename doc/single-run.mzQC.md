@@ -1,8 +1,8 @@
 
-## Single-Run Example of mzQC
+## Individual-Run Example of mzQC
 Here, we describe an mzQC JSON document used for QC of a **single mass spectrometry** run.
-mzQC can store information for multiple independent runs, which would be an easy extension of this example and is briefly described below.
-To store QC information which is derived by looking at **sets** of runs (i.e. information is not attributable to a single run), please refer to the `multi-run.mzQC` example.
+mzQC can store information for multiple independent, individual runs, which would be an easy extension of this example and is briefly described below.
+To store QC information which is derived by looking at **sets** (or even supersets) of runs (i.e. information is not attributable to a single run), please refer to the `set-of-runs.mzQC` example.
 
 Find the complete example file at the bottom of this document or in the example folder.
 

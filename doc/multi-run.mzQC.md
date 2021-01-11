@@ -2,11 +2,11 @@
 Here, we describe an mzQC JSON document used to convey QC data which is computed on a set of runs, i.e.
 is **only interpretable in the context of this set** (group).
 Of course, QC metrics which refer to each run individually can also be stored, also in the same mzQC file
-(see our example single-run.mzQC.md on how to do that), but this example is about group/set metrics.
+(see our example individual-runs.mzQC.md on how to do that), but this example is about group/set metrics.
 
 Find the complete example file at the bottom of this document or in the example folder.
 
-The basic structure of our mzQC file is identical to the `single-run.mzQC` example, i.e.
+The basic structure of our mzQC file is identical to the `individual-runs.mzQC` example, i.e.
 the documents main anchor is between the outer curly brackets:
 ```
 { "mzQC":
@@ -41,7 +41,7 @@ b) reference information for controlled vocabularies (cv) at the bottom,
       }
     ]
 ```
-and (now in addition or as replacement) to the `runQualities` of the `single-run.mzQC` we have
+and (now in addition or as replacement) to the `runQualities` of the `individual-runs.mzQC` we have
 c) information about the QC metrics computed on **a set of runs**.
 ```
     "setQualities": [
@@ -52,7 +52,7 @@ c) information about the QC metrics computed on **a set of runs**.
 ```
 In fact, `setQualities` can contain one or more `setQuality` objects, each defining a different set of runs.
 E.g. if you have three technical replicates for two conditions, you might want to subsume three runs into a set, one for each condition and report the total number of proteins you identified, or the percentage of total intensity attributable to contaminants). Each `setQuality` object is an element of a JSON array, thus it is not explicitly named (i.e. there is no "setQuality" key in the mzQC file).
-A different `runQualities` object may hold QC information about the individual runs (shown in the `single-run.mzQC` example).
+A different `runQualities` object may hold QC information about the individual runs (shown in the `individual-runs.mzQC` example).
 For the purpose of this example, we will just use two `setQuality` objects (there could be none, only one or more than two though). How you define (and name) each set, is up to you and depends on your experimental design.
 A `setQuality` represents QC data that must be viewed in the context of all the runs of this set/group. I.e. the data is only valid within the context of the runs it comprises. E.g. it would be invalid to define a set of three runs and report their individual MS1 scan counts as a 3-tuple -- because this information can clearly be attributed to individual runs.
 Similar to `runQuality`, a `setQuality` also contains `metadata` about the set of runs (its input file**s**, the software used). 
@@ -89,7 +89,7 @@ The `inputFiles` consist of an array of `inputFile` objects, describing the sour
             }
           ]
 ```
-The `inputFile` object is only sketched here. It can contain a lot more information, such as file format and further properties. See the full example below or `single-run.mzQC` for details.
+The `inputFile` object is only sketched here. It can contain a lot more information, such as file format and further properties. See the full example below or `individual-runs.mzQC` for details.
 
 In  `qualityMetrics`, we will store the actual QC information for a particular `setQuality`. Each `qualityMetric` has an `accession` and the corresponding `name` are defined by the QC CV (see `qc-cv.obo`) and should be represented exactly as stated in the .obo file. The `value` carries the actual information.
 Metric `value`s can be either single values, tuple of values, or matrices or tables (shown in other examples). 
