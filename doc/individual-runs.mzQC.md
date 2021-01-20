@@ -56,15 +56,16 @@ A `runQuality` reflects all QC data we have to a particular run (as `qualityMetr
 ```
       {
         "metadata": {
-          "inputFiles": 
+          "inputFiles": [ 
             ...
+          ]
         },
         "qualityMetrics": [
             ...
         ]
       }
 ```
-The `inputFiles` consist of a single object, describing the source file with structured information about the file's name, format, location and other properties, defined via cv terms. 
+The `inputFiles` array consists of one or more `inputFile` objects, each describing the source file with structured information about the file's name, format, location and other properties, defined via cv terms. It may make sense to add multiple `inputFile` objects, e.g. for setQualities (not discussed here).
 ```
           "inputFiles": [
             {
@@ -91,6 +92,8 @@ The `inputFiles` consist of a single object, describing the source file with str
                   "value": "LTQ Orbitrap Velos"
                 }
               ]
+            }
+          ]
 ```
 As you can see, the location can not only be a filesystem location, but also a URL as you would get as part of a dataset submission to ProteomeXchange. Different meta information can be included, too, like on which `instrument model` the run was acquired on, or the `completion time` of the run.
 
