@@ -14,6 +14,8 @@ remark: namespace: MS
 remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
 import: https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
+import: https://github.com/obi-ontology/obi/blob/master/views/obi.obo
+import: https://github.com/ISA-tools/stato/blob/dev/releases/1.4/stato.obo
 ontology: qc
 
 [Typedef]
@@ -72,33 +74,26 @@ def: "The QC metric type describes what type the respective metric is, like e.g.
 [Term]
 id: QC:4000003
 name: single value
-def: "Metrics consisting of a single value (in contrast to n-tuple or table)." [PSI:QC]
+def: "Metrics consisting of a single value (in contrast to n-tuple or table). The value must have a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000004
 name: n-tuple
-def: "Metrics consisting of n values (in contrast to single_value or table), n specified by the CV param value, e.g. n=4 for quartiles." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
-is_a: QC:4000002 ! QC metric value type
-
-[Term]
-id: QC:4000005
-name: corresponding lists
-def: "Metrics consisting of a variable number of lists with n elements each, n specified by the CV param value. The k-th elements of the lists correspond to each other (as RT and intensity lists for a chromatogram)." [PSI:QC]
+def: "Metrics consisting of 'n' values (in contrast to single_value or table), where 'n' is implicitly specified by length of the JSON array, e.g. n=4 for quartiles. All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value). All values in the n-tuple must have the same unit and type (if given)." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000006
 name: table
-def: "Metrics consisting of a table or data frame (in contrast to single_value or n-tuple), the values of the table may have different types in each column (in contrast to a matrix). The actual structure of the table is defined in the QC document." [PSI:QC]
+def: "Metrics consisting of a table or data frame (in contrast to single_value or n-tuple), the values of the table may have different types in each column (in contrast to a matrix). The actual structure of the table is defined in the mzQC specification document. In short: it must have at least one column, and MAY have optional columns. Each column must have a unit (identical for all entries of this column) and may have a value type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000007
 name: matrix
-def: "A matrix is a rectangular array of values of the same type (in contrast to a table). The actual structure of the matrix is defined in the QC document." [PSI:QC]
+def: "A matrix is a rectangular array of values of the same type (in contrast to a table). The actual structure of the matrix is defined in the mzQC specification document. In short: All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value). All values in the matrix must have the same unit and type (if given)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
