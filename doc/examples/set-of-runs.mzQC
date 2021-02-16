@@ -8,11 +8,11 @@
     "setQualities": [
       {
         "metadata": {
-          "label": "TechRepl:1,2,3_healthy",
+          "label": "healthy",
           "inputFiles": [
             {
-              "name": "techRep1_healthy",
-              "location": "c:\\msdata\\techRep1_healthy.raw",
+              "name": "tr1_healthy",
+              "location": "c:\\msdata\\techRep1_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -26,8 +26,8 @@
               ]
             },
             {
-              "name": "techRep2_healthy",
-              "location": "c:\\msdata\\techRep2_healthy.raw",
+              "name": "tr2_healthy",
+              "location": "c:\\msdata\\techRep2_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -41,8 +41,8 @@
               ]
             },
             {
-              "name": "techRep3_healthy",
-              "location": "c:\\msdata\\techRep3_healthy.raw",
+              "name": "tr3_healthy",
+              "location": "c:\\msdata\\techRep3_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -63,36 +63,24 @@
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             }
-          ],
-          "cvParameters": [
-            {
-              "accession": "QC:0000000",
-              "name": "superset-label",
-              "value": "MaxQuant experiment groups"
-            }
           ]
         },
         "qualityMetrics": [
           {
             "accession": "QC:0000000",
             "name": "Protein contaminant intensity ratio",
-            "value": 0.25
-          },
-          {
-            "accession": "QC:0000000",
-            "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ 47.22, 29.1, 3.8, -7.7, 140.6 ]
+            "value": "0.25"
           }
         ]
       },
       
       {
         "metadata": {
-          "label": "TechRepl:1,2,3_diseased",
+          "label": "diseased",
           "inputFiles": [
             {
-              "name": "techRep1_diseased",
-              "location": "c:\\msdata\\techRep1_diseased.raw",
+              "name": "tr1_diseased",
+              "location": "c:\\msdata\\techRep1_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -106,8 +94,8 @@
               ]
             },
             {
-              "name": "techRep2_diseased",
-              "location": "c:\\msdata\\techRep2_diseased.raw",
+              "name": "tr2_diseased",
+              "location": "c:\\msdata\\techRep2_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -121,8 +109,8 @@
               ]
             },
             {
-              "name": "techRep3_diseased",
-              "location": "c:\\msdata\\techRep3_diseased.raw",
+              "name": "tr3_diseased",
+              "location": "c:\\msdata\\techRep3_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -143,28 +131,145 @@
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             }
-          ],
-          "cvParameters": [
-            {
-              "accession": "QC:0000000",
-              "name": "superset-label",
-              "value": "MaxQuant experiment groups"
-            }
           ]
         },
         "qualityMetrics": [
           {
             "accession": "QC:0000000",
             "name": "Protein contaminant intensity ratio",
-            "value": 0.31
+            "value": "0.31"
+          }
+        ]
+      },
+      
+      {
+        "metadata": {
+          "label": "all",
+          "inputFiles": [
+            {
+              "name": "tr1_healthy",
+              "location": "c:\\msdata\\techRep1_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 11:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_healthy",
+              "location": "c:\\msdata\\techRep2_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 13:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_healthy",
+              "location": "c:\\msdata\\techRep3_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr1_diseased",
+              "location": "c:\\msdata\\techRep1_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 12:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_diseased",
+              "location": "c:\\msdata\\techRep2_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_diseased",
+              "location": "c:\\msdata\\techRep3_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 15:00:41"
+                }
+              ]
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "QC:4000262",
+            "name": "group of runs",
+            "value": {
+                "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
+                "group-label":     ["healthy"    , "healthy"    , "healthy"       , "diseased"    , "diseased"    , "diseased"]
+            }
           },
           {
-            "accession": "QC:0000000",
-            "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ -30.22, -36.5, -7.3, 5.55, -64.1 ]
+            "accession": "QC:4000263",
+            "name": "PCA table",
+            "value": {
+                "group-label":  ["healthy", "diseased"],
+                "PCA Dimension 1": [47.22, -30.22],
+                "PCA Dimension 2": [29.1, -36.5],
+                "PCA Dimension 3": [3.8, -7.3],
+                "PCA Dimension 4": [-7.7, 5.55],
+                "PCA Dimension 5": [140.6, -64.1]
+            }
           }
         ]
       }
+      
     ],
     "controlledVocabularies": [
       {

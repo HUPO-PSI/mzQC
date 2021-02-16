@@ -2,7 +2,7 @@
 Here, we describe an mzQC JSON document used to convey QC data which is computed on a set of runs, i.e.
 is **only interpretable in the context of this set** (group).
 Of course, QC metrics which refer to each run individually can also be stored, also in the same mzQC file
-(see our example individual-runs.mzQC.md on how to do that), but this example is about group/set metrics.
+(see our example `individual-runs.mzQC.md` on how to do that), but this example is about group/set metrics.
 
 Find the complete example file at the bottom of this document or in the example folder.
 
@@ -51,16 +51,24 @@ c) information about the QC metrics computed on **a set of runs**.
     ]
 ```
 In fact, `setQualities` can contain one or more `setQuality` objects, each defining a different set of runs.
-E.g. if you have three technical replicates for two conditions, you might want to subsume three runs into a set, one for each condition and report the total number of proteins you identified, or the percentage of total intensity attributable to contaminants). Each `setQuality` object is an element of a JSON array, thus it is not explicitly named (i.e. there is no "setQuality" key in the mzQC file).
-A different `runQualities` object may hold QC information about the individual runs (shown in the `individual-runs.mzQC` example).
-For the purpose of this example, we will just use two `setQuality` objects (there could be none, only one or more than two though). How you define (and name) each set, is up to you and depends on your experimental design.
-A `setQuality` represents QC data that must be viewed in the context of all the runs of this set/group. I.e. the data is only valid within the context of the runs it comprises. E.g. it would be invalid to define a set of three runs and report their individual MS1 scan counts as a 3-tuple -- because this information can clearly be attributed to individual runs.
-Similar to `runQuality`, a `setQuality` also contains `metadata` about the set of runs (its input file**s**, the software used). 
+E.g. if you have three technical replicates for two conditions for at total of six runs, you might want to subsume three runs into a set, one for each condition and report the total number of proteins you identified, or the percentage of total intensity attributable to contaminants). Each `setQuality` object is an element of a JSON array, thus it is not explicitly named (i.e. there is no "setQuality" key in the mzQC file).
+For the purpose of this example, we will use **three** `setQuality` objects (there could be none, only one or more than two though):
+
+```
+  the **healthy** set: tr1_healthy, tr2_healthy, tr3_healthy
+  the **diseased** set: tr1_diseased, tr2_diseased, tr3_diseased
+  the **all** set: tr1_healthy, tr2_healthy, tr3_healthy, tr1_diseased, tr2_diseased, tr3_diseased
+```
+
+How you define (and name) each set, is up to you and depends on your experimental design and the kind of comparisons you want to make.
+
+A `setQuality` represents QC data that must be viewed in the context of all the runs of this set/group. I.e. the data is only valid within the context of the runs it comprises. E.g. it would be invalid to define a set of three runs and report their individual MS1 scan counts as a 3-tuple -- because this information can clearly be attributed to individual runs and thus belongs in three separate `runQuality` objects, rather than a single `setQuality`.
+Similar to `runQuality`, a `setQuality` also contains `metadata` about the set of runs (its input file**s**, the software used, etc). 
 You can give the set a unique name using the `label` attribute. Here is how a `setQuality` object looks like:
 ```
       {
         "metadata": {
-          "label": "TechRepl:1,2,3_healthy"
+          "label": "healthy"
           "inputFiles": 
             ...
         },
@@ -73,56 +81,83 @@ The `inputFiles` consist of an array of `inputFile` objects, describing the sour
 ```
           "inputFiles": [
             {
-              "name": "techRep1_healthy",
-              "location": "c:\msdata\techRep1_healthy.raw",
+              "name": "tr1_healthy",
+              "location": "c:\msdata\techRep1_healthy.mzML",
               ...
             },
             {
-              "name": "techRep2_healthy",
-              "location": "c:\msdata\techRep2_healthy.raw",
+              "name": "tr2_healthy",
+              "location": "c:\msdata\techRep2_healthy.mzML",
               ...
             },
             {
-              "name": "techRep3_healthy",
-              "location": "c:\msdata\techRep3_healthy.raw",
+              "name": "tr3_healthy",
+              "location": "c:\msdata\techRep3_healthy.mzML",
               ...
             }
           ]
 ```
 The `inputFile` object is only sketched here. It can contain a lot more information, such as file format and further properties. See the full example below or `individual-runs.mzQC` for details.
 
-In  `qualityMetrics`, we will store the actual QC information for a particular `setQuality`. Each `qualityMetric` has an `accession` and the corresponding `name` are defined by the QC CV (see `qc-cv.obo`) and should be represented exactly as stated in the .obo file. The `value` carries the actual information.
-Metric `value`s can be either single values, tuple of values, or matrices or tables (shown in other examples). 
+In `qualityMetrics`, we will store the actual QC information for a particular `setQuality`. Each `qualityMetric` has an `accession` and the corresponding `name` as defined by the QC controlled vocabulary (see `qc-cv.obo`). They should be represented exactly as stated in the .obo file. The `value` carries the actual information and can be either a single value, a tuple of values, a matrix or table. Below, we will look at single values and tables.
 
-Here we show two metrics: the first describes the relative total intensity of all contaminant proteins (from all runs in the set) -- the higher the value the more contaminants are present in the samples of the set.
+Lets start with our first metric `Protein contaminant intensity ratio`. It describes the relative intensity (in [0, 1]) of all contaminant proteins (from all runs in the set) -- the higher the value the more contaminants are present in the runs of the set.
 ```
             "accession": "QC:0000000",
             "name": "Protein contaminant intensity ratio",
             "value": 0.25
 ```
-... and the second metric is a single column of a PCA result matrix. This metric is a bit special because it only partially describes the data.
-This data is part of a superset (a.k.a. set of sets). Let's see what the full data would look like:
-![PCA results based on a table where each row is a proteingroup, and each column represents a set of Rawfiles(runs). Each data point in the plot represents one set, e.g. `TechRepl:1,2,3_diseased` or `TechRepl:1,2,3_healthy`.](figures/MultiSet_PCA.png)
-But let's see the mzQC data first: The metric for this set stores its first 5 principal components (PC):
+
+We compute this metric for each set, in our case for the `healthy` as well as the `diseased` set, but not for the `all` set (because we want to keep the example small). But in general, what metrics you compute is up to you.
+
+Our second example is a principal component analysis (PCA) result matrix.
+The `setQuality` where this PCA metric will be stored, references **all** runs as input files.
+The input table for a PCA computation can be found, for example, in MaxQuant's proteinGroups.txt output file. To stick with this example, the table in proteinGroups.txt has rows (proteins) and columns (groups, e.g. `healthy` or `diseased`), and the values in the table are protein abundances. Thus, MaxQuant has already aggregated the data from rawfiles(=runs) belonging to a certain group for us (e.g. by averaging the protein abundances). Now your QC software can derive a new table using PCA, where each group is represented by PCA coordinates.
+
+First, let's see what the PCA plot would look like:
+![ Typically, the first two PCA dimensions are plotted, as shown here: Each data point in the plot represents one set(group), e.g. `diseased` or `healthy`.](figures/MultiSet_PCA.png)
+Now, let's look at the mzQC data which allows to create this plot: We use two separate metrics. One named `group of runs` to associate runs to groups, and secondly a `PCA table` metric to store the PCA data (the first 5 principal components for each group).
 ```
-            "accession": "QC:0000000",
-            "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ 47.22, 29.1, 3.8, -7.7, 140.6 ]
-```
-Now, these values are meaningless unless we know the PC's for other sets to puzzle together the PCA plot above (this is how the PCA was done in the first place: from a table, where each column represents a set of Raw files (e.g. subsumed technical replicates), and each row is a proteingroup; you would find this data, for example, in MaxQuant's proteinGroups.txt). To make sure we can identify all sets which belong to this 'superset' for our PCA result, we annotate the `metadata` section with a CV term. All sets which have the same term (and value!), contribute one row of our PCA result matrix.
-```
-  "metadata" : {
-    ...,
-    "cvParameters": [
+    "setQualities": [
+      ...,
       {
-        "accession": "QC:0000000",
-        "name": "superset-label",
-        "value": "MaxQuant experiment groups"
+        ...,
+        
+        "qualityMetrics": [
+        {
+            "accession": "QC:4000262",
+            "name": "group of runs",
+            "value": {
+                "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
+                "group-label":     ["healthy"    , "healthy"    , "healthy"       , "diseased"    , "diseased"    , "diseased"]
+            }
+        },
+        {
+            "accession": "QC:4000263",
+            "name": "PCA table",
+            "value": {
+                "group-label":  ["healthy", "diseased"],
+                "PCA Dimension 1": [47.22, -30.22],
+                "PCA Dimension 2": [29.1, -36.5],
+                "PCA Dimension 3": [3.8, -7.3],
+                "PCA Dimension 4": [-7.7, 5.55],
+                "PCA Dimension 5": [140.6, -64.1]
+            }
+        }
       }
     ]
-  }
+    
+]
 ```
-In other words: if you need to represent some kind of hierarchy of QC information (supersets), maybe due to your experimental design, `setQuality`'s are always the leaf nodes in that tree. To describe data for inner nodes (supersets), annotate the sets in the leaf nodes with a CV term. This allows to reconstruct this hierarchy.
+
+Note: the `group of runs` metric can be defined only once per `setQuality`, but can be referenced in many metrics (here, for our `PCA table`) in that context.
+
+If you look closely, we somewhat defined the group `healthy` twice. Once as an individual `setQuality` and once via the `group of runs` qualityMetric in the `all` set.
+There is no easy way around this. If we were to omit the `all` set, we'd need to distribute the columns of the PCA table metric into separate `setQuality` objects (and whoever wants to plot it, needs to puzzle it back together; not ideal).
+On the other hand, ommitting the `healthy`/`diseased` setQualities is not sensible either, because then there would be only the `all` setQuality where all data for different subsets would need to reside.
+
+
+
 
 
 ### This is the mzQC file once again, in full:
@@ -137,11 +172,11 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
     "setQualities": [
       {
         "metadata": {
-          "label": "TechRepl:1,2,3_healthy",
+          "label": "healthy",
           "inputFiles": [
             {
-              "name": "techRep1_healthy",
-              "location": "c:\\msdata\\techRep1_healthy.raw",
+              "name": "tr1_healthy",
+              "location": "c:\\msdata\\techRep1_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -155,8 +190,8 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
               ]
             },
             {
-              "name": "techRep2_healthy",
-              "location": "c:\\msdata\\techRep2_healthy.raw",
+              "name": "tr2_healthy",
+              "location": "c:\\msdata\\techRep2_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -170,8 +205,8 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
               ]
             },
             {
-              "name": "techRep3_healthy",
-              "location": "c:\\msdata\\techRep3_healthy.raw",
+              "name": "tr3_healthy",
+              "location": "c:\\msdata\\techRep3_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -192,36 +227,24 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             }
-          ],
-          "cvParameters": [
-            {
-              "accession": "QC:0000000",
-              "name": "superset-label",
-              "value": "MaxQuant experiment groups"
-            }
           ]
         },
         "qualityMetrics": [
           {
             "accession": "QC:0000000",
             "name": "Protein contaminant intensity ratio",
-            "value": 0.25
-          },
-          {
-            "accession": "QC:0000000",
-            "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ 47.22, 29.1, 3.8, -7.7, 140.6 ]
+            "value": "0.25"
           }
         ]
       },
       
       {
         "metadata": {
-          "label": "TechRepl:1,2,3_diseased",
+          "label": "diseased",
           "inputFiles": [
             {
-              "name": "techRep1_diseased",
-              "location": "c:\\msdata\\techRep1_diseased.raw",
+              "name": "tr1_diseased",
+              "location": "c:\\msdata\\techRep1_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -235,8 +258,8 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
               ]
             },
             {
-              "name": "techRep2_diseased",
-              "location": "c:\\msdata\\techRep2_diseased.raw",
+              "name": "tr2_diseased",
+              "location": "c:\\msdata\\techRep2_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -250,8 +273,8 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
               ]
             },
             {
-              "name": "techRep3_diseased",
-              "location": "c:\\msdata\\techRep3_diseased.raw",
+              "name": "tr3_diseased",
+              "location": "c:\\msdata\\techRep3_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -272,28 +295,145 @@ In other words: if you need to represent some kind of hierarchy of QC informatio
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             }
-          ],
-          "cvParameters": [
-            {
-              "accession": "QC:0000000",
-              "name": "superset-label",
-              "value": "MaxQuant experiment groups"
-            }
           ]
         },
         "qualityMetrics": [
           {
             "accession": "QC:0000000",
             "name": "Protein contaminant intensity ratio",
-            "value": 0.31
+            "value": "0.31"
+          }
+        ]
+      },
+      
+      {
+        "metadata": {
+          "label": "all",
+          "inputFiles": [
+            {
+              "name": "tr1_healthy",
+              "location": "c:\\msdata\\techRep1_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 11:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_healthy",
+              "location": "c:\\msdata\\techRep2_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 13:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_healthy",
+              "location": "c:\\msdata\\techRep3_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr1_diseased",
+              "location": "c:\\msdata\\techRep1_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 12:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_diseased",
+              "location": "c:\\msdata\\techRep2_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_diseased",
+              "location": "c:\\msdata\\techRep3_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 15:00:41"
+                }
+              ]
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "QC:4000262",
+            "name": "group of runs",
+            "value": {
+                "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
+                "group-label":     ["healthy"    , "healthy"    , "healthy"       , "diseased"    , "diseased"    , "diseased"]
+            }
           },
           {
-            "accession": "QC:0000000",
-            "name": "PrincipalComponents5_RawProteinGroupIntensity",
-            "value": [ -30.22, -36.5, -7.3, 5.55, -64.1 ]
+            "accession": "QC:4000263",
+            "name": "PCA table",
+            "value": {
+                "group-label":  ["healthy", "diseased"],
+                "PCA Dimension 1": [47.22, -30.22],
+                "PCA Dimension 2": [29.1, -36.5],
+                "PCA Dimension 3": [3.8, -7.3],
+                "PCA Dimension 4": [-7.7, 5.55],
+                "PCA Dimension 5": [140.6, -64.1]
+            }
           }
         ]
       }
+      
     ],
     "controlledVocabularies": [
       {
