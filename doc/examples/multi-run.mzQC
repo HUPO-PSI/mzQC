@@ -4,11 +4,7 @@
     "contactName": "MW & CB",
     "contactAddress":  "spam@noreply.com",
     "version": "1.0.0",
-    "description": "A multi-run example, where sets of runs are grouped into setQualities according to the experimental design. 
-        Each setQuality has a label annotation, that must be unique. The label also lends itself as input source to axis labels 
-        if you need to plot a figure from multiple setQualities. If you want to specifiy an upper level of hierarchy (summarizing 
-        dimensions), then add a describing cvParameter in metadata. E.g. you have a sets, one set describes a group at a specific 
-        timepoint."
+    "description": "A multi-run example, where sets of runs are grouped into setQualities according to the experimental design. Each setQuality has a label annotation, that must be unique. The label also lends itself as input source to axis labels if you need to plot a figure from multiple setQualities. If you want to specifiy an upper level of hierarchy (summarizing dimensions), then add a describing cvParameter in metadata. E.g. you have a sets, one set describes a group at a specific timepoint.",
     "runQualities": [
       /// here we would add all the individual runs qualityMetrics each with its own runQuality element.
       /// , { ... }
@@ -102,3 +98,4 @@
     ]
   }
 }
+
