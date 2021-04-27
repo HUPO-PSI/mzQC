@@ -2081,11 +2081,11 @@ property_value: has_units UO:0000110
 [Term]
 id: QC:4000262
 name: Retention time mean shift
-def: "Based on expected and measured retention times of detected features the mean shift is calculated in seconds." [PSI:QC]
+def: "Based on reference retention times of detected features the mean shift is calculated in seconds." [PSI:QC]
 comment: Low deviation in retention time indicates consistency and reproducibility in chromatographic separation.
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
-relationship: has_relation QC:4000014 ! QC metric relation: multiple runs
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000010 ! second
 
 [Term]
