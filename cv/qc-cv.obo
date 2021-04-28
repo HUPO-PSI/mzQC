@@ -2077,3 +2077,24 @@ name: Pressure
 def: "The column contains measurements of pressure in pascal." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000110
+
+[Term]
+id: QC:4000262
+name: Retention time mean shift
+def: "Based on reference retention times of detected features the mean shift of all features is calculated in seconds." [PSI:QC]
+comment: Low deviation in retention time indicates consistency and reproducibility in chromatographic separation.
+is_a: QC:4000003 ! single value
+is_a: QC:4000009 ! ID based
+relationship: has_relation QC:4000013 ! QC metric relation: single run
+property_value: has_units UO:0000010 ! second
+
+[Term]
+id: QC:4000263
+name: Pump pressure mean
+def: "The mean pump pressure in bar for the whole run." [PSI:QC]
+comment: Detecting inconsistencies in pump pressure between runs early helps troubleshooting and prevents instrument damage.
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: single run
+relationship: has_relation MS:1003019 ! pressure chromatogram
+relationship: has_relation QC:4000079 ! Pump pressure chromatogram
