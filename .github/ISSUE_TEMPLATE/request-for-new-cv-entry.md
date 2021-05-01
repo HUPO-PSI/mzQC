@@ -1,25 +1,22 @@
 ---
-name: Request for new CV entry
-about: Use this template to request a new item in the mzQC CV
+name: Request for new CV term
+about: Use this template to request a new term in the QC CV
 title: "[CV request]"
 labels: request for new CV entry
 assignees: julianu
 
 ---
 
-Name: (name of metric, should be shorter than 100 characters)
+**Purpose:** Informally describe the reason for proposing to include this term in the QC Controlled Vocabulary. Relevant details can include which information this term captures, the experimental set-up and workflow for which it is relevant, and the software from which the metric originates.
 
-Definition: (a longer definition, containing how the metric should be stored in the mzQC file and may contain, if applicable, how the metric is calculated)
+**Name:** Informative, human-readable name. The name should consist of maximum 100 characters and should only consist of alphanumeric characters, spaces, and punctuation marks.
 
-How to interpret the metric value: (short description of how to interpret, like "Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution.")
+**Definition:** A short explanation of the term and how it should be stored in the mzQC file. The definition should provide aid in interpreting the values, but should not include calculation details or subjective interpretation details.
 
-Proposed value type:
-- [ ] single value
-- [ ] n-tuple
-- [ ] corresponding lists
-- [ ] table
-- [ ] matrix
+**Comment:** An optional comment can be included to provide additional calculation and interpretation details. For example, whether smaller or larger values are desirable. If applicable, it is recommended to include a reference to the corresponding code.
 
-Identifications needed (if appropriate):
-- [ ] ID based
-- [ ] ID free
+**Value type:** `single value`, `n-tuple`, `table`, or `matrix`.
+
+**Unit:** Optional unit of the value, specified using an existing CV term. Units should preferably be sourced from the Units of Measurement Ontology (https://www.ebi.ac.uk/ols/ontologies/uo) or the Statistical Methods Ontology (http://stato-ontology.org/).
+
+**Category:** Different categories can be assigned to CV terms. Some examples include whether the metric is ID-based or ID-free, the element of the experimental set-up for which it is relevant (chromatography, ionization, MS1, MS2, etc.)
