@@ -1,7 +1,7 @@
 ---
 name: Request for new CV term
-about: Use this template to request a new term in the QC CV
-title: "[CV request]"
+about: Use this template to request a new term in the QC CV.
+title: "[CV request] INCLUDE APPLICABLE TITLE HERE"
 labels: request for new CV entry
 assignees: julianu
 
