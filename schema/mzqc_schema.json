@@ -94,8 +94,8 @@
             "description": "Element containing metadata and qualityMetrics for a collection of related runs (set).",
             "$ref": "#/definitions/baseQuality"
         },
-        "cvParameter": {
-            "description": "Base element for a term that is defined in a controlled vocabulary, with OPTIONAL value.",
+        "baseParameter": {
+            "description": "Base element from which both userParameter and cvParameter elements are derived.",
             "type": "object",
             "properties": {
                 "accession": {
@@ -115,7 +115,22 @@
                     "description": "Value of the parameter."
                 }
             },
-            "required": ["accession", "name"]
+            "required": ["name"]
+        },
+        "userParameter": {
+            "description": "Uncontrolled user parameter (essentially allowing free text). Before using these, one should verify whether there is an appropriate CV term available, and if so, use a cvParameter term instead.",
+            "$ref": "#/definitions/baseParameter"
+        },
+        "cvParameter": {
+            "description": "Base element for a term that is defined in a controlled vocabulary, with OPTIONAL value.",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/baseParameter"
+                },
+                {
+                    "required": ["accession", "name"]
+                }
+            ]
         },
         "metadata": {
             "description": "Metadata describing the QC analysis.",
@@ -136,7 +151,7 @@
                     "items": {
                         "allOf": [
                             {
-                                "$ref": "#/definitions/cvParameter"
+                                "$ref": "#/definitions/baseParameter"
                             },
                             {
                                 "properties": {
@@ -160,11 +175,11 @@
                     "type": "string"
                 },
                 "cvParameters": {
-                    "description": "OPTIONAL list of cvParameter elements containing additional metadata about its parent runQuality/setQuality.",
+                    "description": "OPTIONAL list of parameters containing additional metadata about its parent runQuality/setQuality.",
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/cvParameter"
+                        "$ref": "#/definitions/baseParameter"
                     }
                 }
             },
@@ -193,7 +208,7 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/cvParameter"
+                        "$ref": "#/definitions/baseParameter"
                     }
                 }
             },
@@ -201,10 +216,10 @@
             "required": ["name", "location", "fileFormat"]
         },
         "qualityMetric": {
-            "description": "Element containing the value and description of a QC metric defined in a controlled vocabulary.",
+            "description": "Element containing the value and description of a QC metric (defined in a controlled vocabulary).",
             "allOf": [
                 {
-                    "$ref": "#/definitions/cvParameter"
+                    "$ref": "#/definitions/baseParameter"
                 },
                 {
                     "properties": {
@@ -212,13 +227,13 @@
                             "description": "One or more controlled vocabulary elements describing the unit of the metric.",
                             "anyOf": [
                                 {
-                                    "$ref": "#/definitions/cvParameter"
+                                    "$ref": "#/definitions/baseParameter"
                                 },
                                 {
                                     "type": "array",
                                     "minItems": 1,
                                     "items": {
-                                        "$ref": "#/definitions/cvParameter"
+                                        "$ref": "#/definitions/baseParameter"
                                     }
                                 }
                             ]
