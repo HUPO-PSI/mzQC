@@ -201,7 +201,7 @@
                 },
                 "fileFormat": {
                     "description": "Type of input file.",
-                    "$ref": "#/definitions/cvParameter"
+                    "$ref": "#/definitions/baseParameter"
                 },
                 "fileProperties": {
                     "description": "Detailed properties of the input file.",
