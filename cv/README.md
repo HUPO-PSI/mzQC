@@ -1,19 +1,32 @@
-# The mzQC controlled vocabulary (CV)
+# The Quality Control Controlled Vocabulary (QC CV)
 
-The CV contains entries for metrics which can be recorded in the mzQC files. Even if mzQC allows to just store any metric information, the CV helps to facilitate the interpretation of the actual values. Each entry in the CV has a unique ID, QC:XXXXX number, followed by a human readable name, which both will also be given in teh mzQC files. A short explanation of the entry and how it SHOULD be stored in the mzQC file is given in the entry's definition.
-The comment gives a short means on how to interpret the actual values of the metric.
+The PSI-QC controlled vocabulary (CV) is intended to provide terms for the 
+definition of quality metrics and related supporting values. The CV contains 
+entries for metrics that can be recorded in the mzQC files. While the mzQC 
+format allows storing any metric information, the CV makes it possible to 
+interpret the actual values.
 
-# Request new entry in the CV
+# CV Term Creation for QC Metric Definition
 
-If you like to record a metric which is not yet defined in the current CV, we just need some information of your metric:
+New CV terms have to be requested via the [mzQC GitHub issue 
+tracker](https://github.com/HUPO-PSI/mzQC/issues). Upon creating a new issue, 
+you should select the "Request for new CV term" option. This will produce a 
+template that will guide you in providing the necessary information to request 
+your new CV term, as detailed below. If additional information or clarifications 
+beyond the initial request are needed, the mzQC working group will work with you 
+to finalize your CV term request. When all the necessary information has been 
+provided, a new CV term will be created based on the request and added to the QC 
+CV.
 
-- Name: some (short) string describing your metric
-- Definition: a longer description and how the metric shoudl be stored in the mzQC file
-- How to interpret the metric value: how your metric can be interpreted (e.g. is a higher value better, can it only be interpreted relative to...)
-- type of the metric: Is your metric a single value, an n-tuple, a corresponding list, matrix, table, ...?
-- are Identifications needed: Does teh metric depend on spectrum/peptide/metabolomical identifications?
+Each metric (and CV entry request) MUST include the following information:
 
-
-If you have this information, you have two ways to request a new CV entry, either:
-* visit https://github.com/HUPO-PSI/mzQC/issues and open a new issue and make a 'Request for new CV entry'
-* or write to the mailing list `psidev-qc-dev@lists.sourceforge.net`
+- Name: A (short) string describing your metric.
+- Definition: A longer description. This MUST include information about how the 
+metric should be represented in an mzQC file.
+- Comment: OPTIONAL details on how the metric should be interpreted (e.g. is a 
+higher value better, can it only be interpreted relative to...). - Value type: 
+Is the metric type a single value, an n-tuple, a table, or a matrix?
+- Unit: OPTIONAL unit of the value, specified using an existing CV term.
+- Categorization: A categorization can OPTIONALLY be supplied. Examples are 
+whether the metric depends on spectrum, peptide, protein, or metabolite 
+identifications; or to describe the metric context.
