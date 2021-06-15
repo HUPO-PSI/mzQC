@@ -24,8 +24,9 @@ Each metric (and CV entry request) MUST include the following information:
 - Definition: A longer description. This MUST include information about how the 
 metric should be represented in an mzQC file.
 - Comment: OPTIONAL details on how the metric should be interpreted (e.g. is a 
-higher value better, can it only be interpreted relative to...). - Value type: 
-Is the metric type a single value, an n-tuple, a table, or a matrix?
+higher value better, can it only be interpreted relative to...).
+- Value type:  Is the metric type a single value, an n-tuple, a table, or a
+matrix?
 - Unit: OPTIONAL unit of the value, specified using an existing CV term.
 - Categorization: A categorization can OPTIONALLY be supplied. Examples are 
 whether the metric depends on spectrum, peptide, protein, or metabolite 
