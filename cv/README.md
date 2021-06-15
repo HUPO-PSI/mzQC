@@ -6,7 +6,7 @@ entries for metrics that can be recorded in the mzQC files. While the mzQC
 format allows storing any metric information, the CV makes it possible to 
 interpret the actual values.
 
-# CV Term Creation for QC Metric Definition
+## CV Term Creation for QC Metric Definition
 
 New CV terms have to be requested via the [mzQC GitHub issue 
 tracker](https://github.com/HUPO-PSI/mzQC/issues). Upon creating a new issue, 
