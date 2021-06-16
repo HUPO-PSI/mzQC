@@ -177,6 +177,22 @@ For full semantic integration, it is RECOMMENDED to specify the value type for
 automatic processing and interpretation of the value. It is RECOMMENDED to
 source value types from [STATO](http://stato-ontology.org/).
 
+## Additional Information
+
+```
+synonym: "MS1-Count" EXACT []
+```
+
+In case of reimplementing, renaming, or redefining a metric, it is RECOMMENDED
+to also add synonym attributes with either the name or ID of the initial metric.
+It is not required for the initial metric to be included in any controlled
+vocabulary, but the name SHOULD be unambiguous and recognizable (e.g. from the
+source publication). Synonyms can be “RELATED” (the defined metric is similar,
+but not the same as what is connected with the synonym name), "NARROW" (the
+metric's values can be identically interpreted as in the meaning of the synonym
+metric, however, definition and calculation may somewhat differ), "EXACT" (the
+defined metric is basically a result of renaming).
+
 ## CV Term Examples
 
 **Single value:**
