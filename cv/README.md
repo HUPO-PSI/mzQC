@@ -31,3 +31,9 @@ matrix?
 - Categorization: A categorization can OPTIONALLY be supplied. Examples are 
 whether the metric depends on spectrum, peptide, protein, or metabolite 
 identifications; or to describe the metric context.
+
+More information on how to request CV terms and their translation to elements in
+an mzQC file is available in the following CV guides:
+
+- [CV Term Creation Guide](howto_create_cv_terms.md)
+- [CV Term Usage Guide](howto_use_cv_terms.md)
