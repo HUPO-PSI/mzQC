@@ -113,10 +113,10 @@ an `is_a` relation. Different value types are possible: single value, n-tuple,
 table, or matrix. A value must be associated with a unit, see below.
 Depending on the value type, different additional categorization is REQUIRED.
 
-- **single value:** Unit specification using `has_unit` is REQUIRED, type
+- **single value:** Unit specification using `has_units` is REQUIRED, type
 specification using `has_type` is RECOMMENDED.
 - **n-tuple:** An ordered list/array of length 'n'. Unit specification using
-`has_unit` is REQUIRED, type specification using `has_type` is RECOMMENDED.
+`has_units` is REQUIRED, type specification using `has_type` is RECOMMENDED.
 Units and types (optional) MUST be uniform for all values. An n-tuple is
 represented by a JSON array, which implicitly defines its length 'n'.
 - **table:** A table MUST have one or more columns defined using `has_column`
@@ -124,10 +124,10 @@ and MAY have optional columns defined using `has_optional_column`. A table is
 represented using a JSON key–value object where key(s) represent the column term
 names/accessions and the value(s) are JSON arrays of uniform value type and
 length.
-- **table column type definitions:** Unit specification using `has_unit` is
+- **table column type definitions:** Unit specification using `has_units` is
 REQUIRED, type specification using `has_type` is RECOMMENDED. The term name will
 be used as the column's header.
-- **matrix:** Unit specification using `has_unit` is REQUIRED, type
+- **matrix:** Unit specification using `has_units` is REQUIRED, type
 specification using `has_type` is RECOMMENDED. Units and types (optional) MUST
 be uniform for all values. A matrix is represented by a JSON array of JSON
 arrays where the inner arrays MUST be of uniform length, which implicitly
