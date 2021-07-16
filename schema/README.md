@@ -6,6 +6,12 @@ For a detailed description of the mzQC Schema, please see the [mzQC Specificatio
 
 ## Changelog
 
+### Version 1.0.0 (Jun 2021)
+
+- Add `contactName` and `contactAddress` to store contact information of the mzQC file creator.
+- Add `label` to name the mzQC file.
+- Remove free text `fileProvenance` from `metadata`.
+
 ### Version 0.1.1 (Nov 2020)
 
 - Removed `cvRef` from `qualityMetric`s.
