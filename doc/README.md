@@ -19,4 +19,6 @@ This folder contains different types of documentations for mzQC, here is a guide
 
 * The formal [format specification document](mzQC_specDoc_v_1_0_0.pdf) [.docx](mzQC_specDoc_v_1_0_0.docx)
 
+* Information on .mzQC file validation can be found in the [validation guide](validation.md).
+
 

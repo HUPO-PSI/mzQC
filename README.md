@@ -1,8 +1,8 @@
 # mzQC: Reporting and exchange format for mass spectrometry quality control data
 
-[![Build status](https://travis-ci.org/HUPO-PSI/mzQC.svg?branch=master)](https://travis-ci.org/HUPO-PSI/mzQC)
+[![Build status](https://github.com/HUPO-PSI/mzQC/workflows/tests/badge.svg)](https://github.com/HUPO-PSI/mzQC/actions?query=workflow:tests)
 
-<img src="mzQC.png" width="120">
+<img src="doc/logo/mzQC.png" width="120">
 
 ## The HUPO-PSI Quality Control working group
 
