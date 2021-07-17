@@ -1,0 +1,48 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2.3.1
+    - uses: renatoathaydes/setup-java-sdkman@v2.x
+      with:
+        java-version: '11.0.2-open'
+    - name: Install Groovy
+      run: |
+        sdk install groovy
+
+    - name: Build qc-cv html
+      run: |
+        mkdir -p build/target/cv
+        cp cv/qc-cv.obo build
+        cp ./build-tools/* build
+        cd build && ./dtr.sh
+        cp qc-cv.adoc.html target/cv/qc-cv.html
+
+       # Use GitHub Actions' cache to shorten build times and decrease load on servers
+    - uses: actions/cache@v1
+      with:
+        path: vendor/bundle
+        key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-gems-
+
+    - name: Build Jekyll page
+      # copy the md contents to target
+      # run jekyll site build target
+      uses:  helaili/jekyll-action@2.2.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        jekyll_src: 'target'
+        target_branch: 'gh-pages'
+
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.4
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: target # The folder the action should deploy.
