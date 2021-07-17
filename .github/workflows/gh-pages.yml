@@ -9,13 +9,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2.3.1
+      # install sdkman to install java   
     - uses: renatoathaydes/setup-java-sdkman@v2.x
       with:
         java-version: '11.0.2-open'
+      # and groovy   
     - name: Install Groovy
       run: |
         sdk install groovy
-
+      # Render the obo file to html, mv final file to target/cv/qc-cv.html
     - name: Build qc-cv html
       run: |
         mkdir -p build/target/cv
@@ -24,7 +26,7 @@ jobs:
         cd build && ./dtr.sh
         cp qc-cv.adoc.html target/cv/qc-cv.html
 
-       # Use GitHub Actions' cache to shorten build times and decrease load on servers
+      # Use GitHub Actions' cache to shorten build times and decrease load on servers
     - uses: actions/cache@v1
       with:
         path: vendor/bundle
@@ -40,9 +42,3 @@ jobs:
         token: ${{ secrets.GITHUB_TOKEN }}
         jekyll_src: 'target'
         target_branch: 'gh-pages'
-
-    - name: Deploy
-      uses: JamesIves/github-pages-deploy-action@4.1.4
-      with:
-        branch: gh-pages # The branch the action should deploy to.
-        folder: target # The folder the action should deploy.
