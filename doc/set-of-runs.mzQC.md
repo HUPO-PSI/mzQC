@@ -125,7 +125,7 @@ Now, let's look at the mzQC data which allows to create this plot: We use two se
         
         "qualityMetrics": [
         {
-            "accession": "QC:4000262",
+            "accession": "QC:4000264",
             "name": "group of runs",
             "value": {
                 "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
@@ -133,7 +133,7 @@ Now, let's look at the mzQC data which allows to create this plot: We use two se
             }
         },
         {
-            "accession": "QC:4000263",
+            "accession": "QC:4000265",
             "name": "PCA table",
             "value": {
                 "group-label":  ["healthy", "diseased"],
@@ -412,7 +412,7 @@ On the other hand, ommitting the `healthy`/`diseased` setQualities is not sensib
         },
         "qualityMetrics": [
           {
-            "accession": "QC:4000262",
+            "accession": "QC:4000264",
             "name": "group of runs",
             "value": {
                 "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
@@ -420,7 +420,7 @@ On the other hand, ommitting the `healthy`/`diseased` setQualities is not sensib
             }
           },
           {
-            "accession": "QC:4000263",
+            "accession": "QC:4000265",
             "name": "PCA table",
             "value": {
                 "group-label":  ["healthy", "diseased"],

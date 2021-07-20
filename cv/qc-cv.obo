@@ -1,6 +1,6 @@
 format-version: 1.2
 data-version: 0.1.2
-date: 14:01:2020 10:28
+date: 14:04:2021 12:39
 saved-by: julianu
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
@@ -14,6 +14,8 @@ remark: namespace: MS
 remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
 import: https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
+import: https://raw.githubusercontent.com/obi-ontology/obi/master/obi.owl
+import: https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/1.4/stato.obo
 ontology: qc
 
 [Typedef]
@@ -72,33 +74,26 @@ def: "The QC metric type describes what type the respective metric is, like e.g.
 [Term]
 id: QC:4000003
 name: single value
-def: "Metrics consisting of a single value (in contrast to n-tuple or table)." [PSI:QC]
+def: "Metrics consisting of a single value (in contrast to n-tuple or table). The value must have a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000004
 name: n-tuple
-def: "Metrics consisting of n values (in contrast to single_value or table), n specified by the CV param value, e.g. n=4 for quartiles." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
-is_a: QC:4000002 ! QC metric value type
-
-[Term]
-id: QC:4000005
-name: corresponding lists
-def: "Metrics consisting of a variable number of lists with n elements each, n specified by the CV param value. The k-th elements of the lists correspond to each other (as RT and intensity lists for a chromatogram)." [PSI:QC]
+def: "Metrics consisting of 'n' values (in contrast to single_value or table), where 'n' is implicitly specified by length of the JSON array, e.g. n=4 for quartiles. All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value). All values in the n-tuple must have the same unit and type (if given)." [PSI:QC]
 xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000006
 name: table
-def: "Metrics consisting of a table or data frame (in contrast to single_value or n-tuple), the values of the table may have different types in each column (in contrast to a matrix). The actual structure of the table is defined in the QC document." [PSI:QC]
+def: "Metrics consisting of a table or data frame (in contrast to single_value or n-tuple), the values of the table may have different types in each column (in contrast to a matrix). The actual structure of the table is defined in the mzQC specification document. In short: it must have at least one column, and MAY have optional columns. Each column must have a unit (identical for all entries of this column) and may have a value type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
 id: QC:4000007
 name: matrix
-def: "A matrix is a rectangular array of values of the same type (in contrast to a table). The actual structure of the matrix is defined in the QC document." [PSI:QC]
+def: "A matrix is a rectangular array of values of the same type (in contrast to a table). The actual structure of the matrix is defined in the mzQC specification document. In short: All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value). All values in the matrix must have the same unit and type (if given)." [PSI:QC]
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
@@ -131,8 +126,8 @@ def: "A QC metric describes the basis for the metric calculation like \"one MS r
 
 [Term]
 id: QC:4000013
-name: QC metric relation: one run
-def: "Describes a metric which is calculated on one run (e.g. one .raw file)" [PSI:QC]
+name: QC metric relation: single run
+def: "Describes a metric that is calculated from a single run (e.g. one .raw file)" [PSI:QC]
 is_a: QC:4000012 ! QC metric relation
 
 [Term]
@@ -212,7 +207,7 @@ def: "The fraction of precursor ions accounting for the top half of all peak wid
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000051
@@ -222,7 +217,7 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "XIC-FWHM-Q1" RELATED []
 synonym: "XIC-FWHM-Q2" RELATED []
 synonym: "XIC-FWHM-Q3" RELATED []
@@ -236,7 +231,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000020 ! XIC metric
 relationship: has_relation MS:1000042 ! peak intensity
 relationship: has_relation MS:1000627 ! selected ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "XIC-Height-Q2" RELATED []
 synonym: "XIC-Height-Q3" RELATED []
 synonym: "XIC-Height-Q4" RELATED []
@@ -249,7 +244,7 @@ is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
 relationship: has_relation MS:1000016 ! scan start time
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "RT-Duration" EXACT []
 
 [Term]
@@ -261,7 +256,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000021 ! retention time metric
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "RT-TIC-Q1" RELATED []
 synonym: "RT-TIC-Q2" RELATED []
 synonym: "RT-TIC-Q3" RELATED []
@@ -278,7 +273,7 @@ is_a: QC:4000021 ! retention time metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000579 ! MS1 spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "RT-MS-Q1" RELATED []
 synonym: "RT-MS-Q2" RELATED []
 synonym: "RT-MS-Q3" RELATED []
@@ -295,7 +290,7 @@ is_a: QC:4000021 ! retention time metric
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000191
 synonym: "RT-MSMS-Q1" RELATED []
 synonym: "RT-MSMS-Q2" RELATED []
@@ -312,7 +307,7 @@ is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "MS1-TIC-Change-Q2" RELATED []
 synonym: "MS1-TIC-Change-Q3" RELATED []
 synonym: "MS1-TIC-Change-Q4" RELATED []
@@ -327,7 +322,7 @@ is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "MS1-TIC-Q2" RELATED []
 synonym: "MS1-TIC-Q3" RELATED []
 synonym: "MS1-TIC-Q4" RELATED []
@@ -341,7 +336,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000023 ! MS1 metric
 comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or issues with sample amounts.
 relationship: has_relation MS:1000579 ! MS1 spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000189
 synonym: "MS1-Count" EXACT []
 
@@ -354,7 +349,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 comment: A lower number of MS2 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or unusual low levels of ions collectable for MS/MS.
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000189
 synonym: "MS2-Count" EXACT []
 
@@ -367,7 +362,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000106
 synonym: "MS2-Freq-Max" EXACT []
 
@@ -379,7 +374,7 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation MS:1000035 ! peak picking
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "MS2-Density-Q1" RELATED []
 synonym: "MS2-Density-Q2" RELATED []
 synonym: "MS2-Density-Q3" RELATED []
@@ -393,7 +388,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
 relationship: has_relation MS:1000041 ! charge state
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_column: QC:4000238 ! Charge state
 property_value: has_column: QC:4000239 ! Fraction
 synonym: "MS2-PrecZ-1" RELATED []
@@ -412,7 +407,7 @@ is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
 is_a: QC:4000006 ! table 
 relationship: has_relation MS:1000041 ! charge state
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_column: QC:4000238 ! Charge state
 property_value: has_column: QC:4000239 ! Fraction
 synonym: "MS2-PrecZ-likely-1" RELATED []
@@ -426,7 +421,7 @@ is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000023 ! MS1 metric
 is_a: QC:4000025 ! ion source metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000066
@@ -436,7 +431,7 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000023 ! MS1 metric
 is_a: QC:4000024 ! MS2 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000067
@@ -446,7 +441,7 @@ is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_column: QC:4000108 ! Retention time
 property_value: has_column: QC:4000109 ! Relative intensity
 
@@ -457,7 +452,7 @@ def: "The ambient relative humidity in percent (0,100) over one or more time poi
 is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_column: QC:4000108 ! Retention time
 property_value: has_column: QC:4000260 ! Percent
 
@@ -470,7 +465,7 @@ is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
 property_value: has_column: QC:4000108 ! Retention time
 property_value: has_column: QC:4000109 ! Relative intensity
@@ -484,7 +479,7 @@ is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000024 ! MS2 metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
 property_value: has_column: QC:4000108 ! Retention time
 property_value: has_column: QC:4000109 ! Relative intensity
@@ -497,7 +492,7 @@ comment: Estimates very early peak broadening.
 is_a: QC:4000006 ! table 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_column: QC:4000108 ! Retention time
 property_value: has_column: QC:4000239 ! Fraction
 
@@ -509,7 +504,7 @@ comment: Longer times indicate better chromatographic separation.
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000073
@@ -519,7 +514,7 @@ comment: Higher rates indicate efficient sampling and identification.
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation QC:4000072 ! Interquartile RT period for peptide identifications
 
 [Term]
@@ -531,7 +526,7 @@ is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000075
@@ -542,7 +537,7 @@ is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000076
@@ -553,7 +548,7 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000077
@@ -563,7 +558,7 @@ is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000078
@@ -573,7 +568,7 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000079
@@ -583,7 +578,7 @@ is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1003019 ! pressure chromatogram
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_column: QC:4000108 ! Retention time
 property_value: has_column: QC:4000261 ! Pressure
 
@@ -2040,7 +2035,7 @@ name: "Detected Compounds"
 def: "Number of detected compounds from a given library of target compounds in a specific run." [PSI:QC]
 is_a: QC:4000256 ! Metabolomics metric
 is_a: QC:4000003 ! single value
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000189
 
 [Term]
@@ -2052,7 +2047,7 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: one run
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 property_value: has_units UO:0000106
 synonym: "MS1-Freq-Max" EXACT []
 
@@ -2064,10 +2059,10 @@ is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
 is_a: QC:4000023 ! MS2 metric
 relationship: has_relation MS:1000035 ! peak picking
-relationship: has_relation QC:4000013 ! QC metric relation: one run
-synonym: MS1-Density-Q1" RELATED []
-synonym: MS1-Density-Q2" RELATED []
-synonym: MS1-Density-Q3" RELATED []
+relationship: has_relation QC:4000013 ! QC metric relation: single run
+synonym: "MS1-Density-Q1" RELATED []
+synonym: "MS1-Density-Q2" RELATED []
+synonym: "MS1-Density-Q3" RELATED []
 
 [Term]
 id: QC:4000260
@@ -2083,10 +2078,30 @@ def: "The column contains measurements of pressure in pascal." [PSI:QC]
 is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000110
 
+[Term]
+id: QC:4000262
+name: Retention time mean shift
+def: "Based on reference retention times of detected features the mean shift of all features is calculated in seconds." [PSI:QC]
+comment: Low deviation in retention time indicates consistency and reproducibility in chromatographic separation.
+is_a: QC:4000003 ! single value
+is_a: QC:4000009 ! ID based
+relationship: has_relation QC:4000013 ! QC metric relation: single run
+property_value: has_units UO:0000010 ! second
+
+[Term]
+id: QC:4000263
+name: Pump pressure mean
+def: "The mean pump pressure in bar for the whole run." [PSI:QC]
+comment: Detecting inconsistencies in pump pressure between runs early helps troubleshooting and prevents instrument damage.
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: single run
+relationship: has_relation MS:1003019 ! pressure chromatogram
+relationship: has_relation QC:4000079 ! Pump pressure chromatogram
 
 
 [Term]
-id: QC:4000262
+id: QC:4000264
 name: group of runs
 def: A table with two columns 'inputfile-name' and 'group-label' which maps input files to group names. Inputfile names must occur only once and correspond to the 'metadata:inputfiles[x]:name' attribute in the mzQC JSON schema.
 is_a: QC:4000006 ! table 
@@ -2096,14 +2111,14 @@ property_value: has_column: QC:4000264 ! group-label
 
 
 [Term]
-id: QC:4000263
+id: QC:4000265
 name: inputfile-name
 def: "The column contains values from 'metadata:inputfiles[x]:name' attribute in the mzQC JSON file and thus the value makes a reference to these input files."
 is_a: QC:4000107 ! Column type
 
 
 [Term]
-id: QC:4000264
+id: QC:4000266
 name: group-label
 def: "The column contains user-defined names for groups, e.g. 'healthy group' and can be used to give a name to a group of raw files."
 is_a: QC:4000107 ! Column type
@@ -2111,7 +2126,7 @@ is_a: QC:4000107 ! Column type
 
 
 [Term]
-id: QC:4000265
+id: QC:4000267
 name: PCA table
 is_a: QC:4000006 ! table 
 property_value: has_column: QC:4000264 ! group-label
@@ -2121,5 +2136,4 @@ property_value: has_column: QC:4000248 ! PCA Dimension 2
 property_value: has_optional_column: QC:4000249 ! PCA Dimension 3
 property_value: has_optional_column: QC:4000250 ! PCA Dimension 4
 property_value: has_optional_column: QC:4000251 ! PCA Dimension 5
-
 
