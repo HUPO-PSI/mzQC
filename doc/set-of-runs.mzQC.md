@@ -133,7 +133,7 @@ Now, let's look at the mzQC data which allows to create this plot: We use two se
             }
         },
         {
-            "accession": "QC:4000265",
+            "accession": "QC:4000267",
             "name": "PCA table",
             "value": {
                 "group-label":  ["healthy", "diseased"],
@@ -420,7 +420,7 @@ On the other hand, ommitting the `healthy`/`diseased` setQualities is not sensib
             }
           },
           {
-            "accession": "QC:4000265",
+            "accession": "QC:4000267",
             "name": "PCA table",
             "value": {
                 "group-label":  ["healthy", "diseased"],
