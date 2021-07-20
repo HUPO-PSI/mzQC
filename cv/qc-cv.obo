@@ -2106,8 +2106,8 @@ name: group of runs
 def: A table with two columns 'inputfile-name' and 'group-label' which maps input files to group names. Inputfile names must occur only once and correspond to the 'metadata:inputfiles[x]:name' attribute in the mzQC JSON schema.
 is_a: QC:4000006 ! table 
 is_a: QC:4000009 ! ID based
-property_value: has_column: QC:4000263 ! inputfile-name
-property_value: has_column: QC:4000264 ! group-label
+property_value: has_column: QC:4000265 ! inputfile-name
+property_value: has_column: QC:4000266 ! group-label
 
 
 [Term]
@@ -2129,7 +2129,7 @@ is_a: QC:4000107 ! Column type
 id: QC:4000267
 name: PCA table
 is_a: QC:4000006 ! table 
-property_value: has_column: QC:4000264 ! group-label
+property_value: has_column: QC:4000266 ! group-label
 property_value: has_column: QC:4000246 ! Run name
 property_value: has_column: QC:4000247 ! PCA Dimension 1
 property_value: has_column: QC:4000248 ! PCA Dimension 2
