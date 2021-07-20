@@ -256,7 +256,7 @@
             }
           },
           {
-            "accession": "QC:4000265",
+            "accession": "QC:4000267",
             "name": "PCA table",
             "value": {
                 "group-label":  ["healthy", "diseased"],
