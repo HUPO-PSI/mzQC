@@ -1,6 +1,6 @@
 format-version: 1.2
 data-version: 0.1.2
-date: 14:04:2021 12:39
+date: 21:07:2021 20:26
 saved-by: julianu
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
@@ -2095,6 +2095,18 @@ def: "The mean pump pressure in bar for the whole run." [PSI:QC]
 comment: Detecting inconsistencies in pump pressure between runs early helps troubleshooting and prevents instrument damage.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
+relationship: has_relation QC:4000013 ! QC metric relation: single run
+relationship: has_relation MS:1003019 ! pressure chromatogram
+relationship: has_relation QC:4000079 ! Pump pressure chromatogram
+
+[Term]
+id: QC:4000264
+name: Min. peaks for 50% of total spectra intensity
+def: "The minimum number of peaks to explain at least 50% of total spectrum intensity." [PSI:QC]
+comment: A very basic metric assessing the quality of an individual spectrum by its peaks intensities compared to the total spectrum intensity.
+is_a: QC:4000003 ! single value
+is_a: QC:4000010 ! ID free
+is_a: QC:4000015 ! QC metric relation: one spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation QC:4000079 ! Pump pressure chromatogram
