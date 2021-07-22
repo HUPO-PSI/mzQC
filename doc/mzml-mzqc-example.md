@@ -33,7 +33,7 @@ Next, the spectra metrics can be put as children of `<spectrum>` elements, in th
 				<cvParam cvRef="MS" accession="MS:1000285" name="total ion current" value="6.937649e06"/>
 				<cvParam cvRef="MS" accession="MS:1000528" name="lowest observed m/z" value="300.000828877017"/>
 				<cvParam cvRef="MS" accession="MS:1000527" name="highest observed m/z" value="2008.458458829989922"/>
-				<cvParam cvRef="QC" accession="QC:4000264" name="Min. peaks for 50% of total spectra intensity" value="11"/>
+				<cvParam cvRef="QC" accession="QC:4000268" name="Min. peaks for 50% of total spectra intensity" value="11"/>
 				<userParam name="filter string" type="xsd:string" value="FTMS + p NSI Full ms [300.00-2000.00]"/>
 				<userParam name="preset scan configuration" type="xsd:string" value="1"/>
 				<scanList count="1">
