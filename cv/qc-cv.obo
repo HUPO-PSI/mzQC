@@ -2098,3 +2098,42 @@ is_a: QC:4000010 ! ID free
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation QC:4000079 ! Pump pressure chromatogram
+
+
+[Term]
+id: QC:4000264
+name: group of runs
+def: A table with two columns 'inputfile-name' and 'group-label' which maps input files to group names. Inputfile names must occur only once and correspond to the 'metadata:inputfiles[x]:name' attribute in the mzQC JSON schema.
+is_a: QC:4000006 ! table 
+is_a: QC:4000009 ! ID based
+property_value: has_column: QC:4000265 ! inputfile-name
+property_value: has_column: QC:4000266 ! group-label
+
+
+[Term]
+id: QC:4000265
+name: inputfile-name
+def: "The column contains values from 'metadata:inputfiles[x]:name' attribute in the mzQC JSON file and thus the value makes a reference to these input files."
+is_a: QC:4000107 ! Column type
+
+
+[Term]
+id: QC:4000266
+name: group-label
+def: "The column contains user-defined names for groups, e.g. 'healthy group' and can be used to give a name to a group of raw files."
+is_a: QC:4000107 ! Column type
+
+
+
+[Term]
+id: QC:4000267
+name: PCA table
+is_a: QC:4000006 ! table 
+property_value: has_column: QC:4000266 ! group-label
+property_value: has_column: QC:4000246 ! Run name
+property_value: has_column: QC:4000247 ! PCA Dimension 1
+property_value: has_column: QC:4000248 ! PCA Dimension 2
+property_value: has_optional_column: QC:4000249 ! PCA Dimension 3
+property_value: has_optional_column: QC:4000250 ! PCA Dimension 4
+property_value: has_optional_column: QC:4000251 ! PCA Dimension 5
+
