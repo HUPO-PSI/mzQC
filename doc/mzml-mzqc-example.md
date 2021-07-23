@@ -6,8 +6,8 @@ Due to the shared design properties of _mzQC_, metrics can be directly represent
 
 The first addition to the _mzML_ is the source from which the metrics came from, for reference to more QC information on the run and documentation.
 ```
-			<sourceFile id="QC1" name="BSA1_F1.mzQC" location="file:///">
-				<cvParam cvRef="MS" accession="MS:1003160" name="mzQC format" value=""/>
+			<sourceFile id="QC1" name="BSA1_F1.mzQC" location="file:///examples/">
+				<cvParam cvRef="MS" accession="MS:1003160" name="mzQC format" />
 			</sourceFile>
 ```
 Next, the metrics computed for the whole run can be be deposited as a child of the `<run>` element itself. Metric objects from mzQC can be directly translated into `<cvParam>` elements.
@@ -20,7 +20,7 @@ Next, the metrics computed for the whole run can be be deposited as a child of t
 ```
 Please note that for example brevity purposes the _mzML_ was truncated to 3 spectra, however the metrics were calculated on the whole to reflect realistic values.
 
-Next, the spectra metrics can be put as children of `<spectrum>` elements, in the same fashion as for the run metrics. As you can seen in the `<cvParam>` elements, it contains extra information in `cvRef`. This attribute is a reference to a data entry registering the controlled vocabularies used in the file much like in _mzQC_. This has to be added to finalise the _mzML_.
+Next, the spectra metrics can be put as children of `<spectrum>` elements, in the same fashion as for the run metrics. 
 ```
 		<spectrumList count="3" defaultDataProcessingRef="dp_sp_0">
 			<spectrum id="spectrum=1011" index="0" defaultArrayLength="467" dataProcessingRef="dp_sp_0">
@@ -66,6 +66,9 @@ Next, the spectra metrics can be put as children of `<spectrum>` elements, in th
 			<spectrum id="spectrum=1012" index="1" defaultArrayLength="478">
 				...
 ```
+As you can seen in the `<cvParam>` elements, it contains extra information in `cvRef`. 
+This attribute is a reference to a data entry registering the controlled vocabularies used in the file much like in _mzQC_. 
+This has to be added to finalise the _mzML_.
 The `<cv>` elements are again very similar to the respective entries in _mzQC_, making translation easy.
 ```
 	<cvList count="5">
@@ -77,5 +80,5 @@ The `<cv>` elements are again very similar to the respective entries in _mzQC_, 
 		<cv id="QC" fullName="Quality Control Ontology" version="unknown" URI="https://raw.githubusercontent.com/HUPO-PSI/mzQC/main/cv/qc-cv.obo"/>
 	</cvList>
 ```
-
+Note that you should also add your software to `<software>` and `<dataProcessing>`.
 You can find the [full _mzML_ file in the examples folder](examples/mzml-mzqc-example.mzML).

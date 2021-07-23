@@ -13,13 +13,13 @@
 			<cvParam cvRef="MS" accession="MS:1000294" name="mass spectrum" />
 		</fileContent>
 		<sourceFileList count="1">
-			<sourceFile id="sf_ru_0" name="BSA1_F1.mzML" location="file:///home/walzer/ms-tools/openms-source-git/share/OpenMS/examples/FRACTIONS">
+			<sourceFile id="sf_ru_0" name="BSA1_F1.mzML" location="file:///examples/">
 				<cvParam cvRef="MS" accession="MS:1000569" name="SHA-1" value="ce02b0744755a8d026f11ece3c5f9b76efcd87f8" />
 				<cvParam cvRef="MS" accession="MS:1000584" name="mzML format" />
 				<cvParam cvRef="MS" accession="MS:1000777" name="spectrum identifier nativeID format" />
 			</sourceFile>
-			<sourceFile id="QC1" name="BSA1_F1.mzQC" location="file:///">
-				<cvParam cvRef="MS" accession="MS:1003160" name="mzQC format" value=""/>
+			<sourceFile id="QC1" name="BSA1_F1.mzQC" location="file:///examples/">
+				<cvParam cvRef="MS" accession="MS:1003160" name="mzQC format" />
 			</sourceFile>
 		</sourceFileList>
 	</fileDescription>
@@ -70,6 +70,9 @@
 		<software id="so_dp_sp_1_pm_4" version="2.1.0" >
 			<cvParam cvRef="MS" accession="MS:1000757" name="FileFilter" />
 		</software>
+		<software id="qc_0" version="0.1" >
+			<cvParam cvRef="MS" accession="MS:1000799" name="custom unreleased software tool" value="Quality Control" />
+		</software>
 	</softwareList>
 	<instrumentConfigurationList count="1">
 		<instrumentConfiguration id="ic_0">
@@ -95,7 +98,7 @@
 			<softwareRef ref="so_in_0" />
 		</instrumentConfiguration>
 	</instrumentConfigurationList>
-	<dataProcessingList count="2">
+	<dataProcessingList count="3">
 		<dataProcessing id="dp_sp_0">
 			<processingMethod order="0" softwareRef="so_dp_sp_0_pm_0">
 				<cvParam cvRef="MS" accession="MS:1000544" name="Conversion to mzML" />
@@ -314,6 +317,11 @@
 				<userParam name="parameter: algorithm:SignalToNoise:min_required_elements" type="xsd:integer" value="10"/>
 				<userParam name="parameter: algorithm:SignalToNoise:noise_for_empty_window" type="xsd:double" value="1.0e20"/>
 				<userParam name="parameter: algorithm:SignalToNoise:write_log_messages" type="xsd:string" value="true"/>
+			</processingMethod>
+		</dataProcessing>
+		<dataProcessing id="dp_sp_2">
+			<processingMethod order="0" softwareRef="qc_0">
+				<cvParam cvRef="MS" accession="MS:1000543" name="data processing action" value="Quality Control" />
 			</processingMethod>
 		</dataProcessing>
 	</dataProcessingList>
