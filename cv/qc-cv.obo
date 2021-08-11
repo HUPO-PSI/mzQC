@@ -1,7 +1,7 @@
 format-version: 1.2
 data-version: 0.1.2
-date: 14:04:2021 12:39
-saved-by: julianu
+date: 11:08:2021 12:39
+saved-by: Wout Bittremieux
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 namespace-id-rule: * QC:$sequence(7,0,9999999)$
@@ -41,25 +41,6 @@ name: has_tuple
 [Typedef]
 id: has_units
 name: has_units
-
-
-[Term]
-id: MS:1009001
-name: quality control metrics generating software
-def: "Quality control metrics generating softwares are special types of analysis softwares, which are capable of generating QC metrics." [PSI:PI]
-is_a: MS:1001456 ! analysis software
-
-[Term]
-id: MS:1009002
-name: QuaMeter IDFree
-def: "QuaMeter IDFree is a QC metrics generating software." [PSI:PI]
-is_a: MS:1009001 ! quality control metrics generating software
-
-[Term]
-id: MS:1009003
-name: iMonDB
-def: "iMonDB is a QC metrics generating software." [PSI:PI]
-is_a: MS:1009001 ! quality control metrics generating software
 
 [Term]
 id: QC:4000001
