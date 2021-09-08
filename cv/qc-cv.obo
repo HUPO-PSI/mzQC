@@ -1,7 +1,7 @@
 format-version: 1.2
 data-version: 0.1.2
-date: 21:07:2021 20:26
-saved-by: julianu
+date: 08:09:2021 00:00
+saved-by: bittremieux
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 namespace-id-rule: * QC:$sequence(7,0,9999999)$
@@ -10,6 +10,7 @@ remark: creator: Chris Bielow <chris.bielow <-at-> fu-berlin.de>
 remark: creator: Julian Uszkoreit <julian.uszkoreit <-at-> ruhr-uni-bochum.de>
 remark: creator: Martin Eisenacher <martin.eisenacher <-at-> ruhr-uni-bochum.de>
 remark: creator: Mathias Walzer <walzer <-at-> ebi.ac.uk>
+remark: creator: Wout Bittremieux <wbittremieux <-at-> health.ucsd.edu>
 remark: namespace: MS
 remark: namespace: QC
 import: http://ontologies.berkeleybop.org/uo.obo
@@ -2139,9 +2140,19 @@ property_value: has_optional_column: QC:4000251 ! PCA Dimension 5
 
 [Term]
 id: QC:4000268
-name: Min. peaks for 50% of total spectra intensity
-def: "The minimum number of peaks to explain at least 50% of total spectrum intensity." [PSI:QC]
-comment: A very basic metric assessing the quality of an individual spectrum by its peaks intensities compared to the total spectrum intensity.
-is_a: QC:4000003 ! single value
+name: Number of peaks for at least 50% total ion current per spectrum
+def: "The number of peaks needed to cover at least 50% of the total ion current in individual spectra." [PSI:QC]
+comment: A simple metric to assess the quality of individual spectra using their peaks intensities compared to their total ion current.
+is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
+is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation QC:4000013 ! QC metric relation: single run
+property_value: has_column: QC:4000269 ! Universal Spectrum Identifier
+property_value: has_column: QC:4000115 ! Count
+
+[Term]
+id: QC:4000269
+name: Universal Spectrum Identifier
+def: "The column contains Universal Spectrum Identifiers to refer to individual spectra." [PSI:QC]
+is_a: QC:4000107 ! Column type
+property_value: has_type MS:1003063 ! universal spectrum identifier
