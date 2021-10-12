@@ -1,7 +1,7 @@
 format-version: 1.2
-data-version: 0.1.3
-date: 11:08:2021 00:00
-saved-by: Wout Bittremieux
+data-version: 0.1.4
+date: 12:10:2021 16:08
+saved-by: Mathias Walzer
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
 namespace-id-rule: * QC:$sequence(7,0,9999999)$
@@ -242,7 +242,7 @@ synonym: "RT-TIC-Q1" RELATED []
 synonym: "RT-TIC-Q2" RELATED []
 synonym: "RT-TIC-Q3" RELATED []
 synonym: "RT-TIC-Q4" RELATED []
-property_value: has_units UO:0000191
+relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: QC:4000055
@@ -259,7 +259,7 @@ synonym: "RT-MS-Q1" RELATED []
 synonym: "RT-MS-Q2" RELATED []
 synonym: "RT-MS-Q3" RELATED []
 synonym: "RT-MS-Q4" RELATED []
-property_value: has_units UO:0000191
+relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: QC:4000056
@@ -272,7 +272,7 @@ is_a: QC:4000024 ! MS2 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000191
+relationship: has_units UO:0000191 ! fraction
 synonym: "RT-MSMS-Q1" RELATED []
 synonym: "RT-MSMS-Q2" RELATED []
 synonym: "RT-MSMS-Q3" RELATED []
@@ -318,7 +318,7 @@ is_a: QC:4000023 ! MS1 metric
 comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or issues with sample amounts.
 relationship: has_relation MS:1000579 ! MS1 spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 synonym: "MS1-Count" EXACT []
 
 [Term]
@@ -331,7 +331,7 @@ is_a: QC:4000024 ! MS2 metric
 comment: A lower number of MS2 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or unusual low levels of ions collectable for MS/MS.
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 synonym: "MS2-Count" EXACT []
 
 [Term]
@@ -344,7 +344,6 @@ is_a: QC:4000024 ! MS2 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000106
 synonym: "MS2-Freq-Max" EXACT []
 
 [Term]
@@ -370,8 +369,8 @@ is_a: QC:4000024 ! MS2 metric
 is_a: QC:4000025 ! ion source metric
 relationship: has_relation MS:1000041 ! charge state
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_column: QC:4000238 ! Charge state
-property_value: has_column: QC:4000239 ! Fraction
+relationship: has_column: QC:4000238 ! Charge state
+relationship: has_column: QC:4000239 ! Fraction
 synonym: "MS2-PrecZ-1" RELATED []
 synonym: "MS2-PrecZ-2" RELATED []
 synonym: "MS2-PrecZ-3" RELATED []
@@ -389,8 +388,8 @@ is_a: QC:4000025 ! ion source metric
 is_a: QC:4000006 ! table 
 relationship: has_relation MS:1000041 ! charge state
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_column: QC:4000238 ! Charge state
-property_value: has_column: QC:4000239 ! Fraction
+relationship: has_column: QC:4000238 ! Charge state
+relationship: has_column: QC:4000239 ! Fraction
 synonym: "MS2-PrecZ-likely-1" RELATED []
 synonym: "MS2-PrecZ-likely-multi" RELATED []
 
@@ -423,8 +422,8 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_column: QC:4000108 ! Retention time
-property_value: has_column: QC:4000109 ! Relative intensity
+relationship: has_column: QC:4000108 ! Retention time
+relationship: has_column: QC:4000109 ! Relative intensity
 
 [Term]
 id: QC:4000068
@@ -434,8 +433,8 @@ is_a: QC:4000006 ! table
 is_a: QC:4000010 ! ID free
 is_a: QC:4000026 ! environment metric
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_column: QC:4000108 ! Retention time
-property_value: has_column: QC:4000260 ! Percent
+relationship: has_column: QC:4000108 ! Retention time
+relationship: has_column: QC:4000260 ! Percent
 
 [Term]
 id: QC:4000069
@@ -448,8 +447,8 @@ is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000023 ! MS1 metric
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
-property_value: has_column: QC:4000108 ! Retention time
-property_value: has_column: QC:4000109 ! Relative intensity
+relationship: has_column: QC:4000108 ! Retention time
+relationship: has_column: QC:4000109 ! Relative intensity
 
 [Term]
 id: QC:4000070
@@ -462,8 +461,8 @@ is_a: QC:4000022 ! chromatogram metric
 is_a: QC:4000024 ! MS2 metric
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation QC:4000067 ! Total ion current chromatogram
-property_value: has_column: QC:4000108 ! Retention time
-property_value: has_column: QC:4000109 ! Relative intensity
+relationship: has_column: QC:4000108 ! Retention time
+relationship: has_column: QC:4000109 ! Relative intensity
 
 [Term]
 id: QC:4000071
@@ -474,8 +473,8 @@ is_a: QC:4000006 ! table
 is_a: QC:4000009 ! ID based
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_column: QC:4000108 ! Retention time
-property_value: has_column: QC:4000239 ! Fraction
+relationship: has_column: QC:4000108 ! Retention time
+relationship: has_column: QC:4000239 ! Fraction
 
 [Term]
 id: QC:4000072
@@ -560,8 +559,8 @@ is_a: QC:4000010 ! ID free
 is_a: QC:4000022 ! chromatogram metric
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_column: QC:4000108 ! Retention time
-property_value: has_column: QC:4000261 ! Pressure
+relationship: has_column: QC:4000108 ! Retention time
+relationship: has_column: QC:4000261 ! Pressure
 
 [Term]
 id: QC:4000080
@@ -594,78 +593,76 @@ id: QC:4000108
 name: Retention time
 def: "The column contains retention time points in seconds." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000010
 
 [Term]
 id: QC:4000109
 name: Relative intensity
 def: "The column contains relative intensity values of one type." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units MS:1000043
+relationship: has_units MS:1000043 ! intensity unit
 
 [Term]
 id: QC:4000110
 name: Sequence coverage
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000187
-property_value: has_type NCIT:C68811
+relationship: has_units UO:0000187 ! percent
+relationship: has_type NCIT:C68811
 
 [Term]
 id: QC:4000111
 name: Protein accession
 def: "The column contains protein accessions." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_types MS:1000885
+relationship: has_types MS:1000885
 
 [Term]
 id: QC:4000112
 name: Length value
 def: "The column contains length values of sequences, i.e. the count of items within the sequences, e.g. total length of proteins." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000113
 name: Target or decoy designation
 def: "The column contains designations of the type 'target', 'decoy', or 'target+decoy'." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_types NCIT:C45253
+relationship: has_types NCIT:C45253
 
 [Term]
 id: QC:4000114
 name: Sample rate
 def: "The column contains sample rate values as number of occurrences." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units PATO:0000161
 
 [Term]
 id: QC:4000115
 name: Count
 def: "The column contains counts of occurrences of a common type." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000116
 name: Peptide sequence
 def: "The column contains peptide sequences; multiple peptides are separated by space." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_types NCIT:C45253
+relationship: has_types NCIT:C45253
 
 [Term]
 id: QC:4000117
 name: Outliers below
 def: "The outlier values below 1.5 * IQR." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type NCIT:C79083
+relationship: has_type NCIT:C79083
 
 [Term]
 id: QC:4000118
 name: Outliers above
 def: "The outlier values above 1.5 * IQR." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type NCIT:C79083
+relationship: has_type NCIT:C79083
 
 [Term]
 id: QC:4000119
@@ -675,10 +672,10 @@ comment: The protein coverage can provide insight into the sensitivity of the in
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-property_value: has_column QC:4000110
-property_value: has_column QC:4000111
-property_value: has_column QC:4000112
-property_value: has_optional_column QC:4000113
+relationship: has_column QC:4000110
+relationship: has_column QC:4000111
+relationship: has_column QC:4000112
+relationship: has_optional_column QC:4000113
 
 [Term]
 id: QC:4000120
@@ -688,9 +685,9 @@ comment: The sampling rate may give insights to peptide separation, dynamic excl
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-property_value: has_column QC:4000114
-property_value: has_column QC:4000115
-property_value: has_optional_column QC:4000116
+relationship: has_column QC:4000114
+relationship: has_column QC:4000115
+relationship: has_optional_column QC:4000116
 
 [Term]
 id: QC:4000121
@@ -740,7 +737,7 @@ comment: Can be used to approximate the dynamic range of signal
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000300
+relationship: has_units STATO:0000300 ! dimensionless ratio
 synonym: "MS1-3A" NARROW []
 
 [Term]
@@ -751,7 +748,7 @@ comment: The intensity range of the identified precursors informs about the dyna
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units MS:1003085
+relationship: has_units MS:1003085 ! previous MSn-1 scan precursor intensity
 
 [Term]
 id: QC:4000127
@@ -761,9 +758,9 @@ comment: The (un)identified precursor intensity distribution can aid the interpr
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000128
@@ -773,9 +770,9 @@ comment: The (un)identified precursor intensity distribution can aid the interpr
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000129
@@ -785,7 +782,7 @@ comment: Higher MS1 S/N may correlate with higher signal discrimination
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000300
+relationship: has_units STATO:0000300 ! dimensionless ratio
 synonym: "MS1-2A" NARROW []
 
 [Term]
@@ -822,7 +819,7 @@ comment: Gives insight into the amount of overall explained signal and whether t
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000574
+relationship: has_units STATO:0000574 ! center value
 
 [Term]
 id: QC:4000134
@@ -841,7 +838,7 @@ comment: A lower number of chromatograms acquired during one sample run compared
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000138
@@ -851,7 +848,7 @@ comment: Acquisition levels can be used as a criterion to assess the comparabili
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units MS:1000040
+relationship: has_units MS:1000040 ! m/z
 
 [Term]
 id: QC:4000139
@@ -859,7 +856,6 @@ name: RT acquisition range
 def: "Upper and lower limit of time at which spectra are recorded." [PSI:QC]
 comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs. 
 is_a: QC:4000004 ! n-tuple
-property_value: has_units UO:0000010
 
 [Term]
 id: QC:4000140
@@ -869,7 +865,6 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000141
@@ -879,7 +874,6 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000142
@@ -889,7 +883,6 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000143
@@ -899,7 +892,6 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000144
@@ -909,7 +901,7 @@ comment: The intensity range of the precursors informs about the dynamic range o
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units MS:1003085
+relationship: has_units MS:1003085 ! previous MSn-1 scan precursor intensity
 
 [Term]
 id: QC:4000145
@@ -919,7 +911,6 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000146
@@ -929,7 +920,6 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units UO:0000106
 
 [Term]
 id: QC:4000147
@@ -937,9 +927,9 @@ name: MS1 ion collection time Q1, Q2, Q3
 def: "From the distribution of ion injection times (MS:1000927) for MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000148
@@ -949,7 +939,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000149
@@ -959,7 +949,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000150
@@ -969,7 +959,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000151
@@ -979,7 +969,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000152
@@ -989,9 +979,9 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000153
@@ -1001,7 +991,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000154
@@ -1011,7 +1001,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000155
@@ -1021,7 +1011,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000156
@@ -1031,7 +1021,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000157
@@ -1041,9 +1031,9 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000158
@@ -1053,7 +1043,7 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000159
@@ -1063,7 +1053,7 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000160
@@ -1073,7 +1063,7 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000161
@@ -1083,7 +1073,7 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000162
@@ -1093,9 +1083,9 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_type STATO:0000167
-property_value: has_type STATO:0000574
-property_value: has_type STATO:0000170
+relationship: has_type STATO:0000167
+relationship: has_type STATO:0000574
+relationship: has_type STATO:0000170
 
 [Term]
 id: QC:4000163
@@ -1105,7 +1095,7 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000164
@@ -1115,7 +1105,7 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000165
@@ -1125,7 +1115,7 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000166
@@ -1135,7 +1125,7 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000167
@@ -1145,9 +1135,9 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000168
@@ -1157,7 +1147,7 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000169
@@ -1167,7 +1157,7 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000170
@@ -1177,7 +1167,7 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000171
@@ -1187,7 +1177,7 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000172
@@ -1302,7 +1292,7 @@ def: "Number of different distinct protein from all PSM after FDR filtering. (No
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000185
@@ -1312,7 +1302,7 @@ comment: The number of identifications are likely to only make local sense withi
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000186
@@ -1321,7 +1311,7 @@ def: "Total number of PSM before FDR filtering." [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000187
@@ -1331,7 +1321,7 @@ comment: The number of identifications are likely to only make local sense withi
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000188
@@ -1341,7 +1331,7 @@ comment: The number of identifications are likely to only make local sense withi
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000189
@@ -1350,7 +1340,7 @@ def: "The ratio of identified and recorded MS2 spectra after FDR filtering." [PS
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000300
+relationship: has_units STATO:0000300 ! dimensionless ratio
 
 [Term]
 id: QC:4000190
@@ -1360,9 +1350,9 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000191
@@ -1372,7 +1362,7 @@ def: "From the distribution of Precursor errors (mass deviation of precursor to 
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 synonym: "MS1-5B" NARROW []
 
 [Term]
@@ -1383,7 +1373,7 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000193
@@ -1393,7 +1383,7 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000194
@@ -1403,7 +1393,7 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000195
@@ -1413,9 +1403,9 @@ def: "From the distribution of Precursor errors (ppm), the quartiles Q1, Q2, Q3 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000196
@@ -1425,7 +1415,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000197
@@ -1435,7 +1425,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000198
@@ -1445,7 +1435,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000199
@@ -1455,7 +1445,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000200
@@ -1465,7 +1455,7 @@ comment: The precursor error distribution can aid the interpretation of overall 
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 synonym: "MS1-5A" NARROW []
 
 [Term]
@@ -1476,7 +1466,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 synonym: "MS1-5C" NARROW []
 
 [Term]
@@ -1487,7 +1477,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 synonym: "MS1-5D" NARROW []
 
 [Term]
@@ -1498,9 +1488,9 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000204
@@ -1510,7 +1500,7 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000205
@@ -1520,7 +1510,7 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000206
@@ -1530,7 +1520,7 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000207
@@ -1540,7 +1530,7 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000208
@@ -1550,9 +1540,9 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000209
@@ -1562,7 +1552,7 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 synonym: "MS1-5B" NARROW []
 
 [Term]
@@ -1573,7 +1563,7 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000211
@@ -1583,7 +1573,7 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000212
@@ -1593,7 +1583,7 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000213
@@ -1603,9 +1593,9 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000214
@@ -1615,7 +1605,7 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 synonym: "MS1-5B" NARROW []
 
 [Term]
@@ -1626,7 +1616,7 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000216
@@ -1636,7 +1626,7 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000217
@@ -1646,7 +1636,7 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000218
@@ -1656,9 +1646,9 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight to th
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000219
@@ -1668,7 +1658,7 @@ def: "From the distribution of signal-to-noise ratio in MS1, the mean" [PSI:QC]
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000220
@@ -1678,7 +1668,7 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight into 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000221
@@ -1688,7 +1678,7 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight into 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000222
@@ -1698,7 +1688,7 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight into 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000223
@@ -1708,9 +1698,9 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000224
@@ -1720,7 +1710,7 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000225
@@ -1730,7 +1720,7 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000226
@@ -1740,7 +1730,7 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000227
@@ -1750,7 +1740,7 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000228
@@ -1758,9 +1748,9 @@ name: Identified precursor intensity distribution Q1, Q2, Q3
 def: "From the distribution of identified precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The intensity distribution of the identified precursors informs about the dynamic range of the acquisition in relation to identifiability.
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000229
@@ -1770,7 +1760,7 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000230
@@ -1780,7 +1770,7 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000231
@@ -1790,7 +1780,7 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000232
@@ -1800,7 +1790,7 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000233
@@ -1810,9 +1800,9 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_units STATO:0000167
-property_value: has_units STATO:0000574
-property_value: has_units STATO:0000170
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000234
@@ -1822,7 +1812,7 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000003 ! single value
-property_value: has_units STATO:0000401
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
 id: QC:4000235
@@ -1832,7 +1822,7 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000003 ! single value
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
-property_value: has_units STATO:0000237
+relationship: has_units STATO:0000237 ! standard deviation
 
 [Term]
 id: QC:4000236
@@ -1842,7 +1832,7 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000117
+relationship: has_column QC:4000117
 
 [Term]
 id: QC:4000237
@@ -1852,35 +1842,35 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-property_value: has_column QC:4000118
+relationship: has_column QC:4000118
 
 [Term]
 id: QC:4000238
 name: Charge state
 def: "The column contains charge states." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units MS:1000041
+relationship: has_units MS:1000041 ! charge state
 
 [Term]
 id: QC:4000239
 name: Fraction
 def: "The column contains fraction values as decimals." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000191
+relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: QC:4000240
 name: Humidity
 def: "The column contains relative humidity values in percent." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000187
+relationship: has_units UO:0000187 ! percent
 
 [Term]
 id: QC:4000241
 name: Observed MS1 feature areas
 def: "Observed MS1 feature areas." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type MS:1001844
+relationship: has_type MS:1001844
 
 [Term]
 id: QC:4000242
@@ -1889,17 +1879,16 @@ def: "Observed MS1 feature area from selected peptides of a QC2 sample measureme
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-property_value: has_column: QC:4000116 ! Peptide sequence
-property_value: has_column: QC:4000241 ! Observed MS1 feature areas
+relationship: has_column: QC:4000116 ! Peptide sequence
+relationship: has_column: QC:4000241 ! Observed MS1 feature areas
 
 [Term]
 id: QC:4000243
 name: Observed mass accuracies
 def: "Observed mass accuracy calculated by 1E6 x (observed mz - theoretical mz)/theoretical mz of selected peptides." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type MS:1000014
-property_value: has_units UO:0000169 
-
+relationship: has_type MS:1000014
+ 
 [Term] 
 id: QC:4000244
 name: QC2 sample mass accuracies 
@@ -1907,8 +1896,8 @@ def: "Observed mass accuracy from selected peptides of a QC2 sample measurement.
 is_a: QC:4000001 ! QC metric 
 is_a: QC:4000009 ! ID based 
 is_a: QC:4000006 ! table 
-property_value: has_column: QC:4000116 ! Peptide sequence
-property_value: has_column: QC:4000243 ! Observed mass accuracies
+relationship: has_column: QC:4000116 ! Peptide sequence
+relationship: has_column: QC:4000243 ! Observed mass accuracies
 
 [Term]
 id: QC:4000245
@@ -1917,7 +1906,7 @@ def: "Number of different undistinguishable proteins groups from all PSM after F
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 is_a: QC:4000001 ! QC metric
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000246
@@ -1930,35 +1919,35 @@ id: QC:4000247
 name: PCA Dimension 1
 def: "The column contains Principal Component Analysis scores from the first eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type STATO:0000587
+relationship: has_type STATO:0000587
 
 [Term]
 id: QC:4000248
 name: PCA Dimension 2
 def: "The column contains Principal Component Analysis scores from the second eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type STATO:0000587
+relationship: has_type STATO:0000587
 
 [Term]
 id: QC:4000249
 name: PCA Dimension 3
 def: "The column contains Principal Component Analysis scores from the third eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type STATO:0000587
+relationship: has_type STATO:0000587
 
 [Term]
 id: QC:4000250
 name: PCA Dimension 4
 def: "The column contains Principal Component Analysis scores from the fourth eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type STATO:0000587
+relationship: has_type STATO:0000587
 
 [Term]
 id: QC:4000251
 name: PCA Dimension 5
 def: "The column contains Principal Component Analysis scores from the fifth eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_type STATO:0000587
+relationship: has_type STATO:0000587
 
 [Term]
 id: QC:4000252
@@ -1979,14 +1968,14 @@ def: "PCA score result from multiple runs with (log transformed) peak area input
 is_a: QC:4000001 ! QC metric 
 is_a: QC:4000010 ! ID free 
 is_a: QC:4000006 ! table 
-property_value: has_column: QC:4000246 ! Run name
-property_value: has_column: QC:4000247 ! PCA Dimension 1
-property_value: has_column: QC:4000248 ! PCA Dimension 2
-property_value: has_optional_column: QC:4000249 ! PCA Dimension 3
-property_value: has_optional_column: QC:4000250 ! PCA Dimension 4
-property_value: has_optional_column: QC:4000251 ! PCA Dimension 5
-property_value: has_optional_column: QC:4000252 ! Batch label
-property_value: has_optional_column: QC:4000253 ! Injection sequence number
+relationship: has_column: QC:4000246 ! Run name
+relationship: has_column: QC:4000247 ! PCA Dimension 1
+relationship: has_column: QC:4000248 ! PCA Dimension 2
+relationship: has_optional_column: QC:4000249 ! PCA Dimension 3
+relationship: has_optional_column: QC:4000250 ! PCA Dimension 4
+relationship: has_optional_column: QC:4000251 ! PCA Dimension 5
+relationship: has_optional_column: QC:4000252 ! Batch label
+relationship: has_optional_column: QC:4000253 ! Injection sequence number
 
 [Term] 
 id: QC:4000255
@@ -1995,14 +1984,14 @@ def: "PCA score result from multiple runs with (log transformed) peak area input
 is_a: QC:4000001 ! QC metric 
 is_a: QC:4000010 ! ID free 
 is_a: QC:4000006 ! table 
-property_value: has_column: QC:4000246 ! Run name
-property_value: has_column: QC:4000247 ! PCA Dimension 1
-property_value: has_column: QC:4000248 ! PCA Dimension 2
-property_value: has_optional_column: QC:4000249 ! PCA Dimension 3
-property_value: has_optional_column: QC:4000250 ! PCA Dimension 4
-property_value: has_optional_column: QC:4000251 ! PCA Dimension 5
-property_value: has_optional_column: QC:4000252 ! Batch label
-property_value: has_optional_column: QC:4000253 ! Injection sequence number
+relationship: has_column: QC:4000246 ! Run name
+relationship: has_column: QC:4000247 ! PCA Dimension 1
+relationship: has_column: QC:4000248 ! PCA Dimension 2
+relationship: has_optional_column: QC:4000249 ! PCA Dimension 3
+relationship: has_optional_column: QC:4000250 ! PCA Dimension 4
+relationship: has_optional_column: QC:4000251 ! PCA Dimension 5
+relationship: has_optional_column: QC:4000252 ! Batch label
+relationship: has_optional_column: QC:4000253 ! Injection sequence number
 
 [Term] 
 id: QC:4000256
@@ -2017,7 +2006,8 @@ def: "Number of detected compounds from a given library of target compounds in a
 is_a: QC:4000256 ! Metabolomics metric
 is_a: QC:4000003 ! single value
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000189
+relationship: has_units UO:0000189 ! count unit
+
 
 [Term]
 id: QC:4000258
@@ -2029,7 +2019,6 @@ is_a: QC:4000023 ! MS1 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000106
 synonym: "MS1-Freq-Max" EXACT []
 
 [Term]
@@ -2050,14 +2039,13 @@ id: QC:4000260
 name: Percent
 def: "The column contains percentages of one type." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000187
+relationship: has_units UO:0000187 ! percent
 
 [Term]
 id: QC:4000261
 name: Pressure
 def: "The column contains measurements of pressure in pascal." [PSI:QC]
 is_a: QC:4000107 ! Column type
-property_value: has_units UO:0000110
 
 [Term]
 id: QC:4000262
@@ -2067,7 +2055,7 @@ comment: Low deviation in retention time indicates consistency and reproducibili
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-property_value: has_units UO:0000010 ! second
+relationship: has_units UO:0000010 ! second
 
 [Term]
 id: QC:4000263
@@ -2080,16 +2068,14 @@ relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation QC:4000079 ! Pump pressure chromatogram
 
-
 [Term]
 id: QC:4000264
 name: group of runs
 def: A table with two columns 'inputfile-name' and 'group-label' which maps input files to group names. Inputfile names must occur only once and correspond to the 'metadata:inputfiles[x]:name' attribute in the mzQC JSON schema.
 is_a: QC:4000006 ! table 
 is_a: QC:4000009 ! ID based
-property_value: has_column: QC:4000265 ! inputfile-name
-property_value: has_column: QC:4000266 ! group-label
-
+relationship: has_column: QC:4000265 ! inputfile-name
+relationship: has_column: QC:4000266 ! group-label
 
 [Term]
 id: QC:4000265
@@ -2097,24 +2083,20 @@ name: inputfile-name
 def: "The column contains values from 'metadata:inputfiles[x]:name' attribute in the mzQC JSON file and thus the value makes a reference to these input files."
 is_a: QC:4000107 ! Column type
 
-
 [Term]
 id: QC:4000266
 name: group-label
 def: "The column contains user-defined names for groups, e.g. 'healthy group' and can be used to give a name to a group of raw files."
 is_a: QC:4000107 ! Column type
 
-
-
 [Term]
 id: QC:4000267
 name: PCA table
 is_a: QC:4000006 ! table 
-property_value: has_column: QC:4000266 ! group-label
-property_value: has_column: QC:4000246 ! Run name
-property_value: has_column: QC:4000247 ! PCA Dimension 1
-property_value: has_column: QC:4000248 ! PCA Dimension 2
-property_value: has_optional_column: QC:4000249 ! PCA Dimension 3
-property_value: has_optional_column: QC:4000250 ! PCA Dimension 4
-property_value: has_optional_column: QC:4000251 ! PCA Dimension 5
-
+relationship: has_column: QC:4000266 ! group-label
+relationship: has_column: QC:4000246 ! Run name
+relationship: has_column: QC:4000247 ! PCA Dimension 1
+relationship: has_column: QC:4000248 ! PCA Dimension 2
+relationship: has_optional_column: QC:4000249 ! PCA Dimension 3
+relationship: has_optional_column: QC:4000250 ! PCA Dimension 4
+relationship: has_optional_column: QC:4000251 ! PCA Dimension 5
