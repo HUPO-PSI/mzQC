@@ -62,7 +62,6 @@ is_a: QC:4000002 ! QC metric value type
 id: QC:4000004
 name: n-tuple
 def: "Metrics consisting of 'n' values (in contrast to single_value or table), where 'n' is implicitly specified by length of the JSON array, e.g. n=4 for quartiles. All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median, or OBI:0001442 ! q-value). All values in the n-tuple must have the same unit and type (if given)." [PSI:QC]
-xref: value-type:xsd\:int "The allowed value-type for this CV term."
 is_a: QC:4000002 ! QC metric value type
 
 [Term]
@@ -344,6 +343,7 @@ is_a: QC:4000024 ! MS2 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
+relationship: has_units UO:0000106 ! hertz
 synonym: "MS2-Freq-Max" EXACT []
 
 [Term]
@@ -593,6 +593,7 @@ id: QC:4000108
 name: Retention time
 def: "The column contains retention time points in seconds." [PSI:QC]
 is_a: QC:4000107 ! Column type
+relationship: has_units UO:0000010 ! second
 
 [Term]
 id: QC:4000109
@@ -635,6 +636,7 @@ id: QC:4000114
 name: Sample rate
 def: "The column contains sample rate values as number of occurrences." [PSI:QC]
 is_a: QC:4000107 ! Column type
+relationship: has_units PATO:0000161 ! rate
 
 [Term]
 id: QC:4000115
@@ -856,6 +858,7 @@ name: RT acquisition range
 def: "Upper and lower limit of time at which spectra are recorded." [PSI:QC]
 comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs. 
 is_a: QC:4000004 ! n-tuple
+relationship: has_units UO:0000010 ! second
 
 [Term]
 id: QC:4000140
@@ -865,6 +868,7 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000141
@@ -874,6 +878,7 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000142
@@ -883,6 +888,7 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000143
@@ -892,6 +898,7 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000144
@@ -911,6 +918,7 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000146
@@ -920,6 +928,7 @@ comment: Spectrum acquisition frequency can be used to gauge the suitability of 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000147
@@ -2020,6 +2029,7 @@ relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "MS1-Freq-Max" EXACT []
+relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000259
@@ -2046,6 +2056,7 @@ id: QC:4000261
 name: Pressure
 def: "The column contains measurements of pressure in pascal." [PSI:QC]
 is_a: QC:4000107 ! Column type
+relationship: has_units UO:0000110 ! pascal
 
 [Term]
 id: QC:4000262
@@ -2055,7 +2066,7 @@ comment: Low deviation in retention time indicates consistency and reproducibili
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-
+relationship: has_units UO:0000010 ! second
 
 [Term]
 id: QC:4000263
