@@ -607,14 +607,14 @@ name: Sequence coverage
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
 is_a: QC:4000107 ! Column type
 relationship: has_units UO:0000187 ! percent
-relationship: has_type NCIT:C68811
+relationship: has_type NCIT:C68811 ! Cover
 
 [Term]
 id: QC:4000111
 name: Protein accession
 def: "The column contains protein accessions." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_types MS:1000885
+relationship: has_type MS:1000885 ! protein accession
 
 [Term]
 id: QC:4000112
@@ -628,7 +628,7 @@ id: QC:4000113
 name: Target or decoy designation
 def: "The column contains designations of the type 'target', 'decoy', or 'target+decoy'." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_types NCIT:C45253
+relationship: has_type NCIT:C45253 ! String
 
 [Term]
 id: QC:4000114
@@ -648,21 +648,21 @@ id: QC:4000116
 name: Peptide sequence
 def: "The column contains peptide sequences; multiple peptides are separated by space." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_types NCIT:C45253
+relationship: has_type NCIT:C45253 ! String
 
 [Term]
 id: QC:4000117
 name: Outliers below
 def: "The outlier values below 1.5 * IQR." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type NCIT:C79083
+relationship: has_type NCIT:C79083 ! Outlier
 
 [Term]
 id: QC:4000118
 name: Outliers above
 def: "The outlier values above 1.5 * IQR." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type NCIT:C79083
+relationship: has_type NCIT:C79083 ! Outlier
 
 [Term]
 id: QC:4000119
@@ -1083,9 +1083,9 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000010 ! ID free
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000004 ! n-tuple
-relationship: has_type STATO:0000167
-relationship: has_type STATO:0000574
-relationship: has_type STATO:0000170
+relationship: has_type STATO:0000167 ! first quartile
+relationship: has_type STATO:0000574 ! center value
+relationship: has_type STATO:0000170 ! third quartile
 
 [Term]
 id: QC:4000163
@@ -1870,7 +1870,7 @@ id: QC:4000241
 name: Observed MS1 feature areas
 def: "Observed MS1 feature areas." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type MS:1001844
+relationship: has_type MS:1001844 ! MS1 feature area
 
 [Term]
 id: QC:4000242
@@ -1887,7 +1887,7 @@ id: QC:4000243
 name: Observed mass accuracies
 def: "Observed mass accuracy calculated by 1E6 x (observed mz - theoretical mz)/theoretical mz of selected peptides." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type MS:1000014
+relationship: has_type MS:1000014 ! accuracy
  
 [Term] 
 id: QC:4000244
@@ -1919,35 +1919,35 @@ id: QC:4000247
 name: PCA Dimension 1
 def: "The column contains Principal Component Analysis scores from the first eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type STATO:0000587
+relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000248
 name: PCA Dimension 2
 def: "The column contains Principal Component Analysis scores from the second eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type STATO:0000587
+relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000249
 name: PCA Dimension 3
 def: "The column contains Principal Component Analysis scores from the third eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type STATO:0000587
+relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000250
 name: PCA Dimension 4
 def: "The column contains Principal Component Analysis scores from the fourth eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type STATO:0000587
+relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000251
 name: PCA Dimension 5
 def: "The column contains Principal Component Analysis scores from the fifth eigenvalue dimension." [PSI:QC]
 is_a: QC:4000107 ! Column type
-relationship: has_type STATO:0000587
+relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000252
@@ -2055,7 +2055,7 @@ comment: Low deviation in retention time indicates consistency and reproducibili
 is_a: QC:4000003 ! single value
 is_a: QC:4000009 ! ID based
 relationship: has_relation QC:4000013 ! QC metric relation: single run
-relationship: has_units UO:0000010 ! second
+
 
 [Term]
 id: QC:4000263
