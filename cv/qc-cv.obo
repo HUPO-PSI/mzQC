@@ -334,19 +334,6 @@ relationship: has_units UO:0000189 ! count unit
 synonym: "MS2-Count" EXACT []
 
 [Term]
-id: QC:4000061
-name: Maximal MS2 frequency
-def: "The fastest frequency for MS/MS collection in any minute over the complete run" [PSI:QC]
-is_a: QC:4000003 ! single value
-is_a: QC:4000010 ! ID free
-is_a: QC:4000024 ! MS2 metric
-relationship: has_relation MS:1000029 ! sampling frequency
-relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: single run
-relationship: has_units UO:0000106 ! hertz
-synonym: "MS2-Freq-Max" EXACT []
-
-[Term]
 id: QC:4000062
 name: MS2 density per quantile
 def: "The first to n-th quantile of MS2 scan peak counts." [PSI:QC]
@@ -867,8 +854,12 @@ def: "Fastest frequency for MS level 1 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
-is_a: QC:4000001 ! QC metric
+is_a: QC:4000023 ! MS1 metric
+relationship: has_relation MS:1000029 ! sampling frequency
+relationship: has_relation MS:1000580 ! MSn spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_units UO:0000106 ! hertz
+synonym: "MS1-Freq-Max" EXACT []
 
 [Term]
 id: QC:4000141
@@ -877,8 +868,13 @@ def: "Fastest frequency for MS level 2 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
 is_a: QC:4000003 ! single value
 is_a: QC:4000010 ! ID free
-is_a: QC:4000001 ! QC metric
+is_a: QC:4000024 ! MS2 metric
+relationship: has_relation MS:1000029 ! sampling frequency
+relationship: has_relation MS:1000580 ! MSn spectrum
+relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_units UO:0000106 ! hertz
+relationship: has_units UO:0000106 ! hertz
+synonym: "MS2-Freq-Max" EXACT []
 
 [Term]
 id: QC:4000142
@@ -2016,20 +2012,6 @@ is_a: QC:4000256 ! Metabolomics metric
 is_a: QC:4000003 ! single value
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 relationship: has_units UO:0000189 ! count unit
-
-
-[Term]
-id: QC:4000258
-name: Maximal MS1 frequency
-def: "The fastest frequency for MS collection in any minute over the complete run" [PSI:QC]
-is_a: QC:4000003 ! single value
-is_a: QC:4000010 ! ID free
-is_a: QC:4000023 ! MS1 metric
-relationship: has_relation MS:1000029 ! sampling frequency
-relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation QC:4000013 ! QC metric relation: single run
-synonym: "MS1-Freq-Max" EXACT []
-relationship: has_units UO:0000106 ! hertz
 
 [Term]
 id: QC:4000259
