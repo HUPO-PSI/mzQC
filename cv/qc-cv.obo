@@ -43,25 +43,6 @@ name: has_tuple
 id: has_units
 name: has_units
 
-
-[Term]
-id: MS:1009001
-name: quality control metrics generating software
-def: "Quality control metrics generating softwares are special types of analysis softwares, which are capable of generating QC metrics." [PSI:PI]
-is_a: MS:1001456 ! analysis software
-
-[Term]
-id: MS:1009002
-name: QuaMeter IDFree
-def: "QuaMeter IDFree is a QC metrics generating software." [PSI:PI]
-is_a: MS:1009001 ! quality control metrics generating software
-
-[Term]
-id: MS:1009003
-name: iMonDB
-def: "iMonDB is a QC metrics generating software." [PSI:PI]
-is_a: MS:1009001 ! quality control metrics generating software
-
 [Term]
 id: QC:4000001
 name: QC metric
@@ -2055,10 +2036,10 @@ synonym: "MS1-Freq-Max" EXACT []
 [Term]
 id: QC:4000259
 name: MS1 density per quantile
-def: "The first to n-th quantile of MS2 scan peak counts." [PSI:QC]
+def: "The first to n-th quantile of MS1 scan peak counts." [PSI:QC]
 is_a: QC:4000004 ! n-tuple
 is_a: QC:4000010 ! ID free
-is_a: QC:4000023 ! MS2 metric
+is_a: QC:4000023 ! MS1 metric
 relationship: has_relation MS:1000035 ! peak picking
 relationship: has_relation QC:4000013 ! QC metric relation: single run
 synonym: "MS1-Density-Q1" RELATED []
