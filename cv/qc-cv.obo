@@ -674,10 +674,10 @@ comment: The protein coverage can provide insight into the sensitivity of the in
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-relationship: has_column QC:4000110
-relationship: has_column QC:4000111
-relationship: has_column QC:4000112
-relationship: has_optional_column QC:4000113
+relationship: has_column QC:4000110 ! Sequence coverage column
+relationship: has_column QC:4000111 ! Protein accession column
+relationship: has_column QC:4000112 ! Sequence length column
+relationship: has_optional_column QC:4000113 ! Target or decoy designation column
 
 [Term]
 id: QC:4000120
@@ -687,9 +687,9 @@ comment: The sampling rate may give insights to peptide separation, dynamic excl
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-relationship: has_column QC:4000114
-relationship: has_column QC:4000115
-relationship: has_optional_column QC:4000116
+relationship: has_column QC:4000114 ! Sample rate column
+relationship: has_column QC:4000115 ! Count column
+relationship: has_optional_column QC:4000116 ! Peptide sequence column
 
 [Term]
 id: QC:4000121
@@ -968,7 +968,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000151
@@ -978,7 +978,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000152
@@ -1020,7 +1020,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000156
@@ -1030,7 +1030,7 @@ comment: Injection time distribution can be used to gauge the suitability of use
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000157
@@ -1072,7 +1072,7 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000161
@@ -1082,7 +1082,7 @@ comment: The distribution of peak densities in MS1 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000162
@@ -1124,7 +1124,7 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000166
@@ -1134,7 +1134,7 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000167
@@ -1176,7 +1176,7 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000171
@@ -1186,7 +1186,7 @@ comment: The intensity distribution of the precursors informs about the dynamic 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000172
@@ -1392,7 +1392,7 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000194
@@ -1402,7 +1402,7 @@ comment: The absolute precursor error distribution can aid the interpretation of
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000006 ! table
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000195
@@ -1444,7 +1444,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000199
@@ -1454,7 +1454,7 @@ comment: The precursor error in ppm distribution can aid the interpretation of o
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000200
@@ -1529,7 +1529,7 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000207
@@ -1539,7 +1539,7 @@ comment: The identification score distribution can help improve scoring function
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000208
@@ -1582,7 +1582,7 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000212
@@ -1592,7 +1592,7 @@ comment: The missed cleavage distribution can aid the interpretation of digestio
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000213
@@ -1635,7 +1635,7 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000217
@@ -1645,7 +1645,7 @@ comment: The identified peptide lengths distribution can aid the interpretation 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000218
@@ -1687,7 +1687,7 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight into 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000222
@@ -1697,7 +1697,7 @@ comment: The Signal-to-noise ratio in MS1 distribution can provide insight into 
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000223
@@ -1739,7 +1739,7 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000227
@@ -1749,7 +1749,7 @@ comment: A high signal-to-noise ratio in MS2 distribution can explain a high rat
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000010 ! ID free
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000228
@@ -1789,7 +1789,7 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000232
@@ -1799,7 +1799,7 @@ comment: The intensity distribution of the identified precursors informs about t
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000233
@@ -1841,7 +1841,7 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000117
+relationship: has_column QC:4000117 ! Outliers below column
 
 [Term]
 id: QC:4000237
@@ -1851,7 +1851,7 @@ comment: The intensity distribution of the unidentified precursors informs about
 is_a: QC:4000001 ! QC metric
 is_a: QC:4000009 ! ID based
 is_a: QC:4000004 ! n-tuple
-relationship: has_column QC:4000118
+relationship: has_column QC:4000118 ! Outliers above column
 
 [Term]
 id: QC:4000238
