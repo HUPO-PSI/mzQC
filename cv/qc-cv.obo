@@ -584,7 +584,7 @@ relationship: has_relation QC:4000014 ! QC metric relation: multiple runs
 
 [Term]
 id: QC:4000107
-name: Column type
+name: Table column type
 def: "The parent to the group of column definitions for name, content, and units for table type." [PSI:QC]
 relationship: has_relation QC:4000006 ! table
 
@@ -592,21 +592,21 @@ relationship: has_relation QC:4000006 ! table
 id: QC:4000108
 name: Retention time column
 def: "The column contains retention time points in seconds." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000010 ! second
 
 [Term]
 id: QC:4000109
 name: Relative intensity column
 def: "The column contains relative intensity values of one type." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units MS:1000043 ! intensity unit
 
 [Term]
 id: QC:4000110
 name: Sequence coverage column
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000187 ! percent
 relationship: has_type NCIT:C68811 ! Cover
 
@@ -614,56 +614,56 @@ relationship: has_type NCIT:C68811 ! Cover
 id: QC:4000111
 name: Protein accession column
 def: "The column contains protein accessions." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type MS:1000885 ! protein accession
 
 [Term]
 id: QC:4000112
 name: Sequence length column
 def: "The column contains length values of sequences, i.e. the count of items within the sequences, e.g. total length of proteins." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000113
 name: Target or decoy designation column
 def: "The column contains designations of the type 'target', 'decoy', or 'target+decoy'." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type NCIT:C45253 ! String
 
 [Term]
 id: QC:4000114
 name: Sample rate column
 def: "The column contains sample rate values as number of occurrences." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units PATO:0000161 ! rate
 
 [Term]
 id: QC:4000115
 name: Count column
 def: "The column contains counts of occurrences of a common type." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000116
 name: Peptide sequence column
 def: "The column contains peptide sequences; multiple peptides are separated by space." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type NCIT:C45253 ! String
 
 [Term]
 id: QC:4000117
 name: Outliers below column
 def: "The outlier values below 1.5 * IQR." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type NCIT:C79083 ! Outlier
 
 [Term]
 id: QC:4000118
 name: Outliers above column
 def: "The outlier values above 1.5 * IQR." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type NCIT:C79083 ! Outlier
 
 [Term]
@@ -1857,28 +1857,28 @@ relationship: has_column QC:4000118
 id: QC:4000238
 name: Charge state column
 def: "The column contains charge states." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units MS:1000041 ! charge state
 
 [Term]
 id: QC:4000239
 name: Fraction column
 def: "The column contains fraction values as decimals." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: QC:4000240
 name: Humidity column
 def: "The column contains relative humidity values in percent." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000187 ! percent
 
 [Term]
 id: QC:4000241
 name: Observed MS1 feature areas column
 def: "Observed MS1 feature areas." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type MS:1001844 ! MS1 feature area
 
 [Term]
@@ -1895,7 +1895,7 @@ relationship: has_column: QC:4000241 ! Observed MS1 feature areas
 id: QC:4000243
 name: Observed mass accuracies column
 def: "Observed mass accuracy calculated by 1E6 x (observed mz - theoretical mz)/theoretical mz of selected peptides." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type MS:1000014 ! accuracy
  
 [Term] 
@@ -1921,54 +1921,54 @@ relationship: has_units UO:0000189 ! count unit
 id: QC:4000246
 name: Run name column
 def: "The column contains run names as defined by runQuality inputFile name." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 
 [Term]
 id: QC:4000247
 name: PCA Dimension 1 column
 def: "The column contains Principal Component Analysis scores from the first eigenvalue dimension." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000248
 name: PCA Dimension 2 column
 def: "The column contains Principal Component Analysis scores from the second eigenvalue dimension." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000249
 name: PCA Dimension 3 column
 def: "The column contains Principal Component Analysis scores from the third eigenvalue dimension." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000250
 name: PCA Dimension 4 column
 def: "The column contains Principal Component Analysis scores from the fourth eigenvalue dimension." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000251
 name: PCA Dimension 5 column
 def: "The column contains Principal Component Analysis scores from the fifth eigenvalue dimension." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_type STATO:0000587 ! percentage of variance
 
 [Term]
 id: QC:4000252
 name: Batch label column
 def: "The column contains batch label names" [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 
 [Term]
 id: QC:4000253
 name: Injection sequence number column
 def: "The column contains the order in which the runs were acquired. Numbers may be missing due to unrelated samples being run." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 
 [Term] 
 id: QC:4000254
@@ -2048,14 +2048,14 @@ synonym: "MS1-Density-Q3" RELATED []
 id: QC:4000260
 name: Percentage column
 def: "The column contains percentages of one type." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000187 ! percent
 
 [Term]
 id: QC:4000261
 name: Pressure column
 def: "The column contains measurements of pressure in pascal." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 relationship: has_units UO:0000110 ! pascal
 
 [Term]
@@ -2092,13 +2092,13 @@ relationship: has_column: QC:4000266 ! group-label
 id: QC:4000265
 name: InputFile-name column
 def: "The column contains values from 'metadata:inputfiles[x]:name' attribute in the mzQC JSON file and thus the value makes a reference to these input files." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 
 [Term]
 id: QC:4000266
 name: Group-label column
 def: "The column contains user-defined names for groups, e.g. 'healthy group' and can be used to give a name to a group of raw files." [PSI:QC]
-is_a: QC:4000107 ! Column type
+is_a: QC:4000107 ! Table column type
 
 [Term]
 id: QC:4000267
