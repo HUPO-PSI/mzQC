@@ -2082,7 +2082,7 @@ relationship: has_relation QC:4000079 ! Pump pressure chromatogram
 [Term]
 id: QC:4000264
 name: group of runs
-def: A table with two columns 'inputfile-name' and 'group-label' which maps input files to group names. Inputfile names must occur only once and correspond to the 'metadata:inputfiles[x]:name' attribute in the mzQC JSON schema.
+def: "A table with two columns 'inputfile-name' and 'group-label' which maps input files to group names. Inputfile names must occur only once and correspond to the 'metadata:inputfiles[x]:name' attribute in the mzQC JSON schema." [PSI:QC]
 is_a: QC:4000006 ! table 
 is_a: QC:4000009 ! ID based
 relationship: has_column: QC:4000265 ! inputfile-name
@@ -2091,18 +2091,20 @@ relationship: has_column: QC:4000266 ! group-label
 [Term]
 id: QC:4000265
 name: InputFile-name column
-def: "The column contains values from 'metadata:inputfiles[x]:name' attribute in the mzQC JSON file and thus the value makes a reference to these input files."
+def: "The column contains values from 'metadata:inputfiles[x]:name' attribute in the mzQC JSON file and thus the value makes a reference to these input files." [PSI:QC]
 is_a: QC:4000107 ! Column type
 
 [Term]
 id: QC:4000266
 name: Group-label column
-def: "The column contains user-defined names for groups, e.g. 'healthy group' and can be used to give a name to a group of raw files."
+def: "The column contains user-defined names for groups, e.g. 'healthy group' and can be used to give a name to a group of raw files." [PSI:QC]
 is_a: QC:4000107 ! Column type
 
 [Term]
 id: QC:4000267
 name: PCA table
+def: "A table for the PCA scores of a set of grouped runs, each PCA dimension in a separate column." [PSI:QC]
+comment: The runs need to be labeled with their respective grouping (case/control, timepoints, etc.). The first two PCA dimensions are mandatory, in case more need to be reported, these can be added in optional column as well. While not mandatory, it is recommended to document the features used to calculate the PCA in the file description field. 
 is_a: QC:4000006 ! table 
 relationship: has_column: QC:4000266 ! group-label
 relationship: has_column: QC:4000246 ! Run name
