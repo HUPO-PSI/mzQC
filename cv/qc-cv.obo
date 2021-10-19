@@ -1,6 +1,6 @@
 format-version: 1.2
 data-version: 0.1.4
-date: 12:10:2021 16:08
+date: 19:10:2021 14:48
 saved-by: Mathias Walzer
 default-namespace: QC
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
@@ -402,7 +402,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: single run
 
 [Term]
 id: QC:4000067
-name: Total ion current chromatogram
+name: Total ion current chromatogram table
 def: "The total ion current chromatogram. The first column contains the retention time values in second, the second column the corresponding relative intensities." [PSI:QC]
 is_a: QC:4000006 ! table 
 is_a: QC:4000010 ! ID free
