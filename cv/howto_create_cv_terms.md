@@ -27,7 +27,7 @@ identifications; or to describe the metric context.
 ## Restrictions
 
 The text in `Name`, `Definition` and `Comment` MUST NOT contain escaped characters such as `\"` or special characters like backticks (`` ` ``).
-If you need to quote words or sentences, use single quotes, e.g. `def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'." [PSI:QC]`. Further restrictions forsome term elements may apply, please see details in the [Term element details](#-term-element-details) section.
+If you need to quote words or sentences, use single quotes, e.g. `def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'." [PSI:QC]`. Further restrictions to some term elements may apply, please see details in the [Term element details](#term-element-details) section.
 
 
 ## Example CV term
