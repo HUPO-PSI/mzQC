@@ -10,7 +10,7 @@ to finalize your CV term request. When all the necessary information has been
 provided, a new CV term will be created based on the request and added to the QC 
 CV.
 
-Each metric (and CV entry request) MUST include the following information:
+## Each metric (and CV entry request) MUST include the following information
 
 - Name: A (short) string describing your metric.
 - Definition: A longer description. This MUST include information about how the 
@@ -24,7 +24,12 @@ matrix?
 whether the metric depends on spectrum, peptide, protein, or metabolite 
 identifications; or to describe the metric context.
 
-Example CV term:
+## Restrictions
+
+The text in `Name`, `Definition` and `Comment` MUST NOT contain escaped characters such as `\"` or special characters like backticks (`` ` ``).
+If you need to quote words or sentences, use single quotes, e.g. `def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'." [PSI:QC]`
+
+## Example CV term
 
 ```
 [Term]
