@@ -10,7 +10,7 @@ to finalize your CV term request. When all the necessary information has been
 provided, a new CV term will be created based on the request and added to the QC 
 CV.
 
-Each metric (and CV entry request) MUST include the following information:
+## Each metric (and CV entry request) MUST include the following information
 
 - Name: A (short) string describing your metric.
 - Definition: A longer description. This MUST include information about how the 
@@ -24,7 +24,13 @@ matrix?
 whether the metric depends on spectrum, peptide, protein, or metabolite 
 identifications; or to describe the metric context.
 
-Example CV term:
+## Restrictions
+
+The text in `Name`, `Definition` and `Comment` MUST NOT contain escaped characters such as `\"` or special characters like backticks (`` ` ``).
+If you need to quote words or sentences, use single quotes, e.g. `def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'." [PSI:QC]`. Further restrictions to some term elements may apply, please see details in the [Term element details](#term-element-details) section.
+
+
+## Example CV term
 
 ```
 [Term]
@@ -42,7 +48,8 @@ synonym: "MS1-Count" EXACT []
 
 ```
 
-## ID
+## Term element details
+### ID
 
 ```
 id: QC:4000059
@@ -52,7 +59,7 @@ Each term MUST have a unique ID, specified as `QC:XXXXXXX`. Metric IDs are
 immutable and not reusable (e.g. for redefinition), and will be assigned upon
 inclusion or redefinition.
 
-## Name
+### Name
 
 ```
 name: Number of MS1 spectra
@@ -62,7 +69,7 @@ Each CV term MUST have a human-readable name. The name SHOULD be informative,
 SHOULD consist of maximum 100 characters, and SHOULD only consist of
 alphanumeric 7-bit ASCII characters, spaces, and punctuation marks ([\-_,\.]).
 
-## Definition
+### Definition
 
 ```
 def: "The number of MS1 events in the run." [PSI:QC]
@@ -74,7 +81,7 @@ interpreting the values. The definition section SHOULD NOT contain calculation
 or interpretation details, but rather it should explain the purpose,
 requirements, and scope of the metric.
 
-## Comment
+### Comment
 
 ```
 comment: A lower number of MS1 spectra acquired during one sample run compared
@@ -89,7 +96,7 @@ obvious, the calculation is RECOMMENDED to be briefly described in common terms.
 For published metrics, it is also RECOMMENDED to refer to the corresponding
 code.
 
-## Value Type and Unit
+### Value Type and Unit
 
 ```
 is_a: QC:4000003 ! single value
@@ -140,7 +147,7 @@ necessary. Protein modifications SHOULD be sourced from
 [Unimod](http://www.unimod.org/) or
 [PSI-MOD](https://github.com/HUPO-PSI/psi-mod-CV) where possible.
 
-## Metric Categorization
+### Metric Categorization
 
 ```
 is_a: QC:4000010 ! ID free
@@ -177,7 +184,7 @@ For full semantic integration, it is RECOMMENDED to specify the value type for
 automatic processing and interpretation of the value. It is RECOMMENDED to
 source value types from [STATO](http://stato-ontology.org/).
 
-## Additional Information
+### Additional Information
 
 ```
 synonym: "MS1-Count" EXACT []
@@ -193,7 +200,7 @@ metric's values can be identically interpreted as in the meaning of the synonym
 metric, however, definition and calculation may somewhat differ), "EXACT" (the
 defined metric is basically a result of renaming).
 
-## CV Term Examples
+## More CV Term Examples
 
 **Single value:**
 
