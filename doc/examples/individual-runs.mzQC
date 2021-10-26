@@ -1,0 +1,94 @@
+{ "mzQC": {
+    "version": "1.0.0",
+    "creationDate": "2020-12-01T11:56:34",
+    "contactName": "Mathias Walzer",
+    "contactAddress": "walzer@ebi.ac.uk",
+    "description": "A simple mzQC file containing information for a single run.",
+    "runQualities": [
+      {
+        "metadata": {
+          "inputFiles": [
+            {
+              "name": "CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.trfr.t3.mzML",
+              "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2014/09/PXD000966/CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.raw",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 11:00:41"
+                },
+                {
+                  "accession": "MS:1000569",
+                  "name": "SHA-256",
+                  "value": "82ff4545ab8ab85252a4c5bc2c62abbfd04021ef5fefce145386bf27ae663a0f"
+                },
+                {
+                  "accession": "MS:1000031",
+                  "name": "instrument model",
+                  "value": "LTQ Orbitrap Velos"
+                }
+              ]
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            },
+            {
+              "accession": "QC:0000000",
+              "name": "QCCalculator",
+              "version": "0.9.0",
+              "uri": "qccalculator.readthedocs.io"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "QC:4000059",
+            "name": "Number of MS1 spectra",
+            "value": 5074
+          },
+          {
+            "accession": "QC:4000060",
+            "name": "Number of MS2 spectra",
+            "value": 14812
+          },
+          {
+            "accession": "QC:4000135",
+            "name": "Number of chromatograms",
+            "value": 1
+          },
+          {
+            "accession": "QC:4000138",
+            "name": "MZ acquisition range",
+            "value": [ 300.157287597656, 1778.8639 ]
+          },
+          {
+            "accession": "QC:4000139",
+            "name": "RT acquisition range",
+            "value": [ 0.2959, 5969.8172 ]
+          }
+        ]
+      }
+    ],
+    "controlledVocabularies": [
+      {
+        "name": "Proteomics Standards Initiative Quality Control Ontology",
+        "uri": "https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
+        "version": "0.1.0"
+      },
+      {
+        "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
+        "version": "4.1.7"
+      }
+    ]
+  }
+}

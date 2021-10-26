@@ -1,0 +1,252 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://raw.githubusercontent.com/HUPO-PSI/mzQC/master/schema/mzqc_schema.json",
+    "title": "mzQC schema v1.0.0",
+    "description": "JSON schema specifying the mzQC format v1.0.0 developed by the HUPO-PSI Quality Control working group (http://psidev.info/groups/quality-control).",
+    "type": "object",
+    "properties": {
+        "mzQC": {
+            "description": "Root element of an mzQC file.",
+            "type": "object",
+            "properties": {
+                "version": {
+                    "description": "Version of the mzQC format.",
+                    "type": "string",
+                    "pattern": "^\\d+\\.\\d+\\.\\d+$"
+                },
+                "creationDate": {
+                    "description": "Creation date of the mzQC file.",
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "description": {
+                    "description": "Description and comments about the mzQC file contents.",
+                    "type": "string"
+                },
+                "contactName": {
+                    "description": "Name of file creator or person chosen as dedicated contact a particular mzQC file.",
+                    "type": "string"
+                },
+                "contactAddress": {
+                    "description": "Contact Address (mail/tel.) for getting in touch with given contact for a particular mzQC file",
+                    "type": "string"
+                },
+                "runQualities": {
+                    "description": "List of runQuality elements.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/runQuality"
+                    }
+                },
+                "setQualities": {
+                    "description": "List of setQuality elements.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/setQuality"
+                    }
+                },
+                "controlledVocabularies": {
+                    "description": "Collection of controlled vocabulary elements used to refer to the source of the used CV terms in the qualityMetric objects (and others).",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/controlledVocabulary"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "anyOf": [
+                {"required": ["runQualities"]},
+                {"required": ["setQualities"]}
+            ],
+            "required": ["version", "creationDate", "controlledVocabularies"]
+        }
+    },
+    "additionalProperties": false,
+    "required": ["mzQC"],
+    "definitions": {
+        "baseQuality": {
+            "description": "Base element from which both runQuality and setQuality elements are derived.",
+            "type": "object",
+            "properties": {
+                "metadata": {
+                    "$ref": "#/definitions/metadata"
+                },
+                "qualityMetrics": {
+                    "description": "The collection of qualityMetrics for a particular runQuality or setQuality.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/qualityMetric"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["metadata", "qualityMetrics"]
+        },
+        "runQuality": {
+            "description": "Element containing metadata and qualityMetrics for a single run.",
+            "$ref": "#/definitions/baseQuality"
+        },
+        "setQuality": {
+            "description": "Element containing metadata and qualityMetrics for a collection of related runs (set).",
+            "$ref": "#/definitions/baseQuality"
+        },
+        "cvParameter": {
+            "description": "Base element for a term that is defined in a controlled vocabulary, with OPTIONAL value.",
+            "type": "object",
+            "properties": {
+                "accession": {
+                    "description": "Accession number identifying the term within its controlled vocabulary.",
+                    "type": "string",
+                    "pattern": "^[A-Z]+:[A-Z0-9]+$"
+                },
+                "name": {
+                    "description": "Name of the controlled vocabulary term describing the parameter.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Definition of the controlled vocabulary term.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "Value of the parameter."
+                }
+            },
+            "required": ["accession", "name"]
+        },
+        "metadata": {
+            "description": "Metadata describing the QC analysis.",
+            "type": "object",
+            "properties": {
+                "inputFiles": {
+                    "description": "List of input files from which the QC metrics have been generated.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/inputFile"
+                    }
+                },
+                "analysisSoftware": {
+                    "description": "Software tool(s) used to generate the QC metrics.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "allOf": [
+                            {
+                                "$ref": "#/definitions/cvParameter"
+                            },
+                            {
+                                "properties": {
+                                    "version": {
+                                        "description": "Version number of the software tool.",
+                                        "type": "string"
+                                    },
+                                    "uri": {
+                                        "description": "Publicly accessible URI of the software tool or documentation.",
+                                        "type": "string",
+                                        "format": "uri"
+                                    }
+                                },
+                                "required": ["version", "uri"]
+                            }
+                        ]
+                    }
+                },
+                "label": {
+                    "description": "OPTIONAL label name. For setQuality, this a group name, lending itself for example as a axis labels for a plot. OPTIONAL.",
+                    "type": "string"
+                },
+                "cvParameters": {
+                    "description": "OPTIONAL list of cvParameter elements containing additional metadata about its parent runQuality/setQuality.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/cvParameter"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["inputFiles", "analysisSoftware"]
+        },
+        "inputFile": {
+            "description": "Input file used to generate the QC metrics.",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Base file name. This MUST be unique across all inputFiles specified in the mzQC file.",
+                    "type": "string"
+                },
+                "location": {
+                    "description": "Unique file location. The file URI is RECOMMENDED to be publicly accessible.",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "fileFormat": {
+                    "description": "Type of input file.",
+                    "$ref": "#/definitions/cvParameter"
+                },
+                "fileProperties": {
+                    "description": "Detailed properties of the input file.",
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/cvParameter"
+                    }
+                }
+            },
+            "additionalProperties": false,
+            "required": ["name", "location", "fileFormat"]
+        },
+        "qualityMetric": {
+            "description": "Element containing the value and description of a QC metric defined in a controlled vocabulary.",
+            "allOf": [
+                {
+                    "$ref": "#/definitions/cvParameter"
+                },
+                {
+                    "properties": {
+                        "unit": {
+                            "description": "One or more controlled vocabulary elements describing the unit of the metric.",
+                            "anyOf": [
+                                {
+                                    "$ref": "#/definitions/cvParameter"
+                                },
+                                {
+                                    "type": "array",
+                                    "minItems": 1,
+                                    "items": {
+                                        "$ref": "#/definitions/cvParameter"
+                                    }
+                                }
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "controlledVocabulary": {
+            "description": "Element describing a controlled vocabulary used to refer to the source of the used CV terms in qualityMetric objects (and others).",
+            "type": "object",
+            "properties": {
+                "name": {
+                    "description": "Full name of the controlled vocabulary.", 
+                    "type": "string"
+                },
+                "uri": {
+                    "description": "Publicly accessible URI of the controlled vocabulary.",
+                    "type": "string",
+                    "format": "uri"
+                },
+                "version": {
+                    "description": "Version of the controlled vocabulary.",
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false,
+            "required": ["name", "uri"]
+        }
+    }
+}

@@ -1,0 +1,287 @@
+{
+  "mzQC": {
+    "version": "1.0.0",
+    "creationDate": "2020-12-01T14:19:09",
+    "contactName": "Chris Bielow",
+    "contactAddress": "chris.bielow@bsc.fu-berlin.de",
+    "description": "A simple mzQC file containing information for sets of runs.",
+    "setQualities": [
+      {
+        "metadata": {
+          "label": "healthy",
+          "inputFiles": [
+            {
+              "name": "tr1_healthy",
+              "location": "c:\\msdata\\techRep1_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 11:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_healthy",
+              "location": "c:\\msdata\\techRep2_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 13:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_healthy",
+              "location": "c:\\msdata\\techRep3_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "QC:0000000",
+            "name": "Protein contaminant intensity ratio",
+            "value": "0.25"
+          }
+        ]
+      },
+      
+      {
+        "metadata": {
+          "label": "diseased",
+          "inputFiles": [
+            {
+              "name": "tr1_diseased",
+              "location": "c:\\msdata\\techRep1_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 12:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_diseased",
+              "location": "c:\\msdata\\techRep2_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_diseased",
+              "location": "c:\\msdata\\techRep3_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 15:00:41"
+                }
+              ]
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "QC:0000000",
+            "name": "Protein contaminant intensity ratio",
+            "value": "0.31"
+          }
+        ]
+      },
+      
+      {
+        "metadata": {
+          "label": "all",
+          "inputFiles": [
+            {
+              "name": "tr1_healthy",
+              "location": "c:\\msdata\\techRep1_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 11:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_healthy",
+              "location": "c:\\msdata\\techRep2_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 13:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_healthy",
+              "location": "c:\\msdata\\techRep3_healthy.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr1_diseased",
+              "location": "c:\\msdata\\techRep1_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 12:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr2_diseased",
+              "location": "c:\\msdata\\techRep2_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 14:00:41"
+                }
+              ]
+            },
+            {
+              "name": "tr3_diseased",
+              "location": "c:\\msdata\\techRep3_diseased.mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 15:00:41"
+                }
+              ]
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "QC:4000264",
+            "name": "group of runs",
+            "value": {
+                "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
+                "group-label":     ["healthy"    , "healthy"    , "healthy"       , "diseased"    , "diseased"    , "diseased"]
+            }
+          },
+          {
+            "accession": "QC:4000267",
+            "name": "PCA table",
+            "value": {
+                "group-label":  ["healthy", "diseased"],
+                "PCA Dimension 1": [47.22, -30.22],
+                "PCA Dimension 2": [29.1, -36.5],
+                "PCA Dimension 3": [3.8, -7.3],
+                "PCA Dimension 4": [-7.7, 5.55],
+                "PCA Dimension 5": [140.6, -64.1]
+            }
+          }
+        ]
+      }
+      
+    ],
+    "controlledVocabularies": [
+      {
+        "name": "Proteomics Standards Initiative Quality Control Ontology",
+        "uri": "https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
+        "version": "0.1.0"
+      },
+      {
+        "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
+        "version": "4.1.7"
+      }
+    ]
+  }
+}
