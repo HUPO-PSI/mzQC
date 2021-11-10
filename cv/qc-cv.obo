@@ -635,7 +635,8 @@ relationship: has_units UO:0000189 ! count unit
 [Term]
 id: QC:4000116
 name: Peptide sequence column
-def: "The column contains peptide sequences; multiple peptides are separated by space." [PSI:QC]
+def: "The column contains peptide sequences; multiple peptides are separated by space; sequences in ProForma encoding." [PSI:QC]
+comment: ProForma v2 - https://github.com/HUPO-PSI/ProForma/
 is_a: QC:4000107 ! Table column type
 relationship: has_type NCIT:C45253 ! String
 
