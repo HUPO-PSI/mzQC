@@ -45,13 +45,13 @@ name: has_units
 id: MS:4000000
 name: PSI-MS CV Quality Control Vocabulary
 def: "PSI-MS CV Quality Control Vocabulary." [PSI:MS]
-is_a: MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
+relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
 
 [Term]
 id: MS:4000001
 name: QC metric
 def: "Parent term for QC metrics, each metric MUST have this as an ancestor in its is_a relations." [PSI:QC]
-is_a: MS:4000000
+relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
 id: MS:4000002
