@@ -90,6 +90,7 @@ id: MS:4000008
 name: QC metric category
 def: "Categorization of the QC metric." [PSI:QC]
 comment: Example categories can include ID-based, ID-free, quantification-based, etc.
+relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
 id: MS:4000009
@@ -112,7 +113,8 @@ is_a: MS:4000008 ! QC metric category
 [Term]
 id: MS:4000012
 name: QC metric relation
-def: "A QC metric describes the basis for the metric calculation like \"one MS run\" or \"one spectrum\"" [PSI:QC]
+def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'." [PSI:QC]
+relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
 id: MS:4000013
