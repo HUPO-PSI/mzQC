@@ -143,55 +143,55 @@ is_a: MS:4000012 ! QC metric relation
 [Term]
 id: MS:4000020
 name: XIC metric
-def: "A metric based on extracted ion chromatograms" [PSI:QC]
+def: "QC metric related to an extracted ion chromatogram." [PSI:QC]
 is_a: MS:4000022 ! chromatogram metric
 
 [Term]
 id: MS:4000021
 name: retention time metric
-def: "A metric based on retention time" [PSI:QC]
+def: "A metric related to retention time." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
 id: MS:4000022
 name: chromatogram metric
-def: "A metric based on a chromatogram" [PSI:QC]
+def: "QC metric related to a chromatogram." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
 id: MS:4000023
 name: MS1 metric
-def: "a metric based on MS1 events" [PSI:QC]
+def: "QC metric based on MS1 events." [PSI:QC]
 is_a: MS:4000028 ! MS metric
 
 [Term]
 id: MS:4000024
 name: MS2 metric
-def: "a metric based on MS2 events" [PSI:QC]
+def: "QC metric based on MS2 events." [PSI:QC]
 is_a: MS:4000028 ! MS metric
 
 [Term]
 id: MS:4000025
 name: ion source metric
-def: "A metric related to events in the ion source" [PSI:QC]
+def: "QC metric related to events in the ion source." [PSI:QC]
 is_a: MS:4000028 ! MS metric
 
 [Term]
 id: MS:4000026
 name: environment metric
-def: "A metric related to measurements of the environment/laboratory/room." [PSI:QC]
+def: "QC metric related to measurements of the ambient environment, such as the laboratory." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
 id: MS:4000027
 name: sample preparation metric
-def: "A metric related to the sample preparation." [PSI:QC]
+def: "QC metric related to the sample preparation." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
 id: MS:4000028
 name: MS metric
-def: "A metric related to the mass spectrometry acquisition." [PSI:QC]
+def: "QC metric related to the mass spectrometry acquisition." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
