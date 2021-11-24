@@ -179,11 +179,13 @@ is_a: MS:4000001 ! QC metric
 [Term]
 id: MS:4000027
 name: sample preparation metric
+def: "A metric related to the sample preparation." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
 id: MS:4000028
 name: MS metric
+def: "A metric related to the mass spectrometry acquisition." [PSI:QC]
 is_a: MS:4000001 ! QC metric
 
 [Term]
