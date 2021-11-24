@@ -201,7 +201,7 @@ def: "The fraction of precursor ions accounting for the top half of all peak wid
 is_a: MS:4000003 ! single value
 is_a: MS:4000010 ! ID free
 is_a: MS:4000020 ! XIC metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000051
@@ -211,7 +211,7 @@ is_a: MS:4000004 ! n-tuple
 is_a: MS:4000010 ! ID free
 is_a: MS:4000020 ! XIC metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "XIC-FWHM-Q1" RELATED []
 synonym: "XIC-FWHM-Q2" RELATED []
 synonym: "XIC-FWHM-Q3" RELATED []
@@ -225,7 +225,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000020 ! XIC metric
 relationship: has_relation MS:1000042 ! peak intensity
 relationship: has_relation MS:1000627 ! selected ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "XIC-Height-Q2" RELATED []
 synonym: "XIC-Height-Q3" RELATED []
 synonym: "XIC-Height-Q4" RELATED []
@@ -238,7 +238,7 @@ is_a: MS:4000003 ! single value
 is_a: MS:4000010 ! ID free
 is_a: MS:4000021 ! retention time metric
 relationship: has_relation MS:1000016 ! scan start time
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "RT-Duration" EXACT []
 
 [Term]
@@ -250,7 +250,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000021 ! retention time metric
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "RT-TIC-Q1" RELATED []
 synonym: "RT-TIC-Q2" RELATED []
 synonym: "RT-TIC-Q3" RELATED []
@@ -267,7 +267,7 @@ is_a: MS:4000021 ! retention time metric
 is_a: MS:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000579 ! MS1 spectrum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "RT-MS-Q1" RELATED []
 synonym: "RT-MS-Q2" RELATED []
 synonym: "RT-MS-Q3" RELATED []
@@ -284,7 +284,7 @@ is_a: MS:4000021 ! retention time metric
 is_a: MS:4000024 ! MS2 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000191 ! fraction
 synonym: "RT-MSMS-Q1" RELATED []
 synonym: "RT-MSMS-Q2" RELATED []
@@ -301,7 +301,7 @@ is_a: MS:4000022 ! chromatogram metric
 is_a: MS:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "MS1-TIC-Change-Q2" RELATED []
 synonym: "MS1-TIC-Change-Q3" RELATED []
 synonym: "MS1-TIC-Change-Q4" RELATED []
@@ -316,7 +316,7 @@ is_a: MS:4000022 ! chromatogram metric
 is_a: MS:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "MS1-TIC-Q2" RELATED []
 synonym: "MS1-TIC-Q3" RELATED []
 synonym: "MS1-TIC-Q4" RELATED []
@@ -330,7 +330,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000023 ! MS1 metric
 comment: A lower number of MS1 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or issues with sample amounts.
 relationship: has_relation MS:1000579 ! MS1 spectrum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000189 ! count unit
 synonym: "MS1-Count" EXACT []
 
@@ -343,7 +343,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000024 ! MS2 metric
 comment: A lower number of MS2 spectra acquired during one sample run compared to similar runs can indicate mismatched instrument settings or issues with the instrumentation or unusual low levels of ions collectable for MS/MS.
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000189 ! count unit
 synonym: "MS2-Count" EXACT []
 
@@ -355,7 +355,7 @@ is_a: MS:4000004 ! n-tuple
 is_a: MS:4000010 ! ID free
 is_a: MS:4000024 ! MS2 metric
 relationship: has_relation MS:1000035 ! peak picking
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "MS2-Density-Q1" RELATED []
 synonym: "MS2-Density-Q2" RELATED []
 synonym: "MS2-Density-Q3" RELATED []
@@ -369,7 +369,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000024 ! MS2 metric
 is_a: MS:4000025 ! ion source metric
 relationship: has_relation MS:1000041 ! charge state
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_column: MS:4000238 ! Charge state
 relationship: has_column: MS:4000239 ! Fraction
 synonym: "MS2-PrecZ-1" RELATED []
@@ -388,7 +388,7 @@ is_a: MS:4000024 ! MS2 metric
 is_a: MS:4000025 ! ion source metric
 is_a: MS:4000006 ! table
 relationship: has_relation MS:1000041 ! charge state
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_column: MS:4000238 ! Charge state
 relationship: has_column: MS:4000239 ! Fraction
 synonym: "MS2-PrecZ-likely-1" RELATED []
@@ -402,7 +402,7 @@ is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000023 ! MS1 metric
 is_a: MS:4000025 ! ion source metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000066
@@ -412,7 +412,7 @@ is_a: MS:4000004 ! n-tuple
 is_a: MS:4000009 ! ID based
 is_a: MS:4000023 ! MS1 metric
 is_a: MS:4000024 ! MS2 metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000067
@@ -422,7 +422,7 @@ is_a: MS:4000006 ! table
 is_a: MS:4000010 ! ID free
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_column: MS:4000108 ! Retention time
 relationship: has_column: MS:4000109 ! Relative intensity
 
@@ -433,7 +433,7 @@ def: "The ambient relative humidity in percent (0,100) over one or more time poi
 is_a: MS:4000006 ! table
 is_a: MS:4000010 ! ID free
 is_a: MS:4000026 ! environment metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_column: MS:4000108 ! Retention time
 relationship: has_column: MS:4000260 ! Percent
 
@@ -446,7 +446,7 @@ is_a: MS:4000006 ! table
 is_a: MS:4000010 ! ID free
 is_a: MS:4000022 ! chromatogram metric
 is_a: MS:4000023 ! MS1 metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_relation MS:4000067 ! Total ion current chromatogram
 relationship: has_column: MS:4000108 ! Retention time
 relationship: has_column: MS:4000109 ! Relative intensity
@@ -460,7 +460,7 @@ is_a: MS:4000006 ! table
 is_a: MS:4000010 ! ID free
 is_a: MS:4000022 ! chromatogram metric
 is_a: MS:4000024 ! MS2 metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_relation MS:4000067 ! Total ion current chromatogram
 relationship: has_column: MS:4000108 ! Retention time
 relationship: has_column: MS:4000109 ! Relative intensity
@@ -473,7 +473,7 @@ comment: Estimates very early peak broadening.
 is_a: MS:4000006 ! table
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_column: MS:4000108 ! Retention time
 relationship: has_column: MS:4000239 ! Fraction
 
@@ -485,7 +485,7 @@ comment: Longer times indicate better chromatographic separation.
 is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000073
@@ -495,7 +495,7 @@ comment: Higher rates indicate efficient sampling and identification.
 is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_relation MS:4000072 ! Interquartile RT period for peptide identifications
 
 [Term]
@@ -507,7 +507,7 @@ is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000075
@@ -518,7 +518,7 @@ is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000076
@@ -529,7 +529,7 @@ is_a: MS:4000004 ! n-tuple
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000086 ! full width at half-maximum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000077
@@ -539,7 +539,7 @@ is_a: MS:4000003 ! single value
 is_a: MS:4000010 ! ID free
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000078
@@ -549,7 +549,7 @@ is_a: MS:4000004 ! n-tuple
 is_a: MS:4000010 ! ID free
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 
 [Term]
 id: MS:4000079
@@ -559,7 +559,7 @@ is_a: MS:4000006 ! table
 is_a: MS:4000010 ! ID free
 is_a: MS:4000022 ! chromatogram metric
 relationship: has_relation MS:1003019 ! pressure chromatogram
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_column: MS:4000108 ! Retention time
 relationship: has_column: MS:4000261 ! Pressure
 
@@ -571,7 +571,7 @@ comment: The elution rank difference gives you a measure of how many peptides ar
 is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
-relationship: has_relation MS:4000014 ! QC metric relation: multiple runs
+relationship: has_relation MS:4000014 ! multiple runs based
 
 [Term]
 id: MS:4000081
@@ -581,7 +581,7 @@ comment: The elution rank difference gives you a measure of how many peptides ar
 is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
 is_a: MS:4000022 ! chromatogram metric
-relationship: has_relation MS:4000014 ! QC metric relation: multiple runs
+relationship: has_relation MS:4000014 ! multiple runs based
 
 [Term]
 id: MS:4000082
@@ -1160,7 +1160,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000023 ! MS1 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000106 ! hertz
 synonym: "MS1-Freq-Max" EXACT []
 
@@ -1174,7 +1174,7 @@ is_a: MS:4000010 ! ID free
 is_a: MS:4000024 ! MS2 metric
 relationship: has_relation MS:1000029 ! sampling frequency
 relationship: has_relation MS:1000580 ! MSn spectrum
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000106 ! hertz
 relationship: has_units UO:0000106 ! hertz
 synonym: "MS2-Freq-Max" EXACT []
@@ -2313,7 +2313,7 @@ name: "Detected Compounds"
 def: "Number of detected compounds from a given library of target compounds in a specific run." [PSI:QC]
 is_a: MS:4000256 ! Metabolomics metric
 is_a: MS:4000003 ! single value
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000189 ! count unit
 
 [Term]
@@ -2324,7 +2324,7 @@ is_a: MS:4000004 ! n-tuple
 is_a: MS:4000010 ! ID free
 is_a: MS:4000023 ! MS1 metric
 relationship: has_relation MS:1000035 ! peak picking
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 synonym: "MS1-Density-Q1" RELATED []
 synonym: "MS1-Density-Q2" RELATED []
 synonym: "MS1-Density-Q3" RELATED []
@@ -2350,7 +2350,7 @@ def: "Based on reference retention times of detected features the mean shift of 
 comment: Low deviation in retention time indicates consistency and reproducibility in chromatographic separation.
 is_a: MS:4000003 ! single value
 is_a: MS:4000009 ! ID based
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_units UO:0000010 ! second
 
 [Term]
@@ -2360,7 +2360,7 @@ def: "The mean pump pressure in bar for the whole run." [PSI:QC]
 comment: Detecting inconsistencies in pump pressure between runs early helps troubleshooting and prevents instrument damage.
 is_a: MS:4000003 ! single value
 is_a: MS:4000010 ! ID free
-relationship: has_relation MS:4000013 ! QC metric relation: single run
+relationship: has_relation MS:4000013 ! single run based
 relationship: has_relation MS:1003019 ! pressure chromatogram
 relationship: has_relation MS:4000079 ! Pump pressure chromatogram
 
