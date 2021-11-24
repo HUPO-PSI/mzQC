@@ -87,26 +87,27 @@ is_a: MS:4000002 ! QC metric value type
 
 [Term]
 id: MS:4000008
-name: QC metric basis
-def: "The basis for this QC metric, like ID based, ID free, quant based..." [PSI:QC]
+name: QC metric category
+def: "Categorization of the QC metric." [PSI:QC]
+comment: Example categories can include ID-based, ID-free, quantification-based, etc.
 
 [Term]
 id: MS:4000009
 name: ID based
-def: "Metrics based on a previous identification run (in contrast to ID_free, Quant_based)" [PSI:QC]
-is_a: MS:4000008 ! QC metric basis
+def: "QC metric based on identification results." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000010
 name: ID free
-def: "Metrics not based on a previous identification run (in contrast to ID_based, quant_based)" [PSI:QC]
-is_a: MS:4000008 ! QC metric basis
+def: "QC metric not based on identification results." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000011
 name: quantification based
-def: "Metrics based on a previous quantification run (in contrast to ID_free, ID_based)" [PSI:QC]
-is_a: MS:4000008 ! QC metric basis
+def: "QC metric based on quantification results." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000012
@@ -2302,7 +2303,7 @@ relationship: has_optional_column: MS:4000253 ! Injection sequence number
 id: MS:4000256
 name: Metabolomics metric
 def: "Metrics for metabolomics experiments." [PSI:QC]
-is_a: MS:4000008 ! QC metric basis
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000257
