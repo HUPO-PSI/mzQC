@@ -868,7 +868,6 @@ relationship: has_relation MS:4000105 ! MS2 density average
 [Term]
 id: MS:4000107
 name: Table column type
-name: Column type
 def: "The parent to the group of column definitions for name, content, and units for table type." [PSI:QC]
 relationship: has_relation MS:4000006 ! table
 
