@@ -113,7 +113,7 @@ is_a: MS:4000008 ! QC metric category
 [Term]
 id: MS:4000012
 name: QC metric relation DEPRECATED
-def: "The basis for the metric calculation, such as 'single' or 'single spectrum'." [PSI:QC]
+def: "The basis for the metric calculation, such as 'single run' or 'single spectrum'." [PSI:QC]
 relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
