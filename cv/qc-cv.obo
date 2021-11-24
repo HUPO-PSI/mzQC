@@ -14,7 +14,7 @@ import: http://ontologies.berkeleybop.org/uo.obo
 import: https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
 import: https://raw.githubusercontent.com/obi-ontology/obi/master/obi.owl
 import: https://raw.githubusercontent.com/ISA-tools/stato/dev/releases/1.4/stato.obo
-ontology: qc
+ontology: ms
 
 [Typedef]
 id: has_relation
