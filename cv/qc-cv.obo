@@ -56,7 +56,8 @@ relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 [Term]
 id: MS:4000002
 name: QC metric value type
-def: "The QC metric type describes what type the respective metric is, like e.g. single value, n-tuple or table" [PSI:QC]
+def: "The QC metric type describes what type the respective metric is, e.g. single value, n-tuple, table, or matrix." [PSI:QC]
+relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
 id: MS:4000003
