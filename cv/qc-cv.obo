@@ -112,33 +112,33 @@ is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000012
-name: QC metric relation
-def: "A QC metric describes the basis for the metric calculation like 'one MS run' or 'one spectrum'." [PSI:QC]
+name: QC metric relation DEPRECATED
+def: "The basis for the metric calculation, such as 'single' or 'single spectrum'." [PSI:QC]
 relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
 id: MS:4000013
-name: QC metric relation: single run
-def: "Describes a metric that is calculated from a single run (e.g. one .raw file)" [PSI:QC]
-is_a: MS:4000012 ! QC metric relation
+name: single run based
+def: "QC metric calculated from a single run (e.g. one .raw file)." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000014
-name: QC metric relation: multiple runs
-def: "A metric which is calculated on multiple runs / a set of runs (e.g. multiple .raw files)" [PSI:QC]
-is_a: MS:4000012 ! QC metric relation
+name: multiple runs based
+def: "QC metric calculated from multiple runs (e.g. multiple .raw files)." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000015
-name: QC metric relation: one spectrum
-def: "A metric which is calculated on one spectrum" [PSI:QC]
-is_a: MS:4000012 ! QC metric relation
+name: single spectrum based
+def: "QC metric calculated from a single spectrum." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000016
-name: QC metric relation: multiple spectra
-def: "A metric which is calculated on multiple spectra" [PSI:QC]
-is_a: MS:4000012 ! QC metric relation
+name: multiple spectra based
+def: "QC metric calculated from multiple spectra." [PSI:QC]
+is_a: MS:4000008 ! QC metric category
 
 [Term]
 id: MS:4000020
