@@ -4,7 +4,7 @@ date: 10:11:2021 14:03
 saved-by: Mathias Walzer
 default-namespace: MS
 namespace-id-rule: * MS:$sequence(7,0,9999999)$
-remark: coverage of namespace-id: MS:$sequence(7,4000000,9999999)$: Mass spectrometry quality control metrics
+remark: coverage of namespace-id: MS:$sequence(7,4000000,4999999)$: Mass spectrometry quality control metrics
 remark: creator: Chris Bielow <chris.bielow <-at-> fu-berlin.de>
 remark: creator: Julian Uszkoreit <julian.uszkoreit <-at-> ruhr-uni-bochum.de>
 remark: creator: Martin Eisenacher <martin.eisenacher <-at-> ruhr-uni-bochum.de>
