@@ -897,14 +897,14 @@ name: Sequence coverage column
 def: "The column contains sequence coverage values in percent, e.g. from proteins." [PSI:QC]
 is_a: MS:4000107 ! Table column type
 relationship: has_units UO:0000187 ! percent
-relationship: has_type NCIT:C68811 ! Cover
+relationship: has_units NCIT:C68811 ! Cover
 
 [Term]
 id: MS:4000111
 name: Protein accession column
 def: "The column contains protein accessions." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type MS:1000885 ! protein accession
+relationship: has_units MS:1000885 ! protein accession
 
 [Term]
 id: MS:4000112
@@ -918,7 +918,8 @@ id: MS:4000113
 name: Target or decoy designation column
 def: "The column contains designations of the type 'target', 'decoy', or 'target+decoy'." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type NCIT:C45253 ! String
+relationship: has_value_type xsd\:string ! The allowed value-type for this CV term
+
 
 [Term]
 id: MS:4000114
@@ -940,21 +941,21 @@ name: Peptide sequence column
 def: "The column contains peptide sequences; multiple peptides are separated by space; sequences in ProForma encoding." [PSI:QC]
 comment: ProForma v2 - https://github.com/HUPO-PSI/ProForma/
 is_a: MS:4000107 ! Table column type
-relationship: has_type NCIT:C45253 ! String
+relationship: has_value_type xsd\:string ! The allowed value-type for this CV term
 
 [Term]
 id: MS:4000117
 name: Outliers below column
 def: "The outlier values below 1.5 * IQR." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type NCIT:C79083 ! Outlier
+relationship: has_units NCIT:C79083 ! Outlier
 
 [Term]
 id: MS:4000118
 name: Outliers above column
 def: "The outlier values above 1.5 * IQR." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type NCIT:C79083 ! Outlier
+relationship: has_units NCIT:C79083 ! Outlier
 
 [Term]
 id: MS:4000119
@@ -1391,9 +1392,9 @@ comment: The distribution of peak densities in MS2 can provide insight into the 
 is_a: MS:4000010 ! ID free
 is_a: MS:4000001 ! QC metric
 is_a: MS:4000004 ! n-tuple
-relationship: has_type STATO:0000167 ! first quartile
-relationship: has_type STATO:0000574 ! center value
-relationship: has_type STATO:0000170 ! third quartile
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
 id: MS:4000163
@@ -2178,7 +2179,7 @@ id: MS:4000241
 name: Observed MS1 feature areas column
 def: "Observed MS1 feature areas." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type MS:1001844 ! MS1 feature area
+relationship: has_units MS:1001844 ! MS1 feature area
 
 [Term]
 id: MS:4000242
@@ -2195,7 +2196,7 @@ id: MS:4000243
 name: Observed mass accuracies column
 def: "Observed mass accuracy calculated by 1E6 x (observed mz - theoretical mz)/theoretical mz of selected peptides." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type MS:1000014 ! accuracy
+relationship: has_units MS:1000014 ! accuracy
 
 [Term]
 id: MS:4000244
@@ -2227,35 +2228,35 @@ id: MS:4000247
 name: PCA Dimension 1 column
 def: "The column contains Principal Component Analysis scores from the first eigenvalue dimension." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type STATO:0000587 ! percentage of variance
+relationship: has_units STATO:0000587 ! percentage of variance
 
 [Term]
 id: MS:4000248
 name: PCA Dimension 2 column
 def: "The column contains Principal Component Analysis scores from the second eigenvalue dimension." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type STATO:0000587 ! percentage of variance
+relationship: has_units STATO:0000587 ! percentage of variance
 
 [Term]
 id: MS:4000249
 name: PCA Dimension 3 column
 def: "The column contains Principal Component Analysis scores from the third eigenvalue dimension." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type STATO:0000587 ! percentage of variance
+relationship: has_units STATO:0000587 ! percentage of variance
 
 [Term]
 id: MS:4000250
 name: PCA Dimension 4 column
 def: "The column contains Principal Component Analysis scores from the fourth eigenvalue dimension." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type STATO:0000587 ! percentage of variance
+relationship: has_units STATO:0000587 ! percentage of variance
 
 [Term]
 id: MS:4000251
 name: PCA Dimension 5 column
 def: "The column contains Principal Component Analysis scores from the fifth eigenvalue dimension." [PSI:QC]
 is_a: MS:4000107 ! Table column type
-relationship: has_type STATO:0000587 ! percentage of variance
+relationship: has_units STATO:0000587 ! percentage of variance
 
 [Term]
 id: MS:4000252
