@@ -259,8 +259,8 @@ relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: MS:4000055
-name: MS1 quantiles RT fraction
-def: "The interval used for acquisition of the first, second, third, and fourth quarter of all MS1 events divided by RT-Duration." [PSI:QC]
+name: MS1 quarters RT fraction
+def: "The time interval used for acquisition of the first, second, third, and fourth quarter of all MS1 events divided by RT-Duration." [PSI:QC]
 is_a: MS:4000004 ! n-tuple
 is_a: MS:4000010 ! ID free
 is_a: MS:4000021 ! retention time metric
@@ -268,16 +268,17 @@ is_a: MS:4000023 ! MS1 metric
 relationship: has_relation MS:1000016 ! scan start time
 relationship: has_relation MS:1000579 ! MS1 spectrum
 relationship: has_relation MS:4000013 ! single run based
+relationship: has_units UO:0000191 ! fraction
 synonym: "RT-MS-Q1" RELATED []
 synonym: "RT-MS-Q2" RELATED []
 synonym: "RT-MS-Q3" RELATED []
 synonym: "RT-MS-Q4" RELATED []
-relationship: has_units UO:0000191 ! fraction
+
 
 [Term]
 id: MS:4000056
-name: MS2 quantiles RT fraction
-def: "The interval used for acquisition of the first, second, third, and fourth quarter of all MS2 events divided by RT-Duration." [PSI:QC]
+name: MS2 quarters RT fraction
+def: "The time interval used for acquisition of the first, second, third, and fourth quarter of all MS2 events divided by RT-Duration." [PSI:QC]
 is_a: MS:4000004 ! n-tuple
 is_a: MS:4000010 ! ID free
 is_a: MS:4000021 ! retention time metric
