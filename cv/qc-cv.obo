@@ -33,10 +33,6 @@ id: has_optional_column
 name: has_optional_column
 
 [Typedef]
-id: has_tuple
-name: has_tuple
-
-[Typedef]
 id: has_units
 name: has_units
 
