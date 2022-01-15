@@ -61,26 +61,26 @@ relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 [Term]
 id: MS:4000003
 name: single value
-def: "Metrics consisting of a single value. The value must have a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median or OBI:0001442 ! q-value)." [PSI:QC]
+def: "Metrics consisting of a single value. The value must have a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median or MS:1002354 ! PSM-level q-value)." [PSI:QC]
 is_a: MS:4000002 ! QC metric value type
 
 [Term]
 id: MS:4000004
 name: n-tuple
-def: "Metrics consisting of multiple values, with the number of values implicitly specified by length of the JSON array (e.g. length 4 for quartiles). All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median or OBI:0001442 ! q-value). All values in the tuple must have the same unit and type (if applicable)." [PSI:QC]
+def: "Metrics consisting of multiple values, with the number of values implicitly specified by length of the JSON array (e.g. length 4 for quartiles). All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median or MS:1002354 ! PSM-level q-value). All values in the tuple must have the same unit and type (if applicable)." [PSI:QC]
 is_a: MS:4000002 ! QC metric value type
 
 [Term]
 id: MS:4000006
 name: table
-def: "Metrics consisting of a table or data frame. The values of the table may have different types in each column (in contrast to a matrix). Each column must have a unit (identical for all entries of this column) and may have a value type (e.g. STATO:0000574 ! median or OBI:0001442 ! q-value)." [PSI:QC]
+def: "Metrics consisting of a table or data frame. The values of the table may have different types in each column (in contrast to a matrix). Each column must have a unit (identical for all entries of this column) and may have a value type (e.g. STATO:0000574 ! median or MS:1002354 ! PSM-level q-value)." [PSI:QC]
 comment: The actual structure of the table is defined in the mzQC specification document. In short: it must have at least one column, and MAY have optional columns.
 is_a: MS:4000002 ! QC metric value type
 
 [Term]
 id: MS:4000007
 name: matrix
-def: "A matrix is a rectangular array of values of the same type (in contrast to a table). All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median or OBI:0001442 ! q-value). All values in the matrix must have the same unit and type (if applicable)." [PSI:QC]
+def: "A matrix is a rectangular array of values of the same type (in contrast to a table). All values must be given a unit (e.g. UO:0000221 ! dalton or UO:0000187 ! percent), and optionally a type (e.g. STATO:0000574 ! median or MS:1002354 ! PSM-level q-value). All values in the matrix must have the same unit and type (if applicable)." [PSI:QC]
 comment: The actual structure of the matrix is defined in the mzQC specification document.
 is_a: MS:4000002 ! QC metric value type
 
