@@ -46,7 +46,7 @@ name: has_optional_column
 
 [Term]
 id: MS:4000000
-name: QC CV term
+name: PSI-MS CV Quality Control Vocabulary
 def: "PSI Quality Control controlled vocabulary term." [PSI:QC]
 relationship: part_of MS:0000000 ! Proteomics Standards Initiative Mass Spectrometry Vocabularies
 
