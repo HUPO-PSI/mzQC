@@ -23,10 +23,6 @@ id: has_relation
 name: has_relation
 
 [Typedef]
-id: has_type
-name: has_type
-
-[Typedef]
 id: has_units
 name: has_units
 
