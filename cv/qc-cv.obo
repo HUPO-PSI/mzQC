@@ -88,7 +88,6 @@ is_a: MS:4000002 ! QC metric value type
 id: MS:4000007
 name: QC metric category
 def: "Categorization of the QC metric." [PSI:QC]
-comment: Example categories can include ID-based, ID-free, quantification-based, etc.
 relationship: part_of MS:4000000 ! PSI-MS CV Quality Control Vocabulary
 
 [Term]
@@ -236,7 +235,6 @@ id: MS:4000053
 name: RT duration
 def: "The retention time duration of the MS run in seconds." [PSI:QC]
 comment: This was also part of the Quameter manual's definition - ... , similar to the highest scan time minus the lowest scan time.
-comment: no synonym as the name matches exact
 synonym: "RT-Duration" EXACT []
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free
