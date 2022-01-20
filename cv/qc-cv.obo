@@ -196,7 +196,7 @@ is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free
 relationship: has_metric_category MS:4000012 ! single run based
 relationship: has_value_type xsd\:float ! The allowed value-type for this CV term
-relationship: has_units UO:0000191 ! fraction
+relationship: has_value_concept UO:0000191 ! fraction
 
 [Term]
 id: MS:4000051
@@ -228,7 +228,7 @@ relationship: has_metric_category MS:4000012 ! single run based
 relationship: has_metric_category MS:4000018 ! XIC metric
 relationship: has_value_type xsd\:float ! The allowed value-type for this CV term
 relationship: has_value_concept STATO:0000105 ! log signal intensity ratio
-relationship: has_units UO:0000191 ! fraction
+relationship: has_value_concept UO:0000191 ! fraction
 
 [Term]
 id: MS:4000053
