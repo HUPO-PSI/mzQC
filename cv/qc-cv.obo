@@ -243,8 +243,8 @@ relationship: has_units UO:0000010 ! second
 
 [Term]
 id: MS:4000054
-name: RT over TIC quantile
-def: "The interval when the respective quantile of the TIC accumulates divided by retention time duration. The number of quantiles observed is given by the size of the tuple." [PSI:QC]
+name: TIC quarters RT fraction
+def: "The interval when the respective quarter of the TIC accumulates divided by retention time duration." [PSI:QC]
 synonym: "RT-TIC-Q1" RELATED []
 synonym: "RT-TIC-Q2" RELATED []
 synonym: "RT-TIC-Q3" RELATED []
@@ -259,8 +259,8 @@ relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: MS:4000055
-name: MS1 quantiles RT fraction
-def: "The interval used for acquisition of the first, second, third, and fourth quarter of all MS1 events divided by RT-Duration." [PSI:QC]
+name: MS1 quarter RT fraction
+def: "The interval used for acquisition of the first, second, third, and fourth quarter of all MS1 events divided by retention time duration." [PSI:QC]
 synonym: "RT-MS-Q1" RELATED []
 synonym: "RT-MS-Q2" RELATED []
 synonym: "RT-MS-Q3" RELATED []
@@ -275,8 +275,8 @@ relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: MS:4000056
-name: MS2 quantiles RT fraction
-def: "The interval used for acquisition of the first, second, third, and fourth quarter of all MS2 events divided by RT-Duration." [PSI:QC]
+name: MS2 quarter RT fraction
+def: "The interval used for acquisition of the first, second, third, and fourth quarter of all MS2 events divided by retention time duration." [PSI:QC]
 synonym: "RT-MSMS-Q1" RELATED []
 synonym: "RT-MSMS-Q2" RELATED []
 synonym: "RT-MSMS-Q3" RELATED []
