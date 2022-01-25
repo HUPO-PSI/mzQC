@@ -310,8 +310,8 @@ relationship: has_value_concept STATO:0000105 ! log signal intensity ratio
 
 [Term]
 id: MS:4000058
-name: MS1 quantile TIC ratio to Q1
-def: "The log ratio for the second to n-th quantile of TIC over the previous quantile of TIC. For the boundary elements min/max are used." [PSI:QC]
+name: MS1 TIC ratios
+def: "The log ratios of successive TIC quartiles. The metric's value triplet represents the log ratios of TIC-Q2 and TIC-Q1, TIC-Q3 and TIC-Q2, TIC-max and TIC-Q3." [PSI:QC]
 synonym: "MS1-TIC-Q2" RELATED []
 synonym: "MS1-TIC-Q3" RELATED []
 synonym: "MS1-TIC-Q4" RELATED []
