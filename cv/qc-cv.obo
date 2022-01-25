@@ -202,7 +202,6 @@ relationship: has_value_concept UO:0000191 ! fraction
 id: MS:4000051
 name: XIC-FWHM quantiles
 def: "The first to n-th quantile of peak widths for the wide XICs." [PSI:QC]
-comment: No idea what wide XICs are...
 synonym: "XIC-FWHM-Q1" RELATED []
 synonym: "XIC-FWHM-Q2" RELATED []
 synonym: "XIC-FWHM-Q3" RELATED []
@@ -234,8 +233,6 @@ relationship: has_value_concept UO:0000191 ! fraction
 id: MS:4000053
 name: RT duration
 def: "The retention time duration of the MS run in seconds." [PSI:QC]
-comment: This was also part of the Quameter manual's definition - ... , similar to the highest scan time minus the lowest scan time.
-synonym: "RT-Duration" EXACT []
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free
 relationship: has_metric_category MS:4000012 ! single run based
