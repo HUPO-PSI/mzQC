@@ -410,7 +410,7 @@ relationship: has_column: MS:1000041 ! charge state
 relationship: has_column: UO:0000191 ! fraction
 
 [Term]
-id: MS:4000140
+id: MS:4000065
 name: Fastest frequency for MS level 1 collection
 def: "Fastest frequency for MS level 1 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
@@ -423,7 +423,7 @@ relationship: has_value_type xsd\:float ! The allowed value-type for this CV ter
 relationship: has_units UO:0000106 ! hertz
 
 [Term]
-id: MS:4000141
+id: MS:4000066
 name: Fastest frequency for MS level 2 collection
 def: "Fastest frequency for MS level 2 collection" [PSI:QC]
 comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
