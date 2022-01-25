@@ -294,9 +294,8 @@ relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: MS:4000057
-name: MS1 quantile TIC change ratio to Q1
-def: "The log ratio for the second to n-th quantile of TIC changes over first quantile of TIC changes." [PSI:QC]
-comment: this definition is not implementation clear
+name: MS1 TIC-change ratios
+def: "The log ratios of successive TIC-change quartiles. The TIC changes are the list of MS1 total ion current (TIC) value changes from one to the next scan, produced when each MS1 TIC is subtracted from the preceding MS1 TIC. The metric's value triplet represents the log ratio of the TIC-change Q2 to Q1, Q3 to Q2, TIC-change-max to Q3" [PSI:QC]
 synonym: "MS1-TIC-Change-Q2" RELATED []
 synonym: "MS1-TIC-Change-Q3" RELATED []
 synonym: "MS1-TIC-Change-Q4" RELATED []
@@ -311,7 +310,7 @@ relationship: has_value_concept STATO:0000105 ! log signal intensity ratio
 [Term]
 id: MS:4000058
 name: MS1 TIC ratios
-def: "The log ratios of successive TIC quartiles. The metric's value triplet represents the log ratios of TIC-Q2 and TIC-Q1, TIC-Q3 and TIC-Q2, TIC-max and TIC-Q3." [PSI:QC]
+def: "The log ratios of successive TIC quartiles. The metric's value triplet represents the log ratios of TIC-Q2 to TIC-Q1, TIC-Q3 to TIC-Q2, TIC-max to TIC-Q3." [PSI:QC]
 synonym: "MS1-TIC-Q2" RELATED []
 synonym: "MS1-TIC-Q3" RELATED []
 synonym: "MS1-TIC-Q4" RELATED []
