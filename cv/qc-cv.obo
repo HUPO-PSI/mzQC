@@ -188,10 +188,10 @@ is_a: MS:4000001 ! QC metric
 
 [Term]
 id: MS:4000050
-name: XIC-WideFrac
-def: "The fraction of precursor ions accounting for the top half of all peak widths" [PSI:QC]
-comment: No synonym for QuaMeter names since this is literally the QuaMeter metric
-comment: is it precursor ions accounting for the top 50% of all precursor ion peaks' FWHM?,  
+name: XIC50 fraction
+def: "The number of XIC that account for the top half of all XIC-FWHM divided by the number of all XIC." [PSI:QC]
+comment: This metric characterises the distribution of precursor peak widths, much as the N50 characterises contig sizes in genome assembly.
+synonym: "XIC-WideFrac" EXACT []
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free
 relationship: has_metric_category MS:4000012 ! single run based
@@ -201,7 +201,7 @@ relationship: has_value_concept UO:0000191 ! fraction
 [Term]
 id: MS:4000051
 name: XIC-FWHM quantiles
-def: "The first to n-th quantile of peak widths for the wide XICs." [PSI:QC]
+def: "The first to n-th quantile of peak widths for XICs. A metric's value triplet represents the related QuaMeter metrics of of XIC-FWHM-Q1,Q2,Q3." [PSI:QC]
 synonym: "XIC-FWHM-Q1" RELATED []
 synonym: "XIC-FWHM-Q2" RELATED []
 synonym: "XIC-FWHM-Q3" RELATED []
@@ -216,8 +216,8 @@ relationship: has_units UO:0000010 ! second
 
 [Term]
 id: MS:4000052
-name: XIC-Height quantiles ratio to Q1
-def: "The log ratio for the second to n-th quantile of wide XIC heights over previous quantile of heights. For the boundary elements min/max are used." [PSI:QC]
+name: XIC-Height quartile ratios
+def: "The log ratio of successive XIC height quartiles. The metric's value triplet represents the log ratios of XIC-height-Q2 to XIC-height-Q1, XIC-height-Q3 to XIC-height-Q2, XIC-height max to XIC-height-Q3." [PSI:QC]
 synonym: "XIC-Height-Q2" RELATED []
 synonym: "XIC-Height-Q3" RELATED []
 synonym: "XIC-Height-Q4" RELATED []
@@ -291,7 +291,7 @@ relationship: has_units UO:0000191 ! fraction
 
 [Term]
 id: MS:4000057
-name: MS1 TIC-change ratios
+name: MS1 TIC-change quartile ratios
 def: "The log ratios of successive TIC-change quartiles. The TIC changes are the list of MS1 total ion current (TIC) value changes from one to the next scan, produced when each MS1 TIC is subtracted from the preceding MS1 TIC. The metric's value triplet represents the log ratio of the TIC-change Q2 to Q1, Q3 to Q2, TIC-change-max to Q3" [PSI:QC]
 synonym: "MS1-TIC-Change-Q2" RELATED []
 synonym: "MS1-TIC-Change-Q3" RELATED []
@@ -306,7 +306,7 @@ relationship: has_value_concept STATO:0000105 ! log signal intensity ratio
 
 [Term]
 id: MS:4000058
-name: MS1 TIC ratios
+name: MS1 TIC quartile ratios
 def: "The log ratios of successive TIC quartiles. The metric's value triplet represents the log ratios of TIC-Q2 to TIC-Q1, TIC-Q3 to TIC-Q2, TIC-max to TIC-Q3." [PSI:QC]
 synonym: "MS1-TIC-Q2" RELATED []
 synonym: "MS1-TIC-Q3" RELATED []
