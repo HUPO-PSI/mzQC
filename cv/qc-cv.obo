@@ -232,7 +232,7 @@ relationship: has_value_concept UO:0000191 ! fraction
 [Term]
 id: MS:4000053
 name: RT duration
-def: "The retention time duration of the MS run in seconds." [PSI:QC]
+def: "The retention time duration of the chromatography in seconds." [PSI:QC]
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free
 relationship: has_metric_category MS:4000012 ! single run based
