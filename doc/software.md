@@ -8,6 +8,12 @@ Core libraries:
 - [mzqc-pylib](https://github.com/bigbio/mzqc-pylib): Python library to process
 and validate mzQC files. It includes a Python object model, (de-)serialisation
 functions, syntactic validation, and semantic validation of mzQC files.
+- [jmzqc](https://github.com/lifs-tools/jmzqc): Java library to create, process
+and validate mzQC files. It includes a Java object model, (de-)serialisation
+functions, syntactic validation, and semantic validation of mzQC files.
+- [rmzqc](TODO): R library to create, process
+and validate mzQC files. It includes a Java object model, (de-)serialisation
+functions, syntactic validation, and semantic validation of mzQC files.
 
 Metrics generating software:
 
