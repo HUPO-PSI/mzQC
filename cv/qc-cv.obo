@@ -430,3 +430,15 @@ relationship: has_metric_category MS:4000012 ! single run based
 relationship: has_metric_category MS:4000022 ! MS2 metric
 relationship: has_value_type xsd\:float ! The allowed value-type for this CV term
 relationship: has_units UO:0000106 ! hertz
+
+[Term]
+id: MS:4000067
+name: MS duration
+def: "The duration of the mass spectrometry acquisition (as measured by the time between the last scan and first scan) in seconds." [PSI:QC]
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free
+relationship: has_metric_category MS:4000012 ! single run based
+relationship: has_metric_category MS:4000019 ! MS metric
+relationship: has_value_type xsd\:float ! The allowed value-type for this CV term
+relationship: has_value_concept NCIT:C25330 ! Duration
+relationship: has_units UO:0000010 ! second
