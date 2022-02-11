@@ -16,7 +16,7 @@ body:
   - type: input
     attributes:
       label: "What is the QC term's unit?"
-      description: "Optional unit of the value, specified using an existing CV term. Units should preferably be sourced from the Units of Measurement Ontology (https://www.ebi.ac.uk/ols/ontologies/uo) or the Statistical Methods Ontology (http://stato-ontology.org/)."
+      description: "Optional unit of the value, specified using an existing CV term. Units should preferably be sourced from the [Units of Measurement Ontology](https://www.ebi.ac.uk/ols/ontologies/uo) or the [Statistical Methods Ontology](http://stato-ontology.org/)."
   - type: dropdown
     attributes:
       label: "Value type"
