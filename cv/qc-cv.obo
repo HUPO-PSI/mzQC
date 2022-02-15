@@ -156,7 +156,6 @@ relationship: has_metric_category MS:4000xxx ! QC value distribution description
 relationship: has_value_concept STATO:0000164 ! inter quartile range
 synonym: "MS1-5D" NARROW []
 
-# RECOMMEND to mention primary identification score in metadata
 [Term]
 id: MS:4000xxx
 name: identification score - Q1, Q2, Q3
@@ -417,7 +416,7 @@ relationship: has_metric_category MS:4000xxx ! QC value distribution description
 relationship: has_value_concept STATO:0000036 ! outlier
 
 [Term]
-id: MS:4000144
+id: MS:4000xxx
 name: precursor intensity range
 def: "Minimum and maximum precursor intensity recorded." [PSI:QC]
 comment: The intensity range of the precursors informs about the dynamic range of the acquisition.
@@ -426,7 +425,7 @@ relationship: has_metric_category MS:4000009 ! ID free metric
 relationship: has_units MS:1003085 ! previous MSn-1 scan precursor intensity
 
 [Term]
-id: MS:4000167
+id: MS:4000xxx
 name: precursor intensity distribution Q1, Q2, Q3
 def: "From the distribution of precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
 comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
@@ -636,57 +635,10 @@ relationship: has_value_concept STATO:0000036 ! outlier
 
 [Term]
 id: MS:4000xxx
-name: MS1 peak FWHM for identifications - Q1, Q2, Q3
-def: "From the distribution of MS1 peak FWHM identified at given FDR threshold the quartiles Q1, Q2, Q3 value" [PSI:QC]
-comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution and tighter distributions indicate better consistency.
-is_a: MS:4000009 ! ID based
-is_a: MS:4000001 ! QC metric
+name: median MS1 peak FWHM for identifications per RT quarter
+def: "Median of all MS1 peak widths at half maximum (FWHM) for all identified MS2 ordered and split into quarters by retention time." [PSI:QC]
+comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution in the given quantile.
 is_a: MS:4000004 ! n-tuple
-is_a: MS:4000xxx ! QC value distribution description
-relationship: has_value_concept STATO:0000167 ! first quartile
-relationship: has_value_concept STATO:0000574 ! center value
-relationship: has_value_concept STATO:0000170 ! third quartile
-relationship: has_units UO:0000010 ! second
-
-[Term]
-id: MS:4000xxx
-name: MS1 peak FWHM for identifications - mean
-def: "From the distribution of MS1 peak FWHM identified at given FDR threshold the mean" [PSI:QC]
-comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution and tighter distributions indicate better consistency.
-is_a: MS:4000009 ! ID based
-is_a: MS:4000001 ! QC metric
-is_a: MS:4000003 ! single value
-is_a: MS:4000xxx ! QC value distribution description
-relationship: has_value_concept STATO:0000401 ! sample mean
-
-[Term]
-id: MS:4000xxx
-name: MS1 peak FWHM for identifications - sigma
-def: "From the distribution of MS1 peak FWHM identified at given FDR threshold  the sigma value" [PSI:QC]
-comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution and tighter distributions indicate better consistency.
-is_a: MS:4000009 ! ID based
-is_a: MS:4000001 ! QC metric
-is_a: MS:4000003 ! single value
-is_a: MS:4000xxx ! QC value distribution description
-relationship: has_value_concept STATO:0000237 ! standard deviation
-
-[Term]
-id: MS:4000xxx
-name: MS1 peak FWHM for identifications - low outliers (<Q1-1.5*IQR)
-def: "From the distribution of MS1 peak FWHM identified at given FDR threshold the list of outliers below Q1-1.5*IQR" [PSI:QC]
-comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution and tighter distributions indicate better consistency.
-is_a: MS:4000001 ! QC metric
-is_a: MS:4000009 ! ID based
-is_a: MS:4000004 ! n-tuple
-relationship: has_value_concept STATO:0000036 ! outlier
-
-[Term]
-id: MS:4000xxx
-name: MS1 peak FWHM for identifications - high outliers (>Q3+1.5*IQR)
-def: "From the distribution of MS1 peak FWHM identified at given FDR threshold the list of outliers above Q3+1.5*IQR" [PSI:QC]
-comment: Sharper peak widths (i.e. smaller values) indicate better chromatographic resolution and tighter distributions indicate better consistency.
-is_a: MS:4000001 ! QC metric
-is_a: MS:4000009 ! ID based
-is_a: MS:4000004 ! n-tuple
-is_a: MS:4000xxx ! QC value distribution description
-relationship: has_value_concept STATO:0000036 ! outlier
+relationship: has_metric_category MS:4000008 ! ID based metric
+relationship: has_relation MS:1000086 ! full width at half-maximum
+relationship: has_relation MS:4000013 ! single run based
