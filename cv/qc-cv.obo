@@ -117,5 +117,4 @@ def: "The count of MS1 signal decline events (spectra sum) by a factor of ten or
 comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free metric
-relationship: has_units STATO:0000237 ! standard deviation
 synonym: "IS-1B"  RELATED []
