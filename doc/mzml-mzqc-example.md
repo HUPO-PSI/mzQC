@@ -18,7 +18,7 @@ Next, the metrics computed for the whole run can be be deposited as a child of t
 		<cvParam cvRef="QC" accession="QC:4000181" name="Charged spectra ratio +4 over +2" value="0.012987012987012988" />
 		<userParam name="mzml_id" type="xsd:string" value="20090810_SvNa_QC_BSA50fmol.RAW"/>
 ```
-Please note that for example brevity purposes the _mzML_ was truncated to 3 spectra, however the metrics were calculated on the whole to reflect realistic values.
+Please note that for example brevity purposes the _mzML_ was truncated to 3 spectra, however the metrics were calculated on the whole to reflect realistic values. Also, the NativeID format was truncated to the index of `spectrum=` bit.
 
 Next, the spectra metrics can be put as children of `<spectrum>` elements, in the same fashion as for the run metrics. 
 ```
@@ -33,7 +33,7 @@ Next, the spectra metrics can be put as children of `<spectrum>` elements, in th
 				<cvParam cvRef="MS" accession="MS:1000285" name="total ion current" value="6.937649e06"/>
 				<cvParam cvRef="MS" accession="MS:1000528" name="lowest observed m/z" value="300.000828877017"/>
 				<cvParam cvRef="MS" accession="MS:1000527" name="highest observed m/z" value="2008.458458829989922"/>
-				<cvParam cvRef="QC" accession="QC:4000268" name="Min. peaks for 50% of total spectra intensity" value="11"/>
+				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': [1011], 'UO:0000191': [0.0235]}"/>
 				<userParam name="filter string" type="xsd:string" value="FTMS + p NSI Full ms [300.00-2000.00]"/>
 				<userParam name="preset scan configuration" type="xsd:string" value="1"/>
 				<scanList count="1">
@@ -77,7 +77,6 @@ The `<cv>` elements are again very similar to the respective entries in _mzQC_, 
 		<cv id="BTO" fullName="BrendaTissue545" version="unknown" URI="http://www.brenda-enzymes.info/ontology/tissue/tree/update/update_files/BrendaTissueOBO"/>
 		<cv id="GO" fullName="Gene Ontology - Slim Versions" version="unknown" URI="http://www.geneontology.org/GO_slims/goslim_goa.obo"/>
 		<cv id="PATO" fullName="Quality ontology" version="unknown" URI="http://obo.cvs.sourceforge.net/*checkout*/obo/obo/ontology/phenotype/quality.obo"/>
-		<cv id="QC" fullName="Quality Control Ontology" version="unknown" URI="https://raw.githubusercontent.com/HUPO-PSI/mzQC/main/cv/qc-cv.obo"/>
 	</cvList>
 ```
 Note that you should also add your software to `<software>` and `<dataProcessing>`.
