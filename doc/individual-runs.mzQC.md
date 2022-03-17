@@ -100,7 +100,7 @@ As you can see, the location can not only be a filesystem location, but also a U
 This example will now show several simple metrics included in `qualityMetrics`, which contain the actual QC information for a particular `runQuality`. The `accession` and the corresponding `name` are defined by the QC CV (see `qc-cv.obo`) and should be represented exactly as stated in the .obo file. The `value` carries the actual information.
 Metric values can be either single values,
 ```
-            "accession": "QC:4000059",
+            "accession": "MS:4000059",
             "name": "Number of MS1 spectra",
             "value": 5074
 ```
@@ -167,12 +167,12 @@ or matrices or tables (shown in other examples).
         },
         "qualityMetrics": [
           {
-            "accession": "QC:4000059",
+            "accession": "MS:4000059",
             "name": "Number of MS1 spectra",
             "value": 5074
           },
           {
-            "accession": "QC:4000060",
+            "accession": "MS:4000060",
             "name": "Number of MS2 spectra",
             "value": 14812
           },

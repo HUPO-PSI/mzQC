@@ -40,23 +40,17 @@
               "name": "quality estimation by manual validation",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
-            },
-            {
-              "accession": "QC:0000000",
-              "name": "QCCalculator",
-              "version": "0.9.0",
-              "uri": "qccalculator.readthedocs.io"
             }
           ]
         },
         "qualityMetrics": [
           {
-            "accession": "QC:4000059",
+            "accession": "MS:4000059",
             "name": "Number of MS1 spectra",
             "value": 5074
           },
           {
-            "accession": "QC:4000060",
+            "accession": "MS:4000060",
             "name": "Number of MS2 spectra",
             "value": 14812
           },
