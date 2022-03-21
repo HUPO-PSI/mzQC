@@ -787,21 +787,23 @@ relationship: has_units UO:0000189 ! count unit
 
 [Term]
 id: QC:4000138
-name: MZ acquisition range
-def: "Upper and lower limit of m/z values at which spectra are recorded." [PSI:QC]
-comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs.
-relationship: has_metric_category MS:4000009 ! ID free metric
+name: m/z acquisition range
+def: "Upper and lower limit of m/z precursor values at which MSn spectra are recorded." [PSI:QC]
 is_a: MS:4000004 ! n-tuple
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_metric_category MS:4000012 ! single run based metric
 relationship: has_units MS:1000040 ! m/z
+is_obsolete: true
 
 [Term]
 id: QC:4000139
-name: RT acquisition range
+name: retention time acquisition range
 def: "Upper and lower limit of time at which spectra are recorded." [PSI:QC]
-comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs.
 is_a: MS:4000004 ! n-tuple
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_metric_category MS:4000012 ! single run based metric
 relationship: has_units UO:0000010 ! second
-
+is_obsolete: true
 
 [Term]
 id: QC:4000142
@@ -1712,28 +1714,37 @@ relationship: has_type MS:1001844 ! MS1 feature area
 
 [Term]
 id: QC:4000242
-name: QC2 sample MS1 feature areas
-def: "Observed MS1 feature area from selected peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Selected peptides in the first column to be expected: 'YAEAVTR','STLTDSLVC(Carbamidomethyl)K','SLADELALVDVLEDK','NPDDITNEEYGEFYK','LAVDEEENADNNTK','FEELNMDLFR','EAALSTALSEK','DDVAQTDLLQIDPNFGSK','RFPGYDSESK','EATTEFSVDAR','EQFLDGDGWTSR','TPAQFDADELR','LGDLYEEEMR','EVSTYIK','FAFQAEVNR'" [PSI:QC]
-relationship: has_metric_category MS:4000008 ! ID based metric
+name: QC2 sample intensities
+def: "Observed intensities for the peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Different metrics of observed intensities are possible, at least one must be present. The table should contain the peptides as defined in the parent QC2 sample metric term, missing are interpreted as not detected." [PSI:MS]
+is_a: MS:4000269 ! QC2 sample metric
+is_a: MS:4000008 ! ID based metric
 is_a: MS:4000005 ! table
-relationship: has_column: QC:4000116 ! Peptide sequence
-relationship: has_column: QC:4000241 ! Observed MS1 feature areas column
+relationship: has_column: MS:1003169 ! proforma peptidoform sequence
+relationship: has_optional_column MS:1001858 ! XIC area
+relationship: has_optional_column MS:1001859 ! normalized XIC area
+relationship: has_optional_column MS:1001844 ! MS1 feature area
+relationship: has_optional_column MS:1001843 ! MS1 feature maximum intensity
+relationship: has_optional_column MS:1003085 ! previous MSn-1 scan precursor intensity
+is_obsolete: true
 
 [Term]
 id: QC:4000243
-name: Observed mass accuracies column
-def: "Observed mass accuracy calculated by 1E6 x (observed mz - theoretical mz)/theoretical mz of selected peptides." [PSI:QC]
-is_a: QC:4000107 ! Table column type
-relationship: has_type MS:1000014 ! accuracy
+name: observed mass accuracy
+def: "Observed mass accuracy in ppm, calculated by 1E6 x (observed m/z - theoretical m/z)/theoretical m/z of a selected peptide spectrum." [PSI:MS]
+relationship: has_value_concept MS:1000014 ! accuracy
+relationship: has_units UO:0000169 ! parts per million
+is_obsolete: true
 
 [Term]
 id: QC:4000244
 name: QC2 sample mass accuracies
-def: "Observed mass accuracy from selected peptides of a QC2 sample measurement. Selected peptides in the first column to be expected: 'YAEAVTR','STLTDSLVC(Carbamidomethyl)K','SLADELALVDVLEDK','NPDDITNEEYGEFYK','LAVDEEENADNNTK','FEELNMDLFR','EAALSTALSEK','DDVAQTDLLQIDPNFGSK','RFPGYDSESK','EATTEFSVDAR','EQFLDGDGWTSR','TPAQFDADELR','LGDLYEEEMR','EVSTYIK','FAFQAEVNR'" [PSI:QC]
-relationship: has_metric_category MS:4000008 ! ID based metric
+def: "Observed mass accuracy for the peptides of a QC2 sample measurement. The table should contain the peptides as defined in the parent QC2 sample metric term, missing are interpreted as not detected." [PSI:MS]
+is_a: MS:4000269 ! QC2 sample metric
+is_a: MS:4000008 ! ID based metric
 is_a: MS:4000005 ! table
-relationship: has_column: QC:4000116 ! Peptide sequence
-relationship: has_column: QC:4000243 ! Observed mass accuracies xolumn
+relationship: has_column: MS:1003169 ! proforma peptidoform sequence
+relationship: has_column: QC:4000243 ! observed mass accuracy
+is_obsolete: true
 
 [Term]
 id: QC:4000245
@@ -1910,3 +1921,17 @@ relationship: has_column: QC:4000248 ! PCA Dimension 2
 relationship: has_optional_column: QC:4000249 ! PCA Dimension 3
 relationship: has_optional_column: QC:4000250 ! PCA Dimension 4
 relationship: has_optional_column: QC:4000251 ! PCA Dimension 5
+
+[Term]
+id: QC:4000268
+name: "QC sample metric." [PSI:MS]
+def: A QC metric based on a QC sample of known content.
+is_a: MS:4000007 ! QC metric category
+is_obsolete: true
+
+[Term]
+id: QC:4000269
+name: QC2 sample metric
+def: "A QC metric based on the results of a QC2 sample measurement (see Pichler et al. (pmid:23088386) Chiva et al. (pmid:29324744) for details on QC2 sample design). Expected peptides from sample measurement are: 'YAEAVTR','STLTDSLVC(Carbamidomethyl)K','SLADELALVDVLEDK','NPDDITNEEYGEFYK','LAVDEEENADNNTK','FEELNMDLFR','EAALSTALSEK','DDVAQTDLLQIDPNFGSK','RFPGYDSESK','EATTEFSVDAR','EQFLDGDGWTSR','TPAQFDADELR','LGDLYEEEMR','EVSTYIK','FAFQAEVNR'" [PSI:MS]
+is_a: MS:400068 ! QC sample metric
+is_obsolete: true
