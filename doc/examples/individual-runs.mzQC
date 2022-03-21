@@ -1,4 +1,5 @@
-{ "mzQC": {
+{ "mzQC": 
+  {
     "version": "1.0.0",
     "creationDate": "2020-12-01T11:56:34",
     "contactName": "Mathias Walzer",
@@ -40,18 +41,23 @@
               "name": "quality estimation by manual validation",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
+            },
+            {
+                "accession": MS:1000799",
+                "name": "custom unreleased software tool"
+                "value": "mzqc-pylib"
             }
           ]
         },
         "qualityMetrics": [
           {
             "accession": "MS:4000059",
-            "name": "Number of MS1 spectra",
+            "name": "number of MS1 spectra",
             "value": 5074
           },
           {
             "accession": "MS:4000060",
-            "name": "Number of MS2 spectra",
+            "name": "number of MS2 spectra",
             "value": 14812
           },
           {
@@ -75,13 +81,13 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Quality Control Ontology",
-        "uri": "https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
-        "version": "0.1.0"
+        "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
+        "version": "1.0.0"
       },
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
-        "version": "4.1.7"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
+        "version": "4.1.71"
       }
     ]
   }

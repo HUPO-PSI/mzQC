@@ -80,4 +80,6 @@ The `<cv>` elements are again very similar to the respective entries in _mzQC_, 
 	</cvList>
 ```
 Note that you should also add your software to `<software>` and `<dataProcessing>`.
-You can find the [full _mzML_ file in the examples folder](examples/mzml-mzqc-example.mzML).
+
+### This is the mzQC file once again, in full:
+**[mzml-mzqc-example.mzML](examples/mzml-mzqc-example.mzML)**

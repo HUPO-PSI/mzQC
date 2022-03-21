@@ -13,16 +13,16 @@ The metrics describe simple values like the cornerstone numbers of the acquisiti
             "accession": "QC:4000244",
             "name": "QC2 sample mass accuracies",
             "value": {
-              "Peptide sequences": ["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
-              "Observed mass accuracies": [-0.2346854518740762,-0.08024023890884578,-0.1322012562867409,-0.2259441806378488,-0.10596535779273217,0.28345130855013684,-0.08600783742175504,-0.3683484942567654,-0.03348194493295555,-0.41789282666789496,-0.12794363836212685,0.0,0.0,0.0,0.0]
+              "MS:1003169": ["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
+              "QC:4000243": [-0.2346854518740762,-0.08024023890884578,-0.1322012562867409,-0.2259441806378488,-0.10596535779273217,0.28345130855013684,-0.08600783742175504,-0.3683484942567654,-0.03348194493295555,-0.41789282666789496,-0.12794363836212685,0.0,0.0,0.0,0.0]
             }
 	  },
           {
             "accession": "QC:4000242",
-            "name": "QC2 sample MS1 feature areas",
+            "name": "QC2 sample intensities",
             "value": {
-              "Peptide sequences": ["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
-              "Observed MS1 feature areas": [1234940000.0,922790000.0,80819100.0,478714000.0,254935000.0,52841200.0,243597000.0,24581800.0,707504000.0,129063000.0,205583000.0,0.0,0.0,0.0,0.0]
+              "MS:1003169": ["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
+              "MS:1001844": [1234940000.0,922790000.0,80819100.0,478714000.0,254935000.0,52841200.0,243597000.0,24581800.0,707504000.0,129063000.0,205583000.0,0.0,0.0,0.0,0.0]
             }
           },
 ```
@@ -30,13 +30,17 @@ The individual peptides' values are stored in a table, that is defined by the re
 ```
 [Term]
 id: QC:4000242
-name: QC2 sample MS1 feature areas
-def: "Observed MS1 feature area from selected peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Selected peptides in the first column to be expected: 'YAEAVTR','STLTDSLVC(Carbamidomethyl)K','SLADELALVDVLEDK','NPDDITNEEYGEFYK','LAVDEEENADNNTK','FEELNMDLFR','EAALSTALSEK','DDVAQTDLLQIDPNFGSK','RFPGYDSESK','EATTEFSVDAR','EQFLDGDGWTSR','TPAQFDADELR','LGDLYEEEMR','EVSTYIK','FAFQAEVNR'" [PSI:QC]
-is_a: QC:4000001 ! QC metric
-is_a: QC:4000009 ! ID based
-is_a: QC:4000006 ! table
-property_value: has_column: QC:4000116 ! Peptide sequence
-property_value: has_column: QC:4000241 ! Observed MS1 feature areas
+name: QC2 sample intensities
+def: "Observed intensities for the peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Different metrics of observed intensities are possible, at least one must be present. The table should contain the peptides as defined in the parent QC2 sample metric term, missing are interpreted as not detected." [PSI:MS]
+is_a: MS:4000269 ! QC2 sample metric
+is_a: MS:4000008 ! ID based metric
+is_a: MS:4000005 ! table
+relationship: has_column: MS:1003169 ! proforma peptidoform sequence
+relationship: has_optional_column MS:1001858 ! XIC area
+relationship: has_optional_column MS:1001859 ! normalized XIC area
+relationship: has_optional_column MS:1001844 ! MS1 feature area
+relationship: has_optional_column MS:1001843 ! MS1 feature maximum intensity
+relationship: has_optional_column MS:1003085 ! previous MSn-1 scan precursor intensity
 ```
 Since each column is in turn defined by a cv term, the column can also be assigned an expected value type and unit. In this case the feature area column is expected to contain values of `MS:1001844 - MS1 feature area`s. This concept allows for easier automated metric consumption and even generic plotting of graphs. With a collection consecutive QC2 sample mzQC files, a plot like a Levey-Jennings Control Chart are easily achieved.
 
@@ -44,175 +48,4 @@ Since each column is in turn defined by a cv term, the column can also be assign
 
 
 ### This is the mzQC file once again, in full:
-```
-{
-   "mzQC":{
-      "creationDate":"2020-12-03T19:51:02",
-      "version":"1.0.0",
-      "contactName":"Mathias Walzer",
-      "contactAddress":"walzer@ebi.ac.uk",
-      "description":"This is an example of an mzQC file produced from a proteomics QC2 sample. 20 ug dried Pierce HeLa protein digest standard from Thermo Fisher Scientific (Part number: 88329) are dissolved in 200 uL of 0.1% formic acid in water to a final concentration of 100 ng/uL. A total amount of 1 uL (100ng) is injected per analysis.",
-      "runQualities":[
-         {
-            "metadata":{
-               "inputFiles":[
-                  {
-                     "location":"/tmp/QC2_18052020.mzML",
-                     "name":"QC type 2 sample",
-                     "fileFormat":{
-                        "accession":"MS:1000584",
-                        "name":"mzML format"
-                     },
-                     "fileProperties":[
-                        {
-                           "accession":"MS:1000747",
-                           "name":"completion time",
-                           "value":"2020-05-18 09:20:48"
-                        },
-                        {
-                           "accession":"MS:1000569",
-                           "name":"SHA-1",
-                           "value":"fbe692c887404179518089abc670484c"
-                        },
-                        {
-                           "accession":"MS:1000031",
-                           "name":"instrument model",
-                           "value":"LTQ Orbitrap Velos"
-                        }
-                     ]
-                  }
-               ],
-               "analysisSoftware":[
-                  {
-                     "accession":"MS:1001058",
-                     "name":"quality estimation by manual validation",
-                     "version":"0",
-                     "uri":"https://dx.doi.org/10.1021/pr201071t"
-                  },
-                  {
-                     "accession":"QC:0000000",
-                     "name":"QCCaclulator",
-                     "version":"0.9.0",
-                     "uri":"qccalculator.readthedocs.io"
-                  }
-               ]
-            },
-            "qualityMetrics":[
-               {
-                  "accession":"QC:4000060",
-                  "name":"Number of MS2 spectra",
-                  "value":62299
-               },
-               {
-                  "accession":"QC:4000186",
-                  "name":"Total number of PSM",
-                  "value":24765
-               },
-               {
-                  "accession":"QC:4000187",
-                  "name":"Number of identified peptides",
-                  "value":22241
-               },
-               {
-                  "accession":"QC:4000185",
-                  "name":"Number of identified proteins",
-                  "value":"5504"
-               },
-               {
-                  "accession":"QC:4000244",
-                  "name":"QC2 sample mass accuracies",
-                  "value":{
-                     "Peptide sequences":[
-                        "YAEAVTR",
-                        "STLTDSLVC(Carbamidomethyl)K",
-                        "SLADELALVDVLEDK",
-                        "NPDDITNEEYGEFYK",
-                        "LAVDEEENADNNTK",
-                        "FEELNMDLFR",
-                        "EAALSTALSEK",
-                        "DDVAQTDLLQIDPNFGSK",
-                        "RFPGYDSESK",
-                        "EATTEFSVDAR",
-                        "EQFLDGDGWTSR",
-                        "TPAQFDADELR",
-                        "LGDLYEEEMR",
-                        "EVSTYIK",
-                        "FAFQAEVNR"
-                     ],
-                     "Observed mass accuracies":[
-                        -0.2346854518740762,
-                        -0.08024023890884578,
-                        -0.1322012562867409,
-                        -0.2259441806378488,
-                        -0.10596535779273217,
-                        0.28345130855013684,
-                        -0.08600783742175504,
-                        -0.3683484942567654,
-                        -0.03348194493295555,
-                        -0.41789282666789496,
-                        -0.12794363836212685,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0
-                     ]
-                  }
-               },
-               {
-                  "accession":"QC:4000242",
-                  "name":"QC2 sample MS1 feature areas",
-                  "value":{
-                     "Peptide sequences":[
-                        "YAEAVTR",
-                        "STLTDSLVC(Carbamidomethyl)K",
-                        "SLADELALVDVLEDK",
-                        "NPDDITNEEYGEFYK",
-                        "LAVDEEENADNNTK",
-                        "FEELNMDLFR",
-                        "EAALSTALSEK",
-                        "DDVAQTDLLQIDPNFGSK",
-                        "RFPGYDSESK",
-                        "EATTEFSVDAR",
-                        "EQFLDGDGWTSR",
-                        "TPAQFDADELR",
-                        "LGDLYEEEMR",
-                        "EVSTYIK",
-                        "FAFQAEVNR"
-                     ],
-                     "Observed MS1 feature areas":[
-                        1234940000.0,
-                        922790000.0,
-                        80819100.0,
-                        478714000.0,
-                        254935000.0,
-                        52841200.0,
-                        243597000.0,
-                        24581800.0,
-                        707504000.0,
-                        129063000.0,
-                        205583000.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0
-                     ]
-                  }
-               }
-            ]
-         }
-      ],
-      "controlledVocabularies":[
-         {
-            "name":"Proteomics Standards Initiative Quality Control Ontology",
-            "uri":"https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
-            "version":"0.1.1"
-         },
-         {
-            "name":"Proteomics Standards Initiative Mass Spectrometry Ontology",
-            "uri":"https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
-            "version":"4.1.7"
-         }
-      ]
-   }
-}
-```
+**[QC2-sample-example.mzQC](examples/QC2-sample-example.mzQC)**

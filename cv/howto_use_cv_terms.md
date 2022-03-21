@@ -26,8 +26,8 @@ A corresponding `qualityMetric` object in an mzQC file:
 
 ```
 {
-    "accession": "QC:4000059",
-    "name": "Number of MS1 spectra",
+    "accession": "MS:4000059",
+    "name": "number of MS1 spectra",
     "value": 8259,
     "unit": {
         "accession": "UO:0000189",
@@ -59,8 +59,8 @@ A corresponding `qualityMetric` object in an mzQC file:
 
 ```
 {
-    "accession": "QC:4000062",
-    "name": "MS2 density per quantile",
+    "accession": "MS:4000062",
+    "name": "MS2 density quantiles",
     "value": [
         162,
         250,
