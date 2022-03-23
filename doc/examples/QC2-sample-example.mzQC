@@ -1,5 +1,5 @@
-{
-   "mzQC":{
+{ "mzQC": 
+   {
       "creationDate":"2020-12-03T19:51:02",
       "version":"1.0.0",
       "contactName":"Mathias Walzer",
@@ -43,17 +43,16 @@
                      "uri":"https://dx.doi.org/10.1021/pr201071t"
                   },
                   {
-                     "accession":"QC:0000000",
-                     "name":"QCCaclulator",
-                     "version":"0.9.0",
-                     "uri":"qccalculator.readthedocs.io"
+                     "accession": MS:1000799",
+                     "name": "custom unreleased software tool"
+                     "value": "mzqc-pylib"
                   }
                ]
             },
             "qualityMetrics":[
                {
                   "accession":"QC:4000060",
-                  "name":"Number of MS2 spectra",
+                  "name":"number of MS2 spectra",
                   "value":62299
                },
                {
@@ -75,7 +74,7 @@
                   "accession":"QC:4000244",
                   "name":"QC2 sample mass accuracies",
                   "value":{
-                     "Peptide sequences":[
+                     "MS:1003169":[
                         "YAEAVTR",
                         "STLTDSLVC(Carbamidomethyl)K",
                         "SLADELALVDVLEDK",
@@ -92,7 +91,7 @@
                         "EVSTYIK",
                         "FAFQAEVNR"
                      ],
-                     "Observed mass accuracies":[
+                     "QC:4000243":[
                         -0.2346854518740762,
                         -0.08024023890884578,
                         -0.1322012562867409,
@@ -113,9 +112,9 @@
                },
                {
                   "accession":"QC:4000242",
-                  "name":"QC2 sample MS1 feature areas",
+                  "name":"QC2 sample intensities",
                   "value":{
-                     "Peptide sequences":[
+                     "MS:1003169":[
                         "YAEAVTR",
                         "STLTDSLVC(Carbamidomethyl)K",
                         "SLADELALVDVLEDK",
@@ -132,7 +131,7 @@
                         "EVSTYIK",
                         "FAFQAEVNR"
                      ],
-                     "Observed MS1 feature areas":[
+                     "MS:1001844":[
                         1234940000.0,
                         922790000.0,
                         80819100.0,
@@ -154,16 +153,16 @@
             ]
          }
       ],
-      "controlledVocabularies":[
+      "controlledVocabularies": [
          {
-            "name":"Proteomics Standards Initiative Quality Control Ontology",
-            "uri":"https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
-            "version":"0.1.1"
+         "name": "Proteomics Standards Initiative Quality Control Ontology",
+         "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
+         "version": "1.0.0"
          },
          {
-            "name":"Proteomics Standards Initiative Mass Spectrometry Ontology",
-            "uri":"https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
-            "version":"4.1.7"
+         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
+         "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
+         "version": "4.1.71"
          }
       ]
    }

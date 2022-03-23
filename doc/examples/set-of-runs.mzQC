@@ -1,5 +1,5 @@
-{
-  "mzQC": {
+{ "mzQC": 
+  {
     "version": "1.0.0",
     "creationDate": "2020-12-01T14:19:09",
     "contactName": "Chris Bielow",
@@ -62,13 +62,18 @@
               "name": "quality estimation by manual validation",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
+            },
+            {
+              "accession": MS:1000799",
+              "name": "custom unreleased software tool"
+              "value": "mzqc-pylib"
             }
           ]
         },
         "qualityMetrics": [
           {
-            "accession": "QC:0000000",
-            "name": "Protein contaminant intensity ratio",
+            "accession": "QC:4000270",
+            "name": "protein contaminant intensity ratio",
             "value": "0.25"
           }
         ]
@@ -135,8 +140,8 @@
         },
         "qualityMetrics": [
           {
-            "accession": "QC:0000000",
-            "name": "Protein contaminant intensity ratio",
+            "accession": "QC:4000270",
+            "name": "protein contaminant intensity ratio",
             "value": "0.31"
           }
         ]
@@ -274,13 +279,13 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Quality Control Ontology",
-        "uri": "https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
-        "version": "0.1.0"
+        "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
+        "version": "1.0.0"
       },
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
-        "version": "4.1.7"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
+        "version": "4.1.71"
       }
     ]
   }
