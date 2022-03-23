@@ -21731,11 +21731,6 @@
         ],
         "controlledVocabularies": [
             {
-                "name": "Proteomics Standards Initiative Quality Control Ontology",
-                "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
-                "version": "1.0.0"
-            },
-            {
                 "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
                 "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
                 "version": "4.1.71"
