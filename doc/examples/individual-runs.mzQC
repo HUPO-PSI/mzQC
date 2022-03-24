@@ -23,7 +23,7 @@
                   "value": "2012-02-03 11:00:41"
                 },
                 {
-                  "accession": "MS:1000569",
+                  "accession": "MS:1003151",
                   "name": "SHA-256",
                   "value": "82ff4545ab8ab85252a4c5bc2c62abbfd04021ef5fefce145386bf27ae663a0f"
                 },
@@ -61,18 +61,18 @@
             "value": 14812
           },
           {
-            "accession": "QC:4000135",
-            "name": "Number of chromatograms",
+            "accession": "MS:4000071",
+            "name": "number of chromatograms",
             "value": 1
           },
           {
-            "accession": "QC:4000138",
-            "name": "MZ acquisition range",
+            "accession": "MS:4000069",
+            "name": "m/z acquisition range",
             "value": [ 300.157287597656, 1778.8639 ]
           },
           {
-            "accession": "QC:4000139",
-            "name": "RT acquisition range",
+            "accession": "MS:4000070",
+            "name": "retention time acquisition range",
             "value": [ 0.2959, 5969.8172 ]
           }
         ]
@@ -80,14 +80,9 @@
     ],
     "controlledVocabularies": [
       {
-        "name": "Proteomics Standards Initiative Quality Control Ontology",
-        "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
-        "version": "1.0.0"
-      },
-      {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
-        "version": "4.1.71"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.77/psi-ms.obo",
+        "version": "4.1.77"
       }
     ]
   }
