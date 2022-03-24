@@ -51,7 +51,7 @@
             },
             "qualityMetrics":[
                {
-                  "accession":"QC:4000060",
+                  "accession":"MS:4000060",
                   "name":"number of MS2 spectra",
                   "value":62299
                },
