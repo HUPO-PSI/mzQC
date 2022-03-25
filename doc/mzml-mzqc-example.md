@@ -13,9 +13,7 @@ The first addition to the _mzML_ is the source from which the metrics came from,
 Next, the metrics computed for the whole run can be be deposited as a child of the `<run>` element itself. Metric objects from mzQC can be directly translated into `<cvParam>` elements.
 ```
 	<run id="ru_0" defaultInstrumentConfigurationRef="ic_0" sampleRef="sa_0" startTimeStamp="2009-08-09T22:32:31" defaultSourceFileRef="sf_ru_0">
-		<cvParam cvRef="QC" accession="QC:4000179" name="Charged spectra ratio +1 over +2" value="0" />
-		<cvParam cvRef="QC" accession="QC:4000180" name="Charged spectra ratio +3 over +2" value="0.5454545454545454" />
-		<cvParam cvRef="QC" accession="QC:4000181" name="Charged spectra ratio +4 over +2" value="0.012987012987012988" />
+		<cvParam cvRef="QC" accession="MS:4000063" name="MS2 known precursor charges fractions" value="{'MS:1000041': [1,2,3,4], 'UO:0000191': [0,17369,10733,2256]}" />
 		<userParam name="mzml_id" type="xsd:string" value="20090810_SvNa_QC_BSA50fmol.RAW"/>
 ```
 Please note that for example brevity purposes the _mzML_ was truncated to 3 spectra, however the metrics were calculated on the whole to reflect realistic values. Also, the NativeID format was truncated to the index of `spectrum=` bit.
