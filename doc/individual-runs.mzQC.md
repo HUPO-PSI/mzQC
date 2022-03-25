@@ -29,14 +29,9 @@ b) reference information for controlled vocabularies (cv) at the bottom,
 ```
     "controlledVocabularies": [
       {
-        "name": "Proteomics Standards Initiative Quality Control Ontology",
-        "uri": "https://github.com/HUPO-PSI/qcML-development/blob/master/cv/v0_1_0/qc-cv.obo",
-        "version": "0.1.0"
-      },
-      {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
-        "version": "4.1.7"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.77/psi-ms.obo",
+        "version": "4.1.77"
       }
     ]
 ```
@@ -82,7 +77,7 @@ The `inputFiles` array consists of one or more `inputFile` objects, each describ
                   "value": "2012-02-03 11:00:41"
                 },
                 {
-                  "accession": "MS:1000569",
+                  "accession": "MS:1003151",
                   "name": "SHA-256",
                   "value": "82ff4545ab8ab85252a4c5bc2c62abbfd04021ef5fefce145386bf27ae663a0f"
                 },
@@ -106,8 +101,8 @@ Metric values can be either single values,
 ```
 tuple of values,
 ```
-            "accession": "QC:4000138",
-            "name": "MZ acquisition range",
+            "accession": "MS:4000069",
+            "name": "m/z acquisition range",
             "value": [ 300.157287597656, 1778.8639 ]
 ```
 or matrices or tables (shown in other examples). 
