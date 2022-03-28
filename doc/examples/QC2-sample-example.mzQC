@@ -56,109 +56,40 @@
                   "value":62299
                },
                {
-                  "accession":"QC:4000186",
-                  "name":"Total number of PSM",
+                  "accession":"MS:1003251",
+                  "name":"count of identified spectra",
                   "value":24765
                },
                {
-                  "accession":"QC:4000187",
-                  "name":"Number of identified peptides",
+                  "accession":"MS:1003250",
+                  "name":"count of identified peptidoforms",
                   "value":22241
                },
                {
-                  "accession":"QC:4000185",
-                  "name":"Number of identified proteins",
+                  "accession":"MS:1002404",
+                  "name":"count of identified proteins",
                   "value":"5504"
                },
                {
-                  "accession":"QC:4000244",
+                  "accession":"MS:4000078",
                   "name":"QC2 sample mass accuracies",
                   "value":{
-                     "MS:1003169":[
-                        "YAEAVTR",
-                        "STLTDSLVC(Carbamidomethyl)K",
-                        "SLADELALVDVLEDK",
-                        "NPDDITNEEYGEFYK",
-                        "LAVDEEENADNNTK",
-                        "FEELNMDLFR",
-                        "EAALSTALSEK",
-                        "DDVAQTDLLQIDPNFGSK",
-                        "RFPGYDSESK",
-                        "EATTEFSVDAR",
-                        "EQFLDGDGWTSR",
-                        "TPAQFDADELR",
-                        "LGDLYEEEMR",
-                        "EVSTYIK",
-                        "FAFQAEVNR"
-                     ],
-                     "QC:4000243":[
-                        -0.2346854518740762,
-                        -0.08024023890884578,
-                        -0.1322012562867409,
-                        -0.2259441806378488,
-                        -0.10596535779273217,
-                        0.28345130855013684,
-                        -0.08600783742175504,
-                        -0.3683484942567654,
-                        -0.03348194493295555,
-                        -0.41789282666789496,
-                        -0.12794363836212685,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0
-                     ]
+                     "MS:1003169":["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
+                     "MS:4000072":[-0.2346854518740762,-0.08024023890884578,-0.1322012562867409,-0.2259441806378488,-0.10596535779273217,0.28345130855013684,-0.08600783742175504,-0.3683484942567654,-0.03348194493295555,-0.41789282666789496,-0.12794363836212685,0.0,0.0,0.0,0.0]
                   }
                },
                {
-                  "accession":"QC:4000242",
+                  "accession":"MS:4000079",
                   "name":"QC2 sample intensities",
                   "value":{
-                     "MS:1003169":[
-                        "YAEAVTR",
-                        "STLTDSLVC(Carbamidomethyl)K",
-                        "SLADELALVDVLEDK",
-                        "NPDDITNEEYGEFYK",
-                        "LAVDEEENADNNTK",
-                        "FEELNMDLFR",
-                        "EAALSTALSEK",
-                        "DDVAQTDLLQIDPNFGSK",
-                        "RFPGYDSESK",
-                        "EATTEFSVDAR",
-                        "EQFLDGDGWTSR",
-                        "TPAQFDADELR",
-                        "LGDLYEEEMR",
-                        "EVSTYIK",
-                        "FAFQAEVNR"
-                     ],
-                     "MS:1001844":[
-                        1234940000.0,
-                        922790000.0,
-                        80819100.0,
-                        478714000.0,
-                        254935000.0,
-                        52841200.0,
-                        243597000.0,
-                        24581800.0,
-                        707504000.0,
-                        129063000.0,
-                        205583000.0,
-                        0.0,
-                        0.0,
-                        0.0,
-                        0.0
-                     ]
+                     "MS:1003169":["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
+                     "MS:1001844":[1234940000.0,922790000.0,80819100.0,478714000.0,254935000.0,52841200.0,243597000.0,24581800.0,707504000.0,129063000.0,205583000.0,0.0,0.0,0.0,0.0]
                   }
                }
             ]
          }
       ],
       "controlledVocabularies": [
-         {
-         "name": "Proteomics Standards Initiative Quality Control Ontology",
-         "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
-         "version": "1.0.0"
-         },
          {
          "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
          "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
