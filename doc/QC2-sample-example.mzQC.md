@@ -9,33 +9,33 @@ Optional (detailed) descriptions about the file can be placed into mzQC next to 
 ```
 The metrics describe simple values like the cornerstone numbers of the acquisition and identification process, but also information specific to the QC method employed. Here, it is the mass accuracies and MS1 feature areas of selected peptides. With regular runs like this, the instrument's performance can be reliably monitored and maintenance interventions scheduled before valuable samples are wasted on an instrument running at sub-par performance. 
 ```
-          {
-            "accession": "QC:4000244",
-            "name": "QC2 sample mass accuracies",
-            "value": {
-              "MS:1003169": ["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
-              "QC:4000243": [-0.2346854518740762,-0.08024023890884578,-0.1322012562867409,-0.2259441806378488,-0.10596535779273217,0.28345130855013684,-0.08600783742175504,-0.3683484942567654,-0.03348194493295555,-0.41789282666789496,-0.12794363836212685,0.0,0.0,0.0,0.0]
-            }
-	  },
-          {
-            "accession": "QC:4000242",
-            "name": "QC2 sample intensities",
-            "value": {
-              "MS:1003169": ["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
-              "MS:1001844": [1234940000.0,922790000.0,80819100.0,478714000.0,254935000.0,52841200.0,243597000.0,24581800.0,707504000.0,129063000.0,205583000.0,0.0,0.0,0.0,0.0]
-            }
-          },
+               {
+                  "accession":"MS:4000078",
+                  "name":"QC2 sample mass accuracies",
+                  "value":{
+                     "MS:1003169":["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
+                     "MS:4000072":[-0.2346854518740762,-0.08024023890884578,-0.1322012562867409,-0.2259441806378488,-0.10596535779273217,0.28345130855013684,-0.08600783742175504,-0.3683484942567654,-0.03348194493295555,-0.41789282666789496,-0.12794363836212685]
+                  }
+               },
+               {
+                  "accession":"MS:4000079",
+                  "name":"QC2 sample intensities",
+                  "value":{
+                     "MS:1003169":["YAEAVTR","STLTDSLVC(Carbamidomethyl)K","SLADELALVDVLEDK","NPDDITNEEYGEFYK","LAVDEEENADNNTK","FEELNMDLFR","EAALSTALSEK","DDVAQTDLLQIDPNFGSK","RFPGYDSESK","EATTEFSVDAR","EQFLDGDGWTSR","TPAQFDADELR","LGDLYEEEMR","EVSTYIK","FAFQAEVNR"],
+                     "MS:1001844":[1234940000.0,922790000.0,80819100.0,478714000.0,254935000.0,52841200.0,243597000.0,24581800.0,707504000.0,129063000.0,205583000.0]
+                  }
+               }
 ```
 The individual peptides' values are stored in a table, that is defined by the respective metric cv term. In case of the feature areas, there is a column indicating the peptide and another column for the respective feature area. 
 ```
 [Term]
-id: QC:4000242
+id: MS:4000079
 name: QC2 sample intensities
 def: "Observed intensities for the peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Different metrics of observed intensities are possible, at least one must be present. The table should contain the peptides as defined in the parent QC2 sample metric term, missing are interpreted as not detected." [PSI:MS]
-is_a: MS:4000269 ! QC2 sample metric
-is_a: MS:4000008 ! ID based metric
 is_a: MS:4000005 ! table
-relationship: has_column: MS:1003169 ! proforma peptidoform sequence
+relationship: has_metric_category MS:4000076 ! QC2 sample metric
+relationship: has_metric_category MS:4000008 ! ID based metric
+relationship: has_column MS:1003169 ! proforma peptidoform sequence
 relationship: has_optional_column MS:1001858 ! XIC area
 relationship: has_optional_column MS:1001859 ! normalized XIC area
 relationship: has_optional_column MS:1001844 ! MS1 feature area
