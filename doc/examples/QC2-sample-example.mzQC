@@ -44,7 +44,8 @@
                   },
                   {
                      "accession": MS:1000799",
-                     "name": "custom unreleased software tool"
+                     "name": "custom unreleased software tool",
+                     "version":"0",
                      "value": "mzqc-pylib"
                   }
                ]
