@@ -26,4 +26,4 @@ jobs:
         pip install jsonschema
     - name: Validate mzQC files
       run: |
-        jsonschema -i ./doc/examples/*.mzqc ./schema/mzqc_schema.json
+        jsonschema -i ./doc/examples/*.mz[qQ][cC] ./schema/mzqc_schema.json
