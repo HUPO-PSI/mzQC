@@ -30,7 +30,7 @@
                             "uri": "http://proteowizard.sourceforge.net/"
                         },
                         {
-                            "accession": MS:1000799",
+                            "accession": "MS:1000799",
                             "name": "custom unreleased software tool"
                             "value": "tsv-to-mzqc conversion with mzqc-pylib"
                         }
