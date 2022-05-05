@@ -27,8 +27,9 @@ jobs:
     - name: Validate mzQC files
       run: |
         for i in ./doc/examples/*.mz[qQ][cC]; do 
+          echo "Syntactic validating of $i"
           jsonschema -i $i ./schema/mzqc_schema.json 
-          if [ $? -neq 0 ]; then
+          if [ $? -ne 0 ]; then
             echo "Failed to validate $i"
             exit 1
           fi
