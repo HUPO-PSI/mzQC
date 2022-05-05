@@ -26,4 +26,10 @@ jobs:
         pip install jsonschema
     - name: Validate mzQC files
       run: |
-        jsonschema -i ./doc/examples/*.mz[qQ][cC] ./schema/mzqc_schema.json
+        for i in ./doc/examples/*.mz[qQ][cC]; do 
+          jsonschema -i $i ./schema/mzqc_schema.json 
+          if [ $? -neq 0 ]
+            echo "Failed to validate $i"
+            exit 1
+          fi
+        done
