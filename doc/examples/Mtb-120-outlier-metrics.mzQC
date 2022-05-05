@@ -32,7 +32,9 @@
                         {
                             "accession": "MS:1000799",
                             "name": "custom unreleased software tool",
-                            "value": "tsv-to-mzqc conversion with mzqc-pylib"
+                            "value": "tsv-to-mzqc conversion with mzqc-pylib",
+                            "version": "unknown",
+                            "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
                         }
                     ]
                 },

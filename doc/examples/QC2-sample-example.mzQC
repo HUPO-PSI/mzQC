@@ -46,7 +46,8 @@
                      "accession": "MS:1000799",
                      "name": "custom unreleased software tool",
                      "version":"0",
-                     "value": "mzqc-pylib"
+                     "value": "mzqc-pylib",
+                     "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
                   }
                ]
             },
