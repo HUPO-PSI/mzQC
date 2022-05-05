@@ -1,5 +1,5 @@
-{ "mzQC": 
-  {
+{
+  "mzQC": {
     "version": "1.0.0",
     "creationDate": "2020-12-01T11:56:34",
     "contactName": "Mathias Walzer",
@@ -43,9 +43,11 @@
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             },
             {
-                "accession": "MS:1000799",
-                "name": "custom unreleased software tool",
-                "value": "mzqc-pylib"
+              "accession": "MS:1000799",
+              "name": "custom unreleased software tool",
+              "version": "0",
+              "value": "mzqc-pylib",
+              "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
             }
           ]
         },
@@ -68,12 +70,18 @@
           {
             "accession": "MS:4000069",
             "name": "m/z acquisition range",
-            "value": [ 300.157287597656, 1778.8639 ]
+            "value": [
+              300.157287597656,
+              1778.8639
+            ]
           },
           {
             "accession": "MS:4000070",
             "name": "retention time acquisition range",
-            "value": [ 0.2959, 5969.8172 ]
+            "value": [
+              0.2959,
+              5969.8172
+            ]
           }
         ]
       }
