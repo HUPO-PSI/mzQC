@@ -16,3 +16,6 @@ The current projects of the QC working group are:
 ## Contribute
 
 Please get in touch with us by filing an issue in this GitHub repository or through the working group's mailing list (<psidev-qc-dev@lists.sourceforge.net>).
+
+## License
+Unless stated otherwise, documents in this repository are licensed under CC-BY-4 (see [license](/LICENSE))
