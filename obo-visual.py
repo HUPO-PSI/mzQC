@@ -1,6 +1,5 @@
 #import pronto
 import itertools
-from platform import node
 import fastobo
 from pyvis.network import Network
 import numpy as np
@@ -8,6 +7,7 @@ import numpy as np
 # wget -O cv/psi-ms.obo https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo
 psi = fastobo.load('cv/psi-ms.obo')
 
+# fastobo example
 # term_list = dict()
 # for frame in psi:
 #     if isinstance(frame, fastobo.term.TermFrame):
@@ -16,6 +16,8 @@ psi = fastobo.load('cv/psi-ms.obo')
 #             if isinstance(clause, fastobo.term.IsAClause):
 #                 term_list[str(frame.id)] = (str(frame.id), str(clause.term))
 
+
+# network doc resource: https://pyvis.readthedocs.io/en/latest/tutorial.html
 term_list = dict()
 c = 0
 pref_selection = ["MS:0000000", "MS:4"]
@@ -69,7 +71,9 @@ edge_d = [list(map(accession_lookup.get, v['edges_cat'])) for k,v in term_list.i
 edge_list = list(map(tuple,np.concatenate([list(itertools.product([i], v)) for i,v in zip(edge_o, edge_d) if v])))
 edge_list = [tuple(map(int, i)) for i in edge_list]
 net.add_edges(edge_list)
+
+net.barnes_hut()
 net.show('edges.html')
 
 # TODO filter nodes without edges
-# TODO add colour
+# TODO add colour (https://encycolorpedia.com/808080)
