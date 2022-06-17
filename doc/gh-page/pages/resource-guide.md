@@ -7,7 +7,8 @@ permalink: /resource-guide/
 # Online
 mzQC is *web-native*, and integrates nicely with modern applications and websites. You can find one example on this website if you visit the [Validator](../validator).
 
-# Software
+[comment]: # Software
+{% include_relative software.md %}
 
 # Tutorials
 
