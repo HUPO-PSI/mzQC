@@ -1,0 +1,222 @@
+---
+title: "Validator"
+layout: default
+permalink: "/validator.html"
+---
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.accordion {
+		  background-color: #eee;
+		  color: #444;
+		  cursor: pointer;
+		  padding: 18px;
+		  width: 100%;
+		  border: none;
+		  text-align: left;
+		  outline: none;
+		  font-size: 15px;
+		  transition: 0.4s;
+		}
+		
+		.active, .accordion:hover {
+		  background-color: #ccc;
+		}
+		
+		.accordion:after {
+		  content: '\002B';
+		  color: #777;
+		  font-weight: bold;
+		  float: right;
+		  margin-left: 5px;
+		}
+		
+		.active:after {
+		  content: "\2212";
+		}
+		
+		.panel {
+		  padding: 0 18px;
+		  background-color: white;
+		  max-height: 0;
+		  overflow: hidden;
+		  transition: max-height 0.2s ease-out;
+		}
+
+		.dragndrop {
+			position: relative;
+			width: 100%;
+			height: 100px;
+			border: 3px dashed grey;
+			border-radius: 10px;
+		}
+        .dragndrop p {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+		.dragndrop div{
+			width: 100%;
+			height: 100%;
+			text-align: center;
+			line-height: 170px;
+			color: black;
+			font-family: Arial;
+			position: absolute;
+			top: 10%;
+			z-index: -1;
+		}
+		.dragndrop input{
+			position: relative;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			outline: none;
+			opacity: 0;
+		}
+		.dragndrop button {
+			border-radius: 10px;
+			padding: 10px 20px;
+			background: #1950A3;
+			outline: none;
+			border: none;
+			color: white;
+			font-size: 16px;
+		}
+	</style>
+</head>
+
+<div id="input">
+    <div id="droparea" class="dragndrop">
+        <p>Drop mzQC here!<br>(or click to browse.)</p>
+		<input type="file" id="file-selector" accept=".mzQC, .mzqc">
+    </div>
+</div>
+<div id="output">
+	<p id="status"></p>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    const status = document.getElementById('status');
+	const output = document.getElementById('output');
+    const dropArea = document.getElementById('droparea');
+
+
+    function activateAccordion(){
+		var acc = document.getElementsByClassName("accordion");
+		var i;
+		
+		for (i = 0; i < acc.length; i++) {
+		acc[i].addEventListener("click", function() {
+			this.classList.toggle("active");
+			var panel = this.nextElementSibling;
+			if (panel.style.maxHeight) {
+			panel.style.maxHeight = null;
+			} else {
+			panel.style.maxHeight = panel.scrollHeight + "px";
+			} 
+		});
+		}
+	}
+
+	function appendAccordionElement (elem, k, v) {
+		if (Array.isArray(v)) {
+			if (v.length) {
+				let btn = document.createElement("button");
+				btn.innerHTML = k;
+				btn.className = "accordion";
+				elem.appendChild(btn);
+				let niv = document.createElement("div");
+				niv.className = "panel";
+				let nc = document.createElement('ul');
+				$.each(v, function(i) {
+					let li = document.createElement('li');
+					li.appendChild(document.createTextNode(v[i]));
+					nc.appendChild(li);
+					console.log(v[i]);
+				});
+				niv.appendChild(nc);
+				elem.appendChild(niv);
+			}
+		} else {
+			if (Boolean(v)) {
+				let btn = document.createElement("button");
+				btn.innerHTML = k;
+				btn.className = "accordion";
+				elem.appendChild(btn);
+				let niv = document.createElement("div");
+				niv.className = "panel";
+				let nc = document.createElement('ul');
+				
+				let li = document.createElement('li');
+				li.appendChild(document.createTextNode(v));
+				nc.appendChild(li);
+				console.log(v);
+				
+				niv.appendChild(nc);
+				elem.appendChild(niv);
+			}
+		}
+	}
+
+    <!-- alternative is to add ondragover="return false" in the droparea tag -->
+    dropArea.addEventListener('dragover', (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        // Style the drag-and-drop as a "copy file" operation.
+        event.dataTransfer.dropEffect = 'copy';
+    });
+
+    <!-- alternative is to add ondrop="getDragDrop(event)" in the droparea tag and define getDragDrop -->
+    dropArea.addEventListener('drop', (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        const fileList = event.dataTransfer.files;
+        console.log(fileList);
+
+
+        for (var i = 0; i < fileList.length; i++) {
+				console.log("Filename: " + fileList[i].name);
+				console.log("Type: " + fileList[i].type);
+				console.log("Size: " + fileList[i].size + " bytes");
+			}
+			if (!fileList[0].type) {
+				console.log('Error: The File.type property does not appear to be supported on this browser.');
+			}
+			console.log("No. of  files: " + fileList.length);
+			
+			const reader = new FileReader();
+			reader.readAsText(fileList[0]);
+			
+			reader.onload = function(event) {
+				try {
+					var mzqc = JSON.parse(event.target.result);
+                    console.log(mzqc);
+					//output.textContent = JSON.stringify(mzqc);
+					if (mzqc) {
+						console.log("validating...")
+						$.post("https://mzqc-validator.herokuapp.com/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
+						//$.post("http://127.0.0.1:5000/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
+							//output.textContent = JSON.stringify(response);
+							$.each(response, function(k,v) {
+  								appendAccordionElement(output, k,v)
+								});
+							activateAccordion();
+							}).fail(function() {
+							status.textContent = "Uhoh, seems your file broke the validator. Or something broke down during communication. Actually, that's way more likely. Your connection is fine? No proxy, etc.?";
+						})
+					}
+				} catch(err) {
+					status.textContent = "File does not appear to be a JSON format. (" + err.message + ")";
+				}
+			}
+	//} else { status.textContent = "Your browser seems a bit outdated. Please try with a contemporary version."; }
+    });
+
+</script>
+	
