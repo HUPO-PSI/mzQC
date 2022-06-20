@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "mzQC Usecases and Examples"
-permalink: /usecases/
+permalink: /mzQC-intro/usecases/
 ---
 This page should give you a (non-exclusive) overview over the use cases covered by mzQC:
 

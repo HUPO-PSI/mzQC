@@ -1,0 +1,54 @@
+# Page links must be URLs as given by the page headers' permalinks
+# _not_ as the .md contents of /pages or /posts
+# IF YOU UPDATE THE YAML, ALSO UPDATE THE PAGE-TREE TO CHECK ALL
+# LINKS ARE UNBROKEN AND ALL CONTENT IS REACHABLE!!! 
+- title: About
+  url: /about/
+  submenu:
+    - title: mzQC
+      url: /mzQC-intro/
+    - title: Use Cases
+      url: /mzQC-intro/usecases/
+    - title: HUPO-PSI QC
+      url: /about/#the-hupo-psi-quality-control-workgroup
+    - title: QC Metrics
+      url: /metrics/
+    - title: Validation
+      url: /validator/#process
+- title: Validator
+  url: /validator/
+  submenu:
+    - title: The Validation Process
+      url: /validator/#process
+    - title: More Software for Validation
+      url: /resource-guide/#validation
+    - title: Local Validation
+      url: /tutorials/#validation
+- title: mzQC Resources
+  url: /resource-guide/
+  submenu:
+    - title: mzQC Frameworks
+      url: /resource-guide/#core-libraries
+    - title: Tutorials
+      url: /tutorials/
+    - title: QC Software with mzQC
+      url: /resource-guide/#qc-software
+    - title: JSON Primer
+      url: /tutorials/#json
+- title: Specification Document
+  url: /spec-doc/
+# /about/
+# /about/#the-hupo-psi-quality-control-workgroup
+# /metrics/
+# /mzQC-intro/
+# /mzQC-intro/usecases
+# /resource-guide/
+# /resource-guide/#core-libraries
+# /resource-guide/#qc-software
+# /resource-guide/#validation
+# /spec-doc/
+# /tutorials/
+# /tutorials/#validation
+# /tutorials/#json
+# /validator/
+# /validator/#process

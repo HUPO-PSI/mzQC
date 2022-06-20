@@ -20,11 +20,12 @@ slack: slack://channel?team=TJJHF7L4D&id=CJJHF8EBX
 # content settings
 ## If you want to link only specific pages in your header, uncomment
 ## this and add the path to the pages in order as they should show up
-header_pages:
-  - pages/about.md
-  - pages/validator.html
-  - pages/resource-guide.md
-  - pages/spec-doc.md
+# header_pages:
+#   - pages/about.md
+#   - pages/validator.html
+#   - pages/resource-guide.md
+#   - pages/spec-doc.md
+# THIS HAS BEEN MOVED TO _data/menu.yaml
 
 show_excerpts: false # set to true to show excerpts on the homepage
 

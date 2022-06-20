@@ -61,7 +61,7 @@ this principle of selection: he rejects pleasures to secure other greater
 pleasures, or else he endures pains to avoid worse pains.
 
 
-# The HUPO-PSI Quality Control workgroup
+# The HUPO-PSI Quality Control Workgroup
 
 The Human Proteome Organisation (HUPO) Proteomics Standards Initiative (PSI) defines community standards for data representation in biological mass spectrometry to facilitate data comparison, exchange, and verification. The Quality Control (QC) Working Group develops standards and recommendations to describe the quality of mass spectrometry data and related analysis results.
 
