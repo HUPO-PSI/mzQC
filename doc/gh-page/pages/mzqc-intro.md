@@ -1,9 +1,8 @@
 ---
 layout: page
-title: "5 Minutes into mzQC"
-permalink: /quick-intro/
+title: "Introduction to mzQC"
+permalink: /mzQC-intro/
 ---
-# 5 Minute Overview to mzQC
 
 The mzQC specification defines a simple yet versatile file format with a hierarchical structure to store quality metrics. Following is a ~5 minutes overview to mzQC:
 
@@ -20,3 +19,4 @@ It's schema is in JSON, too.
 
 
 ## CV
+
