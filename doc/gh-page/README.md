@@ -29,6 +29,16 @@ Updating the spec doc needs 'only' copying the html export from google doc (unzi
 Additionally, the images there need to be replaced  with a base64 version:
 `base64 pages/spec-doc-page-src/images/image1.jpg > pages/spec-doc-page-src/image1.base64` then plonk that in to the img-src tag attribute of the image in the html (as `data:image/jpeg;base64`).
 
+Any time we want to deploy changes to our website, all you need to do is split the doc/gh-page folder into the gh-pages branch (from main branch):
+
+```
+git subtree split --branch gh-pages --prefix doc/gh-page/
+git push origin gh-pages
+```
+NOTE: you might be inclined to use the `--force` if the push is rejected. DO NOT.
+This means you probably did not work from main branch and have commits missing in your workingtree that are present in gh-pages. Just use the main branch. It needs to go there anyway.
+
+NOTE: asset deployment (images, css, scripts) on gh-pages may take a couple of minutes!
 
 ## changelog:
 social.html changed rss format to link directly from site. argument and fixed link text of `release rss`
