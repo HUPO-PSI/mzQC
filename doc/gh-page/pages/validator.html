@@ -83,7 +83,6 @@
 		}
 	</style>
 </head>
-
 <div id="input">
     <div id="droparea" class="dragndrop">
         <p>Drop mzQC here!<br>(or click to browse.)</p>
@@ -93,17 +92,68 @@
 <div id="output">
 	<p id="status"></p>
 </div>
+<div id="documentation">
+	<p id="docstat"></p>
+</div>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script>
     const status = document.getElementById('status');
 	const output = document.getElementById('output');
+	const docstat = document.getElementById('docstat');
+	const documentation = document.getElementById('documentation');
     const dropArea = document.getElementById('droparea');
+	document.onload = getValidatorDocu();
 
+	function getValidatorDocu(){
+		// $.post("https://mzqc-validator.herokuapp.com/documentation/").done(function(response) {
+		$.getJSON("http://127.0.0.1:5000/documentation/").done(function(response) {
+			let btn = document.createElement("button");
+			btn.innerHTML = "Validator Documentation";
+			btn.className = "accordion";
+			documentation.appendChild(btn);
+			let doc_panel = document.createElement("div");
+			validation_doc_content = document.createTextNode("The following aspects of mzQC are validated as described in the respective section.");
+			doc_panel.appendChild(validation_doc_content);
 
-    function activateAccordion(){
-		var acc = document.getElementsByClassName("accordion");
+			$.each(response.documentation, function(k,v) {
+				doc_panel.appendChild(document.createElement('hr'));
+
+				let validation_section_header = document.createElement('h3');
+				validation_section_header.appendChild(document.createTextNode(k.trim()));
+				doc_panel.appendChild(validation_section_header);
+				doc_checks = v.trim().split('*');
+				doc_panel.appendChild(document.createTextNode(doc_checks[0].trim()));
+
+				let validation_section_list = document.createElement('ul');
+				$.each(doc_checks.slice(1), function(i) {
+					check_items = doc_checks[i+1].trim().split('\n');
+					li=document.createElement('li')
+					li.appendChild(document.createTextNode(check_items[0].trim()));
+					validation_section_list.appendChild(li);
+					validation_section_sublist = document.createElement('ul');
+					$.each(check_items.slice(1), function(j) {
+						li=document.createElement('li')
+						li.appendChild(document.createTextNode(check_items[j+1].trim()));
+						validation_section_sublist.appendChild(li);
+					});
+					validation_section_list.appendChild(validation_section_sublist);
+				});
+				doc_panel.appendChild(validation_section_list);
+
+			});
+			doc_panel.className = "panel";
+			documentation.appendChild(doc_panel);
+			activateAccordion(documentation);
+
+		}).fail(function() {
+			docstat.textContent = "Validator offline, please check back later!";
+		})
+	}
+
+    function activateAccordion(el){
+		var acc = el.getElementsByClassName("accordion");
 		var i;
 		
 		for (i = 0; i < acc.length; i++) {
@@ -200,8 +250,8 @@
 							//output.textContent = JSON.stringify(response);
 							$.each(response, function(k,v) {
   								appendAccordionElement(output, k,v)
-								});
-							activateAccordion();
+							});
+							activateAccordion(output);
 							}).fail(function() {
 							status.textContent = "Uhoh, seems your file broke the validator. Or something broke down during communication. Actually, that's way more likely. Your connection is fine? No proxy, etc.?";
 						})
