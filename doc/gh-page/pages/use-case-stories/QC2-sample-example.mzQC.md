@@ -1,4 +1,9 @@
-## QC Sample-Run Example of mzQC
+---
+layout: page
+title: "QC Sample-Run Example of mzQC"
+permalink: /mzQC-intro/usecases/qc-sample-run/
+---
+
 Here, we describe details of a mzQC JSON document used for a QC sample mass spectrometry run. 
 For description of the general structure of mzQC, see the Single-Run Example of mzQC.
 Find the complete file at the bottom of this document or in the example folder.

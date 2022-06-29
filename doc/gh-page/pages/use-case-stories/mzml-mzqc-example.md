@@ -1,4 +1,8 @@
-## Example of mzQC metrics in mzML
+---
+layout: page
+title: "Example of mzQC metrics in mzML"
+permalink: /mzQC-intro/usecases/mzML-mzQC/
+---
 
 QC metrics from _mzQC_ can also be incorporated into other PSI formats, like _mzML_ and _mzIdentML_, if it is preferable to keep all information in one file.
 The following describes a tiny _mzML_, for which a QC tool calculated id-free QC metrics for all individual spectra of the run and a set of charge distribution metrics.

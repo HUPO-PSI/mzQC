@@ -1,4 +1,8 @@
-## Metabolomics batch runs example
+---
+layout: page
+title: "Metabolomics batch runs example"
+permalink: /mzQC-intro/usecases/metabo-batches/
+---
 
 Here, we describe details of a metabolomics mzQC JSON document used to describe a Studies' quality before and after batch correction methods are applied. 
 For description of the general structure of mzQC, see the Single-Run Example of mzQC.

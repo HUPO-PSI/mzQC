@@ -1,4 +1,9 @@
-## Multi-Run (i.e. sets) Example of mzQC
+---
+layout: page
+title: "Multi-Run (i.e. sets) Example of mzQC"
+permalink: /mzQC-intro/usecases/set-of-runs/
+---
+
 Here, we describe an mzQC JSON document used to convey QC data which is computed on a set of runs, i.e.
 is **only interpretable in the context of this set** (group).
 Of course, QC metrics which refer to each run individually can also be stored, also in the same mzQC file

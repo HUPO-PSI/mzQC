@@ -8,15 +8,24 @@
 layout: home
 ---
 
-This is the HUPO-PSI's Quality Control working group website. 
+## Welcome
+This is the HUPO-PSI's Quality Control working group homepage. 
+One of the major results/products from the group is
 
-# About us
-You can read more about the group [here](about) and [here](https://www.psidev.info/groups/quality-control)!
+{% include highlight.html 
+    content="<b>mzQC:</b><br/> Reporting and exchange format for mass spectrometry quality control data from HUPO-PSI"
+    icon='&#xf56c;' 
+	icon_size='5em' 
+	background_color='#ECF7FF' 
+	border_color='#0065B4' 
+	icon_color='#248031' 
+    font_size='1.2em'
+%}
 Find out more about the format [here](quick-intro)!
 
-# Specification Document
-For more details on the mzQC format see [the current version of the specification document](https://docs.google.com/document/d/132F3MBgDJgtFlXxDZhpJ1oHGbKL8pT6dk9fvL55L5_M/edit?usp=sharing).
+## About us
+You can read more about the group [here](about) and [here](https://www.psidev.info/groups/quality-control)!
 
-# Explore
-Explore our [examples](https://github.com/HUPO-PSI/mzQC/tree/master/doc/examples) and [play with mzQC online](https://mybinder.org/v2/gh/bigbio/mzqc-pylib/v0.1.1?filepath=jupyter%2FMZQC_in_5_minutes.ipynb)!
-
+## Specification Document
+For more details on the mzQC format see either the [latest release static version](spec-doc), or 
+[the current google doc version](https://docs.google.com/document/d/132F3MBgDJgtFlXxDZhpJ1oHGbKL8pT6dk9fvL55L5_M/edit?usp=sharing).

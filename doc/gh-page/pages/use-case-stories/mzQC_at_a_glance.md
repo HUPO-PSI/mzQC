@@ -1,4 +1,9 @@
-# mzQC at a glance
+---
+layout: page
+title: "mzQC at a glance"
+permalink: /mzQC-intro/usecases/at-a-glance/
+---
+
 This is a discription of a barebones mzQC example file that should give you an overview over the overall structure of things. 
 We will visit the elements one-by-one and describe what they are and their use.
 ```

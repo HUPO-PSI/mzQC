@@ -1,5 +1,8 @@
-# ﻿mzQC: a “common currency” for quality control of biological mass spectrometry
-
+---
+layout: page
+title: "mzQC: a 'common currency' for quality control of biological mass spectrometry"
+permalink: /mzQC-intro/usecases/mzQC-common-currency/
+---
 
 Quality control for biological mass spectrometry has, in recent years, become an increasingly established and mature field. This maturity has been reflected in the emergence of many quality control tools and metrics that are derived from instrumental data, many of which are being used more widely every month.
 

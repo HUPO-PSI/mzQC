@@ -13,9 +13,15 @@ The current projects of the QC working group are:
 - mzQC: A standard file format for the exchange, transmission, and archiving of quality metrics derived from biological mass spectrometry.
 - QC CV: A controlled vocabulary to represent terms for the definition of quality metrics and related supporting values.
 
+Our official website is here:
+<div align="center" style="font-size: 30px; text-decoration: none; color:RebeccaPurple; font-weight:700">
+   <a href="https://hupo-psi.github.io/mzqc/"><b>hupo-psi.github.io/mzqc/</b></a>
+</div>
+
 ## Contribute
 
-Please get in touch with us by filing an issue in this GitHub repository or through the working group's mailing list (<psidev-qc-dev@lists.sourceforge.net>).
+We welcome new contributors, see [our help on that](/CONTRIBUTING.md).
+If you want to get in touch with us, please see our [website]( https://hupo-psi.github.io/mzqc/ ).
 
 ## License
 Unless stated otherwise, documents in this repository are licensed under CC-BY-4 (see [license](/LICENSE))

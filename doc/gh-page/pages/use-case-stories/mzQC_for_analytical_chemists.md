@@ -1,4 +1,9 @@
-# mzQC format for analytical chemists
+---
+layout: page
+title: "mzQC format for analytical chemists"
+permalink: /mzQC-intro/usecases/analytical-chemists/
+---
+
 The Proteomics Standards Initiative of the Human Proteomics Organization (HUPO-PSI) has developed the mzQC format to simplify communicating quality control metrics for biological mass spectrometry experiments.  HUPO-PSI wants it to be easy to generate quality metrics from proteomics and metabolomics data sets and easy to read and interpret these values.  mzQC is different from other HUPO-PSI standards in that it employs “JSON” (JavaScript Object Notation) rather than XML (as in mzML or mzIdentML) or tab-delimited text (as in mzTab).  JSON is in widespread use for communicating data among web applications and other network services.
 
 ## Decide on a set of metrics

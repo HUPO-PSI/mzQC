@@ -1,4 +1,8 @@
-# USI Example of mzQC
+---
+layout: page
+title: "USI Example of mzQC"
+permalink: /mzQC-intro/usecases/USI-example/
+---
 
 Here, we describe a mzQC JSON document to exemplify the use of USI to address the quality of specific spectra by metrics recorded in a table value type.
 
