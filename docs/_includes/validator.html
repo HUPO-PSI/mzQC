@@ -107,8 +107,8 @@
 	document.onload = getValidatorDocu();
 
 	function getValidatorDocu(){
-		// $.post("https://mzqc-validator.herokuapp.com/documentation/").done(function(response) {
-		$.getJSON("http://127.0.0.1:5000/documentation/").done(function(response) {
+		$.post("https://mzqc-validator.herokuapp.com/documentation/").done(function(response) {
+		// $.getJSON("http://127.0.0.1:5000/documentation/").done(function(response) {
 			let btn = document.createElement("button");
 			btn.innerHTML = "Validator Documentation";
 			btn.className = "accordion";
