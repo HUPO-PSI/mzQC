@@ -1,4 +1,8 @@
-# Contribute to mzQC
+---
+layout: page
+permalink: /about/contribs/
+title: Contribute to mzQC
+---
 
 Thank you for investing your time in contributing to our project! :sparkles:. 
 
@@ -6,7 +10,7 @@ Read the [Code of Conduct](https://github.com/github/docs/blob/main/CODE_OF_COND
 
 ## Contribute Your Metrics
 
-We welcome every metric contribution, be it new or established. The easiest way is to open a new issue on the PSI-MS CV repository with our `New QC Term` template. You can read more detail about the process on the [Metrics page](metrics/).
+We welcome every metric contribution, be it new or established. The easiest way is to open a new issue on the PSI-MS CV repository with our `New QC Term` template. You can read more detail about the process on the [Metrics page](../../metrics/).
 
 ## New contributor guide
 
