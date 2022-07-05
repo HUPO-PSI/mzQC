@@ -22,7 +22,7 @@ One of the major results/products from the group is
     font_size='1.2em'
 %}
 
-### mzQC
+### For whom is mzQC?
 
 The format is designed to work as ***handover format*** as well as a ***report format*** and ***archive format*** as well. 
 As such, we expect it to greatly benefit researchers to better understand their data and improve experimental protocols, 
