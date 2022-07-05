@@ -1,8 +1,6 @@
 # mzQC: Reporting and exchange format for mass spectrometry quality control data
 
-[![Build status](https://github.com/HUPO-PSI/mzQC/workflows/tests/badge.svg)](https://github.com/HUPO-PSI/mzQC/actions?query=workflow:tests)
-
-<img src="doc/logo/mzQC.png" width="120">
+<img src="doc/logo/mzQC.png" height="20"> [![Build status](https://github.com/HUPO-PSI/mzQC/workflows/tests/badge.svg)](https://github.com/HUPO-PSI/mzQC/actions?query=workflow:tests) [![Ontology](https://img.shields.io/badge/Ontology-PSI|MS-blueviolet)](https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_4000000&lang=en&viewMode=All&siblings=false)
 
 ## The HUPO-PSI Quality Control working group
 
@@ -13,9 +11,16 @@ The current projects of the QC working group are:
 - mzQC: A standard file format for the exchange, transmission, and archiving of quality metrics derived from biological mass spectrometry.
 - QC CV: A controlled vocabulary to represent terms for the definition of quality metrics and related supporting values.
 
+--------------------------------
+## Our official website is here:
+<div align="center">
+   <h1><a href="https://hupo-psi.github.io/mzqc/"><b>hupo-psi.github.io/mzqc/</b></a></h1>
+</div>
+
 ## Contribute
 
-Please get in touch with us by filing an issue in this GitHub repository or through the working group's mailing list (<psidev-qc-dev@lists.sourceforge.net>).
+We welcome new contributors, see [our help on that](/CONTRIBUTING.md).
+If you want to get in touch with us, please see our [website]( https://hupo-psi.github.io/mzqc/ ).
 
 ## License
 Unless stated otherwise, documents in this repository are licensed under CC-BY-4 (see [license](/LICENSE))
