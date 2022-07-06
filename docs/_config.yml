@@ -1,0 +1,45 @@
+# base settings: page served at https://hupo-psi.github.io/mzQC/
+baseurl: "/mzQC"
+# that's your landing page (template internal name home.html <= index.md)
+
+# footer settings
+title: mzQC Format Specification Group
+emailtitle: Mailing-list
+email: psidev-qc-dev@lists.sourceforge.net
+description: > # > means ignore newlines until the next yaml section (e.g. "twitter_username:")
+  mzQC: Reporting and exchange format for mass spectrometry 
+  quality control data from HUPO-PSI
+orga: HUPO-PSI
+orgaurl: https://www.psidev.info/
+
+## social links
+github_orguser: HUPO-PSI/mzQC
+rss: https://github.com/HUPO-PSI/mzQC/releases.atom
+slack: slack://channel?team=TJJHF7L4D&id=CJJHF8EBX
+
+# content settings
+## If you want to link only specific pages in your header, uncomment
+## this and add the path to the pages in order as they should show up
+# header_pages:
+#   - pages/about.md
+#   - pages/validator.html
+#   - pages/resource-guide.md
+#   - pages/spec-doc.md
+# THIS HAS BEEN MOVED TO _data/menu.yaml
+
+show_excerpts: false # set to true to show excerpts on the homepage
+
+# include: [pages/tutorials/]
+# exclude: [README.markdown, package.json, grunt.js, Gruntfile.js, Gruntfile.coffee, node_modules]
+
+# Minima date format
+# refer to http://shopify.github.io/liquid/filters/date/ if you want to customize this
+minima:
+  date_format: "%b %-d, %Y"
+
+# build settings
+theme: minima
+
+plugins:
+ - jekyll-feed
+ - jekyll-seo-tag

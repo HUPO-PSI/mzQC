@@ -1,0 +1,33 @@
+{% comment %}```
+requirement:
+	add <link rel="stylesheet" href=URL> to _includes/head.html where URL is from https://cdnjs.com/libraries/font-awesome
+use:
+{% 
+	include highlight.html 
+	content="Your highlight" 
+	icon='&#xe097;' 
+	icon_size='5em' 
+	background_color='#FFEDED' 
+	border_color='#D60000' 
+	icon_color='#FF0000' 
+  %}
+```{% endcomment %}
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<div class="highlight-box" style="
+    background-color: {{ include.background_color | default:  '#ECF7FF' }};
+    border-left: 6px solid {{ include.border_color | default:  '#0065B4' }};
+    padding: .1em .1em .1em 1em;
+    display: flex;
+    column-gap: 1em;
+    margin: 2em 2em 2em 2em;">
+	<p class="highlight-icon" style="
+		font-family: 'Font Awesome 5 Free';
+	    vertical-align: middle;
+	    font-weight: 900;
+	    font-size: {{ include.icon_size | default:  '3em' }};
+	    color: {{ include.icon_color | default:  '#FF6F00' }};">{{ include.icon | default:  '&#xf0eb;' }}</p>
+	<p class="highlight-content" style="
+		font-size: {{ include.font_size | default:  '3em' }};
+		margin: 1em 1em 1em 1em;">{{ include.content }}</p>
+</div>
+
