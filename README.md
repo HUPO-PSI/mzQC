@@ -1,6 +1,6 @@
 # mzQC: Reporting and exchange format for mass spectrometry quality control data
 
-<img src="doc/logo/mzQC.png" height="20"> [![Build status](https://github.com/HUPO-PSI/mzQC/workflows/tests/badge.svg)](https://github.com/HUPO-PSI/mzQC/actions?query=workflow:tests) [![Ontology](https://img.shields.io/badge/Ontology-PSI|MS-blueviolet)](https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_4000000&lang=en&viewMode=All&siblings=false)
+<img src="docs/pages/figures/logo/mzQC.png" height="20"> [![Build status](https://github.com/HUPO-PSI/mzQC/workflows/tests/badge.svg)](https://github.com/HUPO-PSI/mzQC/actions?query=workflow:tests) [![Ontology](https://img.shields.io/badge/Ontology-PSI|MS-blueviolet)](https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_4000000&lang=en&viewMode=All&siblings=false)
 
 ## The HUPO-PSI Quality Control working group
 
