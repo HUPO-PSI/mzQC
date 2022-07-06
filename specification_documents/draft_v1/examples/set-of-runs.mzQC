@@ -1,5 +1,5 @@
-{ "mzQC": 
-  {
+{
+  "mzQC": {
     "version": "1.0.0",
     "creationDate": "2020-12-01T14:19:09",
     "contactName": "Chris Bielow",
@@ -66,7 +66,9 @@
             {
               "accession": "MS:1000799",
               "name": "custom unreleased software tool",
-              "value": "mzqc-pylib"
+              "value": "mzqc-pylib",
+              "version": "0",
+              "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
             }
           ]
         },
@@ -78,7 +80,6 @@
           }
         ]
       },
-      
       {
         "metadata": {
           "label": "diseased",
@@ -146,7 +147,6 @@
           }
         ]
       },
-      
       {
         "metadata": {
           "label": "all",
@@ -256,25 +256,56 @@
             "accession": "QC:4000264",
             "name": "group of runs",
             "value": {
-                "inputfile_name":  ["tr1_healthy", "tr2_healthy", "tr3_healthy"   , "tr1_diseased", "tr2_diseased", "tr3_diseased"],
-                "group-label":     ["healthy"    , "healthy"    , "healthy"       , "diseased"    , "diseased"    , "diseased"]
+              "inputfile_name": [
+                "tr1_healthy",
+                "tr2_healthy",
+                "tr3_healthy",
+                "tr1_diseased",
+                "tr2_diseased",
+                "tr3_diseased"
+              ],
+              "group-label": [
+                "healthy",
+                "healthy",
+                "healthy",
+                "diseased",
+                "diseased",
+                "diseased"
+              ]
             }
           },
           {
             "accession": "QC:4000267",
             "name": "PCA table",
             "value": {
-                "group-label":  ["healthy", "diseased"],
-                "PCA Dimension 1": [47.22, -30.22],
-                "PCA Dimension 2": [29.1, -36.5],
-                "PCA Dimension 3": [3.8, -7.3],
-                "PCA Dimension 4": [-7.7, 5.55],
-                "PCA Dimension 5": [140.6, -64.1]
+              "group-label": [
+                "healthy",
+                "diseased"
+              ],
+              "PCA Dimension 1": [
+                47.22,
+                -30.22
+              ],
+              "PCA Dimension 2": [
+                29.1,
+                -36.5
+              ],
+              "PCA Dimension 3": [
+                3.8,
+                -7.3
+              ],
+              "PCA Dimension 4": [
+                -7.7,
+                5.55
+              ],
+              "PCA Dimension 5": [
+                140.6,
+                -64.1
+              ]
             }
           }
         ]
       }
-      
     ],
     "controlledVocabularies": [
       {

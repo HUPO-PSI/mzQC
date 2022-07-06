@@ -4,9 +4,9 @@ name: tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
   schedule:
   - cron: "0 0 1 1/1 *" # Run monthly.
 
@@ -26,4 +26,11 @@ jobs:
         pip install jsonschema
     - name: Validate mzQC files
       run: |
-        jsonschema -i ./doc/examples/*.mz[qQ][cC] ./schema/mzqc_schema.json
+        for i in ./specification_documents/draft_v1/examples/*.mz[qQ][cC]; do 
+          echo "Syntactic validating of $i"
+          jsonschema -i $i ./schema/mzqc_schema.json 
+          if [ $? -ne 0 ]; then
+            echo "Failed to validate $i"
+            exit 1
+          fi
+        done
