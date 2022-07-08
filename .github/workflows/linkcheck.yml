@@ -1,7 +1,10 @@
 name: Broken link check
 on: 
   page_build:
-
+  pull_request:
+    branches:    
+      - main
+    types: [opened, synchronize, reopened]
 jobs:
   broken_link_checker_job:
     runs-on: ubuntu-latest
