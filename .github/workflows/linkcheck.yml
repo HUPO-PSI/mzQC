@@ -18,7 +18,7 @@ jobs:
         url: 'https://hupo-psi.github.io/mzQC/'
         # optional:
         honorRobotExclusions: false
-        ignorePatterns: 'google,channel?team'
+        ignorePatterns: 'google,slack*channel*team'
         recursiveLinks: false # Check all URLs on all reachable pages (could take a while)
     - name: Get the result
       run: echo "${{steps.link-report.outputs.result}}"
