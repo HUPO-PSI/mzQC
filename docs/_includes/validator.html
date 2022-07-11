@@ -81,19 +81,35 @@
 			color: white;
 			font-size: 16px;
 		}
+		.stsbtn {
+			height: fit-content;
+			width: fit-content;
+			border-radius: 5%;
+			border: 1px solid rgb(255, 183, 0);
+			padding: 0px 10px;
+			text-align: center;
+			position: fixed;
+			bottom: 0;
+			right: 0;
+		}
+		.stsbtn:active {
+    		background-color: #dedcd8;
+		}
+
 	</style>
 </head>
 <div id="input">
     <div id="droparea" class="dragndrop">
-        <p>Drop mzQC here!<br>(or click to browse.)</p>
+        <p>Drop mzQC here!<br></p>
 		<input type="file" id="file-selector" accept=".mzQC, .mzqc">
     </div>
 </div>
 <div id="output">
-	<p id="status"></p>
+	<p id="docstat"></p>
 </div>
 <div id="documentation">
-	<p id="docstat"></p>
+	<p id="status"></p>
+	<p class="stsbtn" id="indicator">API status</p>
 </div>
 
 
@@ -106,9 +122,19 @@
     const dropArea = document.getElementById('droparea');
 	document.onload = getValidatorDocu();
 
+	function getStatus() {
+		$.getJSON("https://mzqc-validator.herokuapp.com/status/").done(function(response) {
+			console.log(response);
+			indicator.style.backgroundColor = 'green';
+		}).fail(function() {
+			indicator.style.backgroundColor = 'salmon';
+		});
+	}
+
 	function getValidatorDocu(){
-		$.post("https://mzqc-validator.herokuapp.com/documentation/").done(function(response) {
-		// $.getJSON("http://127.0.0.1:5000/documentation/").done(function(response) {
+		getStatus();
+		$.getJSON("https://mzqc-validator.herokuapp.com/documentation/").done(function(response) {
+		//$.getJSON("http://127.0.0.1:5000/documentation/").done(function(response) {
 			let btn = document.createElement("button");
 			btn.innerHTML = "Validator Documentation";
 			btn.className = "accordion";
@@ -148,7 +174,7 @@
 			activateAccordion(documentation);
 
 		}).fail(function() {
-			docstat.textContent = "Validator offline, please check back later!";
+			docstat.textContent = "You can also click the outlined box to start selecting files. But the box is drag and drop enabled.";
 		})
 	}
 
@@ -157,15 +183,15 @@
 		var i;
 		
 		for (i = 0; i < acc.length; i++) {
-		acc[i].addEventListener("click", function() {
-			this.classList.toggle("active");
-			var panel = this.nextElementSibling;
-			if (panel.style.maxHeight) {
-			panel.style.maxHeight = null;
-			} else {
-			panel.style.maxHeight = panel.scrollHeight + "px";
-			} 
-		});
+			acc[i].addEventListener("click", function() {
+				this.classList.toggle("active");
+				var panel = this.nextElementSibling;
+				if (panel.style.maxHeight) {
+				panel.style.maxHeight = null;
+				} else {
+				panel.style.maxHeight = panel.scrollHeight + "px";
+				} 
+			});
 		}
 	}
 
@@ -252,7 +278,7 @@
   								appendAccordionElement(output, k,v)
 							});
 							activateAccordion(output);
-							}).fail(function() {
+						}).fail(function() {
 							status.textContent = "Uhoh, seems your file broke the validator. Or something broke down during communication. Actually, that's way more likely. Your connection is fine? No proxy, etc.?";
 						})
 					}
