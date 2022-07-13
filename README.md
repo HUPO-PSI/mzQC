@@ -14,13 +14,13 @@ The current projects of the QC working group are:
 --------------------------------
 ## Our official website is here:
 <div align="center">
-   <h1><a href="https://hupo-psi.github.io/mzqc/"><b>hupo-psi.github.io/mzqc/</b></a></h1>
+   <h1><a href="https://hupo-psi.github.io/mzQC/"><b>hupo-psi.github.io/mzQC/</b></a></h1>
 </div>
 
 ## Contribute
 
 We welcome new contributors, see [our help on that](/CONTRIBUTING.md).
-If you want to get in touch with us, please see our [website]( https://hupo-psi.github.io/mzqc/ ).
+If you want to get in touch with us, please see our [website]( https://hupo-psi.github.io/mzQC/ ).
 
 ## License
 Unless stated otherwise, documents in this repository are licensed under CC-BY-4 (see [license](/LICENSE))
