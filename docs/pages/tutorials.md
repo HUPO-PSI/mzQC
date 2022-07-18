@@ -49,5 +49,5 @@ Here is a list of links and documents that should help you out in case you want 
 * Visit the [HUPO-PSI webpage](https://www.psidev.info/groups/controlled-vocabularies) for more information on CV use in different settings.
 * __Browse our controlled vocabulary terms on [OLS](https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_4000000&lang=en&viewMode=All&siblings=false)__
 * If you want to start with the foundations and get ambitious here are the resources [from protege for ontology development](https://protege.stanford.edu/publications/ontology_development/ontology101.pdf)
-* <sub>Luckily, we have all the relevant metrics and terms in PSI-MS CV, so no [Ontology Dowsing](https://www.w3.org/wiki/Ontology_Dowsing) necessary</sub>
+* Luckily, we have all the relevant metrics and terms in [PSI-MS CV](https://github.com/HUPO-PSI/psi-ms-CV) (<sub>so no [Ontology Dowsing](https://www.w3.org/wiki/Ontology_Dowsing) necessary</sub>)
 
