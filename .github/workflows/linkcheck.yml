@@ -12,7 +12,7 @@ jobs:
     steps:
     - name: Check for broken links
       id: link-report
-      uses: celinekurpershoek/link-checker@v1.0.0
+      uses: celinekurpershoek/link-checker@37818c3d3586584d04f1a989ac23545adf7a9487
       with:
         # Required:
         url: 'https://hupo-psi.github.io/mzQC/'
