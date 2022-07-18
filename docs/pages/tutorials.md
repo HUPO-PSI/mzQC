@@ -46,7 +46,8 @@ Ontologies also known as controlled vocabularies are used in mzQC to manage metr
 Here is a list of links and documents that should help you out in case you want to know more.
 * Ontologies are powerful tools, we mostly use them as [controlled vocabularies](https://en.wikipedia.org/w/index.php?title=Controlled_vocabulary&oldid=1092198296)
 * The W3C has a bit broader explanation of [ontologies](https://www.w3.org/standards/semanticweb/ontology)
-* Luckily, we have all the relevant metrics and terms in PSI-MS CV, so no [Ontology Dowsing](https://www.w3.org/wiki/Ontology_Dowsing) necessary
+* Visit the [HUPO-PSI webpage](https://www.psidev.info/groups/controlled-vocabularies) for more information on CV use in different settings.
+* __Browse our controlled vocabulary terms on [OLS](https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_4000000&lang=en&viewMode=All&siblings=false)__
 * If you want to start with the foundations and get ambitious here are the resources [from protege for ontology development](https://protege.stanford.edu/publications/ontology_development/ontology101.pdf)
-* Browse our controlled vocabulary terms on [OLS](https://www.ebi.ac.uk/ols/ontologies/ms/terms?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2FMS_4000000&lang=en&viewMode=All&siblings=false)
+* <sub>Luckily, we have all the relevant metrics and terms in PSI-MS CV, so no [Ontology Dowsing](https://www.w3.org/wiki/Ontology_Dowsing) necessary</sub>
 
