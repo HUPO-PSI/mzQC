@@ -33,6 +33,7 @@ and analysts wanting a better insight to the data they analyse.
 
 * If you are familiar with JSON or have an understanding of PSI file formats, are however pressed for time, [mzQC at a glance](use-cases/at-a-glance/) will give you a brief overview of the essentials.
 
+* A in a nutshell exlanation is [here](mzQC-in-a-nutshell/)
 * Find out more about the format in general [here](mzQC-intro/)!
 
 ### Specification Document
