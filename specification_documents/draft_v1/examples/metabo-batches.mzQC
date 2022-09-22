@@ -10,7 +10,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-10.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-10.mzML",
               "name": "GCMS ToF sample 10",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -53,7 +53,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-100.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-100.mzML",
               "name": "GCMS ToF sample 100",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -96,7 +96,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-101.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-101.mzML",
               "name": "GCMS ToF sample 101",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -139,7 +139,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-102.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-102.mzML",
               "name": "GCMS ToF sample 102",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -182,7 +182,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-103.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-103.mzML",
               "name": "GCMS ToF sample 103",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -225,7 +225,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-104.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-104.mzML",
               "name": "GCMS ToF sample 104",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -268,7 +268,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-106.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-106.mzML",
               "name": "GCMS ToF sample 106",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -311,7 +311,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-107.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-107.mzML",
               "name": "GCMS ToF sample 107",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -354,7 +354,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-108.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-108.mzML",
               "name": "GCMS ToF sample 108",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -397,7 +397,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-109.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-109.mzML",
               "name": "GCMS ToF sample 109",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -440,7 +440,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-11.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-11.mzML",
               "name": "GCMS ToF sample 11",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -483,7 +483,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-110.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-110.mzML",
               "name": "GCMS ToF sample 110",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -526,7 +526,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-111.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-111.mzML",
               "name": "GCMS ToF sample 111",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -569,7 +569,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-112.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-112.mzML",
               "name": "GCMS ToF sample 112",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -612,7 +612,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-113.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-113.mzML",
               "name": "GCMS ToF sample 113",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -655,7 +655,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-114.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-114.mzML",
               "name": "GCMS ToF sample 114",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -698,7 +698,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-115.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-115.mzML",
               "name": "GCMS ToF sample 115",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -741,7 +741,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-116.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-116.mzML",
               "name": "GCMS ToF sample 116",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -784,7 +784,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-117.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-117.mzML",
               "name": "GCMS ToF sample 117",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -827,7 +827,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-118.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-118.mzML",
               "name": "GCMS ToF sample 118",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -870,7 +870,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-119.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-119.mzML",
               "name": "GCMS ToF sample 119",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -913,7 +913,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-12.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-12.mzML",
               "name": "GCMS ToF sample 12",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -956,7 +956,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-120.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-120.mzML",
               "name": "GCMS ToF sample 120",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -999,7 +999,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-121.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-121.mzML",
               "name": "GCMS ToF sample 121",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1042,7 +1042,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-122.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-122.mzML",
               "name": "GCMS ToF sample 122",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1085,7 +1085,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-123.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-123.mzML",
               "name": "GCMS ToF sample 123",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1128,7 +1128,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-124.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-124.mzML",
               "name": "GCMS ToF sample 124",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1171,7 +1171,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-125.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-125.mzML",
               "name": "GCMS ToF sample 125",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1214,7 +1214,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-126.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-126.mzML",
               "name": "GCMS ToF sample 126",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1257,7 +1257,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-127.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-127.mzML",
               "name": "GCMS ToF sample 127",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1300,7 +1300,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-128.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-128.mzML",
               "name": "GCMS ToF sample 128",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1343,7 +1343,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-129.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-129.mzML",
               "name": "GCMS ToF sample 129",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1386,7 +1386,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-13.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-13.mzML",
               "name": "GCMS ToF sample 13",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1429,7 +1429,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-130.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-130.mzML",
               "name": "GCMS ToF sample 130",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1472,7 +1472,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-132.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-132.mzML",
               "name": "GCMS ToF sample 132",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1515,7 +1515,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-133.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-133.mzML",
               "name": "GCMS ToF sample 133",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1558,7 +1558,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-134.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-134.mzML",
               "name": "GCMS ToF sample 134",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1601,7 +1601,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-135.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-135.mzML",
               "name": "GCMS ToF sample 135",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1644,7 +1644,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-136.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-136.mzML",
               "name": "GCMS ToF sample 136",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1687,7 +1687,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-137.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-137.mzML",
               "name": "GCMS ToF sample 137",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1730,7 +1730,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-138.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-138.mzML",
               "name": "GCMS ToF sample 138",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1773,7 +1773,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-139.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-139.mzML",
               "name": "GCMS ToF sample 139",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1816,7 +1816,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-14.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-14.mzML",
               "name": "GCMS ToF sample 14",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1859,7 +1859,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-140.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-140.mzML",
               "name": "GCMS ToF sample 140",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1902,7 +1902,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-141.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-141.mzML",
               "name": "GCMS ToF sample 141",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1945,7 +1945,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-142.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-142.mzML",
               "name": "GCMS ToF sample 142",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -1988,7 +1988,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-143.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-143.mzML",
               "name": "GCMS ToF sample 143",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2031,7 +2031,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-144.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-144.mzML",
               "name": "GCMS ToF sample 144",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2074,7 +2074,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-145.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-145.mzML",
               "name": "GCMS ToF sample 145",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2117,7 +2117,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-146.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-146.mzML",
               "name": "GCMS ToF sample 146",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2160,7 +2160,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-147.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-147.mzML",
               "name": "GCMS ToF sample 147",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2203,7 +2203,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-148.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-148.mzML",
               "name": "GCMS ToF sample 148",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2246,7 +2246,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-149.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-149.mzML",
               "name": "GCMS ToF sample 149",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2289,7 +2289,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-15.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-15.mzML",
               "name": "GCMS ToF sample 15",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2332,7 +2332,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-150.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-150.mzML",
               "name": "GCMS ToF sample 150",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2375,7 +2375,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-151.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-151.mzML",
               "name": "GCMS ToF sample 151",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2418,7 +2418,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-152.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-152.mzML",
               "name": "GCMS ToF sample 152",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2461,7 +2461,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-153.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-153.mzML",
               "name": "GCMS ToF sample 153",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2504,7 +2504,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-154.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-154.mzML",
               "name": "GCMS ToF sample 154",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2547,7 +2547,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-155.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-155.mzML",
               "name": "GCMS ToF sample 155",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2590,7 +2590,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-156.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-156.mzML",
               "name": "GCMS ToF sample 156",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2633,7 +2633,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-157.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-157.mzML",
               "name": "GCMS ToF sample 157",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2676,7 +2676,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-158.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-158.mzML",
               "name": "GCMS ToF sample 158",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2719,7 +2719,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-159.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-159.mzML",
               "name": "GCMS ToF sample 159",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2762,7 +2762,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-16.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-16.mzML",
               "name": "GCMS ToF sample 16",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2805,7 +2805,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-160.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-160.mzML",
               "name": "GCMS ToF sample 160",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2848,7 +2848,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-161.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-161.mzML",
               "name": "GCMS ToF sample 161",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2891,7 +2891,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-162.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-162.mzML",
               "name": "GCMS ToF sample 162",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2934,7 +2934,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-163.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-163.mzML",
               "name": "GCMS ToF sample 163",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -2977,7 +2977,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-164.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-164.mzML",
               "name": "GCMS ToF sample 164",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3020,7 +3020,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-165.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-165.mzML",
               "name": "GCMS ToF sample 165",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3063,7 +3063,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-166.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-166.mzML",
               "name": "GCMS ToF sample 166",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3106,7 +3106,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-167.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-167.mzML",
               "name": "GCMS ToF sample 167",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3149,7 +3149,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-168.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-168.mzML",
               "name": "GCMS ToF sample 168",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3192,7 +3192,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-169.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-169.mzML",
               "name": "GCMS ToF sample 169",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3235,7 +3235,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-17.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-17.mzML",
               "name": "GCMS ToF sample 17",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3278,7 +3278,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-170.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-170.mzML",
               "name": "GCMS ToF sample 170",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3321,7 +3321,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-171.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-171.mzML",
               "name": "GCMS ToF sample 171",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3364,7 +3364,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-172.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-172.mzML",
               "name": "GCMS ToF sample 172",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3407,7 +3407,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-173.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-173.mzML",
               "name": "GCMS ToF sample 173",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3450,7 +3450,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-177.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-177.mzML",
               "name": "GCMS ToF sample 177",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3493,7 +3493,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-178.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-178.mzML",
               "name": "GCMS ToF sample 178",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3536,7 +3536,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-179.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-179.mzML",
               "name": "GCMS ToF sample 179",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3579,7 +3579,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-18.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-18.mzML",
               "name": "GCMS ToF sample 18",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3622,7 +3622,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-180.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-180.mzML",
               "name": "GCMS ToF sample 180",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3665,7 +3665,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-181.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-181.mzML",
               "name": "GCMS ToF sample 181",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3708,7 +3708,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-182.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-182.mzML",
               "name": "GCMS ToF sample 182",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3751,7 +3751,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-183.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-183.mzML",
               "name": "GCMS ToF sample 183",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3794,7 +3794,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-184.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-184.mzML",
               "name": "GCMS ToF sample 184",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3837,7 +3837,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-185.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-185.mzML",
               "name": "GCMS ToF sample 185",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3880,7 +3880,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-186.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-186.mzML",
               "name": "GCMS ToF sample 186",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3923,7 +3923,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-187.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-187.mzML",
               "name": "GCMS ToF sample 187",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -3966,7 +3966,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-188.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-188.mzML",
               "name": "GCMS ToF sample 188",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4009,7 +4009,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-189.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-189.mzML",
               "name": "GCMS ToF sample 189",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4052,7 +4052,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-19.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-19.mzML",
               "name": "GCMS ToF sample 19",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4095,7 +4095,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-190.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-190.mzML",
               "name": "GCMS ToF sample 190",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4138,7 +4138,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-191.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-191.mzML",
               "name": "GCMS ToF sample 191",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4181,7 +4181,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-192.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-192.mzML",
               "name": "GCMS ToF sample 192",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4224,7 +4224,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-193.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-193.mzML",
               "name": "GCMS ToF sample 193",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4267,7 +4267,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-195.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-195.mzML",
               "name": "GCMS ToF sample 195",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4310,7 +4310,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-196.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-196.mzML",
               "name": "GCMS ToF sample 196",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4353,7 +4353,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-197.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-197.mzML",
               "name": "GCMS ToF sample 197",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4396,7 +4396,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-198.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-198.mzML",
               "name": "GCMS ToF sample 198",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4439,7 +4439,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-199.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-199.mzML",
               "name": "GCMS ToF sample 199",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4482,7 +4482,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-2.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-2.mzML",
               "name": "GCMS ToF sample 2",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4525,7 +4525,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-20.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-20.mzML",
               "name": "GCMS ToF sample 20",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4568,7 +4568,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-200.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-200.mzML",
               "name": "GCMS ToF sample 200",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4611,7 +4611,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-201.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-201.mzML",
               "name": "GCMS ToF sample 201",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4654,7 +4654,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-202.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-202.mzML",
               "name": "GCMS ToF sample 202",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4697,7 +4697,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-203.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-203.mzML",
               "name": "GCMS ToF sample 203",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4740,7 +4740,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-204.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-204.mzML",
               "name": "GCMS ToF sample 204",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4783,7 +4783,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-205.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-205.mzML",
               "name": "GCMS ToF sample 205",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4826,7 +4826,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-206.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-206.mzML",
               "name": "GCMS ToF sample 206",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4869,7 +4869,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-207.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-207.mzML",
               "name": "GCMS ToF sample 207",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4912,7 +4912,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-208.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-208.mzML",
               "name": "GCMS ToF sample 208",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4955,7 +4955,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-209.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-209.mzML",
               "name": "GCMS ToF sample 209",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -4998,7 +4998,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-21.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-21.mzML",
               "name": "GCMS ToF sample 21",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5041,7 +5041,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-210.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-210.mzML",
               "name": "GCMS ToF sample 210",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5084,7 +5084,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-211.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-211.mzML",
               "name": "GCMS ToF sample 211",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5127,7 +5127,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-212.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-212.mzML",
               "name": "GCMS ToF sample 212",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5170,7 +5170,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-213.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-213.mzML",
               "name": "GCMS ToF sample 213",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5213,7 +5213,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-214.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-214.mzML",
               "name": "GCMS ToF sample 214",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5256,7 +5256,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-216.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-216.mzML",
               "name": "GCMS ToF sample 216",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5299,7 +5299,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-217.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-217.mzML",
               "name": "GCMS ToF sample 217",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5342,7 +5342,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-218.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-218.mzML",
               "name": "GCMS ToF sample 218",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5385,7 +5385,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-219.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-219.mzML",
               "name": "GCMS ToF sample 219",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5428,7 +5428,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-22.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-22.mzML",
               "name": "GCMS ToF sample 22",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5471,7 +5471,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-220.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-220.mzML",
               "name": "GCMS ToF sample 220",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5514,7 +5514,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-221.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-221.mzML",
               "name": "GCMS ToF sample 221",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5557,7 +5557,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-222.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-222.mzML",
               "name": "GCMS ToF sample 222",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5600,7 +5600,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-223.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-223.mzML",
               "name": "GCMS ToF sample 223",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5643,7 +5643,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-224.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-224.mzML",
               "name": "GCMS ToF sample 224",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5686,7 +5686,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-225.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-225.mzML",
               "name": "GCMS ToF sample 225",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5729,7 +5729,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-226.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-226.mzML",
               "name": "GCMS ToF sample 226",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5772,7 +5772,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-227.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-227.mzML",
               "name": "GCMS ToF sample 227",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5815,7 +5815,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-228.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-228.mzML",
               "name": "GCMS ToF sample 228",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5858,7 +5858,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-229.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-229.mzML",
               "name": "GCMS ToF sample 229",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5901,7 +5901,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-23.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-23.mzML",
               "name": "GCMS ToF sample 23",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5944,7 +5944,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-230.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-230.mzML",
               "name": "GCMS ToF sample 230",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -5987,7 +5987,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-231.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-231.mzML",
               "name": "GCMS ToF sample 231",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6030,7 +6030,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-232.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-232.mzML",
               "name": "GCMS ToF sample 232",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6073,7 +6073,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-233.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-233.mzML",
               "name": "GCMS ToF sample 233",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6116,7 +6116,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-234.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-234.mzML",
               "name": "GCMS ToF sample 234",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6159,7 +6159,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-235.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-235.mzML",
               "name": "GCMS ToF sample 235",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6202,7 +6202,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-236.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-236.mzML",
               "name": "GCMS ToF sample 236",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6245,7 +6245,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-238.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-238.mzML",
               "name": "GCMS ToF sample 238",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6288,7 +6288,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-239.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-239.mzML",
               "name": "GCMS ToF sample 239",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6331,7 +6331,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-24.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-24.mzML",
               "name": "GCMS ToF sample 24",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6374,7 +6374,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-25.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-25.mzML",
               "name": "GCMS ToF sample 25",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6417,7 +6417,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-26.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-26.mzML",
               "name": "GCMS ToF sample 26",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6460,7 +6460,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-27.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-27.mzML",
               "name": "GCMS ToF sample 27",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6503,7 +6503,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-28.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-28.mzML",
               "name": "GCMS ToF sample 28",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6546,7 +6546,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-29.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-29.mzML",
               "name": "GCMS ToF sample 29",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6589,7 +6589,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-3.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-3.mzML",
               "name": "GCMS ToF sample 3",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6632,7 +6632,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-30.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-30.mzML",
               "name": "GCMS ToF sample 30",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6675,7 +6675,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-32.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-32.mzML",
               "name": "GCMS ToF sample 32",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6718,7 +6718,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-33.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-33.mzML",
               "name": "GCMS ToF sample 33",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6761,7 +6761,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-34.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-34.mzML",
               "name": "GCMS ToF sample 34",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6804,7 +6804,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-35.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-35.mzML",
               "name": "GCMS ToF sample 35",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6847,7 +6847,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-36.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-36.mzML",
               "name": "GCMS ToF sample 36",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6890,7 +6890,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-37.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-37.mzML",
               "name": "GCMS ToF sample 37",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6933,7 +6933,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-38.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-38.mzML",
               "name": "GCMS ToF sample 38",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -6976,7 +6976,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-39.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-39.mzML",
               "name": "GCMS ToF sample 39",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7019,7 +7019,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-4.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-4.mzML",
               "name": "GCMS ToF sample 4",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7062,7 +7062,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-40.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-40.mzML",
               "name": "GCMS ToF sample 40",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7105,7 +7105,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-41.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-41.mzML",
               "name": "GCMS ToF sample 41",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7148,7 +7148,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-42.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-42.mzML",
               "name": "GCMS ToF sample 42",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7191,7 +7191,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-43.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-43.mzML",
               "name": "GCMS ToF sample 43",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7234,7 +7234,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-44.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-44.mzML",
               "name": "GCMS ToF sample 44",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7277,7 +7277,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-45.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-45.mzML",
               "name": "GCMS ToF sample 45",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7320,7 +7320,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-46.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-46.mzML",
               "name": "GCMS ToF sample 46",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7363,7 +7363,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-47.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-47.mzML",
               "name": "GCMS ToF sample 47",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7406,7 +7406,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-48.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-48.mzML",
               "name": "GCMS ToF sample 48",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7449,7 +7449,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-49.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-49.mzML",
               "name": "GCMS ToF sample 49",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7492,7 +7492,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-5.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-5.mzML",
               "name": "GCMS ToF sample 5",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7535,7 +7535,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-50.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-50.mzML",
               "name": "GCMS ToF sample 50",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7578,7 +7578,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-51.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-51.mzML",
               "name": "GCMS ToF sample 51",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7621,7 +7621,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-52.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-52.mzML",
               "name": "GCMS ToF sample 52",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7664,7 +7664,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-53.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-53.mzML",
               "name": "GCMS ToF sample 53",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7707,7 +7707,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-54.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-54.mzML",
               "name": "GCMS ToF sample 54",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7750,7 +7750,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-55.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-55.mzML",
               "name": "GCMS ToF sample 55",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7793,7 +7793,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-56.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-56.mzML",
               "name": "GCMS ToF sample 56",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7836,7 +7836,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-57.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-57.mzML",
               "name": "GCMS ToF sample 57",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7879,7 +7879,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-58.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-58.mzML",
               "name": "GCMS ToF sample 58",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7922,7 +7922,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-59.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-59.mzML",
               "name": "GCMS ToF sample 59",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -7965,7 +7965,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-6.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-6.mzML",
               "name": "GCMS ToF sample 6",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8008,7 +8008,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-60.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-60.mzML",
               "name": "GCMS ToF sample 60",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8051,7 +8051,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-61.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-61.mzML",
               "name": "GCMS ToF sample 61",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8094,7 +8094,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-62.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-62.mzML",
               "name": "GCMS ToF sample 62",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8137,7 +8137,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-63.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-63.mzML",
               "name": "GCMS ToF sample 63",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8180,7 +8180,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-64.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-64.mzML",
               "name": "GCMS ToF sample 64",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8223,7 +8223,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-65.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-65.mzML",
               "name": "GCMS ToF sample 65",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8266,7 +8266,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-66.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-66.mzML",
               "name": "GCMS ToF sample 66",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8309,7 +8309,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-68.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-68.mzML",
               "name": "GCMS ToF sample 68",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8352,7 +8352,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-69.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-69.mzML",
               "name": "GCMS ToF sample 69",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8395,7 +8395,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-7.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-7.mzML",
               "name": "GCMS ToF sample 7",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8438,7 +8438,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-70.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-70.mzML",
               "name": "GCMS ToF sample 70",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8481,7 +8481,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-71.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-71.mzML",
               "name": "GCMS ToF sample 71",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8524,7 +8524,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-72.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-72.mzML",
               "name": "GCMS ToF sample 72",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8567,7 +8567,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-73.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-73.mzML",
               "name": "GCMS ToF sample 73",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8610,7 +8610,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-74.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-74.mzML",
               "name": "GCMS ToF sample 74",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8653,7 +8653,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-75.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-75.mzML",
               "name": "GCMS ToF sample 75",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8696,7 +8696,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-76.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-76.mzML",
               "name": "GCMS ToF sample 76",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8739,7 +8739,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-77.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-77.mzML",
               "name": "GCMS ToF sample 77",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8782,7 +8782,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-78.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-78.mzML",
               "name": "GCMS ToF sample 78",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8825,7 +8825,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-79.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-79.mzML",
               "name": "GCMS ToF sample 79",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8868,7 +8868,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-8.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-8.mzML",
               "name": "GCMS ToF sample 8",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8911,7 +8911,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-80.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-80.mzML",
               "name": "GCMS ToF sample 80",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8954,7 +8954,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-81.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-81.mzML",
               "name": "GCMS ToF sample 81",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -8997,7 +8997,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-82.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-82.mzML",
               "name": "GCMS ToF sample 82",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9040,7 +9040,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-83.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-83.mzML",
               "name": "GCMS ToF sample 83",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9083,7 +9083,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-84.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-84.mzML",
               "name": "GCMS ToF sample 84",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9126,7 +9126,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-87.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-87.mzML",
               "name": "GCMS ToF sample 87",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9169,7 +9169,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-88.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-88.mzML",
               "name": "GCMS ToF sample 88",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9212,7 +9212,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-89.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-89.mzML",
               "name": "GCMS ToF sample 89",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9255,7 +9255,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-9.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-9.mzML",
               "name": "GCMS ToF sample 9",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9298,7 +9298,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-90.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-90.mzML",
               "name": "GCMS ToF sample 90",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9341,7 +9341,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-91.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-91.mzML",
               "name": "GCMS ToF sample 91",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9384,7 +9384,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-92.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-92.mzML",
               "name": "GCMS ToF sample 92",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9427,7 +9427,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-93.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-93.mzML",
               "name": "GCMS ToF sample 93",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9470,7 +9470,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-94.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-94.mzML",
               "name": "GCMS ToF sample 94",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9513,7 +9513,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-95.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-95.mzML",
               "name": "GCMS ToF sample 95",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9556,7 +9556,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-96.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-96.mzML",
               "name": "GCMS ToF sample 96",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9599,7 +9599,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-97.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-97.mzML",
               "name": "GCMS ToF sample 97",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9642,7 +9642,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-98.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-98.mzML",
               "name": "GCMS ToF sample 98",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9685,7 +9685,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-99.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-99.mzML",
               "name": "GCMS ToF sample 99",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9730,7 +9730,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/GCMS-ToF-sample-10.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-10.mzML",
               "name": "GCMS ToF sample 10",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9738,7 +9738,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-100.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-100.mzML",
               "name": "GCMS ToF sample 100",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9746,7 +9746,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-101.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-101.mzML",
               "name": "GCMS ToF sample 101",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9754,7 +9754,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-102.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-102.mzML",
               "name": "GCMS ToF sample 102",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9762,7 +9762,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-103.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-103.mzML",
               "name": "GCMS ToF sample 103",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9770,7 +9770,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-104.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-104.mzML",
               "name": "GCMS ToF sample 104",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9778,7 +9778,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-106.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-106.mzML",
               "name": "GCMS ToF sample 106",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9786,7 +9786,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-107.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-107.mzML",
               "name": "GCMS ToF sample 107",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9794,7 +9794,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-108.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-108.mzML",
               "name": "GCMS ToF sample 108",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9802,7 +9802,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-109.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-109.mzML",
               "name": "GCMS ToF sample 109",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9810,7 +9810,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-11.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-11.mzML",
               "name": "GCMS ToF sample 11",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9818,7 +9818,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-110.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-110.mzML",
               "name": "GCMS ToF sample 110",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9826,7 +9826,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-111.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-111.mzML",
               "name": "GCMS ToF sample 111",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9834,7 +9834,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-112.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-112.mzML",
               "name": "GCMS ToF sample 112",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9842,7 +9842,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-113.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-113.mzML",
               "name": "GCMS ToF sample 113",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9850,7 +9850,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-114.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-114.mzML",
               "name": "GCMS ToF sample 114",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9858,7 +9858,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-115.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-115.mzML",
               "name": "GCMS ToF sample 115",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9866,7 +9866,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-116.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-116.mzML",
               "name": "GCMS ToF sample 116",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9874,7 +9874,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-117.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-117.mzML",
               "name": "GCMS ToF sample 117",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9882,7 +9882,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-118.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-118.mzML",
               "name": "GCMS ToF sample 118",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9890,7 +9890,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-119.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-119.mzML",
               "name": "GCMS ToF sample 119",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9898,7 +9898,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-12.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-12.mzML",
               "name": "GCMS ToF sample 12",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9906,7 +9906,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-120.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-120.mzML",
               "name": "GCMS ToF sample 120",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9914,7 +9914,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-121.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-121.mzML",
               "name": "GCMS ToF sample 121",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9922,7 +9922,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-122.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-122.mzML",
               "name": "GCMS ToF sample 122",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9930,7 +9930,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-123.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-123.mzML",
               "name": "GCMS ToF sample 123",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9938,7 +9938,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-124.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-124.mzML",
               "name": "GCMS ToF sample 124",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9946,7 +9946,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-125.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-125.mzML",
               "name": "GCMS ToF sample 125",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9954,7 +9954,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-126.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-126.mzML",
               "name": "GCMS ToF sample 126",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9962,7 +9962,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-127.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-127.mzML",
               "name": "GCMS ToF sample 127",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9970,7 +9970,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-128.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-128.mzML",
               "name": "GCMS ToF sample 128",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9978,7 +9978,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-129.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-129.mzML",
               "name": "GCMS ToF sample 129",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9986,7 +9986,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-13.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-13.mzML",
               "name": "GCMS ToF sample 13",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -9994,7 +9994,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-130.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-130.mzML",
               "name": "GCMS ToF sample 130",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10002,7 +10002,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-132.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-132.mzML",
               "name": "GCMS ToF sample 132",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10010,7 +10010,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-133.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-133.mzML",
               "name": "GCMS ToF sample 133",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10018,7 +10018,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-134.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-134.mzML",
               "name": "GCMS ToF sample 134",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10026,7 +10026,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-135.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-135.mzML",
               "name": "GCMS ToF sample 135",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10034,7 +10034,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-136.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-136.mzML",
               "name": "GCMS ToF sample 136",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10042,7 +10042,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-137.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-137.mzML",
               "name": "GCMS ToF sample 137",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10050,7 +10050,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-138.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-138.mzML",
               "name": "GCMS ToF sample 138",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10058,7 +10058,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-139.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-139.mzML",
               "name": "GCMS ToF sample 139",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10066,7 +10066,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-14.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-14.mzML",
               "name": "GCMS ToF sample 14",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10074,7 +10074,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-140.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-140.mzML",
               "name": "GCMS ToF sample 140",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10082,7 +10082,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-141.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-141.mzML",
               "name": "GCMS ToF sample 141",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10090,7 +10090,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-142.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-142.mzML",
               "name": "GCMS ToF sample 142",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10098,7 +10098,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-143.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-143.mzML",
               "name": "GCMS ToF sample 143",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10106,7 +10106,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-144.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-144.mzML",
               "name": "GCMS ToF sample 144",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10114,7 +10114,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-145.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-145.mzML",
               "name": "GCMS ToF sample 145",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10122,7 +10122,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-146.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-146.mzML",
               "name": "GCMS ToF sample 146",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10130,7 +10130,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-147.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-147.mzML",
               "name": "GCMS ToF sample 147",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10138,7 +10138,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-148.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-148.mzML",
               "name": "GCMS ToF sample 148",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10146,7 +10146,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-149.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-149.mzML",
               "name": "GCMS ToF sample 149",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10154,7 +10154,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-15.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-15.mzML",
               "name": "GCMS ToF sample 15",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10162,7 +10162,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-150.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-150.mzML",
               "name": "GCMS ToF sample 150",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10170,7 +10170,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-151.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-151.mzML",
               "name": "GCMS ToF sample 151",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10178,7 +10178,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-152.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-152.mzML",
               "name": "GCMS ToF sample 152",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10186,7 +10186,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-153.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-153.mzML",
               "name": "GCMS ToF sample 153",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10194,7 +10194,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-154.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-154.mzML",
               "name": "GCMS ToF sample 154",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10202,7 +10202,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-155.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-155.mzML",
               "name": "GCMS ToF sample 155",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10210,7 +10210,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-156.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-156.mzML",
               "name": "GCMS ToF sample 156",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10218,7 +10218,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-157.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-157.mzML",
               "name": "GCMS ToF sample 157",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10226,7 +10226,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-158.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-158.mzML",
               "name": "GCMS ToF sample 158",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10234,7 +10234,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-159.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-159.mzML",
               "name": "GCMS ToF sample 159",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10242,7 +10242,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-16.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-16.mzML",
               "name": "GCMS ToF sample 16",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10250,7 +10250,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-160.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-160.mzML",
               "name": "GCMS ToF sample 160",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10258,7 +10258,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-161.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-161.mzML",
               "name": "GCMS ToF sample 161",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10266,7 +10266,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-162.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-162.mzML",
               "name": "GCMS ToF sample 162",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10274,7 +10274,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-163.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-163.mzML",
               "name": "GCMS ToF sample 163",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10282,7 +10282,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-164.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-164.mzML",
               "name": "GCMS ToF sample 164",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10290,7 +10290,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-165.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-165.mzML",
               "name": "GCMS ToF sample 165",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10298,7 +10298,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-166.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-166.mzML",
               "name": "GCMS ToF sample 166",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10306,7 +10306,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-167.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-167.mzML",
               "name": "GCMS ToF sample 167",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10314,7 +10314,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-168.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-168.mzML",
               "name": "GCMS ToF sample 168",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10322,7 +10322,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-169.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-169.mzML",
               "name": "GCMS ToF sample 169",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10330,7 +10330,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-17.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-17.mzML",
               "name": "GCMS ToF sample 17",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10338,7 +10338,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-170.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-170.mzML",
               "name": "GCMS ToF sample 170",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10346,7 +10346,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-171.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-171.mzML",
               "name": "GCMS ToF sample 171",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10354,7 +10354,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-172.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-172.mzML",
               "name": "GCMS ToF sample 172",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10362,7 +10362,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-173.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-173.mzML",
               "name": "GCMS ToF sample 173",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10370,7 +10370,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-177.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-177.mzML",
               "name": "GCMS ToF sample 177",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10378,7 +10378,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-178.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-178.mzML",
               "name": "GCMS ToF sample 178",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10386,7 +10386,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-179.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-179.mzML",
               "name": "GCMS ToF sample 179",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10394,7 +10394,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-18.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-18.mzML",
               "name": "GCMS ToF sample 18",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10402,7 +10402,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-180.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-180.mzML",
               "name": "GCMS ToF sample 180",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10410,7 +10410,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-181.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-181.mzML",
               "name": "GCMS ToF sample 181",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10418,7 +10418,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-182.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-182.mzML",
               "name": "GCMS ToF sample 182",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10426,7 +10426,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-183.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-183.mzML",
               "name": "GCMS ToF sample 183",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10434,7 +10434,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-184.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-184.mzML",
               "name": "GCMS ToF sample 184",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10442,7 +10442,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-185.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-185.mzML",
               "name": "GCMS ToF sample 185",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10450,7 +10450,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-186.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-186.mzML",
               "name": "GCMS ToF sample 186",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10458,7 +10458,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-187.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-187.mzML",
               "name": "GCMS ToF sample 187",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10466,7 +10466,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-188.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-188.mzML",
               "name": "GCMS ToF sample 188",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10474,7 +10474,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-189.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-189.mzML",
               "name": "GCMS ToF sample 189",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10482,7 +10482,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-19.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-19.mzML",
               "name": "GCMS ToF sample 19",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10490,7 +10490,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-190.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-190.mzML",
               "name": "GCMS ToF sample 190",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10498,7 +10498,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-191.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-191.mzML",
               "name": "GCMS ToF sample 191",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10506,7 +10506,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-192.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-192.mzML",
               "name": "GCMS ToF sample 192",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10514,7 +10514,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-193.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-193.mzML",
               "name": "GCMS ToF sample 193",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10522,7 +10522,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-195.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-195.mzML",
               "name": "GCMS ToF sample 195",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10530,7 +10530,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-196.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-196.mzML",
               "name": "GCMS ToF sample 196",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10538,7 +10538,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-197.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-197.mzML",
               "name": "GCMS ToF sample 197",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10546,7 +10546,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-198.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-198.mzML",
               "name": "GCMS ToF sample 198",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10554,7 +10554,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-199.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-199.mzML",
               "name": "GCMS ToF sample 199",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10562,7 +10562,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-2.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-2.mzML",
               "name": "GCMS ToF sample 2",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10570,7 +10570,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-20.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-20.mzML",
               "name": "GCMS ToF sample 20",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10578,7 +10578,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-200.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-200.mzML",
               "name": "GCMS ToF sample 200",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10586,7 +10586,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-201.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-201.mzML",
               "name": "GCMS ToF sample 201",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10594,7 +10594,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-202.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-202.mzML",
               "name": "GCMS ToF sample 202",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10602,7 +10602,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-203.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-203.mzML",
               "name": "GCMS ToF sample 203",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10610,7 +10610,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-204.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-204.mzML",
               "name": "GCMS ToF sample 204",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10618,7 +10618,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-205.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-205.mzML",
               "name": "GCMS ToF sample 205",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10626,7 +10626,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-206.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-206.mzML",
               "name": "GCMS ToF sample 206",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10634,7 +10634,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-207.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-207.mzML",
               "name": "GCMS ToF sample 207",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10642,7 +10642,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-208.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-208.mzML",
               "name": "GCMS ToF sample 208",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10650,7 +10650,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-209.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-209.mzML",
               "name": "GCMS ToF sample 209",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10658,7 +10658,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-21.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-21.mzML",
               "name": "GCMS ToF sample 21",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10666,7 +10666,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-210.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-210.mzML",
               "name": "GCMS ToF sample 210",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10674,7 +10674,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-211.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-211.mzML",
               "name": "GCMS ToF sample 211",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10682,7 +10682,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-212.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-212.mzML",
               "name": "GCMS ToF sample 212",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10690,7 +10690,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-213.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-213.mzML",
               "name": "GCMS ToF sample 213",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10698,7 +10698,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-214.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-214.mzML",
               "name": "GCMS ToF sample 214",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10706,7 +10706,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-216.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-216.mzML",
               "name": "GCMS ToF sample 216",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10714,7 +10714,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-217.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-217.mzML",
               "name": "GCMS ToF sample 217",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10722,7 +10722,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-218.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-218.mzML",
               "name": "GCMS ToF sample 218",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10730,7 +10730,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-219.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-219.mzML",
               "name": "GCMS ToF sample 219",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10738,7 +10738,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-22.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-22.mzML",
               "name": "GCMS ToF sample 22",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10746,7 +10746,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-220.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-220.mzML",
               "name": "GCMS ToF sample 220",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10754,7 +10754,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-221.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-221.mzML",
               "name": "GCMS ToF sample 221",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10762,7 +10762,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-222.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-222.mzML",
               "name": "GCMS ToF sample 222",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10770,7 +10770,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-223.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-223.mzML",
               "name": "GCMS ToF sample 223",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10778,7 +10778,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-224.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-224.mzML",
               "name": "GCMS ToF sample 224",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10786,7 +10786,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-225.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-225.mzML",
               "name": "GCMS ToF sample 225",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10794,7 +10794,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-226.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-226.mzML",
               "name": "GCMS ToF sample 226",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10802,7 +10802,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-227.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-227.mzML",
               "name": "GCMS ToF sample 227",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10810,7 +10810,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-228.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-228.mzML",
               "name": "GCMS ToF sample 228",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10818,7 +10818,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-229.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-229.mzML",
               "name": "GCMS ToF sample 229",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10826,7 +10826,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-23.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-23.mzML",
               "name": "GCMS ToF sample 23",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10834,7 +10834,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-230.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-230.mzML",
               "name": "GCMS ToF sample 230",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10842,7 +10842,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-231.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-231.mzML",
               "name": "GCMS ToF sample 231",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10850,7 +10850,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-232.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-232.mzML",
               "name": "GCMS ToF sample 232",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10858,7 +10858,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-233.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-233.mzML",
               "name": "GCMS ToF sample 233",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10866,7 +10866,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-234.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-234.mzML",
               "name": "GCMS ToF sample 234",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10874,7 +10874,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-235.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-235.mzML",
               "name": "GCMS ToF sample 235",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10882,7 +10882,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-236.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-236.mzML",
               "name": "GCMS ToF sample 236",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10890,7 +10890,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-238.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-238.mzML",
               "name": "GCMS ToF sample 238",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10898,7 +10898,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-239.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-239.mzML",
               "name": "GCMS ToF sample 239",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10906,7 +10906,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-24.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-24.mzML",
               "name": "GCMS ToF sample 24",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10914,7 +10914,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-25.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-25.mzML",
               "name": "GCMS ToF sample 25",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10922,7 +10922,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-26.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-26.mzML",
               "name": "GCMS ToF sample 26",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10930,7 +10930,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-27.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-27.mzML",
               "name": "GCMS ToF sample 27",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10938,7 +10938,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-28.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-28.mzML",
               "name": "GCMS ToF sample 28",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10946,7 +10946,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-29.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-29.mzML",
               "name": "GCMS ToF sample 29",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10954,7 +10954,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-3.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-3.mzML",
               "name": "GCMS ToF sample 3",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10962,7 +10962,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-30.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-30.mzML",
               "name": "GCMS ToF sample 30",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10970,7 +10970,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-32.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-32.mzML",
               "name": "GCMS ToF sample 32",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10978,7 +10978,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-33.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-33.mzML",
               "name": "GCMS ToF sample 33",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10986,7 +10986,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-34.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-34.mzML",
               "name": "GCMS ToF sample 34",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -10994,7 +10994,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-35.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-35.mzML",
               "name": "GCMS ToF sample 35",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11002,7 +11002,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-36.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-36.mzML",
               "name": "GCMS ToF sample 36",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11010,7 +11010,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-37.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-37.mzML",
               "name": "GCMS ToF sample 37",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11018,7 +11018,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-38.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-38.mzML",
               "name": "GCMS ToF sample 38",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11026,7 +11026,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-39.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-39.mzML",
               "name": "GCMS ToF sample 39",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11034,7 +11034,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-4.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-4.mzML",
               "name": "GCMS ToF sample 4",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11042,7 +11042,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-40.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-40.mzML",
               "name": "GCMS ToF sample 40",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11050,7 +11050,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-41.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-41.mzML",
               "name": "GCMS ToF sample 41",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11058,7 +11058,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-42.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-42.mzML",
               "name": "GCMS ToF sample 42",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11066,7 +11066,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-43.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-43.mzML",
               "name": "GCMS ToF sample 43",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11074,7 +11074,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-44.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-44.mzML",
               "name": "GCMS ToF sample 44",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11082,7 +11082,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-45.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-45.mzML",
               "name": "GCMS ToF sample 45",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11090,7 +11090,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-46.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-46.mzML",
               "name": "GCMS ToF sample 46",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11098,7 +11098,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-47.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-47.mzML",
               "name": "GCMS ToF sample 47",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11106,7 +11106,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-48.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-48.mzML",
               "name": "GCMS ToF sample 48",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11114,7 +11114,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-49.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-49.mzML",
               "name": "GCMS ToF sample 49",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11122,7 +11122,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-5.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-5.mzML",
               "name": "GCMS ToF sample 5",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11130,7 +11130,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-50.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-50.mzML",
               "name": "GCMS ToF sample 50",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11138,7 +11138,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-51.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-51.mzML",
               "name": "GCMS ToF sample 51",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11146,7 +11146,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-52.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-52.mzML",
               "name": "GCMS ToF sample 52",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11154,7 +11154,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-53.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-53.mzML",
               "name": "GCMS ToF sample 53",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11162,7 +11162,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-54.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-54.mzML",
               "name": "GCMS ToF sample 54",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11170,7 +11170,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-55.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-55.mzML",
               "name": "GCMS ToF sample 55",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11178,7 +11178,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-56.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-56.mzML",
               "name": "GCMS ToF sample 56",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11186,7 +11186,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-57.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-57.mzML",
               "name": "GCMS ToF sample 57",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11194,7 +11194,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-58.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-58.mzML",
               "name": "GCMS ToF sample 58",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11202,7 +11202,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-59.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-59.mzML",
               "name": "GCMS ToF sample 59",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11210,7 +11210,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-6.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-6.mzML",
               "name": "GCMS ToF sample 6",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11218,7 +11218,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-60.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-60.mzML",
               "name": "GCMS ToF sample 60",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11226,7 +11226,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-61.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-61.mzML",
               "name": "GCMS ToF sample 61",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11234,7 +11234,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-62.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-62.mzML",
               "name": "GCMS ToF sample 62",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11242,7 +11242,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-63.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-63.mzML",
               "name": "GCMS ToF sample 63",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11250,7 +11250,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-64.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-64.mzML",
               "name": "GCMS ToF sample 64",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11258,7 +11258,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-65.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-65.mzML",
               "name": "GCMS ToF sample 65",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11266,7 +11266,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-66.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-66.mzML",
               "name": "GCMS ToF sample 66",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11274,7 +11274,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-68.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-68.mzML",
               "name": "GCMS ToF sample 68",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11282,7 +11282,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-69.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-69.mzML",
               "name": "GCMS ToF sample 69",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11290,7 +11290,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-7.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-7.mzML",
               "name": "GCMS ToF sample 7",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11298,7 +11298,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-70.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-70.mzML",
               "name": "GCMS ToF sample 70",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11306,7 +11306,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-71.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-71.mzML",
               "name": "GCMS ToF sample 71",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11314,7 +11314,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-72.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-72.mzML",
               "name": "GCMS ToF sample 72",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11322,7 +11322,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-73.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-73.mzML",
               "name": "GCMS ToF sample 73",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11330,7 +11330,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-74.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-74.mzML",
               "name": "GCMS ToF sample 74",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11338,7 +11338,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-75.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-75.mzML",
               "name": "GCMS ToF sample 75",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11346,7 +11346,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-76.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-76.mzML",
               "name": "GCMS ToF sample 76",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11354,7 +11354,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-77.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-77.mzML",
               "name": "GCMS ToF sample 77",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11362,7 +11362,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-78.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-78.mzML",
               "name": "GCMS ToF sample 78",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11370,7 +11370,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-79.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-79.mzML",
               "name": "GCMS ToF sample 79",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11378,7 +11378,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-8.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-8.mzML",
               "name": "GCMS ToF sample 8",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11386,7 +11386,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-80.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-80.mzML",
               "name": "GCMS ToF sample 80",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11394,7 +11394,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-81.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-81.mzML",
               "name": "GCMS ToF sample 81",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11402,7 +11402,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-82.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-82.mzML",
               "name": "GCMS ToF sample 82",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11410,7 +11410,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-83.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-83.mzML",
               "name": "GCMS ToF sample 83",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11418,7 +11418,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-84.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-84.mzML",
               "name": "GCMS ToF sample 84",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11426,7 +11426,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-87.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-87.mzML",
               "name": "GCMS ToF sample 87",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11434,7 +11434,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-88.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-88.mzML",
               "name": "GCMS ToF sample 88",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11442,7 +11442,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-89.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-89.mzML",
               "name": "GCMS ToF sample 89",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11450,7 +11450,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-9.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-9.mzML",
               "name": "GCMS ToF sample 9",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11458,7 +11458,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-90.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-90.mzML",
               "name": "GCMS ToF sample 90",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11466,7 +11466,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-91.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-91.mzML",
               "name": "GCMS ToF sample 91",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11474,7 +11474,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-92.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-92.mzML",
               "name": "GCMS ToF sample 92",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11482,7 +11482,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-93.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-93.mzML",
               "name": "GCMS ToF sample 93",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11490,7 +11490,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-94.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-94.mzML",
               "name": "GCMS ToF sample 94",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11498,7 +11498,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-95.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-95.mzML",
               "name": "GCMS ToF sample 95",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11506,7 +11506,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-96.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-96.mzML",
               "name": "GCMS ToF sample 96",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11514,7 +11514,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-97.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-97.mzML",
               "name": "GCMS ToF sample 97",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11522,7 +11522,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-98.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-98.mzML",
               "name": "GCMS ToF sample 98",
               "fileFormat": {
                 "accession": "MS:1000584",
@@ -11530,7 +11530,7 @@
               }
             },
             {
-              "location": "/tmp/GCMS-ToF-sample-99.mzML",
+              "location": "file://tmp/GCMS-ToF-sample-99.mzML",
               "name": "GCMS ToF sample 99",
               "fileFormat": {
                 "accession": "MS:1000584",

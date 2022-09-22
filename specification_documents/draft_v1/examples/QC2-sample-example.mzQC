@@ -10,7 +10,7 @@
         "metadata": {
           "inputFiles": [
             {
-              "location": "/tmp/QC2_18052020.mzML",
+              "location": "file://tmp/QC2_18052020.mzML",
               "name": "QC type 2 sample",
               "fileFormat": {
                 "accession": "MS:1000584",
