@@ -12,7 +12,7 @@
           "inputFiles": [
             {
               "name": "tr1_healthy",
-              "location": "c:\\msdata\\techRep1_healthy.mzML",
+              "location": "file:///C:/msdata/techRep1_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -27,7 +27,7 @@
             },
             {
               "name": "tr2_healthy",
-              "location": "c:\\msdata\\techRep2_healthy.mzML",
+              "location": "file:///C:/msdata/techRep2_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -42,7 +42,7 @@
             },
             {
               "name": "tr3_healthy",
-              "location": "c:\\msdata\\techRep3_healthy.mzML",
+              "location": "file:///C:/msdata/techRep3_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -86,7 +86,7 @@
           "inputFiles": [
             {
               "name": "tr1_diseased",
-              "location": "c:\\msdata\\techRep1_diseased.mzML",
+              "location": "file:///C:/msdata/techRep1_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -101,7 +101,7 @@
             },
             {
               "name": "tr2_diseased",
-              "location": "c:\\msdata\\techRep2_diseased.mzML",
+              "location": "file:///C:/msdata/techRep2_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -116,7 +116,7 @@
             },
             {
               "name": "tr3_diseased",
-              "location": "c:\\msdata\\techRep3_diseased.mzML",
+              "location": "file:///C:/msdata/techRep3_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -153,7 +153,7 @@
           "inputFiles": [
             {
               "name": "tr1_healthy",
-              "location": "c:\\msdata\\techRep1_healthy.mzML",
+              "location": "file:///C:/msdata/techRep1_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -168,7 +168,7 @@
             },
             {
               "name": "tr2_healthy",
-              "location": "c:\\msdata\\techRep2_healthy.mzML",
+              "location": "file:///C:/msdata/techRep2_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -183,7 +183,7 @@
             },
             {
               "name": "tr3_healthy",
-              "location": "c:\\msdata\\techRep3_healthy.mzML",
+              "location": "file:///C:/msdata/techRep3_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -198,7 +198,7 @@
             },
             {
               "name": "tr1_diseased",
-              "location": "c:\\msdata\\techRep1_diseased.mzML",
+              "location": "file:///C:/msdata/techRep1_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -213,7 +213,7 @@
             },
             {
               "name": "tr2_diseased",
-              "location": "c:\\msdata\\techRep2_diseased.mzML",
+              "location": "file:///C:/msdata/techRep2_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -228,7 +228,7 @@
             },
             {
               "name": "tr3_diseased",
-              "location": "c:\\msdata\\techRep3_diseased.mzML",
+              "location": "file:///C:/msdata/techRep3_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
