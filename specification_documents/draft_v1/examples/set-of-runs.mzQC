@@ -1,7 +1,7 @@
 {
   "mzQC": {
     "version": "1.0.0",
-    "creationDate": "2020-12-01T14:19:09",
+    "creationDate": "2020-12-01T14:19:09Z",
     "contactName": "Chris Bielow",
     "contactAddress": "chris.bielow@bsc.fu-berlin.de",
     "description": "A simple mzQC file containing information for sets of runs.",
