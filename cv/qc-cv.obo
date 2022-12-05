@@ -23,98 +23,376 @@ remark: CV migration batch no. ? for accession x replacement see previous PRs
 
 [Term]
 id: MS:4000xxx
-name: MZ acquisition range
-def: "Upper and lower limit of m/z values at which spectra are recorded." [PSI:QC]
-comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs.
+name: MS1 frequency in equal parts of subsequent RT
+def: "Average MS1 frequency during retention time periods between adjacent retention time quantiles. (Four values implies values for 1st quarter, 2nd quarter, 3rd quarter, 4th quarter.)" [PSI:QC]
+comment: Acquisition frequency can be used to gauge the suitability of instrument settings depending on the sample content.
 is_a: MS:4000004 ! n-tuple
 relationship: has_metric_category MS:4000009 ! ID free metric
 relationship: has_metric_category MS:4000012 ! single run based metric
-relationship: has_units MS:1000040 ! m/z
-
-[Term]
-id: MS:4000xxx
-name: RT acquisition range
-def: "Upper and lower limit of time at which spectra are recorded." [PSI:QC]
-comment: Acquisition levels can be used as a criterion to assess the comparability of instrument settings between runs.
-is_a: MS:4000004 ! n-tuple
-relationship: has_metric_category MS:4000012 ! single run based metric
-relationship: has_units UO:0000010 ! second
-
-[Term]
-id: MS:4000xxx
-name: Slowest frequency for MS level 1 collection
-def: "Slowest frequency for MS level 1 collection" [PSI:QC]
-comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
-is_a: MS:4000003 ! single value
-relationship: has_metric_category MS:4000009 ! ID free metric
-relationship: has_metric_category MS:4000012 ! single run based metric
+relationship: has_metric_category MS:4000021 ! MS1 metric
 relationship: has_units UO:0000106 ! hertz
+relationship: has_value_type xsd:float ! The allowed value-type for this CV term
 
 [Term]
 id: MS:4000xxx
-name: Slowest frequency for MS level 2 collection
-def: "Slowest frequency for MS level 2 collection" [PSI:QC]
-comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
-is_a: MS:4000003 ! single value
-relationship: has_metric_category MS:4000009 ! ID free metric
-relationship: has_metric_category MS:4000012 ! single run based metric
-relationship: has_units UO:0000106 ! hertz
-
-[Term]
-id: MS:4000xxx
-name: MS1 frequency in RT quarters
-def: "MS1 frequency in RT 1st quarter, 2nd quarter, 3rd quarter, 4th quarter" [PSI:QC]
-comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
+name: MS2 frequency in equal parts of subsequent RT
+def: "Average MS2 frequency  during retention time periods between adjacent retention time quantiles. (Four values implies values for 1st quarter, 2nd quarter, 3rd quarter, 4th quarter.)" [PSI:QC]
+comment: Acquisition frequency can be used to gauge the suitability of instrument settings depending on the sample content.
 is_a: MS:4000004 ! n-tuple
 relationship: has_metric_category MS:4000009 ! ID free metric
 relationship: has_metric_category MS:4000012 ! single run based metric
+relationship: has_metric_category MS:4000022 ! MS2 metric
 relationship: has_units UO:0000106 ! hertz
+relationship: has_value_type xsd:float ! The allowed value-type for this CV term
+[Term]
+id: QC:4000174
+name: Charged peptides ratio 1+ over 2+
+def: "Ratio of 1+ peptide count  over 2+ peptide count  in identified spectra" [PSI:QC]
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000008 ! ID based metric
+synonym: "IS-3A" NARROW []
 
 [Term]
-id: MS:4000xxx
-name: MS2 frequency in RT quarters
-def: "MS2 frequency in RT 1st quarter, 2nd quarter, 3rd quarter, 4th quarter" [PSI:QC]
-comment: Spectrum acquisition frequency can be used to gauge the suitability of used instrument settings for the sample content used.
+id: QC:4000175
+name: Charged peptides ratio 3+ over 2+
+def: "Ratio of 3+ peptide count over 2+ peptide count in identified spectra" [PSI:QC]
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000008 ! ID based metric
+synonym: "IS-3B" NARROW []
+
+[Term]
+id: QC:4000176
+name: Charged peptides ratio 4+ over 2+
+def: "Ratio of 4+ peptide count over 2+ peptide count in identified spectra" [PSI:QC]
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000008 ! ID based metric
+synonym: "IS-3C" NARROW []
+
+
+[Term]
+id: QC:4000157
+name: Peak density distribution MS1 Q1, Q2, Q3
+def: "From the distribution of peak densities in MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
+comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
+relationship: has_metric_category MS:4000009 ! ID free metric
 is_a: MS:4000004 ! n-tuple
-relationship: has_metric_category MS:4000009 ! ID free metric
-relationship: has_metric_category MS:4000012 ! single run based metric
-relationship: has_units UO:0000106 ! hertz
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
 
 [Term]
-id: MS:4000xxx
-name: number of missing scans
-def: "The number of scans performed, but zero ions are detected." [PSI:QC]
+id: QC:4000158
+name: Peak density distribution MS1 mean
+def: "From the distribution of peak densities in MS1, the mean" [PSI:QC]
+comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free metric
-relationship: has_metric_category MS:4000012 ! single run based metric
-relationship: has_units UO:0000189 ! count unit
+relationship: has_units STATO:0000401 ! sample mean
 
 [Term]
-id: MS:4000xxx
-name: total ion current chromatogram table
-def: "The total ion current chromatogram. The first column contains the retention time values in second, the second column the corresponding relative intensities." [PSI:QC]
-is_a: MS:4000006 ! table
-relationship: has_metric_category MS:4000009 ! ID free metric
-relationship: has_metric_category MS:4000017 ! chromatogram metric
-relationship: has_relation MS:1000235 ! total ion current chromatogram
-relationship: has_relation MS:4000013 ! single run based
-relationship: has_column: MS:4000108 ! Retention time
-relationship: has_column: MS:4000109 ! Relative intensity
-
-[Term]
-id: MS:4000xxx
-name: MS1 signal jump (10x) count
-def: "The count of MS1 signal jump events (spectra sum) by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
-comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
-is_a: MS:4000003 ! single valuez
-relationship: has_metric_category MS:4000009 ! ID free metric
-synonym: "IS-1A"  RELATED []
-
-[Term]
-id: MS:4000xxx
-name: MS1 signal fall (10x) count
-def: "The count of MS1 signal decline events (spectra sum) by a factor of ten or more (10x) between two subsequent scans" [PSI:QC]
-comment: An unusual high count of signal jumps or falls can indicate ESI stability issues.
+id: QC:4000159
+name: Peak density distribution MS1 sigma
+def: "From the distribution of peak densities in MS1, the sigma value" [PSI:QC]
+comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
 is_a: MS:4000003 ! single value
 relationship: has_metric_category MS:4000009 ! ID free metric
-synonym: "IS-1B"  RELATED []
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000160
+name: Peak density distribution MS1 low outliers (<Q1-1.5*IQR)
+def: "From the distribution of peak densities in MS1, the list of outliers below Q1-1.5*IQR" [PSI:QC]
+comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000117 ! Outliers below column
+
+[Term]
+id: QC:4000161
+name: Peak density distribution MS1 high outliers (>Q3+1.5*IQR)
+def: "From the distribution of peak densities in MS1, the list of outliers above Q3+1.5*IQR" [PSI:QC]
+comment: The distribution of peak densities in MS1 can provide insight into the presence of nuisance factors.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000162
+name: Peak density distribution MS2 Q1, Q2, Q3
+def: "From the distribution of peak densities in MS2, the quartiles Q1, Q2, Q3" [PSI:QC]
+comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_type STATO:0000167 ! first quartile
+relationship: has_type STATO:0000574 ! center value
+relationship: has_type STATO:0000170 ! third quartile
+
+[Term]
+id: QC:4000163
+name: Peak density distribution MS2 mean
+def: "From the distribution of peak densities in MS2, the mean" [PSI:QC]
+comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000401 ! sample mean
+
+[Term]
+id: QC:4000164
+name: Peak density distribution MS2 sigma
+def: "From the distribution of peak densities in MS2, the sigma value" [PSI:QC]
+comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000165
+name: Peak density distribution MS2 low outliers (<Q1-1.5*IQR)
+def: "From the distribution of peak densities in MS2, the list of outliers below Q1-1.5*IQR" [PSI:QC]
+comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000117 ! Outliers below column
+
+[Term]
+id: QC:4000166
+name: Peak density distribution MS2 high outliers (>Q3+1.5*IQR)
+def: "From the distribution of peak densities in MS2, the list of outliers above Q3+1.5*IQR" [PSI:QC]
+comment: The distribution of peak densities in MS2 can provide insight into the instruments ion selction settings.
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000167
+name: Precursor intensity distribution Q1, Q2, Q3
+def: "From the distribution of precursor intensities, the quartiles Q1, Q2, Q3" [PSI:QC]
+comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
+
+[Term]
+id: QC:4000168
+name: Precursor intensity distribution mean
+def: "From the distribution of precursor intensities, the mean" [PSI:QC]
+comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000401 ! sample mean
+
+[Term]
+id: QC:4000169
+name: Precursor intensity distribution sigma
+def: "From the distribution of precursor intensities, the sigma value" [PSI:QC]
+comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000170
+name: Precursor intensity distribution low outliers (<Q1-1.5*IQR)
+def: "From the distribution of precursor intensities, the list of outliers below Q1-1.5*IQR" [PSI:QC]
+comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000117 ! Outliers below column
+
+[Term]
+id: QC:4000171
+name: Precursor intensity distribution high outliers (>Q3+1.5*IQR)
+def: "From the distribution of precursor intensities, the list of outliers above Q3+1.5*IQR" [PSI:QC]
+comment: The intensity distribution of the precursors informs about the dynamic range of the acquisition.
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000218
+name: Signal-to-noise ratio in MS1 - Q1, Q2, Q3
+def: "From the distribution of signal-to-noise ratio in MS1, the quartiles Q1, Q2, Q3 value" [PSI:QC]
+comment: The Signal-to-noise ratio in MS1 distribution can provide insight to the presence of nuisance factors.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
+
+[Term]
+id: QC:4000219
+name: Signal-to-noise ratio in MS1 - mean
+comment: The signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+def: "From the distribution of signal-to-noise ratio in MS1, the mean" [PSI:QC]
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000401 ! sample mean
+
+[Term]
+id: QC:4000220
+name: Signal-to-noise ratio in MS1 - sigma
+def: "From the distribution of signal-to-noise ratio in MS1, the sigma value" [PSI:QC]
+comment: The Signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000221
+name: Signal-to-noise ratio in MS1 - low outliers (<Q1-1.5*IQR)
+def: "From the distribution of signal-to-noise ratio in MS1, the list of outliers below Q1-1.5IQR" [PSI:QC]
+comment: The Signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000117 ! Outliers below column
+
+[Term]
+id: QC:4000222
+name: Signal-to-noise ratio in MS1 - high outliers (>Q3+1.5*IQR)
+def: "From the distribution of signal-to-noise ratio in MS1, the list of outliers above Q3+1.5IQR" [PSI:QC]
+comment: The Signal-to-noise ratio in MS1 distribution can provide insight into the presence of nuisance factors. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000223
+name: Signal-to-noise ratio in MS2 - Q1, Q2, Q3
+def: "From the distribution of signal-to-noise ratio in MS2, the quartiles Q1, Q2, Q3 value" [PSI:QC]
+comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
+
+[Term]
+id: QC:4000224
+name: Signal-to-noise ratio in MS2 - mean
+def: "From the distribution of signal-to-noise ratio in MS2, the mean" [PSI:QC]
+comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000401 ! sample mean
+
+[Term]
+id: QC:4000225
+name: Signal-to-noise ratio in MS2 - sigma
+def: "From the distribution of signal-to-noise ratio in MS2, the sigma value" [PSI:QC]
+comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000226
+name: Signal-to-noise ratio in MS2 - low outliers (<Q1-1.5*IQR)
+def: "From the distribution of signal-to-noise ratio in MS2, the list of outliers below Q1-1.5IQR" [PSI:QC]
+comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000117 ! Outliers below column
+
+[Term]
+id: QC:4000227
+name: Signal-to-noise ratio in MS2 - high outliers (>Q3+1.5*IQR)
+def: "From the distribution of signal-to-noise ratio in MS2, the list of outliers above Q3+1.5IQR" [PSI:QC]
+comment: A high signal-to-noise ratio in MS2 distribution can explain a high rate of unidentified spectra. Comparisons will likely only make local sense where the same method of S/N calculation is applied (or overall the same software to calculate this metric, see mzQC 'analysisSoftware').
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000147
+name: MS1 ion collection time Q1, Q2, Q3
+def: "From the distribution of ion injection times (MS:1000927) for MS1, the quartiles Q1, Q2, Q3" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+is_a: MS:4000004 ! n-tuple
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
+
+[Term]
+id: QC:4000148
+name: MS1 ion collection time mean
+def: "From the distribution of ion injection times (MS:1000927) for MS1, the mean" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000401 ! sample mean
+
+[Term]
+id: QC:4000149
+name: MS1 ion collection time sigma
+def: "From the distribution of ion injection times (MS:1000927) for MS1, the sigma value" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000150
+name: MS1 ion collection time low outliers (<Q1-1.5*IQR)
+def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers below Q1-1.5*IQR" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000117 ! Outliers below column
+
+[Term]
+id: QC:4000151
+name: MS1 ion collection time high outliers (>Q3+1.5*IQR)
+def: "From the distribution of ion injection times (MS:1000927) for MS1, the list of outliers above Q3+1.5*IQR" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000152
+name: MS2 ion collection time Q1, Q2, Q3
+def: "From the distribution of ion injection times (MS:1000927) for MS2, the quartiles Q1, Q2, Q3" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+relationship: has_metric_category MS:4000009 ! ID free metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_units STATO:0000167 ! first quartile
+relationship: has_units STATO:0000574 ! center value
+relationship: has_units STATO:0000170 ! third quartile
+
+[Term]
+id: QC:4000153
+name: MS2 ion collection time mean
+def: "From the distribution of ion injection times (MS:1000927) for MS2, the mean" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000401 ! sample mean
+
+[Term]
+id: QC:4000154
+name: MS2 ion collection time sigma
+def: "From the distribution of ion injection times (MS:1000927) for MS2, the sigma value" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000009 ! ID free metric
+relationship: has_units STATO:0000237 ! standard deviation
+
+[Term]
+id: QC:4000155
+name: MS2 ion collection time low outliers (<Q1-1.5*IQR)
+def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers below Q1-1.5*IQR" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
+
+[Term]
+id: QC:4000156
+name: MS2 ion collection time high outliers (>Q3+1.5*IQR)
+def: "From the distribution of ion injection times (MS:1000927) for MS2, the list of outliers above Q3+1.5*IQR" [PSI:QC]
+comment: Injection time distribution can be used to gauge the suitability of used instrument settings for the sample content used.
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000004 ! n-tuple
+relationship: has_column MS:4000118 ! Outliers above column
