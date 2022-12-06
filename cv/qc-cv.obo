@@ -357,3 +357,44 @@ relationship: has_optional_column: MS:1003063 ! universal spectrum identifier
 relationship: has_optional_column: MS:1000767 ! native spectrum identifier format
 relationship: has_optional_column: MS:1000888 ! stripped peptide sequence
 relationship: has_column: STATO:0000047 ! count
+
+[Term]
+id: MS:4000xxx
+name: QC2 sample mass accuracies
+def: "Observed mass accuracy from selected peptides of a QC2 sample measurement. Selected peptides in the first column to be expected: 'YAEAVTR','STLTDSLVC(Carbamidomethyl)K','SLADELALVDVLEDK','NPDDITNEEYGEFYK','LAVDEEENADNNTK','FEELNMDLFR','EAALSTALSEK','DDVAQTDLLQIDPNFGSK','RFPGYDSESK','EATTEFSVDAR','EQFLDGDGWTSR','TPAQFDADELR','LGDLYEEEMR','EVSTYIK','FAFQAEVNR'" [PSI:QC]
+relationship: has_metric_category MS:4000008 ! ID based metric
+is_a: MS:4000005 ! table
+relationship: has_column: MS:4000116 ! Peptide sequence
+relationship: has_column: MS:4000243 ! Observed mass accuracies
+
+[Term]
+id: MS:4000xxx
+name: Fraction of peptide IDs around max MS1
+def: "Fraction of peptides identified at least X minutes earlier or later than the most intense MS1 signal of the identification. The first column contains the time in seconds, divided into minute wise intervals X per row, the other comlumn the fraction of identified. Negative time values indicate minutes before and positive after maximum MS1." [PSI:QC]
+comment: Estimates very early/late peak broadening.
+is_a: MS:4000005 ! table
+relationship: has_metric_category MS:4000008 ! ID based metric
+relationship: has_relation MS:4000017 ! chromatogram metric
+relationship: has_relation QC:4000012 ! single run based metric
+relationship: has_column: MS:4000108 ! Retention time
+relationship: has_value_concept UO:0000191 ! fraction
+
+[Term]
+id: MS:4000xxx
+name: peptide elution order - trailing
+def: "N(a, b) are the peptides common in the run and a reference run. N(a,b)_i to N(a,b)_j are the first to last eluting common peptides in the run ordered by retention time. This metric is the maximum of ('elution rank' of peptide N(a,b)_t in run) - ('elution_rank' of peptide N(a,b)_t in reference) for the first tenth of common peptides ordered by retention time. The metric is finally normalised with dividing by the number of (identified) peptides in the run." [PSI:QC]
+comment: The elution rank difference gives you a measure of how many peptides are eluting early.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000008 ! ID based metric
+relationship: has_relation MS:4000017 ! chromatogram metric
+relationship: has_relation MS:4000015 ! multiple spectra based metric
+
+[Term]
+id: MS:4000xxx
+name: Peptide elution order - preceding
+def: "N(a, b) are the peptides common in the run and a reference run. N(a,b)_i to N(a,b)_j are the first to last eluting common peptides in the run ordered by retention time. This metric is the maximum of ('elution rank' of peptide N(a,b)_t in run) - ('elution_rank' of peptide N(a,b)_t in reference) for the last tenth of common peptides ordered by retention time. The metric is finally normalised with dividing by the number of (identified) peptides in the run." [PSI:QC]
+comment: The elution rank difference gives you a measure of how many peptides are eluting late.
+is_a: MS:4000003 ! single value
+relationship: has_metric_category MS:4000008 ! ID based metric
+relationship: has_relation MS:4000017 ! chromatogram metric
+relationship: has_relation MS:4000015 ! multiple spectra based metric
