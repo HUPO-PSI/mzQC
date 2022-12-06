@@ -220,17 +220,18 @@ relationship: has_value_concept STATO:0000574 ! center value
 relationship: has_units MS:1000040 ! m/z
 
 [Term]
-id: MS:4000088
-name: explained precursor intensity
-def: "Fraction of identified MS2 in the first, second, thrid, and forth quarter of MS2 sorted by precursor intensity at given FDR threshold." [PSI:QC]
-comment: Higher fractions of identified MS2 spectra indicate the efficiency of detection and sampling
+id: MS:4000xxx 
+name: Explained precursor intensity in equal parts of MS2 
+def: "Fraction of identified MS2 in each equally sized part of MS2 scans sorted by precursor intensity after user defined acceptance criteria are applied. A metric's value quadruplet represent the MSQC metrics of MS2-4A/B/C/D." [PSI:QC] 
+comment: Higher fractions of identified MS2 spectra indicate the efficiency of detection and sampling 
 is_a: MS:4000004 ! n-tuple
-relationship: has_metric_category MS:4000008 ! ID based metric
+relationship: has_metric_category MS:4000012 ! single run based metric
+relationship: has_metric_category MS:4000008 ! ID based metric 
 relationship: has_value_concept UO:0000191 ! fraction
-synonym: "MS2-4A" NARROW []
-synonym: "MS2-4B" NARROW []
-synonym: "MS2-4C" NARROW []
-synonym: "MS2-4D" NARROW []
+synonym: "MS2-4A" NARROW [] 
+synonym: "MS2-4B" NARROW [] 
+synonym: "MS2-4C" NARROW [] 
+synonym: "MS2-4D" NARROW [] 
 
 [Term]
 id: MS:4000089
