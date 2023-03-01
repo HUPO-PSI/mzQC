@@ -17,6 +17,11 @@ The current projects of the QC working group are:
    <h1><a href="https://hupo-psi.github.io/mzQC/"><b>hupo-psi.github.io/mzQC/</b></a></h1>
 </div>
 
+## Implementations:
+<div align="center">
+   <h1><a href="https://github.com/MS-Quality-hub"><b>MS Quality Hub</b></a></h1>
+</div>
+
 ## Contribute
 
 We welcome new contributors, see [our help on that](/CONTRIBUTING.md).
