@@ -156,7 +156,7 @@
 	document.onload = getValidatorDocu();
 
 	function getStatus() {
-		$.getJSON("https://mzqc-validator.herokuapp.com/status/").done(function(response) {
+		$.getJSON("https://apps.lifs-tools.org/mzqcvalidator/status/").done(function(response) {
 			console.log(response);
 			indicator.style.backgroundColor = 'green';
 		}).fail(function() {
@@ -166,7 +166,7 @@
 
 	function getValidatorDocu(){
 		getStatus();
-		$.getJSON("https://mzqc-validator.herokuapp.com/documentation/").done(function(response) {
+		$.getJSON("https://apps.lifs-tools.org/mzqcvalidator/documentation/").done(function(response) {
 		//$.getJSON("http://127.0.0.1:5000/documentation/").done(function(response) {
 			let btn = document.createElement("button");
 			btn.innerHTML = "Validator Documentation";
@@ -304,7 +304,7 @@
 					//output.textContent = JSON.stringify(mzqc);
 					if (mzqc) {
 						console.log("validating...")
-						$.post("https://mzqc-validator.herokuapp.com/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
+						$.post("https://apps.lifs-tools.org/mzqcvalidator/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
 						//$.post("http://127.0.0.1:5000/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
 							//output.textContent = JSON.stringify(response);
 							$.each(response, function(k,v) {
