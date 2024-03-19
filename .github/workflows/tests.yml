@@ -22,17 +22,27 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: '3.x'
+        python-version: '3.8'
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install jsonschema check-jsonschema
-    - name: Syntactic Validatation of example mzQC files
+        pip install jsonschema check-jsonschema pymzqc click
+    - name: Syntactic Validatation of Example mzQC Files
       run: |
         for i in $PATH_TO_EXAMPLES/*.mz[qQ][cC]; do 
           echo "Syntactic Validation of $i"
           #jsonschema -i $i ./schema/mzqc_schema.json 
           check-jsonschema --schemafile ./schema/mzqc_schema.json $i
+          if [ $? -ne 0 ]; then
+            echo "Failed to validate $i"
+            exit 1
+          fi
+        done
+    - name: Semantic Validatation of Example mzQC Files
+      run: |
+        for i in $PATH_TO_EXAMPLES/*.mz[qQ][cC]; do 
+          echo "Semantic Validation of $i"
+          mzqc_offline_validator.py $i
           if [ $? -ne 0 ]; then
             echo "Failed to validate $i"
             exit 1
