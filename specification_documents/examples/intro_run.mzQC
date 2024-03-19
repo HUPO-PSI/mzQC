@@ -4,14 +4,14 @@
     "creationDate": "2020-12-01T11:56:34Z",
     "contactName": "Mathias Walzer",
     "contactAddress": "walzer@ebi.ac.uk",
-    "description": "A simple mzQC file containing information for a single run.",
+    "description": "A simple mzQC file containing information for a single mass spectrometry run.",
     "runQualities": [
       {
         "metadata": {
           "inputFiles": [
             {
-              "name": "CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.trfr.t3.mzML",
-              "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2014/09/PXD000966/CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.raw",
+              "name": "CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.mzML",
+              "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2014/09/PXD000966/CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.mzML.gz",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -39,15 +39,16 @@
             {
               "accession": "MS:1001058",
               "name": "quality estimation by manual validation",
+              "description": "The quality estimation was done manually.",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             },
             {
               "accession": "MS:1000799",
               "name": "custom unreleased software tool",
+              "description": "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the PSI-MS working group in order to have another CV term added.",
               "version": "0",
-              "value": "mzqc-pylib",
-              "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
+              "uri": "https://hupo-psi.github.io/mzQC/"
             }
           ]
         },
@@ -55,33 +56,58 @@
           {
             "accession": "MS:4000059",
             "name": "number of MS1 spectra",
-            "value": 5074
+            "description": "The number of MS1 events in the run.",
+            "value": 5074,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           },
           {
             "accession": "MS:4000060",
             "name": "number of MS2 spectra",
-            "value": 14812
-          },
-          {
-            "accession": "MS:4000071",
-            "name": "number of chromatograms",
-            "value": 1
+            "description": "The number of MS2 events in the run.",
+            "value": 14812,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           },
           {
             "accession": "MS:4000069",
             "name": "m/z acquisition range",
+            "description": "Upper and lower limit of m/z precursor values at which MSn spectra are recorded.",
             "value": [
-              300.157287597656,
+              300.1573,
               1778.8639
-            ]
+            ],
+            "unit": {
+              "accession": "MS:1000040",
+              "name": "m/z"
+            }
           },
           {
             "accession": "MS:4000070",
             "name": "retention time acquisition range",
+            "description": "Upper and lower limit of retention time at which spectra are recorded.",
             "value": [
               0.2959,
               5969.8172
-            ]
+            ],
+            "unit": {
+              "accession": "UO:0000010",
+              "name": "second"
+            }
+          },
+          {
+            "accession": "MS:4000071",
+            "name": "number of chromatograms",
+            "description": "The number of chromatograms recorded for the run.",
+            "value": 1,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           }
         ]
       }
@@ -89,8 +115,8 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.77/psi-ms.obo",
-        "version": "4.1.77"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.130/psi-ms.obo",
+        "version": "4.1.130"
       }
     ]
   }
