@@ -26,12 +26,13 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install jsonschema
-    - name: Validate mzQC files
+        pip install jsonschema check-jsonschema
+    - name: Syntactic Validatation of example mzQC files
       run: |
         for i in $PATH_TO_EXAMPLES/*.mz[qQ][cC]; do 
-          echo "Syntactic validating of $i"
-          jsonschema -i $i ./schema/mzqc_schema.json 
+          echo "Syntactic Validation of $i"
+          #jsonschema -i $i ./schema/mzqc_schema.json 
+          check-jsonschema --schemafile schema.json $i
           if [ $? -ne 0 ]; then
             echo "Failed to validate $i"
             exit 1
