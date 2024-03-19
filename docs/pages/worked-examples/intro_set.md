@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Multi-Run (i.e. sets) Example of mzQC"
-permalink: /examples/set-of-runs/
+title: "Introduction to mzQC – Multiple Mass Spectrometry Runs"
+permalink: /examples/intro_set/
 ---
 
 Here, we describe an mzQC JSON document used to convey QC data which is computed on a set of runs, i.e.
