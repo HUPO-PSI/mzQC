@@ -295,9 +295,9 @@
         },
         "qualityMetrics": [
           {
-            "accession": "MS:4000091",
-            "name": "principal component analysis of MaxQuant's protein group lfq intensities",
-            "description": "A table with the PCA results of MaxQuant's protein group lfq intensities.",
+            "accession": "MS:4000090",
+            "name": "principal component analysis of MaxQuant's protein group raw intensities",
+            "description": "A table with the PCA results of MaxQuant's protein group raw intensities.",
             "value": {
               "MS:4000086": [
                 "healthy",
