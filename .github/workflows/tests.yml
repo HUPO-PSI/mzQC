@@ -42,7 +42,7 @@ jobs:
       run: |
         for i in $PATH_TO_EXAMPLES/*.mz[qQ][cC]; do 
           echo "Semantic Validation of $i"
-          mzqc_offline_validator.py $i
+          mzQC-offline-validator $i
           if [ $? -ne 0 ]; then
             echo "Failed to validate $i"
             exit 1
