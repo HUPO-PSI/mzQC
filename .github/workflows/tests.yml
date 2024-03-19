@@ -32,7 +32,7 @@ jobs:
         for i in $PATH_TO_EXAMPLES/*.mz[qQ][cC]; do 
           echo "Syntactic Validation of $i"
           #jsonschema -i $i ./schema/mzqc_schema.json 
-          check-jsonschema --schemafile schema.json $i
+          check-jsonschema --schemafile ./schema/mzqc_schema.json $i
           if [ $? -ne 0 ]; then
             echo "Failed to validate $i"
             exit 1
