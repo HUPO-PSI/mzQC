@@ -21,7 +21,7 @@ Metrics generating software with mzQC support:
 - [OpenMS](https://github.com/OpenMS/OpenMS): Open-source software C++ library for LC/MS data management and analyses.
 - [QCCalculator](https://github.com/bigbio/qccalculator): Python tool for base QC metric calculation from mzML, mzIdentML, and MaxQuant input files.
 - [Yamato / SwaMe / Prognosticator](https://github.com/PaulBrack/Yamato): SWATH-MS QC metrics generation tools.
-- [MsQuality]: An R Bioconductor package, which provides functionality to calculate quality metrics for mass spectrometry-derived, spectral data at the per-sample level. MsQuality relies on the mzQC framework of quality metrics. It supports the calculation of the following metrics.
+- [MsQuality](https://bioconductor.org/packages/release/bioc/html/MsQuality.html): An R Bioconductor package, which provides functionality to calculate quality metrics for mass spectrometry-derived, spectral data at the per-sample level. MsQuality relies on the mzQC framework of quality metrics. It supports the calculation of the following metrics.
   - chromatography duration (MS:4000053)
   - TIC quarters RT fraction (MS:4000054)
   - MS1 quarter RT fraction (MS:4000055)
