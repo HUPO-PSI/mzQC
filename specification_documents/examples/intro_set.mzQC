@@ -75,13 +75,13 @@
         },
         "qualityMetrics": [
           {
-            "accession": "MS:4000XXX",
+            "accession": "MS:4000177",
             "name": "protein contaminant intensity ratio",
-            "description": "The ratio of intensity covered by a predefined list of contaminant proteins compared to the total ion intensity.",
+            "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
             "value": 0.25,
             "unit": {
-              "accession": "UO:0000190",
-              "name": "ratio"
+              "accession": "UO:0000191",
+              "name": "fraction"
             }
           }
         ]
@@ -155,13 +155,13 @@
         },
         "qualityMetrics": [
           {
-            "accession": "MS:4000XXX",
+            "accession": "MS:4000177",
             "name": "protein contaminant intensity ratio",
-            "description": "The ratio of intensity covered by a predefined list of contaminant proteins compared to the total ion intensity.",
+            "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
             "value": 0.31,
             "unit": {
-              "accession": "UO:0000190",
-              "name": "ratio"
+              "accession": "UO:0000191",
+              "name": "fraction"
             }
           }
         ]
@@ -331,8 +331,8 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.130/psi-ms.obo",
-        "version": "4.1.130"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.144/psi-ms.obo",
+        "version": "4.1.144"
       }
     ]
   }
