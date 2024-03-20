@@ -1,3 +1,8 @@
+---
+layout: page
+title: "Metrics - create"
+permalink: /metrics/create
+---
 # CV Term Creation Guide
 
 New CV terms have to be requested via the [mzQC GitHub issue tracker](https://github.com/HUPO-PSI/mzQC/issues).
@@ -234,12 +239,6 @@ is_a: QC:4000107 ! Column type
 property_value: has_units UO:0000191 ! fraction
 ```
 
-**Matrix:**
-
-```
-TODO
-```
-
 ## New CV terms 
 New CV terms have to be requested via the [mzQC GitHub issue tracker](https://github.com/HUPO-PSI/psi-ms-CV/issues/new?assignees=&labels=&template=new_qc_term.yml). 
 Upon creating a new issue, you should select the "Request for new CV term" option. 
@@ -261,8 +260,4 @@ matrix?
 whether the metric depends on spectrum, peptide, protein, or metabolite 
 identifications; or to describe the metric context.
 
-More information on how to request CV terms and their translation to elements in
-an mzQC file is available in the following CV guides:
-
-- [CV Term Creation Guide](cv/howto_create_cv_terms.md)
-- [CV Term Usage Guide](cv/howto_use_cv_terms.md)
+More information on how use CV terms and their translation to elements in an mzQC file is available in the following CV guide: [CV Term Usage Guide](cv/howto_use_cv_terms.md)
