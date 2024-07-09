@@ -167,7 +167,7 @@ First, let's have a look at what the PCA plot would look like, plotting the firs
 
 ![PCA plot of the healthy vs diseased samples.](../../pages/figures/intro_set_pca.png)
 
-Next, we'll look at how mzQC can encapsulate such analysis, storing the the first five principal components as a table metric, referenced by the previously defined set labels.
+Next, we'll look at how mzQC can encapsulate such analysis, storing the first five principal components as a table metric, referenced by the previously defined set labels.
 
 ```
 {
