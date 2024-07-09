@@ -26,7 +26,7 @@ jobs:
         pip install jsonschema
     - name: Validate mzQC files
       run: |
-        for i in ./specification_documents/draft_v1/examples/*.mz[qQ][cC]; do 
+        for i in ./specification_documents/examples/*.mz[qQ][cC]; do 
           echo "Syntactic validating of $i"
           jsonschema -i $i ./schema/mzqc_schema.json 
           if [ $? -ne 0 ]; then
