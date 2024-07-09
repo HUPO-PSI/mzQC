@@ -70,4 +70,7 @@ For metrics that relate to individual spectra, include these metrics at the `spe
 
 Repeat for each spectrum as necessary, adjusting the spectrum ID and corresponding values.
 
-Thus, the key insight for embedding QC metrics in alternative file formats is that because they are backed by terms in the PSI-MS controlled vocabulary, they can be directly included using the respective functionalities for CV terms, such as `cvParam`.
+Note that because QC metrics in mzQC files are typically encoded at the level of runs rather than individual spectra, most spectrum-level QC metrics are defined in the PSI-MS controlled vocabulary as tabular metrics with rows for all spectra.
+Therefore, when directly associating these metrics with a specific spectrum, the tables should contain a single entry only for this spectrum.
+
+The key insight for embedding QC metrics in alternative file formats is that because they are backed by terms in the PSI-MS controlled vocabulary, they can be directly included using the respective functionalities for CV terms, such as `cvParam`.
