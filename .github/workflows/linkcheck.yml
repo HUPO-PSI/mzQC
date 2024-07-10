@@ -15,6 +15,6 @@ jobs:
     - run: pip3 install linkchecker
     - name: Link Checker
       id: link-report
-      run: linkchecker -ofailures --ignore-url="\s*\.md" https://hupo-psi.github.io/mzQC/
+      run: linkchecker -ofailures --check-extern --ignore-url="\s*\.md" https://hupo-psi.github.io/mzQC/
     - name: Get the result
       run: echo linkchecker/failures
