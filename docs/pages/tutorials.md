@@ -7,13 +7,13 @@ permalink: /tutorials/
 We have a couple of tutorials and guides to offer, this page will lead you to them:
 
 ### with python
-* read mzQC: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MS-Quality-hub/pymzqc/blob/v1.0.0rc1/jupyter/colab/read_in_5_minutes.ipynb)
-* write mzQC: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MS-Quality-hub/pymzqc/blob/v1.0.0rc1/jupyter/colab/write_in_5_minutes.ipynb)
+* read mzQC: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MS-Quality-hub/pymzqc/blob/v1.0.0rc2/jupyter/colab/read_in_5_minutes.ipynb)
+* write mzQC: [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/MS-Quality-hub/pymzqc/blob/v1.0.0rc2/jupyter/colab/write_in_5_minutes.ipynb)
 * demo video
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vZXJuPl2yGw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### with R
-* [Rlib for mzQC(TBA)](TBA)
+* [rmzQC](https://cran.r-project.org/web/packages/rmzqc/index.html)
 * PTXQC demo
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sb-mydbNRS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 

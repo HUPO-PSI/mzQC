@@ -6,13 +6,13 @@ permalink: /use-cases/
 This page should give you a (non-exclusive) overview over the use cases covered by mzQC:
 
 ## Handover Format
-It is easy with **mzQC** to get relevant QC info, easy to put your data into context (of measurement realities). That makes it a preferred medium to handover quality information. Read more about it in [mzQC at a glance](at-a-glance/) and explore [a small mzQC example](../examples/individual-runs/).
+It is easy with **mzQC** to get relevant QC info, easy to put your data into context (of measurement realities). That makes it a preferred medium to handover quality information. Read more about it in [mzQC at a glance](at-a-glance/) and explore [a small mzQC example](../examples/intro_run/).
 
 ## Quality Reports
 With JSON at its core, mzQC follows a '_works online, works everywhere_' approach. Even for single spectra, as we show with the [universal spectrum identifier example](../examples/USI-example/).
 
 ## Archival
-The format is an optimal QC tool for the analytical chemist and instrument operators keeping track (and archive) instrument performance. Read on with an [introduction to mzQC for anlytical chemists](analytical-chemists/) or explore our [QC sample example](../examples/qc-sample-run/). You can even embed mzQC in mzML, should you choose to. [View an example here](../examples/mzML-mzQC/).
+The format is an optimal QC tool for the analytical chemist and instrument operators keeping track (and archive) instrument performance. Read on with an [introduction to mzQC for anlytical chemists](analytical-chemists/) or explore our [QC sample example](../examples/QC2-sample-example/). You can even embed mzQC in mzML, should you choose to. [View an example here](../examples/mzml-mzqc-example/).
 
 ## Common currency
 With mzQC for archival, quality reports, and as handover format, [mzQC can serve as a common currency](mzQC-common-currency/) for data repositories, journals, and collaborators.

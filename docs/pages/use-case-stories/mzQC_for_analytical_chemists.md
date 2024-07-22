@@ -17,7 +17,7 @@ While many of the papers describing QC metrics for mass spectrometry have been b
 4. What fraction of MS/MS scans came from +2 precursor ions?
     _63.67%_
 
-Naturally, it’s much easier if you use software to produce these values.  In this case, I am using values reported by the QuaMeter software[1] in “IDFree” mode.
+Naturally, it’s much easier if you use software to produce these values.  In this case, I am using values reported by the QuaMeter software [1](#bumbershoot) in “IDFree” mode.
 
 
 ## Format metrics in JSON
@@ -124,5 +124,5 @@ Choosing JSON rather than XML is intended to reduce the effort required to write
 
 
 ---
-[1]: Bumbershoot from proteowizard.sourceforge.net.  X. Wang et al. Anal. Chem.. (2014) 86: 2497
+<a id="bumbershoot">[1]</a>: Bumbershoot from proteowizard.sourceforge.net.  X. Wang et al. Anal. Chem.. (2014) 86: 2497
 Original draft: https://docs.google.com/document/d/16b1n_LXYWsxLK2PQfXWj_WvtiwJOXu2EZx1Q8WzZNlc/edit#

@@ -87,4 +87,4 @@ before | after
 
 
 ### This is the mzQC file once again, in full:
-**[metabo-batches.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/draft_v1/examples/metabo-batches.mzQC)**
+**[metabo-batches.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/metabo-batches.mzQC)**
