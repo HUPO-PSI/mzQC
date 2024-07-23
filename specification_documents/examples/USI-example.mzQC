@@ -1,5 +1,5 @@
-{
-  "mzQC": {
+{"mzQC": 
+  {
     "creationDate": "2022-03-16T18:58:45Z",
     "version": "1.0.0",
     "contactName": "Mathias Walzer",
@@ -8,46 +8,48 @@
     "runQualities": [
       {
         "metadata": {
-          "inputFiles": [
-            {
-              "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2014/09/PXD000966/CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.mzML.gz",
-              "name": "CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.trfr.t3.mzML.gz",
-              "fileFormat": {
-                "accession": "MS:1000584",
-                "name": "mzML format"
-              },
-              "fileProperties": [
-                {
-                  "accession": "MS:1000747",
-                  "name": "completion time",
-                  "value": "2012-02-03 11:00:41"
+            "inputFiles": [
+              {
+                "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2014/09/PXD000966/CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.mzML.gz",
+                "name": "CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09",
+                "fileFormat": {
+                  "accession": "MS:1000584",
+                  "name": "mzML format"
                 },
-                {
-                  "accession": "MS:1003151",
-                  "name": "SHA-256",
-                  "value": "82ff4545ab8ab85252a4c5bc2c62abbfd04021ef5fefce145386bf27ae663a0f"
-                },
-                {
-                  "accession": "MS:1000031",
-                  "name": "instrument model",
-                  "value": "LTQ Orbitrap Velos"
-                }
-              ]
-            }
-          ],
-          "analysisSoftware": [
-            {
-              "accession": "MS:1001058",
-              "name": "quality estimation by manual validation",
-              "version": "0",
-              "uri": "https://dx.doi.org/10.1021/pr201071t"
-            }
-          ]
+                "fileProperties": [
+                  {
+                    "accession": "MS:1000747",
+                    "name": "completion time",
+                    "value": "2012-02-03 11:00:41"
+                  },
+                  {
+                    "accession": "MS:1003151",
+                    "name": "SHA-256",
+                    "value": "82ff4545ab8ab85252a4c5bc2c62abbfd04021ef5fefce145386bf27ae663a0f"
+                  },
+                  {
+                    "accession": "MS:1000031",
+                    "name": "instrument model",
+                    "value": "LTQ Orbitrap Velos"
+                  }
+                ]
+              }
+            ],
+            "analysisSoftware": [
+              {
+                "accession": "MS:1001058",
+                "name": "quality estimation by manual validation",
+                "description": "The quality estimation was done manually.",
+                "version": "0",
+                "uri": "https://dx.doi.org/10.1021/pr201071t"
+              }
+            ]
         },
         "qualityMetrics": [
           {
             "accession": "MS:4000068",
             "name": "spectra half-TIC",
+            "description": "The minimal proportion of peaks needed to account for at least 50% of the total ion current in each individual spectrum considered, recorded in a mandatory fraction column. Either USI or native spectrum identifier columns must be present as well.",
             "value": {
               "MS:1003063": [
                 "mzspec:PXD000966:CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09:scan:2",
@@ -81,14 +83,14 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/blob/master/psi-ms.obo",
-        "version": "4.1.7"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.157/psi-ms.obo",
+        "version": "4.1.157"
       },
       {
         "name": "Unit Ontology",
-        "uri": "https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/master/unit.obo",
-        "version": "f9ff25b"
+        "uri": "https://raw.githubusercontent.com/bio-ontology-research-group/unit-ontology/v2023-05-23/unit-ontology.obo",
+        "version": "v2023-05-23"
       }
     ]
-  }
+  } 
 }
