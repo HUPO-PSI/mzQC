@@ -53,4 +53,4 @@ Since each column is in turn defined by a cv term, the column can also be assign
 
 
 ### This is the mzQC file once again, in full:
-**[QC2-sample-example.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/draft_v1/examples/QC2-sample-example.mzQC)**
+**[QC2-sample-example.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/QC2-sample-example.mzQC)**

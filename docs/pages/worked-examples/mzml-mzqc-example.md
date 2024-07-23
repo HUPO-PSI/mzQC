@@ -84,4 +84,4 @@ The `<cv>` elements are again very similar to the respective entries in _mzQC_, 
 Note that you should also add your software to `<software>` and `<dataProcessing>`.
 
 ### This is the mzQC file once again, in full:
-**[mzml-mzqc-example.mzML](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/draft_v1/examples/mzml-mzqc-example.mzML)**
+**[mzml-mzqc-example.mzML](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/mzml-mzqc-example.mzML)**

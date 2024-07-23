@@ -72,4 +72,4 @@ Each row represents one spectrum that can be directly looked up. For USI,
 [even directly from the web](https://www.ebi.ac.uk/pride/archive/usi?usi=mzspec:PXD000966:CPTAC_CompRef_00_iTRAQ_05_2Feb12_Cougar_11-10-09:scan:2).
 
 ### This is the mzQC file once again, in full:
-**[USI-example.mzQC](https://github.com/HUPO-PSI/mzQC/blob/main/specification_documents/examples/USI-example.mzQC)**
+**[USI-example.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/USI-example.mzQC)**

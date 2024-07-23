@@ -7,15 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     name: Check for broken links
     steps:
-    - name: Check for broken links
-      id: link-report
-      uses: celinekurpershoek/link-checker@v1.0.2
+    - name: Setup Python
+      uses: actions/setup-python@v5
       with:
-        # Required:
-        url: 'https://hupo-psi.github.io/mzQC/'
-        # optional:
-        honorRobotExclusions: false
-        ignorePatterns: 'github,google,slack'
-        recursiveLinks: false # Check all URLs on all reachable pages (could take a while)
+        python-version: '3.10'
+    - run: pip3 install linkchecker
+    - name: Link Checker
+      id: link-report
+      run: linkchecker -ofailures --check-extern --ignore-url="\s*\.md" https://hupo-psi.github.io/mzQC/
     - name: Get the result
-      run: echo "${{steps.link-report.outputs.result}}"
+      run: echo linkchecker/failures

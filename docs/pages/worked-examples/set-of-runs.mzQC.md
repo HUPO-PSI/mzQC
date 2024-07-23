@@ -456,4 +456,4 @@ On the other hand, ommitting the `healthy`/`diseased` setQualities is not sensib
 }
 ```
 ### This is the mzQC file once again, in full:
-**[sets-of-runs.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/draft_v1/examples/set-of-runs.mzQC)**
+**[sets-of-runs.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/set-of-runs.mzQC)**
