@@ -12,7 +12,9 @@ Optional (detailed) descriptions about the file can be placed into mzQC next to 
 ```
 "description": "This is an example of an mzQC file produced from a proteomics QC2 sample. 20 ug dried Pierce HeLa protein digest standard from Thermo Fisher Scientific (Part number: 88329) are dissolved in 200 uL of 0.1% formic acid in water to a final concentration of 100 ng/uL. A total amount of 1 uL (100ng) is injected per analysis.",
 ```
-The metrics describe simple values like the cornerstone numbers of the acquisition and identification processes, but also information specific to the QC method employed. Here, it is the mass accuracies and MS1 feature areas of selected peptides. With regularly measured runs from samples like this, the instrument's performance can be reliably monitored and maintenance interventions scheduled before valuable samples are wasted on an instrument running at sub-par performance. 
+The metrics describe simple values like the cornerstone numbers of the acquisition and identification processes, but also information specific to the QC method employed. 
+Here, it is the mass accuracies and MS1 feature areas of selected peptides. 
+With regularly measured runs from samples like this, the instrument's performance can be reliably monitored and maintenance interventions scheduled before valuable samples are wasted on an instrument running at sub-par performance. 
 ```
   {
      "accession":"MS:4000078",
@@ -33,7 +35,9 @@ The metrics describe simple values like the cornerstone numbers of the acquisiti
      }
   }
 ```
-The individual peptides' values are stored in a table, that is defined by the respective metric cv term describing part of the QC method. In case of "QC2 sample intensities", there is are columns indicating the peptide (required) and another column for the respective feature area representing the peptide intensities in the run. There are other column types defined to allow for flexible use-case adaption.
+The individual peptides' values are stored in a table, that is defined by the respective metric cv term describing part of the QC method. 
+In case of "QC2 sample intensities", there is are columns indicating the peptide (required) and another column for the respective feature area representing the peptide intensities in the run. 
+There are other column types defined to allow for flexible use-case adaption.
 ```
 [Term]
 id: MS:4000079
@@ -49,7 +53,10 @@ relationship: has_optional_column MS:1001844 ! MS1 feature area
 relationship: has_optional_column MS:1001843 ! MS1 feature maximum intensity
 relationship: has_optional_column MS:1003085 ! previous MSn-1 scan precursor intensity
 ```
-Since each column is in turn defined by a cv term, the column can also be assigned an expected value type and unit. In this example's case the feature area column is expected to contain values of `MS:1001844 - MS1 feature area`s. This concept allows for easier automated metric consumption and even generic plotting of graphs. With a collection consecutive QC2 sample mzQC files, a plot like a Levey-Jennings Control Chart are easily achieved.
+Since each column is in turn defined by a cv term, the column can also be assigned an expected value type and unit. 
+In this example's case the feature area column is expected to contain values of `MS:1001844 - MS1 feature area`s. 
+This concept allows for easier automated metric consumption and even generic plotting of graphs. 
+With a collection consecutive QC2 sample mzQC files, a plot like a Levey-Jennings Control Chart are easily achieved.
 
 ![Levey-Jennings Control Chart](../../pages/figures/LJCC.png)
 
