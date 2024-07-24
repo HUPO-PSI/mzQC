@@ -18,18 +18,6 @@ We have a couple of tutorials and guides to offer, this page will lead you to th
 <iframe width="560" height="315" src="https://www.youtube.com/embed/sb-mydbNRS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-## Validation
-If you have many mzQC files to validate, or the validation API is temporaily unreachable,
-you can set up your own validation process without much effort!
-
-### Container
-The container solution is the least effort, but requires you have the singularity container engine installed.
-
-### Local Installation of pymzqc
-This solution requires you to install pymzqc. 
-In most cases it will be as easy as simply `pip install pymzqc`.
-For all the latest instructions on installation of pymzqc and validation, see [its repository](https://pymzqc.readthedocs.io/en/v1.0.0rc1_b/accessories.html#local-validation-testing).
-
 ## JSON
 If you are new to JSON or file formats (with JSON), 
 the next few links should provide you with an overview:
