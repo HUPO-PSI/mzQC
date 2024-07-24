@@ -53,4 +53,4 @@ Each row represents one spectrum that can be directly looked up, in the case of 
 [even directly from the web](https://www.proteomicsdb.org/use/?usi=mzspec:PXD000966:CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09:scan:2).
 
 ### This is the mzQC file once again, in full:
-**[USI-example.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/draft_v1/examples/USI-example.mzQC)**
+**[USI-example.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/USI-example.mzQC)**
