@@ -331,8 +331,8 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.157/psi-ms.obo",
-        "version": "4.1.157"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.163/psi-ms.obo",
+        "version": "4.1.163"
       }
     ]
   }
