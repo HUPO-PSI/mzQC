@@ -111,7 +111,7 @@ Therefore, it is recommended to use a descriptive label, for example based on th
 ],
 ```
 
-Let's dive into an example metric, like the "protein contaminant intensity ratio."
+Let's dive into an example metric, like the "contaminant protein abundance ratio."
 This metric quantifies the abundance arising from known contaminant proteins (like keratins from skin or BSA from sample buffers) compared to the total abundance across all proteins in the sample.
 High levels of contaminants can indicate issues with sample preparation or handling, leading to potential biases in the data analysis.
 
@@ -124,12 +124,12 @@ High levels of contaminants can indicate issues with sample preparation or handl
   "qualityMetrics": [
     {
       "accession": "MS:4000177",
-      "name": "protein contaminant intensity ratio",
-      "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
+      "name": "contaminant protein abundance ratio",
+      "description": "The ratio of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
       "value": 0.25,
       "unit": {
-        "accession": "UO:0000191",
-        "name": "fraction"
+        "accession": "UO:0010006",
+        "name": "ratio"
       }
     }
   ]
@@ -142,12 +142,12 @@ High levels of contaminants can indicate issues with sample preparation or handl
   "qualityMetrics": [
     {
       "accession": "MS:4000177",
-      "name": "protein contaminant intensity ratio",
-      "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
+      "name": "contaminant protein abundance ratio",
+      "description": "The ratio of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
       "value": 0.31,
       "unit": {
-        "accession": "UO:0000191",
-        "name": "fraction"
+        "accession": "UO:0010006",
+        "name": "ratio"
       }
     }
   ]
