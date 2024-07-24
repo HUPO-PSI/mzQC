@@ -53,4 +53,28 @@ We have several alternatives for validation, however. For these, have a look at 
 - [jmzqc](https://github.com/MS-Quality-Hub/jmzqc): Java library to create, process, and validate mzQC files.
 - [pymzqc](https://github.com/MS-Quality-Hub/pymzqc): Python library to create, process, and validate mzQC files.
 
+## Offline Validation
+If you have many mzQC files to validate, or the validation API is temporaily unreachable,
+you can set up your own validation process without much effort!
 
+The pymzqc library now supports a offline validator:
+```
+mzqc-validator [OPTIONS] INFILE
+```
+You will have to install pymzqc python module, but the process is quick and easy thanks to pypi.
+More details can be found at the [pymzqc site](https://pymzqc.readthedocs.io/en/v1.0.0rc3/).
+The validator tool is a CLI tool built on click. 
+It will generate a joint validation of syntax and semantics of a given mzQC input. The output is in json format. 
+The validator will segment the validation report into lists of the following categories:
+
+* “input files”: reports duplicate input files for sets or runs or inconsistent file name and location
+
+* “label uniqueness”: checking if run and set labels are unique within the file,
+
+* “metric use”: reports duplicate metric use within a set or run, and, if applicable, table consistency, unit use, “ontology load errors”: all controlled vocabularies that could not be loaded,
+
+* “ontology term errors”: checks for ambiguous terms found in multiple of the used controlled vocabularies, terms used not found in any given controlled vocabulary, and correct name, definition, and reference usage,
+
+* “schema validation”: report all elements not corresponding to the mzQC schema”,
+
+* “ontology validation”: in case any non-online controlled vocabularies were used.
