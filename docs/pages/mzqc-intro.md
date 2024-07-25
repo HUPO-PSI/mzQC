@@ -22,7 +22,6 @@ The following schema visualisation illustrates the hierarchical relations of the
 
 QC metrics in an mzQC file are grouped in “runQuality” or “setQuality” elements, depending on whether the metrics pertain to a single or multiple MS runs, respectively. Each runQuality or setQuality element contains a “metadata” section that provides information to track the provenance of the QC metrics, such as the originating MS run(s) and the software tool(s) used to calculate the metrics. QC metric values are stored in “qualityMetric” elements and can consist of single values, tuples, or tabular data. Additionally, each QC metric is defined by a corresponding term in the PSI-MS controlled vocabulary (19) for semantic annotation of the data and to ensure an unambiguous definition of each QC metric. 
 
-
 ## Structure
 JSON data structures are built using two structures: 
 * An (unordered) collection of key–value pairs, generally called an object.
@@ -44,7 +43,6 @@ These structures can be nested; for example, multidimensional tables can be repr
 Strings and values are like the respective C or Java structures. 
 Syntactic validation is available through the usage of JSON Schema for annotation and validation of JSON documents.
 
-
 ## CV
 The PSI-QC controlled vocabulary subsection (QC CV) of the PSI-MS CV defines quality metrics and related supporting values. 
 Its main purpose is describing metrics related to mass spectrometry quality control, for which it builds on established terms and definitions from chemistry, physics, and biology ontologies. 
@@ -56,3 +54,13 @@ The QC CV is present in the `MS:4000000–MS:4999999` namespace of the PSI-MS CV
 The CV is encoded as an OBO (Open Biological and Biomedical Ontologies) file that follows the [OBO specification](https://owlcollab.github.io/oboformat/doc/GO.format.obo-1_2.html). 
 The OBO file format is a biology-oriented language for building ontologies, similar to the Web Ontology Language (OWL). 
 The OBO Foundry maintains a comprehensive index of ontologies related to the life sciences.
+
+## In-a-nutshell
+If you want you include mzQC in your talk, here are resources for explaining mzqc in-a-nutshell:
+
+![in-a-nutshell](../pages/figures/mzQC-in-a-nutshell.pptx.jpg) 
+> You can download the slide for reuse from [here](../pages/figures/mzQC-in-a-nutshell.pptx)
+
+
+Here is another summary slide:
+![mzQC-EBI-summary](../pages/figures/mzQC-EBI-summary.pptx.jpg)
