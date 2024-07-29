@@ -76,11 +76,11 @@
         "qualityMetrics": [
           {
             "accession": "MS:4000177",
-            "name": "contaminant protein abundance ratio",
-            "description": "The ratio of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
+            "name": "contaminant protein abundance fraction",
+            "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
             "value": 0.25,
             "unit": {
-              "accession": "UO:0010006",
+              "accession": "UO:0000191",
               "name": "fraction"
             }
           }
@@ -156,11 +156,11 @@
         "qualityMetrics": [
           {
             "accession": "MS:4000177",
-            "name": "contaminant protein abundance ratio",
-            "description": "The ratio of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
+            "name": "contaminant protein abundance fraction",
+            "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
             "value": 0.31,
             "unit": {
-              "accession": "UO:0010006",
+              "accession": "UO:0000191",
               "name": "fraction"
             }
           }
@@ -331,8 +331,8 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.163/psi-ms.obo",
-        "version": "4.1.163"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.165/psi-ms.obo",
+        "version": "4.1.165"
       }
     ]
   }
