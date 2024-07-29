@@ -12,6 +12,7 @@ Here, we'll walk through the key components of an mzQC file, which uses a JSON-b
 You can explore the complete mzQC file [here](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/intro_run.mzQC), to see all of the elements in their context.
 
 An mzQC file starts with the root element `mzQC`:
+
 ```
 {
   "mzQC": {
@@ -23,6 +24,7 @@ An mzQC file starts with the root element `mzQC`:
 Within `mzQC`, there are three main sections:
 
 1. **General file information:** These attributes provide essential details about the mzQC file itself.
+
 ```
 "version": "1.0.0",
 "creationDate": "2020-12-01T11:56:34Z",
@@ -33,6 +35,7 @@ Within `mzQC`, there are three main sections:
 
 2. **Controlled vocabulary (CV) references:** This section points to standardized vocabularies used to ensure consistent metric definitions across files.
 It is typically included at the end of the mzQC file.
+
 ```
 "controlledVocabularies": [
   {
@@ -44,6 +47,7 @@ It is typically included at the end of the mzQC file.
 ```
 
 3. **Quality metrics for the run:** This core part of the file captures the QC metrics specific to the run being described.
+
 ```
 "runQualities": [
   {
@@ -55,6 +59,7 @@ It is typically included at the end of the mzQC file.
 In the `runQualities` section, you may find multiple `runQuality` elements, each corresponding to a unique mass spectrometry run.
 For simplicity, this example only includes a single run in the mzQC file.
 First, this includes a `metadata` part detailing the run specifics, such as the source files and software used in analysis:
+
 ```
 "metadata": {
   "inputFiles": [
@@ -67,6 +72,7 @@ First, this includes a `metadata` part detailing the run specifics, such as the 
 ```
 
 Digging a bit deeper, for example, the `inputFiles` array describes each file contributing to the run, including details like file name, location (URI), format, and properties—all standardized using CV terms.
+
 ```
 "inputFiles": [
   {
@@ -101,6 +107,7 @@ Finally, the `qualityMetrics` array lists the metrics derived from the run, each
 Metrics can take various forms, such as single values, tuples (arrays of values), or more complex structures like matrices or tables, depending on the information being conveyed.
 
 For example, a single valued metric:
+
 ```
 {
   "accession": "MS:4000059",
@@ -111,10 +118,11 @@ For example, a single valued metric:
     "accession": "UO:0000189",
     "name": "count unit"
   }
-}
+},
 ```
 
 And a tuple metric:
+
 ```
 {
   "accession": "MS:4000069",

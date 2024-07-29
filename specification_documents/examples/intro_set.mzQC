@@ -4,15 +4,15 @@
     "creationDate": "2020-12-01T14:19:09Z",
     "contactName": "Chris Bielow",
     "contactAddress": "chris.bielow@bsc.fu-berlin.de",
-    "description": "A simple mzQC file containing information for sets of runs.",
+    "description": "A simple mzQC file containing information for a set of multiple mass spectrometry runs.",
     "setQualities": [
       {
         "metadata": {
           "label": "healthy",
           "inputFiles": [
             {
-              "name": "tr1_healthy",
-              "location": "file:///C:/msdata/techRep1_healthy.mzML",
+              "name": "techRep1_healthy",
+              "location": "file://C:/msdata/techRep1_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -26,8 +26,8 @@
               ]
             },
             {
-              "name": "tr2_healthy",
-              "location": "file:///C:/msdata/techRep2_healthy.mzML",
+              "name": "techRep2_healthy",
+              "location": "file://C:/msdata/techRep2_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -41,8 +41,8 @@
               ]
             },
             {
-              "name": "tr3_healthy",
-              "location": "file:///C:/msdata/techRep3_healthy.mzML",
+              "name": "techRep3_healthy",
+              "location": "file://C:/msdata/techRep3_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -60,23 +60,29 @@
             {
               "accession": "MS:1001058",
               "name": "quality estimation by manual validation",
+              "description": "The quality estimation was done manually.",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             },
             {
               "accession": "MS:1000799",
               "name": "custom unreleased software tool",
-              "value": "mzqc-pylib",
+              "description": "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the PSI-MS working group in order to have another CV term added.",
               "version": "0",
-              "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
+              "uri": "https://hupo-psi.github.io/mzQC/"
             }
           ]
         },
         "qualityMetrics": [
           {
-            "accession": "QC:4000270",
-            "name": "protein contaminant intensity ratio",
-            "value": "0.25"
+            "accession": "MS:4000177",
+            "name": "contaminant protein abundance fraction",
+            "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
+            "value": 0.25,
+            "unit": {
+              "accession": "UO:0000191",
+              "name": "fraction"
+            }
           }
         ]
       },
@@ -85,8 +91,8 @@
           "label": "diseased",
           "inputFiles": [
             {
-              "name": "tr1_diseased",
-              "location": "file:///C:/msdata/techRep1_diseased.mzML",
+              "name": "techRep1_diseased",
+              "location": "file://C:/msdata/techRep1_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -100,8 +106,8 @@
               ]
             },
             {
-              "name": "tr2_diseased",
-              "location": "file:///C:/msdata/techRep2_diseased.mzML",
+              "name": "techRep2_diseased",
+              "location": "file://C:/msdata/techRep2_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -115,8 +121,8 @@
               ]
             },
             {
-              "name": "tr3_diseased",
-              "location": "file:///C:/msdata/techRep3_diseased.mzML",
+              "name": "techRep3_diseased",
+              "location": "file://C:/msdata/techRep3_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -134,16 +140,29 @@
             {
               "accession": "MS:1001058",
               "name": "quality estimation by manual validation",
+              "description": "The quality estimation was done manually.",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
+            },
+            {
+              "accession": "MS:1000799",
+              "name": "custom unreleased software tool",
+              "description": "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the PSI-MS working group in order to have another CV term added.",
+              "version": "0",
+              "uri": "https://hupo-psi.github.io/mzQC/"
             }
           ]
         },
         "qualityMetrics": [
           {
-            "accession": "QC:4000270",
-            "name": "protein contaminant intensity ratio",
-            "value": "0.31"
+            "accession": "MS:4000177",
+            "name": "contaminant protein abundance fraction",
+            "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
+            "value": 0.31,
+            "unit": {
+              "accession": "UO:0000191",
+              "name": "fraction"
+            }
           }
         ]
       },
@@ -152,8 +171,8 @@
           "label": "all",
           "inputFiles": [
             {
-              "name": "tr1_healthy",
-              "location": "file:///C:/msdata/techRep1_healthy.mzML",
+              "name": "techRep1_healthy",
+              "location": "file://C:/msdata/techRep1_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -167,8 +186,8 @@
               ]
             },
             {
-              "name": "tr2_healthy",
-              "location": "file:///C:/msdata/techRep2_healthy.mzML",
+              "name": "techRep2_healthy",
+              "location": "file://C:/msdata/techRep2_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -182,8 +201,8 @@
               ]
             },
             {
-              "name": "tr3_healthy",
-              "location": "file:///C:/msdata/techRep3_healthy.mzML",
+              "name": "techRep3_healthy",
+              "location": "file://C:/msdata/techRep3_healthy.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -197,8 +216,8 @@
               ]
             },
             {
-              "name": "tr1_diseased",
-              "location": "file:///C:/msdata/techRep1_diseased.mzML",
+              "name": "techRep1_diseased",
+              "location": "file://C:/msdata/techRep1_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -212,8 +231,8 @@
               ]
             },
             {
-              "name": "tr2_diseased",
-              "location": "file:///C:/msdata/techRep2_diseased.mzML",
+              "name": "techRep2_diseased",
+              "location": "file://C:/msdata/techRep2_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -227,8 +246,8 @@
               ]
             },
             {
-              "name": "tr3_diseased",
-              "location": "file:///C:/msdata/techRep3_diseased.mzML",
+              "name": "techRep3_diseased",
+              "location": "file://C:/msdata/techRep3_diseased.mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -240,65 +259,67 @@
                   "value": "2012-02-03 15:00:41"
                 }
               ]
+            },
+            {
+              "name": "proteinGroups",
+              "location": "file://C:/msdata/proteinGroups.txt",
+              "fileFormat": {
+                "accession": "MS:1002130",
+                "name": "identification file format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 18:00:41"
+                }
+              ]
             }
           ],
           "analysisSoftware": [
             {
               "accession": "MS:1001058",
               "name": "quality estimation by manual validation",
+              "description": "The quality estimation was done manually.",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
+            },
+            {
+              "accession": "MS:1000799",
+              "name": "custom unreleased software tool",
+              "description": "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the PSI-MS working group in order to have another CV term added.",
+              "version": "0",
+              "uri": "https://hupo-psi.github.io/mzQC/"
             }
           ]
         },
         "qualityMetrics": [
           {
-            "accession": "QC:4000264",
-            "name": "group of runs",
+            "accession": "MS:4000090",
+            "name": "principal component analysis of MaxQuant's protein group raw intensities",
+            "description": "A table with the PCA results of MaxQuant's protein group raw intensities.",
             "value": {
-              "inputfile_name": [
-                "tr1_healthy",
-                "tr2_healthy",
-                "tr3_healthy",
-                "tr1_diseased",
-                "tr2_diseased",
-                "tr3_diseased"
-              ],
-              "group-label": [
-                "healthy",
-                "healthy",
-                "healthy",
-                "diseased",
-                "diseased",
-                "diseased"
-              ]
-            }
-          },
-          {
-            "accession": "QC:4000267",
-            "name": "PCA table",
-            "value": {
-              "group-label": [
+              "MS:4000086": [
                 "healthy",
                 "diseased"
               ],
-              "PCA Dimension 1": [
-                47.22,
-                -30.22
+              "MS:4000081": [
+                47.2,
+                -30.2
               ],
-              "PCA Dimension 2": [
+              "MS:4000082": [
                 29.1,
                 -36.5
               ],
-              "PCA Dimension 3": [
+              "MS:4000083": [
                 3.8,
                 -7.3
               ],
-              "PCA Dimension 4": [
+              "MS:4000084": [
                 -7.7,
-                5.55
+                5.6
               ],
-              "PCA Dimension 5": [
+              "MS:4000085": [
                 140.6,
                 -64.1
               ]
@@ -309,14 +330,9 @@
     ],
     "controlledVocabularies": [
       {
-        "name": "Proteomics Standards Initiative Quality Control Ontology",
-        "uri": "https://github.com/HUPO-PSI/mzQC/blob/main/cv/qc-cv.obo",
-        "version": "1.0.0"
-      },
-      {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.71/psi-ms.obo",
-        "version": "4.1.71"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.165/psi-ms.obo",
+        "version": "4.1.165"
       }
     ]
   }
