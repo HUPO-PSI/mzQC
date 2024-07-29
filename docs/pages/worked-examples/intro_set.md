@@ -44,8 +44,8 @@ It is typically included at the end of the mzQC file.
 "controlledVocabularies": [
   {
     "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-    "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.144/psi-ms.obo",
-    "version": "4.1.144"
+    "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.165/psi-ms.obo",
+    "version": "4.1.165"
   }
 ]
 ```
@@ -111,7 +111,7 @@ Therefore, it is recommended to use a descriptive label, for example based on th
 ],
 ```
 
-Let's dive into an example metric, like the "protein contaminant intensity ratio."
+Let's dive into an example metric, like the "contaminant protein abundance fraction."
 This metric quantifies the abundance arising from known contaminant proteins (like keratins from skin or BSA from sample buffers) compared to the total abundance across all proteins in the sample.
 High levels of contaminants can indicate issues with sample preparation or handling, leading to potential biases in the data analysis.
 
@@ -124,7 +124,7 @@ High levels of contaminants can indicate issues with sample preparation or handl
   "qualityMetrics": [
     {
       "accession": "MS:4000177",
-      "name": "protein contaminant intensity ratio",
+      "name": "contaminant protein abundance fraction",
       "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
       "value": 0.25,
       "unit": {
@@ -142,7 +142,7 @@ High levels of contaminants can indicate issues with sample preparation or handl
   "qualityMetrics": [
     {
       "accession": "MS:4000177",
-      "name": "protein contaminant intensity ratio",
+      "name": "contaminant protein abundance fraction",
       "description": "The fraction of total protein abundance in a mass spectrometry run or a group of runs which can be attributed to a user-defined list of contaminant proteins (e.g. using the cRAP contaminant database).",
       "value": 0.31,
       "unit": {
@@ -167,7 +167,7 @@ First, let's have a look at what the PCA plot would look like, plotting the firs
 
 ![PCA plot of the healthy vs diseased samples.](../../pages/figures/intro_set_pca.png)
 
-Next, we'll look at how mzQC can encapsulate such analysis, storing the the first five principal components as a table metric, referenced by the previously defined set labels.
+Next, we'll look at how mzQC can encapsulate such analysis, storing the first five principal components as a table metric, referenced by the previously defined set labels.
 
 ```
 {
