@@ -202,11 +202,6 @@ Next, we'll look at how mzQC can encapsulate such analysis, storing the the firs
   }
 }
 ```
-<<<<<<< HEAD
-### This is the mzQC file once again, in full:
-**[sets-of-runs.mzQC](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/set-of-runs.mzQC)**
-=======
->>>>>>> 49f4133 (Update set description)
 
 Note how the principal components are represented as columns in a table, with each column defined by a CV term.
 Additionally, the label is represented by CV term `MS:4000086`, in this case referring to the previous "healthy" and "diseased" sets.
