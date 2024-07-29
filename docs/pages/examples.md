@@ -13,5 +13,5 @@ The following use cases provide several hands-on examples of how mzQC files are 
 
 Additionally, for more advanced usage, mzQC can closely interoperate with several other file formats developed by the Proteomics Standards Initiative:
 
-- [Using USI with mzQC](USI-example/)
+- [Integration of the Universal Spectrum Identifier (USI) in mzQC](adv_mzqc_usi/)
 - [Incorporating QC metrics in mzML files](adv_mzqc_in_mzml/)
