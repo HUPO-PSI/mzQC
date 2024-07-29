@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 <mzML xmlns="http://psi.hupo.org/ms/mzml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://psi.hupo.org/ms/mzml http://psidev.info/files/ms/mzML/xsd/mzML1.1.0.xsd" accession="" version="1.1.0">
 	<cvList count="5">
-		<cv id="MS" fullName="Proteomics Standards Initiative Mass Spectrometry Ontology" URI="http://psidev.cvs.sourceforge.net/*checkout*/psidev/psi/psi-ms/mzML/controlledVocabulary/psi-ms.obo"/>
+		<cv id="MS" fullName="Proteomics Standards Initiative Mass Spectrometry Ontology" URI="https://raw.githubusercontent.com/HUPO-PSI/psi-ms-CV/master/psi-ms.obo"/>
 		<cv id="UO" fullName="Unit Ontology" URI="http://obo.cvs.sourceforge.net/obo/obo/ontology/phenotype/unit.obo"/>
 		<cv id="BTO" fullName="BrendaTissue545" version="unknown" URI="http://www.brenda-enzymes.info/ontology/tissue/tree/update/update_files/BrendaTissueOBO"/>
 		<cv id="GO" fullName="Gene Ontology - Slim Versions" version="unknown" URI="http://www.geneontology.org/GO_slims/goslim_goa.obo"/>
@@ -11,7 +11,7 @@
 		<fileContent>
 			<cvParam cvRef="MS" accession="MS:1000294" name="mass spectrum" />
 		</fileContent>
-		<sourceFileList count="1">
+		<sourceFileList count="2">
 			<sourceFile id="sf_ru_0" name="BSA1_F1.mzML" location="file:///examples/">
 				<cvParam cvRef="MS" accession="MS:1000569" name="SHA-1" value="ce02b0744755a8d026f11ece3c5f9b76efcd87f8" />
 				<cvParam cvRef="MS" accession="MS:1000584" name="mzML format" />
@@ -29,7 +29,7 @@
 			<cvParam cvRef="MS" accession="MS:1000006" name="sample concentration" value="0" unitAccession="UO:0000175" unitName="gram per liter" unitCvRef="UO" />
 		</sample>
 	</sampleList>
-	<softwareList count="13">
+	<softwareList count="14">
 		<software id="so_in_0" version="2.4 SP1" >
 			<cvParam cvRef="MS" accession="MS:1000532" name="Xcalibur" />
 		</software>
@@ -69,8 +69,8 @@
 		<software id="so_dp_sp_1_pm_4" version="2.1.0" >
 			<cvParam cvRef="MS" accession="MS:1000757" name="FileFilter" />
 		</software>
-		<software id="qc_0" version="0.1" >
-			<cvParam cvRef="MS" accession="MS:1000799" name="custom unreleased software tool" value="Quality Control" />
+		<software id="qc_0" version="0" >
+			<cvParam cvRef="MS" accession="MS:1000799" name="custom unreleased software tool" value="https://hupo-psi.github.io/mzQC/" />
 		</software>
 	</softwareList>
 	<instrumentConfigurationList count="1">
@@ -320,7 +320,7 @@
 		</dataProcessing>
 		<dataProcessing id="dp_sp_2">
 			<processingMethod order="0" softwareRef="qc_0">
-				<cvParam cvRef="MS" accession="MS:1000543" name="data processing action" value="Quality Control" />
+				<cvParam cvRef="MS" accession="MS:1000543" name="data processing action" value="QC metrics calculation" />
 			</processingMethod>
 		</dataProcessing>
 	</dataProcessingList>
@@ -338,7 +338,7 @@
 				<cvParam cvRef="MS" accession="MS:1000285" name="total ion current" value="6.937649e06"/>
 				<cvParam cvRef="MS" accession="MS:1000528" name="lowest observed m/z" value="300.000828877017"/>
 				<cvParam cvRef="MS" accession="MS:1000527" name="highest observed m/z" value="2008.458458829989922"/>
-				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': [1011], 'UO:0000191': [0.0235]}"/>
+				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': ['spectrum=1011'], 'UO:0000191': [0.0235]}"/>
 				<userParam name="filter string" type="xsd:string" value="FTMS + p NSI Full ms [300.00-2000.00]"/>
 				<userParam name="preset scan configuration" type="xsd:string" value="1"/>
 				<scanList count="1">
@@ -378,7 +378,7 @@
 				<cvParam cvRef="MS" accession="MS:1000285" name="total ion current" value="6.352711e06"/>
 				<cvParam cvRef="MS" accession="MS:1000528" name="lowest observed m/z" value="300.000766845923977"/>
 				<cvParam cvRef="MS" accession="MS:1000527" name="highest observed m/z" value="2008.458043526329902"/>
-				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': [1012], 'UO:0000191': [0.0209]}"/>
+				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': ['spectrum=1012'], 'UO:0000191': [0.0209]}"/>
 				<userParam name="filter string" type="xsd:string" value="FTMS + p NSI Full ms [300.00-2000.00]"/>
 				<userParam name="preset scan configuration" type="xsd:string" value="1"/>
 				<scanList count="1">
@@ -418,7 +418,7 @@
 				<cvParam cvRef="MS" accession="MS:1000285" name="total ion current" value="5.77027e06"/>
 				<cvParam cvRef="MS" accession="MS:1000528" name="lowest observed m/z" value="300.000692777021015"/>
 				<cvParam cvRef="MS" accession="MS:1000527" name="highest observed m/z" value="2008.457547637299967"/>
-				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': [1013], 'UO:0000191': [0.0219]}"/>
+				<cvParam cvRef="MS" accession="MS:4000068" name="spectra half-TIC" value="{'MS:1000767': ['spectrum=1013'], 'UO:0000191': [0.0219]}"/>
 				<userParam name="filter string" type="xsd:string" value="FTMS + p NSI Full ms [300.00-2000.00]"/>
 				<userParam name="preset scan configuration" type="xsd:string" value="1"/>
 				<scanList count="1">
