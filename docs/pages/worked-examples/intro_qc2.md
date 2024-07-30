@@ -6,7 +6,7 @@ permalink: /examples/intro_qc2/
 
 This document outlines the utilization of an mzQC file for quality control (QC) of a mass spectrometry proteomics experiment.
 The mzQC file discussed here is derived from a QC2 sample, following protocols established in the publication, [QCloud: A cloud-based quality control system for mass spectrometry-based proteomics laboratories](https://doi.org/10.1371/journal.pone.0189209).
-A QC2 sample is defined as a high complexity sample that mimics real samples analysed in a proteomics laboratory, and is meant to be injected 1–5 times per week as a sample to test system suitability.
+A QC2 sample is defined as a high complexity sample that mimics real samples analyzed in a proteomics laboratory, and is meant to be injected 1–5 times per week as a sample to test system suitability.
 
 Here we demonstrate how real-life QC metrics are calculated for a single mass spectrometry run using tools such as QCloud.
 You can view the complete structure of this mzQC example [here](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/intro_qc2.mzQC).
