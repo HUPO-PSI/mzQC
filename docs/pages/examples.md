@@ -8,7 +8,7 @@ Here are a number of worked examples, that, each for its own use-case, go step-b
 
 - [Single mass spectrometry run](intro_run/)
 - [Sets of runs](set-of-runs/)
-- [QC sample mzQC](QC2-sample-example/)
+- [Tracking instrument performance using QC samples](intro_qc2/)
 - [in mzML](mzml-mzqc-example/)
 - [Using USI with mzQC](USI-example/)
 - [Batch correction](metabo-batches/)

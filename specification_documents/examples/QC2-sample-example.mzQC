@@ -1,5 +1,5 @@
-{"mzQC": 
-  {
+{
+  "mzQC": {
     "creationDate": "2020-12-03T19:51:02Z",
     "version": "1.0.0",
     "contactName": "Mathias Walzer",
@@ -11,7 +11,7 @@
           "inputFiles": [
             {
               "location": "file://tmp/QC2_18052020.mzML",
-              "name": "QC2_18052020.mzML",
+              "name": "QC2_18052020",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -178,5 +178,5 @@
         "version": "4.1.157"
       }
     ]
-  } 
+  }
 }
