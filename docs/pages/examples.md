@@ -8,7 +8,7 @@ The following use cases provide several hands-on examples of how mzQC files are 
 
 - [Representing QC data for an individual mass spectrometry run](intro_run/)
 - [Deriving QC data from multiple related mass spectrometry runs](intro_set/)
-- [QC sample mzQC](QC2-sample-example/)
+- [Tracking instrument performance using controlled QC samples](intro_qc2/)
 - [Batch correction](metabo-batches/)
 
 Additionally, for more advanced usage, mzQC can closely interoperate with several other file formats developed by the Proteomics Standards Initiative:
