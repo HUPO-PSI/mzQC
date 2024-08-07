@@ -28,7 +28,7 @@ The latter is required for deriving ID-based QC metrics later on.
 "inputFiles": [
   {
     "location": "file://tmp/QC2_18052020.mzML",
-    "name": "QC2_18052020",
+    "name": "QC2_18052020_mzML",
     "fileFormat": {
       "accession": "MS:1000584",
       "name": "mzML format"
@@ -53,7 +53,7 @@ The latter is required for deriving ID-based QC metrics later on.
   },
   {
     "location": "file://tmp/QC2_18052020.mzid",
-    "name": "QC2_18052020",
+    "name": "QC2_18052020_mzId",
     "fileFormat": {
       "accession": "MS:1002073",
       "name": "mzIdentML format"
