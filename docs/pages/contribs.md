@@ -12,10 +12,6 @@ Read the [Code of Conduct](https://github.com/github/docs/blob/main/CODE_OF_COND
 
 We welcome every metric contribution, be it new or established. The easiest way is to open a new issue on the PSI-MS CV repository with our `New QC Term` template. You can read more detail about the process on the [Metrics page](../../metrics/).
 
-## New contributor guide
-
-To get an overview of the project, read the [README on GitHub](https://github.com/HUPO-PSI/mzQC/blob/main/README.md). 
-
 ### Getting started
 
 A good starting point is our website to get informed on the format and it's mechanistics, how to get in touch with us, ongoing issues, and related projects.

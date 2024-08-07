@@ -23,8 +23,8 @@
     - title: Validation Process
       url: /validator/validation
     - title: Local Validation
-      url: /tutorials/#validation
-    - title: Validator
+      url: /validator/validation/#offline-validation
+    - title: Online Validator
       url: /validator/
 - title: mzQC Resources
   url: /resource-guide/
