@@ -4,21 +4,34 @@
 # LINKS ARE UNBROKEN AND ALL CONTENT IS REACHABLE!!! 
 - title: Home
   url: /
-- title: The Format
-  url: /mzQC-intro/
+- title: Using mzQC
+  # url: /resource-guide/
+  submenu:
+    - title: Introduction
+      url: /mzQC-intro/
+    - title: Use cases
+      url: /use-cases/
+    - title: '*omics'
+      url: /multiomics/
+    - title: QC Software with mzQC
+      url: /resource-guide/#qc-software
+- title: mzQC for devs
+  # url: /mzQC-intro/
   submenu:
     - title: Specification
       url: /spec-doc/
-    - title: '*omics'
-      url: /use-cases/
-    - title: Examples
-      url: /examples/
     - title: Metrics
       url: /metrics/
-    - title: The Format
-      url: /mzQC-intro/
+    - title: mzQC Frameworks
+      url: /resource-guide/#core-libraries
+    - title: Tutorials
+      url: /tutorials/
+    - title: JSON Primer
+      url: /tutorials/#json
+    - title: Ontology Primer
+      url: /tutorials/#ontologies
 - title: Validator
-  url: /validator/
+  # url: /validator/
   submenu:
     - title: Validation Process
       url: /validator/validation
@@ -26,39 +39,10 @@
       url: /validator/validation/#offline-validation
     - title: Online Validator
       url: /validator/
-- title: mzQC Resources
-  url: /resource-guide/
-  submenu:
-    - title: mzQC Frameworks
-      url: /resource-guide/#core-libraries
-    - title: Tutorials
-      url: /tutorials/
-    - title: QC Software with mzQC
-      url: /resource-guide/#qc-software
-    - title: JSON Primer
-      url: /tutorials/#json
-    - title: Ontology Primer
-      url: /tutorials/#ontologies
 - title: About
-  url: /about/
+  # url: /about/
   submenu:
     - title: HUPO-PSI QC
       url: /about/#the-hupo-psi-quality-control-workgroup
     - title: Contribute
       url: /about/contribs/
-
-# /about/
-# /about/#the-hupo-psi-quality-control-workgroup
-# /metrics/
-# /mzQC-intro/
-# /mzQC-intro/usecases
-# /resource-guide/
-# /resource-guide/#core-libraries
-# /resource-guide/#qc-software
-# /resource-guide/#validation
-# /spec-doc/
-# /tutorials/
-# /tutorials/#validation
-# /tutorials/#json
-# /validator/
-# /validator/#process
