@@ -22,3 +22,7 @@ A technology agnostic design makes QC with mzQC easy in other fields as well! As
 
 ## Keep track of your study's runs as a whole
 With mzQC you can keep track of the quality of all your study's runs. We show in [this example](../examples/set-of-runs/) how you can apply metrics to a whole set of runs. There are of course more scenarios in which you want to consider the quality of multiple runs, and you can read [more here](mzqc-multi/).
+
+
+## List of Worked Examples
+{% include_relative examples.md %} 
