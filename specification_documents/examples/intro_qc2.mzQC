@@ -11,7 +11,7 @@
           "inputFiles": [
             {
               "location": "file://tmp/QC2_18052020.mzML",
-              "name": "QC type 2 sample",
+              "name": "QC2_18052020_mzML",
               "fileFormat": {
                 "accession": "MS:1000584",
                 "name": "mzML format"
@@ -33,20 +33,30 @@
                   "value": "LTQ Orbitrap Velos"
                 }
               ]
+            },
+            {
+              "location": "file://tmp/QC2_18052020.mzid",
+              "name": "QC2_18052020_mzId",
+              "fileFormat": {
+                "accession": "MS:1002073",
+                "name": "mzIdentML format"
+              }
             }
           ],
           "analysisSoftware": [
             {
               "accession": "MS:1001058",
               "name": "quality estimation by manual validation",
+              "description": "The quality estimation was done manually.",
               "version": "0",
               "uri": "https://dx.doi.org/10.1021/pr201071t"
             },
             {
               "accession": "MS:1000799",
               "name": "custom unreleased software tool",
-              "version": "0",
+              "description": "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the PSI-MS working group in order to have another CV term added.",
               "value": "mzqc-pylib",
+              "version": "0",
               "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
             }
           ]
@@ -55,26 +65,47 @@
           {
             "accession": "MS:4000060",
             "name": "number of MS2 spectra",
-            "value": 62299
+            "description": "The number of MS2 events in the run.",
+            "value": 62299,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           },
           {
             "accession": "MS:1003251",
             "name": "count of identified spectra",
-            "value": 24765
+            "description": "The number of spectra that pass the threshold to be considered identified with sufficient confidence.",
+            "value": 24765,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           },
           {
             "accession": "MS:1003250",
             "name": "count of identified peptidoforms",
-            "value": 22241
+            "description": "The number of peptidoforms that pass the threshold to be considered identified with sufficient confidence.",
+            "value": 22241,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           },
           {
             "accession": "MS:1002404",
             "name": "count of identified proteins",
-            "value": "5504"
+            "description": "The number of proteins that have been identified, which must match the number of groups that pass the threshold in the file.",
+            "value": "5504",
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
           },
           {
             "accession": "MS:4000078",
             "name": "QC2 sample mass accuracies",
+            "description": "Observed mass accuracy for the peptides of a QC2 sample measurement. The table should contain the peptides as described in the QC2 sample metric term, missing are interpreted as not detected.",
             "value": {
               "MS:1003169": [
                 "YAEAVTR",
@@ -107,6 +138,7 @@
           {
             "accession": "MS:4000079",
             "name": "QC2 sample intensities",
+            "description": "Observed intensities for the peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Different metrics of observed intensities are possible, at least one must be present. The table should contain the peptides as defined in the parent QC2 sample metric term, missing are interpreted as not detected.",
             "value": {
               "MS:1003169": [
                 "YAEAVTR",
@@ -142,8 +174,8 @@
     "controlledVocabularies": [
       {
         "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
-        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.79/psi-ms.obo",
-        "version": "4.1.79"
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.157/psi-ms.obo",
+        "version": "4.1.172"
       }
     ]
   }
