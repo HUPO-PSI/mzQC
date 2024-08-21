@@ -1,5 +1,9 @@
 name: Broken link check
-on: 
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
   page_build:
 
 jobs:
