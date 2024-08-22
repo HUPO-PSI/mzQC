@@ -7,7 +7,7 @@ permalink: /examples/adv_mzqc_in_mzml/
 While QC metrics in the PSI-MS controlled vocabulary are primarily intended for use in mzQC files, they can also be embedded directly within other file formats developed by the Proteomics Standards Initiative, such as [mzML](https://github.com/HUPO-PSI/mzML) and [mzIdentML](https://github.com/HUPO-PSI/mzIdentML) files.
 This integration is particularly useful when it's preferred to store a limited set of QC metrics alongside the data they describe, thereby enhancing data integrity and accessibility.
 
-You can view a comprehensive example of an mzML file incorporating QC metrics [here](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/adv_mzqc_in_mzml.mzml).
+You can view a comprehensive example of an mzML file incorporating QC metrics [here](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/adv_mzqc_in_mzml.mzML).
 Below, we detail the steps and elements involved in this process.
 
 1. **Source file specification**
