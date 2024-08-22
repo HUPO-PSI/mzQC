@@ -1,6 +1,8 @@
 name: Broken link check
-on: 
-  page_build:
+on:
+  page_build
+  pull_request:
+    branches: [ main ]
 
 jobs:
   broken_link_checker_job:
