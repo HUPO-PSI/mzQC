@@ -1,6 +1,6 @@
 name: Broken link check
 on:
-  page_build
+  page_build:
   pull_request:
     branches: [ main ]
 
