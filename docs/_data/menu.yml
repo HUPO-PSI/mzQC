@@ -4,41 +4,41 @@
 # LINKS ARE UNBROKEN AND ALL CONTENT IS REACHABLE!!! 
 - title: Home
   url: /
-- title: The Format
+- title: mzQC for Users
   url: /mzQC-intro/
+  submenu:
+    - title: Introduction
+      url: /mzQC-intro/
+    - title: 'Use cases'
+      url: /use-cases/
+    - title: QC Software with mzQC
+      url: /resource-guide/#qc-software
+    - title: Examples
+      url: /examples/
+- title: mzQC for Developers
+  url: /resource-guide/
   submenu:
     - title: Specification
       url: /spec-doc/
-    - title: '*omics'
-      url: /use-cases/
-    - title: Examples
-      url: /examples/
     - title: Metrics
       url: /metrics/
-    - title: The Format
-      url: /mzQC-intro/
+    - title: mzQC Frameworks
+      url: /resource-guide/#core-libraries
+    - title: Tutorials
+      url: /tutorials/
+    - title: JSON Primer
+      url: /tutorials/#json
+    - title: Ontology Primer
+      url: /tutorials/#ontologies
 - title: Validator
   url: /validator/
   submenu:
     - title: Validation Process
       url: /validator/validation
-    - title: Local Validation
+    - title: Offline Validation
       url: /validator/validation/#offline-validation
     - title: Online Validator
       url: /validator/
-- title: mzQC Resources
-  url: /resource-guide/
-  submenu:
-    - title: mzQC Frameworks
-      url: /resource-guide/#core-libraries
-    - title: Tutorials
-      url: /tutorials/
-    - title: QC Software with mzQC
-      url: /resource-guide/#qc-software
-    - title: JSON Primer
-      url: /tutorials/#json
-    - title: Ontology Primer
-      url: /tutorials/#ontologies
 - title: About
   url: /about/
   submenu:

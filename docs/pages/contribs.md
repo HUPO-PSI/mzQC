@@ -26,7 +26,7 @@ If you spot a problem, [search if an issue already exists](https://docs.github.c
 
 #### Request a new metric
 
-If you miss a specific metric, you can request it's addition via the issue system. It might be good if you'd familiarise yourself with [mzQC](https://hupo-psi.github.io/mzqc/) and [CV metric representation](https://hupo-psi.github.io/mzqc/metrics/) in particular. We have a dedicated issue template for the request of new QC terms in the PSI-MS-CV repository. 
+If you miss a specific metric, you can request it's addition via the issue system. It might be good if you'd familiarise yourself with [mzQC](https://hupo-psi.github.io/mzQC/) and [CV metric representation](https://hupo-psi.github.io/mzQC/metrics/) in particular. We have a dedicated issue template for the request of new QC terms in the PSI-MS-CV repository. 
 
 #### Solve an issue
 
