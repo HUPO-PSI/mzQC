@@ -7,12 +7,19 @@ permalink: /examples/metabo-batches/
 Here, we describe details of a metabolomics mzQC JSON document used to describe a Studies' quality before and after batch correction methods are applied. 
 For description of the general structure of mzQC, see the Single-Run Example of mzQC.
 Find the complete file at the bottom of this document or in the example folder.
-The mzQC file is made from the acquisions of GC-ToF-MS polar metabolite data of an Arabidopsis nucleotype-plasmotype diallel study as described in [Improved batch correction in untargeted MS-based metabolomics](https://dx.doi.org/10.1007%2Fs11306-016-1015-8). 
+The mzQC file is made from the acquisions of GC-ToF-MS polar metabolite data of an Arabidopsis nucleotype-plasmotype diallel study as described in [Improved batch correction in untargeted MS-based metabolomics](https://dx.doi.org/10.1007%2Fs11306-016-1015-8) by Wehrens, et al.(2016). 
 
 ```
-    "description": "This is a metabolomics batch-correction use-case study for mzQC using the method described in 'Improved batch correction in untargeted MS-based metabolomics' by Wehrens, et al.(2016) [https://doi.org/10.1007%2Fs11306-016-1015-8]. The data comes from set3 of the supplementary material.",
+"description": "This is a metabolomics batch-correction use-case study for mzQC using the method described in 'Improved batch correction in untargeted MS-based metabolomics' by Wehrens, et al.(2016) [https://doi.org/10.1007%2Fs11306-016-1015-8]. The data comes from set3 of the supplementary material.",
 ```
+## Data
 This example has 240 runs, for which each a `qualityMetric` object is present in `qualityMetrics`, for sake of brevity only containing the number of successfully identified primary metabolites.
+The data is taken from *set3* of the publication only, extracted from `BC.RData` and stored as `set3.peakarea.csv` and `set3.uncorrected.PCA.csv` (same data).
+All data from [Wehrens, et al.(2016) can be found on GitHub](https://github.com/rwehrens/BatchCorrMetabolomics).
+## Batch correction
+Batch correction was applied as described in the supplementary with BatchCorrMetabolomics (see github repo) scripted in [`demo_set3only.R`](demo_set3only.R). Output is `set3.corrected.PCA.csv`.
+## mzQC
+From the above information and data, we can formulate a mzQC file.
 ```
 {
   "metadata": {
@@ -61,7 +68,7 @@ This example has 240 runs, for which each a `qualityMetric` object is present in
   },
 ...
 ```
-To be able to estimate the effect of the batch correction, we first describe all runs that are batch corrected by a principle component analysis of their peak area features. Hence, we use a `setQuality` composed of all involved `inputFiles`, and add related metrics in the qualityMetric section.
+To be able to estimate the effect of the batch correction, we first describe all runs that are batch corrected by a principal component analysis of their peak area features. Hence, we use a `setQuality` composed of all involved `inputFiles`, and add related metrics in the qualityMetric section.
 ```
 {
   "accession":"MS:4000092",
