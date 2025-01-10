@@ -32,7 +32,7 @@ The mzQC format can organize data into `runQuality` and `setQuality` sections, w
 This distinction helps in organizing and analyzing data at both granular and holistic levels.
 Quality metrics in mzQC capture data characteristics and processing outcomes.
 
-**Metrics for individual runs**
+### Metrics for individual runs
 
 Each run is represented by its own `runQuality`, with metrics specific to that run.
 For instance:
