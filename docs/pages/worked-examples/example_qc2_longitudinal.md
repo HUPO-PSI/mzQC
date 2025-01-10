@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "Introduction to mzQC – Tracking Instrument Performance"
-permalink: /examples/intro_qc2/
+title: "Tracking Instrument Performance with mzQC"
+permalink: /examples/example_qc2_longitudinal/
 ---
 
 This document outlines the utilization of an mzQC file for quality control (QC) of a mass spectrometry proteomics experiment.
@@ -9,7 +9,7 @@ The mzQC file discussed here is derived from a QC2 sample, following protocols e
 A QC2 sample is defined as a high complexity sample that mimics real samples analyzed in a proteomics laboratory, and is meant to be injected 1–5 times per week as a sample to test system suitability.
 
 Here we demonstrate how real-life QC metrics are calculated for a single mass spectrometry run using tools such as QCloud.
-You can view the complete structure of this mzQC example [here](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/intro_qc2.mzQC).
+You can view the complete structure of this mzQC example [here](https://github.com/HUPO-PSI/mzQC/tree/main/specification_documents/examples/example_qc2_longitudinal.mzQC).
 
 ## File description
 
@@ -217,6 +217,6 @@ The structured data in mzQC allows for effective visualization and analysis, suc
 This can help identify any deviations or potential issues with the mass spectrometry process, prompting timely maintenance and calibration actions to maintain optimal performance.
 For example, Levey-Jennings charts can be used to enable quick visual assessment of instrument stability or drift, critical for high-stakes or high-throughput proteomics workflows:
 
-![Levey-Jennings control chart](../../pages/figures/intro_qc2_ljcc.png)
+![Levey-Jennings control chart](../../pages/figures/example_qc2_longitudinal_ljcc.png)
 
 This example demonstrates how QC information in mzQC files helps in monitoring instrument performance, ensuring that maintenance is proactive and timely, thereby preserving the integrity and effectiveness of subsequent analyses.
