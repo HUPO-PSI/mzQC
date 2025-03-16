@@ -65,6 +65,15 @@ For instance:
             "name": "mzTab-M"
           }
         }
+      ],
+      ...
+      "cvParameters": [
+        {
+          "accession": "MS:4000103",
+          "name": "number of identified quantification data points",
+          "description": "The number of identified data points for quantification purposes within the run after user defined acceptance criteria are applied.  These data points may be for example XIC profiles, isotopic pattern areas, or reporter ions (see MS:1001805). The used type should be noted in the metadata or analysis methods section of the recording file for the respective run. In case of multiple acceptance criteria (FDR) available in proteomics, PSM-level FDR should be used for better comparability.",
+          "value": "MS:1001844"
+        }
       ]
     },
     "qualityMetrics": [
@@ -84,6 +93,10 @@ For instance:
 ```
 
 This provides detailed information for each individual run, ensuring granularity in quality control.
+
+The quantification datapoints used in this analysis are the MS1 feature areas (`MS:1001844`) of the detected metabolites. This is important to note in the mzQC metadata, since the metric definition (`MS:4000103`) for the used method calls for the specification of the chosen type of quantification data points (children of `MS:1001805`). Hence, we define the value of `MS:4000103` in the cvParameter section of the mzQC metadata **only** as `MS:1001844`. The value in the qualityMetric is as defined in the metric term.
+	
+
 
 ### Analysis of all runs
 
