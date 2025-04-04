@@ -94,9 +94,9 @@ For instance:
 
 This provides detailed information for each individual run, ensuring granularity in quality control.
 
-The quantification datapoints used in this analysis are the MS1 feature areas (`MS:1001844`) of the detected metabolites. This is important to note in the mzQC metadata, since the metric definition (`MS:4000103`) for the used method calls for the specification of the chosen type of quantification data points (children of `MS:1001805`). Hence, we define the value of `MS:4000103` in the cvParameter section of the mzQC metadata **only** as `MS:1001844`. The value in the qualityMetric is as defined in the metric term.
-	
-
+Note also the interplay between configuration settings in the `metadata` section and metrics in the `qualityMetrics` section.
+The QC metric records the number of identified quantification points, but does not explicitly specify how the quantification information should be calculated.
+Hence, this is explicitly specified as the MS1 feature areas (`MS:1001844`) of the detected metabolites using a matching `cvParameter` in the `metadata` section with as value the corresponding controlled vocabulary (CV) accession.
 
 ### Analysis of all runs
 
@@ -144,7 +144,7 @@ For example:
 }
 ```
 
-This specific QC metric is a table metric, with various columns represented by controlled vocabulary (CV) terms.
+This specific QC metric is a table metric, with various columns represented by CV terms.
 Each column corresponds to a specific aspect of the PCA results, such as the run names (`MS:4000086`), principal component values (`MS:4000081`, `MS:4000082`, en `MS:4000083`), batch labels (`MS:4000088`), or injection sequence labels (`MS:4000089`).
 
 ### Comparing metrics
