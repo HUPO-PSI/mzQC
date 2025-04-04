@@ -10,5 +10,3 @@ You can find out more on how to use and define your own CV terms below.
 {% include_relative cv/howto_use_cv_terms.md %} 
 
 {% include_relative cv/howto_create_cv_terms.md %}
-
-
