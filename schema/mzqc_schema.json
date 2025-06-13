@@ -156,7 +156,7 @@
                     }
                 },
                 "label": {
-                    "description": "OPTIONAL label name. For setQuality, this a group name, lending itself for example as a axis labels for a plot. OPTIONAL.",
+                    "description": "The label name. Unique name for the run (for runQuality) or set (for setQuality). For setQuality, this a group name, lending itself for example as a axis labels for a plot.",
                     "type": "string"
                 },
                 "cvParameters": {
@@ -169,7 +169,7 @@
                 }
             },
             "additionalProperties": false,
-            "required": ["inputFiles", "analysisSoftware"]
+            "required": ["inputFiles", "analysisSoftware", "label"]
         },
         "inputFile": {
             "description": "Input file used to generate the QC metrics.",

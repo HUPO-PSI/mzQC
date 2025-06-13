@@ -8,6 +8,7 @@
     "runQualities": [
       {
         "metadata": {
+          "label": "mzqc_intro_run",
           "inputFiles": [
             {
               "name": "CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.mzML",
