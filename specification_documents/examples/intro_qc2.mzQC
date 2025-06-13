@@ -8,6 +8,7 @@
     "runQualities": [
       {
         "metadata": {
+          "label": "qc2_example",
           "inputFiles": [
             {
               "location": "file://tmp/QC2_18052020.mzML",
