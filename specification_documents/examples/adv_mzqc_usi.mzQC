@@ -8,6 +8,7 @@
     "runQualities": [
       {
         "metadata": {
+        "label": "usi_example",
           "inputFiles": [
             {
               "location": "ftp://ftp.pride.ebi.ac.uk/pride/data/archive/2014/09/PXD000966/CPTAC_CompRef_00_iTRAQ_01_2Feb12_Cougar_11-10-09.raw",
