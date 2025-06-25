@@ -211,7 +211,7 @@
 		})
 	}
 
-    function activateAccordion(el){
+	function activateAccordion(el){
 		var acc = el.getElementsByClassName("accordion");
 		var i;
 		
@@ -225,6 +225,13 @@
 				panel.style.maxHeight = panel.scrollHeight + "px";
 				} 
 			});
+		}
+	}
+
+	function cleanAccordion(el){
+		// var acc = el.getElementsByClassName("accordion");
+		while(el.firstChild){
+			el.removeChild(el.firstChild);
 		}
 	}
 
@@ -306,6 +313,7 @@
 						console.log("validating...")
 						$.post("https://apps.lifs-tools.org/mzqcvalidator/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
 						//$.post("http://127.0.0.1:5000/validator/", {validator_input: JSON.stringify(mzqc)}, 'json').done(function(response) {
+							cleanAccordion(output);
 							//output.textContent = JSON.stringify(response);
 							$.each(response, function(k,v) {
   								appendAccordionElement(output, k,v)
