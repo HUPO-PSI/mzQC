@@ -150,7 +150,7 @@
                                         "format": "uri"
                                     }
                                 },
-                                "required": ["version", "uri"]
+                                "required": ["version"]
                             }
                         ]
                     }
