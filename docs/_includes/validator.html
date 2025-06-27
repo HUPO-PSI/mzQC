@@ -247,9 +247,16 @@
 				let nc = document.createElement('ul');
 				$.each(v, function(i) {
 					let li = document.createElement('li');
-					li.appendChild(document.createTextNode(v[i]));
+					color_vi = v[i].replace(
+						"INFO", '<span style="background-color: #2e2a29;color:white;font-family:courier;">INFO</span>').replace(
+							"WARNING", '<span style="background-color: #c47a39;color:white;font-family:courier;">WARNING</span>').replace(
+								"ERROR", '<span style="background-color: #631504;color:white;font-family:courier; ">ERROR</span>');
+					// li.appendChild(document.createTextNode(color_vi));
+					let issueitem = document.createElement("div");
+					issueitem.innerHTML = color_vi;
+					li.appendChild(issueitem);
 					nc.appendChild(li);
-					console.log(v[i]);
+					// console.log(v[i]);
 				});
 				niv.appendChild(nc);
 				elem.appendChild(niv);
@@ -267,7 +274,7 @@
 				let li = document.createElement('li');
 				li.appendChild(document.createTextNode(v));
 				nc.appendChild(li);
-				console.log(v);
+				// console.log(v);
 				
 				niv.appendChild(nc);
 				elem.appendChild(niv);
@@ -288,9 +295,9 @@
         event.stopPropagation();
         event.preventDefault();
         const fileList = event.dataTransfer.files;
-        console.log(fileList);
+        // console.log(fileList);
 
-
+	console.log("New input event:");
         for (var i = 0; i < fileList.length; i++) {
 				console.log("Filename: " + fileList[i].name);
 				console.log("Type: " + fileList[i].type);
@@ -307,7 +314,7 @@
 			reader.onload = function(event) {
 				try {
 					var mzqc = JSON.parse(event.target.result);
-                    console.log(mzqc);
+                    // console.log(mzqc);
 					//output.textContent = JSON.stringify(mzqc);
 					if (mzqc) {
 						console.log("validating...")
