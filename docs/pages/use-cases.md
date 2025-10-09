@@ -22,7 +22,7 @@ With mzQC for archival, quality reports, and as handover format, [mzQC can serve
 
 ## Bridge the *omics Gap: Metabolomics
 A technology agnostic design makes QC with mzQC easy in other fields as well! Assuming you make per sample measurements (runs in mzQC parlance) and multiple groups of runs in a study (sets),
-then all you need is to define your metrics to open up the mzQC 'ecosystem' to your field. Explore in [this example](../examples/metabo-batches/), 
+then all you need is to define your metrics to open up the mzQC 'ecosystem' to your field. Explore in [this example](../examples/example_batch_correction/), 
 how easy you can include QC data from quite different instruments, employ advanced QC concepts like batch correction, and use metrics on expansive datasets. 
 
 ## Keep track of your study's runs as a whole
