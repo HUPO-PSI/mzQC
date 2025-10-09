@@ -2,8 +2,6 @@
 
 Thank you for investing your time in contributing to our project! :sparkles:. 
 
-Read the [Code of Conduct](https://github.com/github/docs/blob/main/CODE_OF_CONDUCT.md) to keep our community approachable and respectable. (We adopted GitHub's open source code of conduct.)
-
 ## Contribute Your Metrics
 
 We welcome every metric contribution, be it new or established. The easiest way is to open a new issue on the PSI-MS CV repository with our `New QC Term` template. You can read more detail about the process on the [Metrics page](metrics/).
@@ -30,7 +28,7 @@ If you miss a specific metric, you can request it's addition via the issue syste
 
 #### Solve an issue
 
-Scan through our [existing issues](https://github.com/HUPO-PSI/mzQC/issues) to find one that interests you. You can narrow down the search using `labels` as filters. See [Labels](https://github.com/github/docs/contributing/how-to-use-labels.md) for more information. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
+Scan through our [existing issues](https://github.com/HUPO-PSI/mzQC/issues) to find one that interests you. You can narrow down the search using `labels` as filters. As a general rule, we don’t assign issues to anyone. If you find an issue to work on, you are welcome to open a PR with a fix.
 
 ### Make Changes
 
@@ -58,6 +56,11 @@ Labels can help you (*and us*) find and organise issues more readily. Here are s
 - The documentation labels (specification document and website) label issues found in the specification document or with documentation content (such as the website)
 - The CV label is for issues and discussion about the metrics and our CV integration.
 - obsolete: request for new CV entry (We merged with PSI-MS-CV, see labels there.) 
+
+#### Be nice
+
+Keep our community approachable and respectable, we're all here for the science.
+
 
 #### Your PR is merged!
 
