@@ -1,0 +1,182 @@
+{
+  "mzQC": {
+    "creationDate": "2020-12-03T19:51:02Z",
+    "version": "1.0.0",
+    "contactName": "Mathias Walzer",
+    "contactAddress": "walzer@ebi.ac.uk",
+    "description": "This is an example of an mzQC file produced from a proteomics QC2 sample. 20 ug dried Pierce HeLa protein digest standard from Thermo Fisher Scientific (Part number: 88329) are dissolved in 200 uL of 0.1% formic acid in water to a final concentration of 100 ng/uL. A total amount of 1 uL (100ng) is injected per analysis.",
+    "runQualities": [
+      {
+        "metadata": {
+          "inputFiles": [
+            {
+              "location": "file://tmp/QC2_18052020.mzML",
+              "name": "QC2_18052020_mzML",
+              "fileFormat": {
+                "accession": "MS:1000584",
+                "name": "mzML format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2020-05-18 09:20:48"
+                },
+                {
+                  "accession": "MS:1000569",
+                  "name": "SHA-1",
+                  "value": "fbe692c887404179518089abc670484c"
+                },
+                {
+                  "accession": "MS:1000031",
+                  "name": "instrument model",
+                  "value": "LTQ Orbitrap Velos"
+                }
+              ]
+            },
+            {
+              "location": "file://tmp/QC2_18052020.mzid",
+              "name": "QC2_18052020_mzId",
+              "fileFormat": {
+                "accession": "MS:1002073",
+                "name": "mzIdentML format"
+              }
+            }
+          ],
+          "analysisSoftware": [
+            {
+              "accession": "MS:1001058",
+              "name": "quality estimation by manual validation",
+              "description": "The quality estimation was done manually.",
+              "version": "0",
+              "uri": "https://dx.doi.org/10.1021/pr201071t"
+            },
+            {
+              "accession": "MS:1000799",
+              "name": "custom unreleased software tool",
+              "description": "A software tool that has not yet been released. The value should describe the software. Please do not use this term for publicly available software - contact the PSI-MS working group in order to have another CV term added.",
+              "value": "mzqc-pylib",
+              "version": "0",
+              "uri": "https://hupo-psi.github.io/mzQC/unknown.html"
+            }
+          ]
+        },
+        "qualityMetrics": [
+          {
+            "accession": "MS:4000060",
+            "name": "number of MS2 spectra",
+            "description": "The number of MS2 events in the run.",
+            "value": 62299,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
+          },
+          {
+            "accession": "MS:1003251",
+            "name": "count of identified spectra",
+            "description": "The number of spectra that pass the threshold to be considered identified with sufficient confidence.",
+            "value": 24765,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
+          },
+          {
+            "accession": "MS:1003250",
+            "name": "count of identified peptidoforms",
+            "description": "The number of peptidoforms that pass the threshold to be considered identified with sufficient confidence.",
+            "value": 22241,
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
+          },
+          {
+            "accession": "MS:1002404",
+            "name": "count of identified proteins",
+            "description": "The number of proteins that have been identified, which must match the number of groups that pass the threshold in the file.",
+            "value": "5504",
+            "unit": {
+              "accession": "UO:0000189",
+              "name": "count unit"
+            }
+          },
+          {
+            "accession": "MS:4000078",
+            "name": "QC2 sample mass accuracies",
+            "description": "Observed mass accuracy for the peptides of a QC2 sample measurement. The table should contain the peptides as described in the QC2 sample metric term, missing are interpreted as not detected.",
+            "value": {
+              "MS:1003169": [
+                "YAEAVTR",
+                "STLTDSLVC(Carbamidomethyl)K",
+                "SLADELALVDVLEDK",
+                "NPDDITNEEYGEFYK",
+                "LAVDEEENADNNTK",
+                "FEELNMDLFR",
+                "EAALSTALSEK",
+                "DDVAQTDLLQIDPNFGSK",
+                "RFPGYDSESK",
+                "EATTEFSVDAR",
+                "EQFLDGDGWTSR"
+              ],
+              "MS:4000072": [
+                -0.2346854518740762,
+                -0.08024023890884578,
+                -0.1322012562867409,
+                -0.2259441806378488,
+                -0.10596535779273217,
+                0.28345130855013684,
+                -0.08600783742175504,
+                -0.3683484942567654,
+                -0.03348194493295555,
+                -0.41789282666789496,
+                -0.12794363836212685
+              ]
+            }
+          },
+          {
+            "accession": "MS:4000079",
+            "name": "QC2 sample intensities",
+            "description": "Observed intensities for the peptides of a QC2 sample measurement within 5 ppm and +/- 240 s RT tolerance. Different metrics of observed intensities are possible, at least one must be present. The table should contain the peptides as defined in the parent QC2 sample metric term, missing are interpreted as not detected.",
+            "value": {
+              "MS:1003169": [
+                "YAEAVTR",
+                "STLTDSLVC(Carbamidomethyl)K",
+                "SLADELALVDVLEDK",
+                "NPDDITNEEYGEFYK",
+                "LAVDEEENADNNTK",
+                "FEELNMDLFR",
+                "EAALSTALSEK",
+                "DDVAQTDLLQIDPNFGSK",
+                "RFPGYDSESK",
+                "EATTEFSVDAR",
+                "EQFLDGDGWTSR"
+              ],
+              "MS:1001844": [
+                1234940000,
+                922790000,
+                80819100,
+                478714000,
+                254935000,
+                52841200,
+                243597000,
+                24581800,
+                707504000,
+                129063000,
+                205583000
+              ]
+            }
+          }
+        ]
+      }
+    ],
+    "controlledVocabularies": [
+      {
+        "name": "Proteomics Standards Initiative Mass Spectrometry Ontology",
+        "uri": "https://github.com/HUPO-PSI/psi-ms-CV/releases/download/v4.1.157/psi-ms.obo",
+        "version": "4.1.172"
+      }
+    ]
+  }
+}

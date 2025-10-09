@@ -11,10 +11,8 @@ of mzQC files. Full validation is implemented in the
 
 ## Syntactic Validation
 
-With the help of the mzQC JSON schema, mzQC instances can be readily checked for
-syntactic schema compliance. There are a 
-[number of JSON schema implementations for use in various programming languages](https://json-schema.org/implementations.html) 
-that also support validation of JSON schema draft-07 from which the mzQC schema is designed.
+With the help of the mzQC JSON schema, mzQC instances can be readily checked for syntactic schema compliance.
+There are a [number of JSON schema implementations for use in various programming languages](https://json-schema.org/tools) that also support validation of JSON schema draft-07 from which the mzQC schema is designed.
 
 ## Semantic Validation
 
@@ -62,7 +60,7 @@ The pymzqc library now supports a offline validator:
 mzqc-validator [OPTIONS] INFILE
 ```
 You will have to install pymzqc python module, but the process is quick and easy thanks to pypi.
-More details can be found at the [pymzqc site](https://pymzqc.readthedocs.io/en/v1.0.0rc3/).
+More details can be found at the [pymzqc site](https://pymzqc.readthedocs.io/).
 The validator tool is a CLI tool built on click. 
 It will generate a joint validation of syntax and semantics of a given mzQC input. The output is in json format. 
 The validator will segment the validation report into lists of the following categories:
