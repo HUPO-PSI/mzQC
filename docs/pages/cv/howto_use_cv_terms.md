@@ -1,12 +1,10 @@
 ---
 layout: page
-title: "Metrics – Use"
+title: "Metrics – Usage Guide"
 permalink: /metrics/use
 ---
 
-# PSI-MS QC Metrics Usage Guide
-
-*How to use QC CV terms correctly in mzQC files*
+*How to use QC CV terms correctly in mzQC files.*
 
 ## Introduction
 
@@ -24,7 +22,7 @@ That entry defines:
 
 * The **metric name** and **definition**,
 * Its **units** and **value type**,
-* And semantic information (e.g. whether it's run-level, ID-based, or LC-related).
+* Its **semantic classification**, describing where it applies and what it measures.
 
 When you reference a CV term in your mzQC file, you're telling mzQC-compatible software **exactly what kind of data this metric represents**.
 
@@ -44,7 +42,7 @@ Example (simplified):
 
 ## Metric value types
 
-Each QC metric defines **how its values are structured**, through the `has_value_type` relationship.
+Each QC metric defines **how its values are structured**, using the `has_value_type` relationship.
 mzQC supports four value structures:
 
 | Value type       | Structure                        | Example use                           |
@@ -76,8 +74,8 @@ CV definition:
 id: MS:4000059
 name: number of MS1 spectra
 def: "Counts the number of MS1 scans within a single run."
+is_a: MS:4000XXX ! acquisition coverage metric
 relationship: part_of_workflow_stage MS:4000XXX ! mass spectrometry acquisition stage
-relationship: measures_property MS:4000XXX ! acquisition coverage metric
 relationship: depends_on_data_type MS:4000XXX ! raw acquisition data
 relationship: has_measurement_scope MS:4000XXX ! run level
 relationship: applies_to_acquisition_mode MS:4000XXX ! acquisition mode independent
@@ -124,8 +122,8 @@ id: MS:4000062
 name: MS2 density quantiles
 def: "Summarizes the distribution of spectral peak density in MS2 scans as quantiles of the number of fragment peaks per spectrum within a single run. The metric reports an ordered tuple of the first through (n−1)-th quantiles (Q1, ..., Qn−1), characterizing the overall fragmentation complexity and consistency across spectra."
 comment: "Values are reported as an (n−1)-element tuple of counts, representing the first to (n−1)-th quantiles of the distribution of fragment peak counts per MS2 spectrum. The final quantile (100th percentile) is omitted because it corresponds to the maximum observed peak count, which is a boundary value that does not convey additional information about distribution shape or variability and is sensitive to outliers. The tuple length implicitly specifies how many quantiles are reported and thus the resolution of the summary. Lower quantiles correspond to sparsely fragmented spectra; higher quantiles indicate spectra with more peaks. Interpretation depends on the acquisition and fragmentation settings and should be treated as context dependent rather than strictly higher- or lower-is-better."
+is_a: measures_property MS:4000XXX ! spectral quality metric
 relationship: part_of_workflow_stage MS:4000XXX ! mass spectrometry acquisition stage
-relationship: measures_property MS:4000XXX ! spectral quality metric
 relationship: depends_on_data_type MS:4000XXX ! raw acquisition data
 relationship: has_measurement_scope MS:4000XXX ! run level
 relationship: applies_to_acquisition_mode MS:4000XXX ! acquisition mode independent
@@ -161,7 +159,7 @@ Essentially a named column table with one row per observation.
 
 **mzQC encoding:**
 
-* `"value"` is an object where each key is a column ID and its value is a list.
+* `"value"` is an object where each key is a column identifier and its value is a list.
 * Each column has an optional unit.
 * All columns must have identical list lengths — each index corresponds to one row.
 * Units are provided as an array under `"unit"` and as part of the column definition.
@@ -176,8 +174,8 @@ id: MS:4000063
 name: MS2 known precursor charge fractions
 def: "Fraction of MS/MS precursors for each charge state observed within a run. Each entry lists a precursor charge (z) and its corresponding fraction of all observed MS2 precursors."
 comment: "Values are reported as a table with two columns: 'Charge state' and 'Fraction'. The final charge state bin should be interpreted as 'that charge state or higher' to include all unlisted higher charges."
+is_a: MS:4000XXX ! ionization quality metric
 relationship: part_of_workflow_stage MS:4000XXX ! ionization stage
-relationship: measures_property MS:4000XXX ! ionization quality metric
 relationship: depends_on_data_type MS:4000XXX ! raw acquisition data
 relationship: has_measurement_scope MS:4000XXX ! run level
 relationship: has_value_type MS:4000XXX ! table
@@ -220,21 +218,23 @@ A metric that stores a rectangular grid of numeric values of the same type and u
 * A single `"unit"` applies to all entries.
 * Only homogeneous numeric types are allowed (no mixed datatypes).
 
-## Understanding the relationships
+## Understanding hierarchy and relationships
 
-Each metric term in the CV includes semantic relationships that describe *how* and *where* it applies.
-These don't appear directly in mzQC files, but they're important for consistency and validation.
+Each QC metric term in the CV encodes its semantics in two ways:
 
-| Relationship                  | Describes                           | Example                              |
-| ----------------------------- | ----------------------------------- | ------------------------------------ |
-| `part_of_workflow_stage`      | Experimental or computational stage | `chromatography stage`               |
-| `measures_property`           | Quality dimension measured          | `chromatographic performance metric` |
-| `depends_on_data_type`        | Type of data used                   | `raw acquisition data`               |
-| `has_measurement_scope`       | Level of aggregation                | `run level`                          |
-| `applies_to_acquisition_mode` | Acquisition mode                    | `DIA-specific metric`                |
-| `has_quality_directionality`  | Interpretation of values            | `lower is better`                    |
-| `has_value_type`              | Structure of the value              | `tuple`                              |
+* The `is_a` hierarchy specifies *what kind of metric* it is (the analytical dimension).
+* The typed `relationship`s describe *where and how* it applies.
 
-These relationships are how the CV ensures every metric is comparable, searchable, and logically complete.
+| Ontology element              | Describes                             | Example                              |
+| ----------------------------- | ------------------------------------- | ------------------------------------ |
+| `is_a`                        | Type of metric (analytical dimension) | `chromatographic performance metric` |
+| `part_of_workflow_stage`      | Experimental or computational stage   | `chromatography stage`               |
+| `depends_on_data_type`        | Type of data used                     | `raw acquisition data`               |
+| `has_measurement_scope`       | Level of aggregation                  | `run level`                          |
+| `applies_to_acquisition_mode` | Acquisition mode                      | `DIA-specific metric`                |
+| `has_quality_directionality`  | Interpretation of values              | `lower is better`                    |
+| `has_value_type`              | Structure of the value                | `tuple`                              |
 
-For full details and all available subclasses (e.g., all workflow stages or acquisition modes), see the [QC Metric Classification Reference](TODO:link).
+These relationships make each metric comparable, searchable, and logically complete while maintaining a clean metric taxonomy.
+
+For full details and all available subclasses (e.g., analytical metric types, workflow stages, or acquisition modes), see the [QC Metric Classification Reference](/metrics/classification).

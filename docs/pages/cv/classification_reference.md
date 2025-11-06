@@ -4,38 +4,76 @@ title: "Metrics – Classification Reference"
 permalink: /metrics/classification
 ---
 
-# QC Metric Classification Reference
-
-*Standardized semantic categories for PSI-MS quality control metrics*
+*Standardized semantic categories for PSI-MS quality control metrics.*
 
 ## Overview
 
-Each QC metric in the PSI-MS Controlled Vocabulary (CV) is annotated using **seven independent classification dimensions**.
-Together, these describe *what a metric measures*, *where it applies in the workflow*, and *how it should be interpreted*.
+Each QC metric in the [PSI-MS Controlled Vocabulary (CV)](https://github.com/HUPO-PSI/psi-ms-CV) is annotated using **seven independent classification dimensions**.
+First, the **analytical dimension** defines *what kind of metric it is* and is encoded as **inheritance** using `is_a`.
+The other six are **typed relationships** that describe *where the metric applies, what it depends on, how to interpret it,* and *how to serialize it in mzQC*.
 
-Every metric must define **exactly one relationship** from each dimension.
-This ensures complete, machine-interpretable semantics across all QC terms used in mzQC and related standards.
+**At a glance**
 
-| Dimension                       | Describes                                                              |
-| ------------------------------- | ---------------------------------------------------------------------- |
-| **Workflow stage**              | Where in the experimental or computational pipeline the metric applies |
-| **Analytical dimension**        | What fundamental property the metric measures                          |
-| **Information dependency type** | What type of data the metric depends on                                |
-| **Measurement scope**           | At what aggregation level the metric summarizes data                   |
-| **Acquisition strategy**        | Which acquisition or instrument configuration it applies to            |
-| **Quality interpretation type** | How metric values relate to data quality                               |
-| **Metric value type**           | How metric values are structurally represented (single, tuple, etc.)   |
+| Dimension                       | Encoded as     | Purpose                                                             |
+| ------------------------------- | -------------- | ------------------------------------------------------------------- |
+| **Analytical dimension**        | `is_a`         | Defines the metric subtype (what kind of QC metric it *is*)         |
+| **Workflow stage**              | relationship   | Where in the experimental/computational pipeline the metric applies |
+| **Information dependency type** | relationship   | What type of input data the metric needs                            |
+| **Measurement scope**           | relationship   | At what aggregation level the metric summarizes data                |
+| **Acquisition strategy**        | relationship   | Which acquisition/mode or platform it applies to                    |
+| **Quality interpretation type** | relationship   | How to interpret higher/lower/targeted values                       |
+| **Metric value type**           | relationship   | How the values are structurally represented (single, tuple, etc.)   |
 
-## Workflow Stage
+**Rule of thumb:**
+Every QC metric has exactly one `is_a` (analytical dimension) and one value from each of the other six relationship dimensions.
+
+## Part 1 — Inheritance: Analytical dimension
+
+**What it is:**
+The analytical dimension defines the *type of QC metric*.
+This is the only dimension expressed via **inheritance** (`is_a`) because it establishes the metric's place in the taxonomy.
+
+**How to use it:**
+Choose exactly one of the following as the metric's `is_a` parent:
+
+#### Subclasses
+
+- **Acquisition coverage metric:** how comprehensively data were collected (e.g., scan counts, sampling density).
+- **Mass accuracy metric:** deviation between observed and theoretical _m_/_z_.
+- **Intensity stability metric:** variation of signal intensity over time.
+- **Chromatographic performance metric:** separation performance (e.g., eak width, symmetry, RT reproducibility).
+- **Ionization quality metric:** properties of the precursor ion population (e.g., charge-state distribution, adduct prevalence).
+- **Ion mobility metric:** IMS resolution, drift-time/CCS accuracy and reproducibility.
+- **Spectral quality metric:** quality of individual spectra (e.g., peak density, S/N, completeness).
+- **Fragmentation efficiency metric:** effectiveness of precursor ion fragmentation to produce interpretable spectra.
+- **Isolation purity metric:** precursor isolation selectivity or co-isolation of interfering species.
+- **Identification confidence metric:** reliability of identifications (e.g., FDR, ID rate).
+- **Quantification precision metric:** reproducibility or variability of quantitative results.
+- **Contamination metric:** unwanted signal from contaminants, carryover, or background.
+- **Instrument operational performance metric:** general indicators of instrument health (e.g., vacuum, detector voltage, temperature).
+- **Missingness/completeness metric:** data absence or completeness across features, runs, or studies.
+
+#### CV example (inheritance only)
+
+```obo
+is_a: MS:4000XXX ! chromatographic performance metric
+```
+
+## Part 2 — Typed relationships
+
+The remaining six dimensions are not types; they are **properties** of a metric.
+They must be encoded using the specified **relationship** predicates (one value per dimension).
+
+### 1. Workflow stage — `part_of_workflow_stage`
 
 **Definition:**
 The experimental or computational stage of the workflow to which a QC metric applies.
 
 This tells *where* in the process the metric is relevant — from sample preparation through acquisition and analysis.
 
-### Subclasses
+#### Subclasses
 
-#### Experimental workflow stage
+**Experimental workflow stage**
 
 Metrics describing quality at the laboratory or instrument level.
 
@@ -57,7 +95,7 @@ Metrics describing quality at the laboratory or instrument level.
   *Example:* mass-accuracy drift, spray stability.
 * **Instrument calibration stage:** metrics derived from calibration routines or control samples.
 
-#### Data analysis workflow stage
+**Data analysis workflow stage**
 
 Metrics evaluating computational processing and interpretation steps.
 
@@ -68,41 +106,23 @@ Metrics evaluating computational processing and interpretation steps.
   *Example:* CV of peptide intensities, ratio reproducibility.
 * **Integration stage:** metrics related to alignment, normalization, or data integration across runs.
 
-#### Environmental condition monitoring
+**Environmental condition monitoring**
 
 Metrics about environmental conditions that can indirectly affect results.
 *Example:* laboratory temperature, humidity, power fluctuations.
 
-## Analytical Dimension
+#### CV example
 
-**Definition:**
-The fundamental property or aspect of data quality that the metric quantifies.
+```obo
+relationship: part_of_workflow_stage MS:4000XXX ! chromatography stage
+```
 
-Think of this as *what kind of problem the metric detects or describes*.
-
-### Subclasses
-
-* **Acquisition coverage metric:** evaluates how comprehensively data were collected (e.g., scan counts, sampling density).
-* **Mass accuracy metric:** measures deviation between observed and theoretical m/z values.
-* **Intensity stability metric:** assesses signal intensity variation over time.
-* **Chromatographic performance metric:** evaluates separation performance such as peak width, symmetry, or retention reproducibility.
-* **Ionization quality metric:** evaluates properties of the ion population generated during ionization, such as charge-state distribution or adduct prevalence.
-* **Ion mobility metric:** describes resolution, drift-time accuracy, or reproducibility in ion-mobility separations.
-* **Spectral quality metric:** quantifies quality of individual spectra (e.g., peak density, signal-to-noise, completeness).
-* **Fragmentation efficiency metric:** measures how efficiently precursor ions fragment to produce interpretable spectra.
-* **Isolation purity metric:** evaluates precursor isolation selectivity or co-isolation of interfering species.
-* **Identification confidence metric:** quantifies reliability of peptide or compound identifications (e.g., FDR, number of identified analytes).
-* **Quantification precision metric:** measures reproducibility or variability of quantitative results.
-* **Contamination metric:** detects unwanted signal from contaminants, carryover, or background.
-* **Instrument operational performance metric:** general indicators of instrument health (e.g., vacuum level, temperature, detector voltage).
-* **Missingness/completeness metric:** measures data absence or completeness across features, runs, or studies.
-
-## Information Dependency Type
+### 2. Information dependency type — `depends_on_data_type`
 
 **Definition:**
 Specifies which type of data input the metric requires to be computed.
 
-### Subclasses
+#### Subclasses
 
 * **Raw acquisition data:** metrics that can be calculated directly from the raw MS data, without identifications.
   *Example:* total ion current stability, scan count.
@@ -114,12 +134,18 @@ Specifies which type of data input the metric requires to be computed.
 * **Reference data:** metrics requiring comparison to external standards or reference files.
   *Example:* RT deviation vs. iRT peptides, calibration QC.*
 
-## Measurement Scope
+#### CV example
+
+```obo
+relationship: depends_on_data_type MS:4000XXX ! raw acquisition data
+```
+
+### 3. Measurement scope — `has_measurement_scope`
 
 **Definition:**
 Indicates the level of data aggregation the metric summarizes.
 
-### Subclasses
+#### Subclasses
 
 * **Spectrum level:** per-spectrum metrics (e.g., number of peaks, S/N ratio).
 * **Pixel/voxel level:** per-pixel metrics in imaging or spatial omics.
@@ -128,14 +154,20 @@ Indicates the level of data aggregation the metric summarizes.
 * **Batch level:** aggregated across multiple related runs.
 * **Study level:** aggregated across an entire experiment or project.
 
-## Acquisition Strategy
+#### CV example
+
+```obo
+relationship: has_measurement_scope MS:4000XXX ! run level
+```
+
+### 4. Acquisition strategy — `applies_to_acquisition_mode`
 
 **Definition:**
 Specifies which acquisition mode or instrument configuration the metric is relevant for.
 
-### Subclasses
+#### Subclasses
 
-#### Acquisition mode
+**Acquisition mode**
 
 * **Acquisition mode independent:** metrics valid for any acquisition method.
 * **Data-dependent acquisition (DDA):** metrics specific to stochastic precursor selection workflows.
@@ -151,7 +183,7 @@ Specifies which acquisition mode or instrument configuration the metric is relev
 * **Other specialized mode:** metrics for advanced or hybrid acquisition modes such as BoxCar, MSⁿ, or multiplexed scanning.
   *Example:* BoxCar intensity uniformity across boxes.
 
-#### Instrument platform specificity
+**Instrument platform specificity**
 
 * **Orbitrap-specific:** metrics only applicable to Orbitrap instruments.
   *Example:* Orbitrap transient length stability.
@@ -161,13 +193,19 @@ Specifies which acquisition mode or instrument configuration the metric is relev
   *Example:* Ion trap fill time distribution.
 * **Other platform-specific:** for quadrupoles, FT-ICR, or hybrid systems.
 
-## Quality Interpretation Type
+#### CV example
+
+```obo
+relationship: applies_to_acquisition_mode MS:4000XXX ! acquisition mode independent
+```
+
+### 5. Quality interpretation type — `has_quality_directionality`
 
 **Definition:**
 Describes how a metric's numeric value relates to overall quality.
 This enables automatic reasoning about whether "higher," "lower," or "targeted" values represent better data.
 
-### Subclasses
+#### Subclasses
 
 * **Higher is better:** increasing values indicate improved quality.
   *Example:* identification rate, mass accuracy score.
@@ -180,13 +218,19 @@ This enables automatic reasoning about whether "higher," "lower," or "targeted" 
 * **Categorical:** quality expressed as discrete categories (e.g., pass/fail, OK/warning/error).
 * **Trend:** metrics intended for temporal monitoring rather than direct ranking (e.g., instrument drift over time).
 
-## Metric Value Type
+#### CV example
+
+```obo
+relationship: has_quality_directionality MS:4000XXX ! lower is better
+```
+
+### 6. Metric value type — `has_value_type`
 
 **Definition:**
 Specifies the structural format of the metric's reported value(s).
 This defines how the metric must be represented in mzQC.
 
-### Subclasses
+#### Subclasses
 
 | Type             | Structure         | Description                                                   | Example                       |
 | ---------------- | ----------------- | ------------------------------------------------------------- | ----------------------------- |
@@ -195,29 +239,57 @@ This defines how the metric must be represented in mzQC.
 | **Table**        | Named columns     | Parallel lists of equal length; each column has its own unit. | MS2 charge fractions          |
 | **Matrix**       | Rectangular array | 2D array of homogeneous numeric values.                       | Ion-mobility intensity matrix |
 
-See the [CV Term Usage Guide](TODO:link) for details on how each type is encoded in mzQC.
+See the [CV Term Usage Guide](/metrics/use) for details on how each type is encoded in mzQC.
 
 ---
 
-## Putting It All Together
+## Worked examples
 
-Each QC metric term in the PSI-MS CV will therefore include seven semantic relationships:
+### XIC-FWHM quantiles (tuple)
 
-| Relationship                  | Refers to              | Example value                      |
-| ----------------------------- | ---------------------- | ---------------------------------- |
-| `part_of_workflow_stage`      | Workflow stage         | chromatography stage               |
-| `measures_property`           | Analytical dimension   | chromatographic performance metric |
-| `depends_on_data_type`        | Information dependency | raw acquisition data               |
-| `has_measurement_scope`       | Aggregation level      | run level                          |
-| `applies_to_acquisition_mode` | Acquisition strategy   | acquisition mode independent       |
-| `has_quality_directionality`  | Interpretation         | lower is better                    |
-| `has_value_type`              | Value structure        | tuple                              |
+* **Analytical dimension (`is_a`)**: *chromatographic performance metric*
+* **Workflow**: *chromatography stage*
+* **Data type**: *raw acquisition data*
+* **Scope**: *run level*
+* **Acquisition**: *mode independent*
+* **Directionality**: *lower is better*
+* **Value type**: *tuple*
+
+```obo
+is_a: MS:4000XXX ! chromatographic performance metric
+relationship: part_of_workflow_stage MS:4000XXX ! chromatography stage
+relationship: depends_on_data_type MS:4000XXX ! raw acquisition data
+relationship: has_measurement_scope MS:4000XXX ! run level
+relationship: applies_to_acquisition_mode MS:4000XXX ! acquisition mode independent
+relationship: has_quality_directionality MS:4000XXX ! lower is better
+relationship: has_value_type MS:4000XXX ! tuple
+```
+
+### MS2 known precursor charge fractions (table)
+
+* **Analytical dimension (`is_a`)**: *ionization quality metric*
+* **Workflow**: *ionization stage*
+* **Data type**: *raw acquisition data*
+* **Scope**: *run level*
+* **Acquisition**: *mode independent*
+* **Directionality**: *context dependent*
+* **Value type**: *table*
+
+```obo
+is_a: MS:4000XXX ! ionization quality metric
+relationship: part_of_workflow_stage MS:4000XXX ! ionization stage
+relationship: depends_on_data_type MS:4000XXX ! raw acquisition data
+relationship: has_measurement_scope MS:4000XXX ! run level
+relationship: applies_to_acquisition_mode MS:4000XXX ! acquisition mode independent
+relationship: has_quality_directionality MS:4000XXX ! context dependent
+relationship: has_value_type MS:4000XXX ! table
+```
+
+## Summary
+
+* Use **`is_a`** for the **analytical dimension** (the metric's type).
+* Use **typed relationships** (one each) for the six **orthogonal facets**: workflow stage, data dependency, scope, acquisition strategy, quality interpretation, and value type.
 
 These relationships together provide a complete, machine-readable semantic description of any QC metric.
 
-In conclusion:
-
-* Each dimension describes a different facet of a QC metric.
-* Together they make the CV complete, consistent, and queryable.
-* Contributors defining new metrics should select one subclass from each dimension.
-* Developers can use these relationships to automatically filter, group, and interpret QC results.
+For how to serialize each **metric value type** in mzQC (single, tuple, table, matrix), see the **[CV Term Usage Guide](/metrics/use)**.
