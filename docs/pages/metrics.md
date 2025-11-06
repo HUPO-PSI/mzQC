@@ -17,17 +17,17 @@ This ensures that QC results are interoperable across software tools, consistent
 
 Whether you're using, creating, or browsing metrics, the following pages explain everything you need to know:
 
-### [Metric Classification Reference](/metrics/classification)
+### [Metric Classification Reference](classification/)
 
 A taxonomy of QC metric categories and relationships.
 Defines the seven classification dimensions used in mzQC and how they describe each metric's meaning, context, and structure.
 
-### [Using QC Metrics](/metrics/use)
+### [Using QC Metrics](use/)
 
 A hands-on guide for developers and tool integrators.
 Learn how to reference, interpret, and serialize CV terms in mzQC files — including examples for single-value, tuple, table, and matrix metrics.
 
-### [Creating New QC Metrics](/metrics/create)
+### [Creating New QC Metrics](create/)
 
 Step-by-step instructions for proposing or updating QC metric terms in the PSI-MS CV.
 Explains how to write clear definitions, select correct classifications, and provide provenance and quantitative details.

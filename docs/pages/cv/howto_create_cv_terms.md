@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Metrics – Term Creation Guide"
-permalink: /metrics/create
+permalink: /metrics/create/
 ---
 
 *How to define and request new QC metrics for the PSI-MS Controlled Vocabulary.*
@@ -132,7 +132,7 @@ All other dimensions use a `relationship:` field.
 | **Quality interpretation type** | `has_quality_directionality`  | `lower is better`              | How values relate to data quality.                                   |
 | **Metric value type**           | `has_value_type`              | `tuple`                        | Structure of the metric value (single value, tuple, table, matrix).  |
 
-Each dimension has predefined subclasses described in the [QC Metric Classification Reference](/metrics/classification). Use that reference when selecting the appropriate classification terms for your new metric.
+Each dimension has predefined subclasses described in the [QC Metric Classification Reference](../classification/). Use that reference when selecting the appropriate classification terms for your new metric.
 
 ## Quantitative details: what the numbers mean
 
@@ -207,5 +207,5 @@ replaced_by: MS:XXXXXXX
 
 ### See also
 
-* [**QC Metric Classification Reference:**](/metrics/classification) full list of subclasses, definitions, and examples.
-* [**QC Metric Usage Guide:**](/metrics/use) how each value type (single, tuple, table, matrix) is encoded in mzQC.
+* [**QC Metric Classification Reference:**](../classification/) full list of subclasses, definitions, and examples.
+* [**QC Metric Usage Guide:**](../use/) how each value type (single, tuple, table, matrix) is encoded in mzQC.

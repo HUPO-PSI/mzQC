@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Metrics – Classification Reference"
-permalink: /metrics/classification
+permalink: /metrics/classification/
 ---
 
 *Standardized semantic categories for PSI-MS quality control metrics.*
@@ -239,7 +239,7 @@ This defines how the metric must be represented in mzQC.
 | **Table**        | Named columns     | Parallel lists of equal length; each column has its own unit. | MS2 charge fractions          |
 | **Matrix**       | Rectangular array | 2D array of homogeneous numeric values.                       | Ion-mobility intensity matrix |
 
-See the [CV Term Usage Guide](/metrics/use) for details on how each type is encoded in mzQC.
+See the [CV Term Usage Guide](../use/) for details on how each type is encoded in mzQC.
 
 ---
 
@@ -292,4 +292,4 @@ relationship: has_value_type MS:4000XXX ! table
 
 These relationships together provide a complete, machine-readable semantic description of any QC metric.
 
-For how to serialize each **metric value type** in mzQC (single, tuple, table, matrix), see the **[CV Term Usage Guide](/metrics/use)**.
+For how to serialize each **metric value type** in mzQC (single, tuple, table, matrix), see the **[CV Term Usage Guide](../use)**.

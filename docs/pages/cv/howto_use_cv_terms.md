@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Metrics – Usage Guide"
-permalink: /metrics/use
+permalink: /metrics/use/
 ---
 
 *How to use QC CV terms correctly in mzQC files.*
@@ -237,4 +237,4 @@ Each QC metric term in the CV encodes its semantics in two ways:
 
 These relationships make each metric comparable, searchable, and logically complete while maintaining a clean metric taxonomy.
 
-For full details and all available subclasses (e.g., analytical metric types, workflow stages, or acquisition modes), see the [QC Metric Classification Reference](/metrics/classification).
+For full details and all available subclasses (e.g., analytical metric types, workflow stages, or acquisition modes), see the [QC Metric Classification Reference](../classification).
