@@ -126,6 +126,8 @@ Specifies which type of data input the metric requires to be computed.
 
 * **Raw acquisition data:** metrics that can be calculated directly from the raw MS data, without identifications.
   *Example:* total ion current stability, scan count.
+* **Deconvoluted data:** metrics based on processed spectra or peak lists obtained after signal deconvolution, centroiding, or deisotoping, but prior to identification.
+  *Example:* peak density in deconvoluted spectra, precursor mass range coverage.
 * **Identification results:** metrics that depend on identified peptides, compounds, or spectra.
   *Example:* PSM-level FDR, peptide coverage.
 * **Quantification results:** metrics derived from quantitative data matrices.
