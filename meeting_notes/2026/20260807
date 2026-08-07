@@ -1,0 +1,57 @@
+# QC working group teleconference 7 August 2026
+
+* Wout Bittremieux
+* Franziska Nicolaus
+* Bo Johannes Burla
+* Patrick Boschmann
+* Dave Tabb
+* Fatemeh Mirzadeh Sarcheshmeh
+
+---
+
+## Lipidomics
+
+* The lipidomics use case is essentially complete and ready for review.
+* Methods and results have been reorganized, and code will be published once the required CV terms are accepted.
+* **Action – Wout Bittremieux:** Review the lipidomics text.
+* **Action – Franziska Nicolaus:** Coordinate with Fatemeh on reproducibility testing.
+
+## Mass Spectrometry Imaging
+
+* Patrick presented an imaging mzQC use case based on the matrix data type.
+* Spatial metrics such as per-pixel TIC and reference mass error can reveal local contamination and tissue-related effects that would be lost in single-value summaries.
+* Matrix-based mzQC files can become large, although compression should reduce file size.
+* Several new CV terms are required, and an existing PSI-MS search-width term also needs correction.
+* The group supported including imaging in the manuscript, while avoiding excessive overlap with Patrick’s future MSI publication.
+* **Action – Patrick Boschmann:** Prepare a short methods/results section, finalize the required CV terms, and add the analysis code to the repository.
+
+## Figures and Reproducibility
+
+* Fatemeh presented cleaner, more consistent manuscript figures and tested color-blind-friendly alternatives.
+* She is working on reproducing all mzQC results and figures from the original data and validating the associated CV terms.
+* **Action – Fatemeh Mirzadeh Sarcheshmeh:** Share figure alternatives on Slack and continue end-to-end reproducibility testing.
+
+## Code Repository
+
+* Analysis code is currently split between Google Drive and the manuscript repository.
+* The final reproducible scripts should all be consolidated in the repository.
+* Patrick noted that the imaging workflow currently depends on OpenMS 3.6 development code.
+* **Action – All contributors:** Add finalized analysis scripts and notebooks to the manuscript repository.
+
+## Controlled Vocabulary
+
+* CV work is now a major priority because several manuscript use cases depend on new terms.
+* Metabolomics terms have been revised and are waiting on additional centroid/profile data before finalization.
+* TD Auditor and DIAuditor terms are considered mature enough to proceed with pull requests and be refined later if needed.
+* Lipidomics, GC–MS, and imaging terms also require review or submission.
+* **Action – Fatemeh Mirzadeh Sarcheshmeh:** Post the updated metabolomics terms for final review once the additional data arrive.
+* **Action – Wout Bittremieux:** Prioritize review of the outstanding CV submissions.
+* **Action – Dave Tabb:** Revisit TD Auditor and DIAuditor terms.
+
+## Manuscript Status and Timeline
+
+* Lipidomics is nearly final, imaging will be added, and reproducibility checks are ongoing.
+* Word count will be addressed once the full manuscript is assembled.
+* GC–MS remains the main outstanding use case and should resume once Kris returns from holiday.
+* **Next teleconference:** 21 August 2026.
+* The group aims to have most use cases and CV terms further finalized by then, keeping the manuscript on track for submission in the near future.
