@@ -16,11 +16,14 @@ It includes a Java object model, (de-)serialisation functions, syntactic validat
 It includes a R object model, (de-)serialisation functions, syntactic validation, and semantic validation of mzQC files. In development.
 
 ## QC Software
-Metrics generating software with mzQC support:
-- [PTXQC](https://github.com/cbielow/PTXQC): An R package for creation of QC reports from MaxQuant results and OpenMS mzTab files.
-- [OpenMS](https://github.com/OpenMS/OpenMS): Open-source software C++ library for LC/MS data management and analyses.
-- [QCCalculator](https://github.com/bigbio/qccalculator): Python tool for base QC metric calculation from mzML, mzIdentML, and MaxQuant input files.
-- [Yamato / SwaMe / Prognosticator](https://github.com/PaulBrack/Yamato): SWATH-MS QC metrics generation tools.
+Metrics generating software with mzQC support. Input formats are listed where known; for the others, see the tool's own documentation.
+- [PTXQC](https://github.com/cbielow/PTXQC): An R package for creation of QC reports from MaxQuant results and OpenMS mzTab files. *Input: MaxQuant result tables, OpenMS mzTab.*
+- [OpenMS](https://github.com/OpenMS/OpenMS): Open-source software C++ library for LC/MS data management and analyses. *Input: common LC/MS formats, e.g. mzML.*
+- [QCCalculator](https://github.com/bigbio/qccalculator): Python tool for base QC metric calculation from mzML, mzIdentML, and MaxQuant input files. *Input: mzML, mzIdentML, MaxQuant output.*
+- [Yamato / SwaMe / Prognosticator](https://github.com/PaulBrack/Yamato): SWATH-MS QC metrics generation tools. *Input: see the tool documentation.*
+- [DIAuditor](https://github.com/dtabb73/DIAuditor): Infers the DIA isolation window scheme and reports acquisition quality metrics. *Input: mzML. Output: mzQC.*
+- [MSstatsQC](https://bioconductor.org/packages/MSstatsQC/): R package for longitudinal system suitability monitoring with statistical control charts. *Reads mzQC.*
+- QuaMeter: Multivendor QC metrics for LC-MS/MS data. *conversion scripts to mzQC are available.*
 - [MsQuality](https://bioconductor.org/packages/release/bioc/html/MsQuality.html): An R Bioconductor package, which provides functionality to calculate quality metrics for mass spectrometry-derived, spectral data at the per-sample level. MsQuality relies on the mzQC framework of quality metrics. It supports the calculation of the following metrics.
   - chromatography duration (MS:4000053)
   - TIC quarters RT fraction (MS:4000054)
@@ -28,7 +31,7 @@ Metrics generating software with mzQC support:
   - MS2 quarter RT fraction (MS:4000056)
   - MS1 TIC-change quartile ratios (MS:4000057)
   - MS1 TIC quartile ratios (MS:4000058)
-  - number of MS1 spectra MS:4000059)
+  - number of MS1 spectra (MS:4000059)
   - number of MS2 spectra (MS:4000060)
   - m/z acquisition range (MS:4000069)
   - retention time acquisition range (MS:4000070)
@@ -68,3 +71,7 @@ Metrics generating software with mzQC support:
 
 ### A Hub for QC
 If you are looking for a home to your QC software or library, check out [MS-Quality-Hub](https://github.com/MS-Quality-Hub). All the above libraries have their development home there and some other very useful repositories.
+
+
+## QC controlled vocabulary
+All mzQC metrics are defined as terms in the QC namespace of the PSI-MS controlled vocabulary (`MS:4000000` to `MS:4999999`). You can browse them in the [EBI Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/ms). To propose a new metric, see the [metrics page](https://hupo-psi.github.io/mzQC/metrics/) and our [contribution guide](https://github.com/HUPO-PSI/mzQC/blob/main/CONTRIBUTING.md).
