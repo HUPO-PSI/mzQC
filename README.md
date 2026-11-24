@@ -14,8 +14,8 @@ The current projects of the QC working group are:
 
 ## Supported software, data formats and QC metrics
 
-- **QC software and supported data formats:** see the [resource guide](https://hupo-psi.github.io/mzQC/resource-guide/#qc-software) for the tools that support mzQC and the data formats they read.
-- **QC metrics (controlled vocabulary):** all QC terms are in the QC namespace of the PSI-MS CV (`MS:4000000` to `MS:4999999`). Browse them in the [EBI Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/ms) or in the [psi-ms-CV repository](https://github.com/HUPO-PSI/psi-ms-CV/).
+- **QC software and supported data formats:** see the [resource guide](https://hupo-psi.github.io/mzQC/resource-guide/#qc-software) for the tools that support mzQC and data formats that they read.
+- **QC metrics (controlled vocabulary):** all QC terms are in the namespace of the PSI-MS CV (`MS:4000000` to `MS:4999999`). Browse them in [EBI Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/ms) or in [psi-ms-CV repository](https://github.com/HUPO-PSI/psi-ms-CV/).
 - **Missing a tool or metric?** See [our contribution guide](/CONTRIBUTING.md).
 
 ## Our official website is here:
