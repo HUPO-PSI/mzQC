@@ -12,6 +12,12 @@ The current projects of the QC working group are:
 - QC CV: Integration of controlled vocabulary terms into [PSI-MS CV](https://github.com/HUPO-PSI/psi-ms-CV/) to represent quality metrics and related supporting values.
 - Reference Implementations: The [MS-Quality-hub](https://github.com/MS-Quality-hub/) GitHub organization hosts implementations for mzQC in Python, R and Java.
 
+## Supported software and QC metrics
+
+- **QC software:** see the [resource guide](https://hupo-psi.github.io/mzQC/resource-guide/#qc-software) for the tools that support mzQC.
+- **QC metrics (controlled vocabulary):** all QC terms are in the QC namespace of the PSI-MS CV (`MS:4000000` to `MS:4999999`). Browse them in the [EBI Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/ms) or in the [psi-ms-CV repository](https://github.com/HUPO-PSI/psi-ms-CV/).
+- **Missing a tool or metric?** See [our contribution guide](/CONTRIBUTING.md).
+
 ## Our official website is here:
 <div align="center">
    <h1><a href="https://hupo-psi.github.io/mzQC/"><b>hupo-psi.github.io/mzQC/</b></a></h1>
