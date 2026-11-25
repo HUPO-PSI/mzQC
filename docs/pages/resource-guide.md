@@ -4,7 +4,7 @@ title: "mzQC Resources"
 permalink: /resource-guide/
 ---
 
-Everything you need to create, read, and validate mzQC files: software libraries, QC tools that support mzQC and the QC metric definitions.
+Everything you need to create, read and validate mzQC files: software libraries, QC tools that support mzQC and the QC metric definitions.
 
 ## Core libraries
 
