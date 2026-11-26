@@ -54,6 +54,21 @@
                   "value": "2012-02-03 14:00:41"
                 }
               ]
+            },
+            {
+              "name": "proteinGroups",
+              "location": "file://C:/msdata/proteinGroups.txt",
+              "fileFormat": {
+                "accession": "MS:1002130",
+                "name": "identification file format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 18:00:41"
+                }
+              ]
             }
           ],
           "analysisSoftware": [
@@ -132,6 +147,21 @@
                   "accession": "MS:1000747",
                   "name": "completion time",
                   "value": "2012-02-03 15:00:41"
+                }
+              ]
+            },
+            {
+              "name": "proteinGroups",
+              "location": "file://C:/msdata/proteinGroups.txt",
+              "fileFormat": {
+                "accession": "MS:1002130",
+                "name": "identification file format"
+              },
+              "fileProperties": [
+                {
+                  "accession": "MS:1000747",
+                  "name": "completion time",
+                  "value": "2012-02-03 18:00:41"
                 }
               ]
             }
