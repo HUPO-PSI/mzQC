@@ -18,6 +18,10 @@ The current projects of the QC working group are:
 - QC metrics (controlled vocabulary): all QC terms are in the QC namespace of the PSI-MS CV (`MS:4000000` to `MS:4999999`). Browse them in the [EBI Ontology Lookup Service](https://www.ebi.ac.uk/ols4/ontologies/ms) or in the [psi-ms-CV repository](https://github.com/HUPO-PSI/psi-ms-CV/).
 - Missing a tool or metric? See [our contribution guide](/CONTRIBUTING.md).
 
+## Join our calls
+
+To receive the agenda and meeting invitations for the HUPO-PSI Quality Control working group calls, subscribe to our mailing list [psidev-qc-dev@lists.sourceforge.net](mailto:psidev-qc-dev@lists.sourceforge.net) by entering your email address on the [subscription page](https://lists.sourceforge.net/lists/listinfo/psidev-qc-dev).  
+
 ## Our official website is here:
 <div align="center">
    <h1><a href="https://hupo-psi.github.io/mzQC/"><b>hupo-psi.github.io/mzQC/</b></a></h1>
@@ -28,9 +32,6 @@ The current projects of the QC working group are:
    <h1><a href="https://github.com/MS-Quality-hub"><b>MS Quality Hub</b></a></h1>
 </div>
 
-## Join our calls
-
-To receive the agenda and meeting invitations for the HUPO-PSI Quality Control working group calls, subscribe to our mailing list [psidev-qc-dev@lists.sourceforge.net](mailto:psidev-qc-dev@lists.sourceforge.net) by entering your email address on the [subscription page](https://lists.sourceforge.net/lists/listinfo/psidev-qc-dev).
 
 ## Contribute
 
