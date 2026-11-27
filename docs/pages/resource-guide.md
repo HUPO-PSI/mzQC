@@ -16,7 +16,7 @@ See [Communicating Mass Spectrometry Quality Information in mzQC with Python, R,
 |---|---|---|
 | [pymzqc](https://github.com/MS-Quality-Hub/pymzqc) | Python | Reference implementation |
 | [jmzqc](https://github.com/MS-Quality-Hub/jmzqc) | Java | Available |
-| [rmzqc](https://github.com/MS-Quality-Hub/rmzqc) | R | In development |
+| [rmzqc](https://github.com/MS-Quality-Hub/rmzqc) | R | available |
 
 To check a file without installing anything, use the [online validator](https://hupo-psi.github.io/mzQC/validator/).
 
