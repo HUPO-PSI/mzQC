@@ -5,7 +5,7 @@ permalink: /metrics/create
 ---
 # CV Term Creation Guide
 
-New CV terms have to be requested via the [PSI-MS CV issue tracker](https://github.com/HUPO-PSI/psi-ms-CV/issues).
+New CV terms have to be requested via the [mzQC GitHub issue tracker](https://github.com/HUPO-PSI/mzQC/issues).
 Upon creating a new issue, you should select the "New QC Term" template.
 This will guide you in providing the necessary information to request your new CV term, as detailed below.
 If additional information or clarifications beyond the initial request are needed, the mzQC working group will work with you to finalize your CV term request.
