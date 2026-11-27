@@ -8,7 +8,9 @@ Everything you need to create, read, and validate mzQC files: software libraries
 
 ## Core libraries
 
-Reference libraries to create, process, and validate mzQC files. Each provides an object model, (de-)serialisation functions, and syntactic and semantic validation.
+Reference libraries to create, process, and validate mzQC files. Each provides an object model, (de-)serialisation functions, and syntactic validation. 
+In addition, pymzqc supports semantic validation.
+See [Communicating Mass Spectrometry Quality Information in mzQC with Python, R, and Java. J. Am. Soc. Mass Spectrom. (2024) 35 (8): 1875–1882.](https://doi.org/10.1021/jasms.4c00174) for details.
 
 | Library | Language | Status |
 |---|---|---|
