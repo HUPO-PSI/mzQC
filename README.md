@@ -28,6 +28,10 @@ The current projects of the QC working group are:
    <h1><a href="https://github.com/MS-Quality-hub"><b>MS Quality Hub</b></a></h1>
 </div>
 
+## Join our calls
+
+To receive the agenda and meeting invitations for the HUPO-PSI Quality Control working group calls, subscribe to our mailing list [psidev-qc-dev@lists.sourceforge.net](mailto:psidev-qc-dev@lists.sourceforge.net) by entering your email address on the [subscription page](https://lists.sourceforge.net/lists/listinfo/psidev-qc-dev).
+
 ## Contribute
 
 We welcome new contributors, see [our help on that](/CONTRIBUTING.md).
