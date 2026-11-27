@@ -10,7 +10,7 @@ The mzQC specification defines a simple yet versatile file format with a hierarc
 The format (`.mzQC` file extension) is hierarchically structured and CV controlled (see more below).
 The format is realized in the widespread JavaScript Object Notation (JSON). 
 Validation can be done with through our format JSON-schema.
-It's schema is in JSON, too.
+Its schema is in JSON, too.
 
 ## Schema
 The mzQC format can accommodate multiple metrics, possibly from multiple MS runs. 
@@ -56,7 +56,7 @@ The OBO file format is a biology-oriented language for building ontologies, simi
 The OBO Foundry maintains a comprehensive index of ontologies related to the life sciences.
 
 ## In-a-nutshell
-If you want you include mzQC in your talk, here are resources for explaining mzqc in-a-nutshell:
+If you want to include mzQC in your talk, here are resources for explaining mzqc in-a-nutshell:
 
 ![in-a-nutshell](../pages/figures/mzQC-in-a-nutshell.pptx.jpg) 
 > You can download the slide for reuse from [here](../pages/figures/mzQC-in-a-nutshell.pptx)
