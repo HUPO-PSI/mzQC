@@ -14,7 +14,7 @@ With JSON at its core, mzQC follows a '_works online, works everywhere_' approac
 
 ## Archival
 The format is an optimal QC tool for the analytical chemist and instrument operators keeping track (and archive) instrument performance.
-Read on with an [introduction to mzQC for anlytical chemists](analytical-chemists/) or explore our [QC sample example](../examples/intro_qc2/).
+Read on with an [introduction to mzQC for analytical chemists](analytical-chemists/) or explore our [QC sample example](../examples/intro_qc2/).
 You can even embed mzQC in mzML, should you choose to. [View an example here](../examples/adv_mzqc_in_mzml/).
 
 ## Common currency
