@@ -139,7 +139,7 @@ relationship: has_relation QC:4000013 ! QC metric relation: single run
 Different types of categorization can be assigned to CV terms.
 First, it is RECOMMENDED to specify whether a metric requires identification information to be computed (ID based) or not (ID free).
 Second, additional categories to describe the metric context (from which data the metric is derived, to which element of the instrumental setup the metric pertains, etc.) can be specified as well.
-It is RECOMMEND to align the categorization of novel metrics to existing terms to facilitate consumption of related metrics.
+It is RECOMMENDED to align the categorization of novel metrics to existing terms to facilitate consumption of related metrics.
 
 ```
 property_value: has_units UO:0000010
