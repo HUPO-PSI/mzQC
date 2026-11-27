@@ -24,7 +24,8 @@ The current projects of the QC working group are:
    <h1><a href="https://github.com/MS-Quality-hub"><b>MS Quality Hub</b></a></h1>
 </div>
 
-
 # Reach Out 
-Find all the ways to get in touch in the footer of this website.
+- Secretary of the HUPO-PSI Quality Control working group: Fatemeh Mirzadeh ([Fatemeh.MirzadehSarcheshmeh@uantwerpen.be](mailto:Fatemeh.MirzadehSarcheshmeh@uantwerpen.be))
+- To receive the agenda and invitations for our calls, subscribe to the mailing list [psidev-qc-dev@lists.sourceforge.net](mailto:psidev-qc-dev@lists.sourceforge.net) on the [subscription page](https://lists.sourceforge.net/lists/listinfo/psidev-qc-dev).
+- You can find all other ways to get in touch in the footer of this website.
 
